@@ -1,17 +1,52 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import Callable, List, Type, Optional, Dict, Any
-from desktop.models.execution import ExecutionResult
+from enum import Enum
 from desktop.runtimes.capability.context import CapabilityContext
+from desktop.platform.shared.models.execution import ExecutionResult, ExecutionStatus
+
+# Re-export ExecutionResult and ExecutionStatus for convenience
+__all__ = ['ICapability', 'CapabilityDescriptor', 'ICapabilityRegistry', 'SimpleCapabilityRegistry', 'CapabilityCatalog', 'ExecutionResult', 'ExecutionStatus']
+
+
+class CapabilityExecutionMode(str, Enum):
+    SYNC = "sync"
+    ASYNC = "async"
+    BACKGROUND = "background"
+    ISOLATED = "isolated"
+
 
 class ICapability(ABC):
     """
     Rule 178: Capabilities are the only units of execution.
     """
+    @property
+    @abstractmethod
+    def capability_id(self) -> str:
+        """Unique identifier for the capability."""
+        pass
+    
+    @property
+    @abstractmethod
+    def name(self) -> str:
+        """Human-readable name of the capability."""
+        pass
+    
+    @abstractmethod
+    async def initialize(self) -> None:
+        """Initialize the capability."""
+        pass
+    
     @abstractmethod
     async def execute(self, context: CapabilityContext) -> ExecutionResult:
         """Execute the capability using the provided immutable context."""
         pass
+    
+    @abstractmethod
+    async def shutdown(self) -> None:
+        """Shutdown the capability gracefully."""
+        pass
+
 
 @dataclass
 class CapabilityDescriptor:
@@ -22,14 +57,18 @@ class CapabilityDescriptor:
     id: str
     version: str
     permissions: List[str]
-    execution_mode: str # e.g., "async", "background", "isolated"
+    execution_mode: CapabilityExecutionMode
     factory: Callable[[], ICapability]
     # Semantic Metadata for Catalog Generation
     category: str = "Uncategorized"
     action_name: str = ""
     description: str = ""
-    parameters_schema: dict = field(default_factory=dict)
+    parameters_schema: Dict[str, Any] = field(default_factory=dict)
     examples: List[str] = field(default_factory=list)
+    
+    def create_instance(self) -> ICapability:
+        """Create an instance of the capability using the factory."""
+        return self.factory()
 
 class ICapabilityRegistry(ABC):
     """

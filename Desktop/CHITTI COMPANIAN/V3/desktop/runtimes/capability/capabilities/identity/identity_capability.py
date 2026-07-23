@@ -3,6 +3,8 @@ import platform
 from desktop.runtimes.capability.descriptors import CapabilityDescriptor, VerificationSupport
 from desktop.runtimes.capability.results import ExecutionResult, ExecutionStatus
 from desktop.runtimes.capability.context import CapabilityContext
+from desktop.app.capability_contracts import CapabilityExecutionMode
+
 
 class IdentityCapability:
     """
@@ -16,14 +18,13 @@ class IdentityCapability:
             id="core.identity",
             version="1.0.0",
             permissions=[],
-            execution_mode="sync",
+            execution_mode=CapabilityExecutionMode.SYNC,
             category="System",
             action_name="get_identity",
             description="Get the AI's identity, core purpose, software version, and platform information.",
             examples=["Who are you?", "What is your version?", "What OS are we running on?"],
             parameters_schema={},
-            verification_support=VerificationSupport.NOT_SUPPORTED,
-            verification_reason="Identity returns static information and does not mutate external state."
+            factory=lambda: IdentityCapability()
         )
 
     def execute(self, context: CapabilityContext) -> ExecutionResult:

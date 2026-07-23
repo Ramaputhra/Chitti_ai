@@ -1,4 +1,5 @@
 import uuid
+import asyncio
 from datetime import datetime
 from typing import List
 
@@ -14,9 +15,9 @@ from desktop.models.conversation import ConversationArtifact
 from desktop.platform.shared.interfaces.capability import ICapability
 from desktop.platform.shared.interfaces.service import ServiceState
 from desktop.platform.shared.models.ai import ToolInvocation
-from desktop.platform.shared.models.capability import CapabilityDescriptor
-from desktop.platform.shared.models.execution import ExecutionContext, ExecutionResult, ExecutionStatus
+from desktop.platform.shared.models.execution import ExecutionResult, ExecutionStatus
 from desktop.platform.shared.models.tool import ToolDescriptor
+
 
 class TimeCapability(ICapability):
     """
@@ -38,10 +39,10 @@ class TimeCapability(ICapability):
     def state(self) -> ServiceState:
         return self._state
 
-    def initialize(self) -> None:
+    async def initialize(self) -> None:
         self._state = ServiceState.RUNNING
 
-    def shutdown(self) -> None:
+    async def shutdown(self) -> None:
         self._state = ServiceState.STOPPED
 
     def health_check(self) -> dict:
@@ -56,24 +57,18 @@ class TimeCapability(ICapability):
             )
         ]
 
-    def describe(self) -> CapabilityDescriptor:
-        return CapabilityDescriptor(
-            name=self.name,
-            version="1.0",
-            category="System",
-            tools=self.discover_tools(),
-            description="Time fetching capability."
-        )
-
     def validate(self, invocation: ToolInvocation) -> bool:
         return invocation.tool_name == "get_time"
 
     def cancel(self, invocation_id: str) -> None:
         pass
 
-    def execute(self, invocation: ToolInvocation, context: ExecutionContext) -> ExecutionResult:
+    async def execute(self, invocation: ToolInvocation, context: 'ExecutionContext') -> ExecutionResult:
         if not self.validate(invocation):
             return ExecutionResult(status=ExecutionStatus.FAILURE, errors=["Invalid tool."])
+
+        # Simulate async execution
+        await asyncio.sleep(0)
 
         # Execution
         current_time = datetime.now()

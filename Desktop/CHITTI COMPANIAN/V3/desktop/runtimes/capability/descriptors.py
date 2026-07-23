@@ -1,22 +1,20 @@
+"""
+Capability descriptors for the runtime capability system.
+
+This module re-exports from the canonical location in desktop.app.capability_contracts
+for backward compatibility with the capability runtime system.
+"""
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Callable, List, Dict, Any, Optional
 
+# Import canonical types
+from desktop.app.capability_contracts import CapabilityDescriptor as CanonicalCapabilityDescriptor
+
+# Re-export for backward compatibility
+CapabilityDescriptor = CanonicalCapabilityDescriptor
+
+# Keep VerificationSupport here as it's specific to the runtime system
 class VerificationSupport(str, Enum):
     SUPPORTED = "SUPPORTED"
     NOT_SUPPORTED = "NOT_SUPPORTED"
-
-@dataclass
-class CapabilityDescriptor:
-    id: str
-    version: str
-    permissions: List[str]
-    execution_mode: str
-    category: str
-    action_name: str
-    description: str
-    examples: List[str] = field(default_factory=list)
-    parameters_schema: Dict[str, Any] = field(default_factory=dict)
-    verification_support: VerificationSupport = VerificationSupport.SUPPORTED
-    verification_reason: Optional[str] = None
-    factory: Optional[Callable[[], Any]] = None

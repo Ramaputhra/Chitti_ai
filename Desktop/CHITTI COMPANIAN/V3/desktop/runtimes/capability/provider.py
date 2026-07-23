@@ -3,6 +3,8 @@ from desktop.runtimes.capability.capabilities.identity.identity_capability impor
 from desktop.runtimes.capability.descriptors import CapabilityDescriptor
 from desktop.packages.desktop_pack.capabilities.expression import TextResponseCapability
 from desktop.packages.desktop_pack.capabilities.execution import LaunchApplicationCapability, ExecuteTerminalCommandCapability
+from desktop.app.capability_contracts import CapabilityExecutionMode
+
 
 class CapabilityProvider:
     """
@@ -14,8 +16,10 @@ class CapabilityProvider:
 
     def register_all(self):
         # Register IdentityCapability manually via DI
+        # NOTE: Set factory BEFORE registration
         identity_desc = IdentityCapability.get_descriptor()
         identity_desc.factory = lambda: IdentityCapability()
+        identity_desc.execution_mode = CapabilityExecutionMode.ASYNC
         self.registry.register(identity_desc)
         
         # Register TextResponseCapability for planner fallback
@@ -23,11 +27,11 @@ class CapabilityProvider:
             id="TextResponseCapability",
             version="1.0",
             permissions=[],
-            execution_mode="sync",
+            execution_mode=CapabilityExecutionMode.SYNC,
+            factory=lambda: TextResponseCapability(),
             category="Expression",
             action_name="text_response",
-            description="Responds with text.",
-            factory=lambda: TextResponseCapability()
+            description="Responds with text."
         )
         self.registry.register(text_desc)
         
@@ -36,11 +40,11 @@ class CapabilityProvider:
             id="LaunchApplicationCapability",
             version="1.0",
             permissions=["desktop_control"],
-            execution_mode="async",
+            execution_mode=CapabilityExecutionMode.ASYNC,
+            factory=lambda: LaunchApplicationCapability(),
             category="Execution",
             action_name="launch_application",
-            description="Physically launches a standalone application.",
-            factory=lambda: LaunchApplicationCapability()
+            description="Physically launches a standalone application."
         )
         self.registry.register(launch_desc)
         
@@ -49,10 +53,10 @@ class CapabilityProvider:
             id="ExecuteTerminalCommandCapability",
             version="1.0",
             permissions=["desktop_control"],
-            execution_mode="async",
+            execution_mode=CapabilityExecutionMode.ASYNC,
+            factory=lambda: ExecuteTerminalCommandCapability(),
             category="Execution",
             action_name="execute_terminal_command",
-            description="Executes a terminal command attached to a working directory.",
-            factory=lambda: ExecuteTerminalCommandCapability()
+            description="Executes a terminal command attached to a working directory."
         )
         self.registry.register(terminal_desc)

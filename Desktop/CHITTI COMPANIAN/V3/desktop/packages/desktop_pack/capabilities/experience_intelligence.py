@@ -1,9 +1,13 @@
+import asyncio
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 from desktop.platform.shared.interfaces.capability import ICapability
+from desktop.platform.shared.interfaces.service import ServiceState
 from desktop.platform.shared.models.ai import ToolInvocation
+from desktop.platform.shared.models.tool import ToolDescriptor
+from desktop.platform.shared.models.execution import ExecutionResult, ExecutionStatus
 from desktop.models.capability import (
-    ExecutionResult, CanonicalCapabilityOutput, VerificationResult, 
+    ExecutionResult as CapExecutionResult, CanonicalCapabilityOutput, VerificationResult, 
     PresentationDescriptor, MemoryCandidate
 )
 from desktop.models.experience import (
@@ -14,7 +18,7 @@ from desktop.models.experience import (
 
 def _mock_canonical(payload: Dict[str, Any], artifact_instance: Any = None) -> CanonicalCapabilityOutput:
     return CanonicalCapabilityOutput(
-        execution_result=ExecutionResult(success=True, payload=payload),
+        execution_result=CapExecutionResult(success=True, payload=payload),
         verification_result=VerificationResult(verified=True, evidence_ids=[], verification_strategy="mock_experience"),
         conversation_artifact=artifact_instance,
         presentation_descriptor=PresentationDescriptor(experience_id="exp_001", recipe_id="recipe_experience_dashboard", layout_data={}),
@@ -26,12 +30,31 @@ class ExperienceBuilderCapability(ICapability):
     100% deterministic. Collects semantic artifacts, determines boundaries, extracts participants,
     calculates scores, attaches evidence, and generates fingerprint.
     """
-    def initialize(self) -> None: pass
-    def shutdown(self) -> None: pass
-    def discover_tools(self) -> List[str]: return ["experience_build"]
-    def describe(self) -> Dict[str, Any]: return {"name": "ExperienceBuilderCapability", "version": "1.0"}
-    def validate(self, invocation: ToolInvocation) -> bool: return invocation.tool_name in self.discover_tools()
-    def execute(self, invocation: ToolInvocation) -> CanonicalCapabilityOutput:
+    def __init__(self):
+        self._state = ServiceState.STOPPED
+    
+    @property
+    def name(self) -> str:
+        return "ExperienceBuilderCapability"
+    
+    @property
+    def capability_id(self) -> str:
+        return "experience_builder"
+    
+    async def initialize(self) -> None:
+        self._state = ServiceState.RUNNING
+    
+    async def shutdown(self) -> None:
+        self._state = ServiceState.STOPPED
+    
+    def discover_tools(self) -> List[ToolDescriptor]:
+        return [ToolDescriptor(name="experience_build", description="Build experience", parameters={})]
+    
+    def validate(self, invocation: ToolInvocation) -> bool:
+        return invocation.tool_name in ["experience_build"]
+    
+    async def execute(self, invocation: ToolInvocation, context: Any) -> ExecutionResult:
+        await asyncio.sleep(0)
         print("[ExperienceBuilder] Gathering ActivityArtifacts and WorkspaceSummaries...")
         print("[ExperienceBuilder] Calculating deterministic Semantic Scores...")
         print("[ExperienceBuilder] Generating ExperienceFingerprint...")
@@ -64,40 +87,78 @@ class ExperienceBuilderCapability(ICapability):
             continuation_candidate=False,
             fingerprint="hash_5f4dcc3b5aa765d61d8327deb882cf99"
         )
-        return _mock_canonical({"built": True, "fingerprint": exp.fingerprint}, artifact_instance=exp)
+        return ExecutionResult(status=ExecutionStatus.SUCCESS, data=_mock_canonical({"built": True, "fingerprint": exp.fingerprint}, artifact_instance=exp))
 
 class ExperienceReflectionCapability(ICapability):
     """
     Dedicated reflection generator running after Builder.
     Only generates the structured Reflection (Accomplishments, Work, Risks, Next Steps).
     """
-    def initialize(self) -> None: pass
-    def shutdown(self) -> None: pass
-    def discover_tools(self) -> List[str]: return ["experience_reflect"]
-    def describe(self) -> Dict[str, Any]: return {"name": "ExperienceReflectionCapability", "version": "1.0"}
-    def validate(self, invocation: ToolInvocation) -> bool: return invocation.tool_name in self.discover_tools()
-    def execute(self, invocation: ToolInvocation) -> CanonicalCapabilityOutput:
+    def __init__(self):
+        self._state = ServiceState.STOPPED
+    
+    @property
+    def name(self) -> str:
+        return "ExperienceReflectionCapability"
+    
+    @property
+    def capability_id(self) -> str:
+        return "experience_reflection"
+    
+    async def initialize(self) -> None:
+        self._state = ServiceState.RUNNING
+    
+    async def shutdown(self) -> None:
+        self._state = ServiceState.STOPPED
+    
+    def discover_tools(self) -> List[ToolDescriptor]:
+        return [ToolDescriptor(name="experience_reflect", description="Reflect on experience", parameters={})]
+    
+    def validate(self, invocation: ToolInvocation) -> bool:
+        return invocation.tool_name in ["experience_reflect"]
+    
+    async def execute(self, invocation: ToolInvocation, context: Any) -> ExecutionResult:
+        await asyncio.sleep(0)
         print("[ExperienceReflectionGenerator] Synthesizing semantic reflection...")
         reflection = ExperienceReflection(
             accomplishments="Created Experience intelligence platform implementation.",
             remaining_work="None", lessons_learned="Native Python integration works flawlessly.",
             risks="None", recommended_next_step="Proceed to Sprint 31B."
         )
-        return _mock_canonical({"reflected": True, "reflection": reflection.__dict__})
+        return ExecutionResult(status=ExecutionStatus.SUCCESS, data=_mock_canonical({"reflected": True, "reflection": reflection.__dict__}))
 
 class ExperienceValidatorCapability(ICapability):
     """
     Validates timeline, workspace, evidence, reflection, confidences, duplicates, and collisions.
     Transitions Experience to READY_FOR_MEMORY.
     """
-    def initialize(self) -> None: pass
-    def shutdown(self) -> None: pass
-    def discover_tools(self) -> List[str]: return ["experience_validate"]
-    def describe(self) -> Dict[str, Any]: return {"name": "ExperienceValidatorCapability", "version": "1.0"}
-    def validate(self, invocation: ToolInvocation) -> bool: return invocation.tool_name in self.discover_tools()
-    def execute(self, invocation: ToolInvocation) -> CanonicalCapabilityOutput:
+    def __init__(self):
+        self._state = ServiceState.STOPPED
+    
+    @property
+    def name(self) -> str:
+        return "ExperienceValidatorCapability"
+    
+    @property
+    def capability_id(self) -> str:
+        return "experience_validator"
+    
+    async def initialize(self) -> None:
+        self._state = ServiceState.RUNNING
+    
+    async def shutdown(self) -> None:
+        self._state = ServiceState.STOPPED
+    
+    def discover_tools(self) -> List[ToolDescriptor]:
+        return [ToolDescriptor(name="experience_validate", description="Validate experience", parameters={})]
+    
+    def validate(self, invocation: ToolInvocation) -> bool:
+        return invocation.tool_name in ["experience_validate"]
+    
+    async def execute(self, invocation: ToolInvocation, context: Any) -> ExecutionResult:
+        await asyncio.sleep(0)
         print("[ExperienceValidator] Validating timeline and workspace consistency...")
         print("[ExperienceValidator] Assuring EvidenceReference integrity...")
         print("[ExperienceValidator] Asserting ExplainableConfidence thresholds...")
         print("[ExperienceValidator] Experience is VALIDATED and marked READY_FOR_MEMORY.")
-        return _mock_canonical({"validated": True, "status": "READY_FOR_MEMORY"})
+        return ExecutionResult(status=ExecutionStatus.SUCCESS, data=_mock_canonical({"validated": True, "status": "READY_FOR_MEMORY"}))

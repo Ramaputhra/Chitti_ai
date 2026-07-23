@@ -1,19 +1,26 @@
+"""
+Execution models for CHITTI Desktop Companion.
+
+This module re-exports ExecutionResult and ExecutionStatus from the canonical
+location in desktop.platform.shared.models.execution for backward compatibility.
+"""
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
-from typing import Any, Dict, Optional
-from desktop.models.cognition import ExecutionPlan, WorkflowRequest, ApprovalRequirement
-from desktop.models.interaction import InteractionEnvelope
-from desktop.app.context import ServiceRegistry
+from typing import Any, Dict, Optional, List
 
-class ExecutionStatus(Enum):
-    SUCCESS = "SUCCESS"
-    FAILED = "FAILED"
-    RETRYABLE_FAILURE = "RETRYABLE_FAILURE"
-    TIMED_OUT = "TIMED_OUT"
-    WAITING_APPROVAL = "WAITING_APPROVAL"
-    CANCELLED = "CANCELLED"
+# Import canonical types from shared location
+from desktop.platform.shared.models.execution import (
+    ExecutionResult as SharedExecutionResult,
+    ExecutionStatus as SharedExecutionStatus,
+    ExecutionContext as SharedExecutionContext,
+)
 
+# Re-export for backward compatibility
+ExecutionResult = SharedExecutionResult
+ExecutionStatus = SharedExecutionStatus
+
+# Keep ExecutionErrorCode here as it's specific to this module
 class ExecutionErrorCode(str, Enum):
     # System Errors
     ACCESS_DENIED = "ACCESS_DENIED"
@@ -28,29 +35,23 @@ class ExecutionErrorCode(str, Enum):
     INVALID_PATH = "INVALID_PATH"
     USE_MOVE_CAPABILITY = "USE_MOVE_CAPABILITY"
 
-@dataclass
-class ExecutionResult:
-    """The outcome of a capability execution."""
-    status: ExecutionStatus
-    output_data: Dict[str, Any] = field(default_factory=dict)
-    error_message: Optional[str] = None
-    error_code: Optional[ExecutionErrorCode] = None
-    version: str = "1.0"
 
-
+# Legacy alias for ExecutionContext (different from shared.ExecutionContext)
 @dataclass
 class ExecutionContext:
     """
     Immutable context passed to Capabilities.
     Contains strictly the information needed to execute, without exposing the Kernel.
     """
-    plan: ExecutionPlan
-    workflow: WorkflowRequest
     correlation_id: str
     interaction_id: str
     attempt: int
     deadline: Optional[datetime]
-    services: ServiceRegistry
+    # Additional context fields
+    user_id: str = ""
+    session_id: str = ""
+    metadata: Dict[str, Any] = field(default_factory=dict)
+
 
 @dataclass
 class WorkflowContext:
@@ -60,11 +61,12 @@ class WorkflowContext:
     """
     plan_id: str
     correlation_id: str
-    execution_state: ExecutionStatus = ExecutionStatus.WAITING_APPROVAL
+    execution_state: ExecutionStatus = ExecutionStatus.SUCCESS
     attempt_count: int = 0
     started_at: Optional[datetime] = None
     finished_at: Optional[datetime] = None
     result: Optional[ExecutionResult] = None
+
 
 @dataclass
 class ExecutionStep:
@@ -78,16 +80,14 @@ class ExecutionStep:
     output_payload: Optional[Dict[str, Any]] = None
     error_message: Optional[str] = None
     retries: int = 0
-    version: str = "1.0"
+
 
 @dataclass
 class ExecutionTrace:
     """Records the end-to-end chronological execution path of a completed ExecutionPlan."""
     trace_id: str
     plan_id: str
-    steps: list[ExecutionStep] = field(default_factory=list)
+    steps: List['ExecutionStep'] = field(default_factory=list)
     total_duration_ms: float = 0.0
-    overall_status: ExecutionStatus = ExecutionStatus.WAITING_APPROVAL
+    overall_status: ExecutionStatus = ExecutionStatus.SUCCESS
     cancellation_reason: Optional[str] = None
-    version: str = "1.0"
-

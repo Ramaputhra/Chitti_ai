@@ -1,8 +1,12 @@
+import asyncio
 from typing import Dict, Any, Optional
 from desktop.platform.shared.interfaces.capability import ICapability
+from desktop.platform.shared.interfaces.service import ServiceState
 from desktop.platform.shared.models.ai import ToolInvocation
+from desktop.platform.shared.models.tool import ToolDescriptor
+from desktop.platform.shared.models.execution import ExecutionResult, ExecutionStatus
 from desktop.models.capability import (
-    ExecutionResult, CanonicalCapabilityOutput, VerificationResult
+    ExecutionResult as CapExecutionResult, CanonicalCapabilityOutput, VerificationResult
 )
 from desktop.models.experience import Experience
 from desktop.models.memory_episode import (
@@ -10,26 +14,52 @@ from desktop.models.memory_episode import (
     MemoryRelationships, MemoryEpisodeMetadata, RetentionPolicy
 )
 
+
 class MemoryCompilerCapability(ICapability):
     """
     Consumes a READY_FOR_MEMORY Experience and compiles it into a MemoryEpisode.
     Strictly responsible for cognition, NOT persistence.
     """
-    def execute(self, invocation: ToolInvocation) -> CanonicalCapabilityOutput:
+    def __init__(self):
+        self._state = ServiceState.STOPPED
+    
+    @property
+    def name(self) -> str:
+        return "MemoryCompilerCapability"
+    
+    @property
+    def capability_id(self) -> str:
+        return "memory_compiler"
+    
+    async def initialize(self) -> None:
+        self._state = ServiceState.RUNNING
+    
+    async def shutdown(self) -> None:
+        self._state = ServiceState.STOPPED
+    
+    def discover_tools(self) -> list[ToolDescriptor]:
+        return [ToolDescriptor(name="memory_compile", description="Compile experience to memory", parameters={})]
+    
+    def validate(self, invocation: ToolInvocation) -> bool:
+        return invocation.tool_name in ["memory_compile"]
+    
+    async def execute(self, invocation: ToolInvocation, context: Any) -> ExecutionResult:
+        await asyncio.sleep(0)
+        
         # 1. Ingestion: Retrieve the Experience from arguments
         experience_dict = invocation.arguments.get("experience", {})
         if not experience_dict:
-            return self._fail("No Experience provided to MemoryCompiler.")
+            return ExecutionResult(status=ExecutionStatus.FAILURE, errors=["No Experience provided to MemoryCompiler."])
         
         status = experience_dict.get("status")
         if status != "READY_FOR_MEMORY":
-            return self._fail(f"Invalid state: {status}. MemoryCompiler only accepts READY_FOR_MEMORY.")
+            return ExecutionResult(status=ExecutionStatus.FAILURE, errors=[f"Invalid state: {status}. MemoryCompiler only accepts READY_FOR_MEMORY."])
 
         # 2. Eligibility & Deduplication
         fingerprint = experience_dict.get("fingerprint", "")
         # Minimal mock deduplication logic
         if not fingerprint:
-            return self._fail("Experience lacks a deterministic fingerprint.")
+            return ExecutionResult(status=ExecutionStatus.FAILURE, errors=["Experience lacks a deterministic fingerprint."])
 
         # 3. Compilation
         reflection = experience_dict.get("reflection", {})
@@ -77,22 +107,16 @@ class MemoryCompilerCapability(ICapability):
         # Convert Enum to string for safe serialization
         episode_dict['retention_policy'] = episode.retention_policy.name
 
-        return CanonicalCapabilityOutput(
-            execution_result=ExecutionResult(
-                success=True, 
-                payload={"status": "READY_FOR_PERSISTENCE", "episode": episode_dict}
-            ),
-            verification_result=VerificationResult(verified=True, evidence_ids=[], verification_strategy="memory_compilation"),
-            conversation_artifact=None,
-            presentation_descriptor=None,
-            memory_candidate=None
-        )
-
-    def _fail(self, reason: str) -> CanonicalCapabilityOutput:
-        return CanonicalCapabilityOutput(
-            execution_result=ExecutionResult(success=False, payload={"error": reason}),
-            verification_result=VerificationResult(verified=False, evidence_ids=[], verification_strategy="memory_compilation"),
-            conversation_artifact=None,
-            presentation_descriptor=None,
-            memory_candidate=None
+        return ExecutionResult(
+            status=ExecutionStatus.SUCCESS,
+            data=CanonicalCapabilityOutput(
+                execution_result=CapExecutionResult(
+                    success=True, 
+                    payload={"status": "READY_FOR_PERSISTENCE", "episode": episode_dict}
+                ),
+                verification_result=VerificationResult(verified=True, evidence_ids=[], verification_strategy="memory_compilation"),
+                conversation_artifact=None,
+                presentation_descriptor=None,
+                memory_candidate=None
+            )
         )
