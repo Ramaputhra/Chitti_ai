@@ -138,3 +138,34 @@ class ReasoningContext:
     session_metadata: Dict[str, Any] = field(default_factory=dict)
     recent_memory_refs: List[Any] = field(default_factory=list)
     conversation_refs: List[Any] = field(default_factory=list)
+
+
+class MemoryClass(str, Enum):
+    """Memory class priorities for context selection."""
+    WORKING_MEMORY = "working_memory"
+    RECENT_CONVERSATION = "recent_conversation"
+    FACT = "fact"
+    EPISODE = "episode"
+    SESSION_CONTEXT = "session_context"
+
+
+@dataclass
+class ContextSelectionPolicy:
+    """Determines the priority order for including memory classes in context."""
+    priority_order: List[MemoryClass] = field(default_factory=lambda: [
+        MemoryClass.WORKING_MEMORY,
+        MemoryClass.RECENT_CONVERSATION,
+        MemoryClass.FACT,
+        MemoryClass.EPISODE,
+        MemoryClass.SESSION_CONTEXT
+    ])
+
+
+@dataclass
+class SelectedContext:
+    """Context selected for inclusion in the prompt."""
+    working_memory: List[str] = field(default_factory=list)
+    recent_messages: List[str] = field(default_factory=list)
+    facts: List[str] = field(default_factory=list)
+    episodes: List[str] = field(default_factory=list)
+    session_context: str = ""

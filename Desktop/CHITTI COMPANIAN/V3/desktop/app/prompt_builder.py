@@ -1,4 +1,5 @@
 import hashlib
+from typing import List, Any
 from desktop.models.inference import PromptContext, PromptMetadata
 from desktop.app.prompt_templates import PromptTemplates
 

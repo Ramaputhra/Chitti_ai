@@ -69,3 +69,6 @@ class InMemoryEventBus(IEventBus):
             self.unsubscribe(event_id, wrapper)
             callback(event)
         self.subscribe(event_id, wrapper)
+
+# Backward compatibility alias
+EventBus = InMemoryEventBus

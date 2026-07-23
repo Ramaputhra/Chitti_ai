@@ -1,4 +1,4 @@
-from typing import List, Optional, Protocol
+from typing import Any, List, Optional, Protocol
 
 from desktop.platform.shared.models.intent import Intent
 
