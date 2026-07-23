@@ -33,8 +33,10 @@ class RuntimeCapabilityRegistry(IRuntimeCapabilityRegistry):
 
     def register_capability(self, capability: ICapability) -> None:
         cap_desc = capability.describe()
-        self._capabilities[cap_desc.name] = capability
-        self.logger.info(f"Registered Capability: {cap_desc.name} with {len(cap_desc.tools)} tools")
+        cap_name = cap_desc.get("name") if isinstance(cap_desc, dict) else getattr(cap_desc, "name", str(capability))
+        tools = cap_desc.get("tools", []) if isinstance(cap_desc, dict) else getattr(cap_desc, "tools", [])
+        self._capabilities[cap_name] = capability
+        self.logger.info(f"Registered Capability: {cap_name} with {len(tools)} tools")
 
     def get_capability(self, name: str) -> Optional[ICapability]:
         return self._capabilities.get(name)

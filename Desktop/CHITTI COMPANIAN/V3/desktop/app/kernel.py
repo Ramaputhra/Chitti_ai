@@ -1,5 +1,5 @@
 import asyncio
-from typing import List, Type, Dict
+from typing import List, Type, Dict, Optional
 from dataclasses import dataclass
 from desktop.models.lifecycle import IRuntime, RuntimeState
 from desktop.models.events import SystemEvent, DomainEvent, KernelShutdownRequest

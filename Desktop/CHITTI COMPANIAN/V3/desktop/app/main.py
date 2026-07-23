@@ -13,10 +13,10 @@ from desktop.runtimes.execution import ExecutionRuntime
 from desktop.runtimes.expression_runtime import ExpressionRuntime
 from desktop.platform.strategies.deterministic_planner import DeterministicPlannerStrategy
 from desktop.app.transports import TransportManager, CLITransport
-from desktop.ui.tray import SystemTray
+from desktop.ui.tray.system_tray import SystemTray
 from desktop.ui.widget.companion_widget import CompanionWidget
-from desktop.ui.presence.controller import PresenceController
-from desktop.ui.presence.engine import PresenceEngine
+from desktop.ui.widget.presence_controller import PresenceController
+from desktop.ui.presence.presence_engine import PresenceEngine
 from desktop.app.diagnostics import PipelineValidator
 from desktop.models.events import Event
 from PySide6.QtWidgets import QApplication
