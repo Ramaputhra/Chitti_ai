@@ -1,0 +1,149 @@
+{
+    "name": "CHITTI Plugin Marketplace",
+    "version": "1.0.0",
+    "description": "Community plugins for CHITTI AI Desktop Companion",
+    "plugins": [
+        {
+            "id": "slack-integration",
+            "name": "Slack Integration",
+            "description": "Send and receive Slack messages, manage channels",
+            "author": "CHITTI Team",
+            "version": "1.0.0",
+            "type": "integration",
+            "downloads": 15420,
+            "rating": 4.8,
+            "tags": ["communication", "team", "slack"],
+            "requirements": ["slack-sdk"],
+            "featured": true
+        },
+        {
+            "id": "notion-task-sync",
+            "name": "Notion Task Sync",
+            "description": "Sync tasks and notes with Notion workspace",
+            "author": "CHITTI Team",
+            "version": "1.0.0",
+            "type": "capability",
+            "downloads": 12350,
+            "rating": 4.6,
+            "tags": ["productivity", "notion", "tasks"],
+            "requirements": ["notion-client"],
+            "featured": true
+        },
+        {
+            "id": "spotify-control",
+            "name": "Spotify Control",
+            "description": "Control Spotify playback with voice commands",
+            "author": "Community",
+            "version": "1.2.0",
+            "type": "capability",
+            "downloads": 18900,
+            "rating": 4.9,
+            "tags": ["music", "spotify", "media"],
+            "requirements": ["spotipy"],
+            "featured": true
+        },
+        {
+            "id": "home-assistant",
+            "name": "Home Assistant",
+            "description": "Control smart home devices via Home Assistant",
+            "author": "CHITTI Team",
+            "version": "1.0.0",
+            "type": "integration",
+            "downloads": 8920,
+            "rating": 4.5,
+            "tags": ["smart-home", "iot", "home-assistant"],
+            "requirements": ["homeassistant-api"],
+            "featured": false
+        },
+        {
+            "id": "github-assistant",
+            "name": "GitHub Assistant",
+            "description": "Manage PRs, issues, and repositories",
+            "author": "Community",
+            "version": "2.1.0",
+            "type": "capability",
+            "downloads": 22100,
+            "rating": 4.7,
+            "tags": ["development", "github", "git"],
+            "requirements": ["PyGithub"],
+            "featured": true
+        },
+        {
+            "id": "health-reminders",
+            "name": "Health Reminders",
+            "description": "Break reminders, posture checks, eye rest",
+            "author": "CHITTI Team",
+            "version": "1.0.0",
+            "type": "capability",
+            "downloads": 7650,
+            "rating": 4.4,
+            "tags": ["health", "wellness", "reminders"],
+            "requirements": [],
+            "featured": false
+        },
+        {
+            "id": "calendar-pro",
+            "name": "Calendar Pro",
+            "description": "Advanced calendar scheduling and conflict detection",
+            "author": "CHITTI Team",
+            "version": "1.5.0",
+            "type": "capability",
+            "downloads": 11200,
+            "rating": 4.6,
+            "tags": ["calendar", "scheduling", "productivity"],
+            "requirements": [],
+            "featured": false
+        },
+        {
+            "id": "meeting-notes",
+            "name": "Meeting Notes Pro",
+            "description": "AI-powered meeting notes with action item extraction",
+            "author": "CHITTI Team",
+            "version": "1.2.0",
+            "type": "capability",
+            "downloads": 9800,
+            "rating": 4.7,
+            "tags": ["meetings", "notes", "productivity"],
+            "requirements": [],
+            "featured": true
+        }
+    ],
+    "categories": [
+        {
+            "id": "communication",
+            "name": "Communication",
+            "description": "Slack, Discord, Teams integrations",
+            "plugin_count": 5
+        },
+        {
+            "id": "productivity",
+            "name": "Productivity",
+            "description": "Tasks, notes, calendar tools",
+            "plugin_count": 12
+        },
+        {
+            "id": "development",
+            "name": "Development",
+            "description": "GitHub, code, terminal tools",
+            "plugin_count": 8
+        },
+        {
+            "id": "smart-home",
+            "name": "Smart Home",
+            "description": "Home automation integrations",
+            "plugin_count": 6
+        },
+        {
+            "id": "health",
+            "name": "Health & Wellness",
+            "description": "Reminders, breaks, posture",
+            "plugin_count": 4
+        },
+        {
+            "id": "media",
+            "name": "Media Control",
+            "description": "Spotify, YouTube, podcasts",
+            "plugin_count": 7
+        }
+    ]
+}
