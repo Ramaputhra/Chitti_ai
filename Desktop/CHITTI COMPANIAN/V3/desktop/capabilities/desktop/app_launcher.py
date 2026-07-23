@@ -1,25 +1,25 @@
 import os
 from typing import List
 
+from desktop.platform.shared.interfaces.capability import ICapability
 from desktop.platform.shared.interfaces.service import ServiceState
 from desktop.platform.shared.models.capability import CapabilityDescriptor
 from desktop.platform.shared.models.tool import ToolDescriptor, ToolParameter
 from desktop.platform.shared.models.execution import ExecutionContext, ExecutionResult
 from desktop.platform.shared.models.ai import ToolInvocation
-from desktop.runtimes.capability.base import BaseCapability
 
-class AppLauncherCapability(BaseCapability):
+class AppLauncherCapability(ICapability):
     """
-    Launches applications, opens files or folders using the default Windows handler.
+    Launches applications, opens files or folders using the default handler.
     """
     def __init__(self):
-        super().__init__()
         self._state = ServiceState.STOPPED
 
     @property
     def name(self) -> str:
         return "AppLauncherCapability"
 
+    @property
     def state(self) -> ServiceState:
         return self._state
 
@@ -34,13 +34,11 @@ class AppLauncherCapability(BaseCapability):
 
     def describe(self) -> CapabilityDescriptor:
         return CapabilityDescriptor(
-            name="app_launcher",
+            id="app_launcher",
             version="1.0",
-            category="desktop",
             permissions=["filesystem", "desktop_control"],
-            tools=self.discover_tools(),
-            health="healthy",
-            platform="windows"
+            execution_mode="sync",
+            factory=None
         )
 
     def discover_tools(self) -> List[ToolDescriptor]:

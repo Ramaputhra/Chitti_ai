@@ -8,7 +8,6 @@ from desktop.platform.shared.models.ai import ToolInvocation
 from desktop.platform.shared.models.capability import CapabilityDescriptor
 from desktop.platform.shared.models.execution import ExecutionContext, ExecutionResult, ExecutionStatus
 from desktop.platform.shared.models.tool import ToolDescriptor, ToolParameter
-from desktop.runtimes.presentation.models import PresentationModel, PresentationType, PresentationMetadata, PresentationCapability, PresentationLifetime
 
 
 class CalculatorCapability(ICapability):
@@ -46,13 +45,11 @@ class CalculatorCapability(ICapability):
 
     def describe(self) -> CapabilityDescriptor:
         return CapabilityDescriptor(
-            name="calculator",
+            id="calculator",
             version="1.0",
-            category="utilities",
             permissions=[],
-            tools=self.discover_tools(),
-            health="healthy",
-            platform="all"
+            execution_mode="sync",
+            factory=None
         )
 
     def discover_tools(self) -> List[ToolDescriptor]:
@@ -90,14 +87,7 @@ class CalculatorCapability(ICapability):
         else:
             raise ValueError(f"Unsupported syntax node: {type(node)}")
 
-    def execute(self, *args, **kwargs) -> ExecutionResult:
-        if args and hasattr(args[0], "tool_name"):
-            invocation = args[0]
-        else:
-            action = kwargs.get("action")
-            parameters = kwargs.get("parameters", {})
-            invocation = ToolInvocation(tool_name=action, parameters=parameters)
-
+    def execute(self, invocation: ToolInvocation, context: ExecutionContext) -> ExecutionResult:
         if not self.validate(invocation):
             return ExecutionResult(status=ExecutionStatus.FAILURE, errors=["Invalid tool or missing expression."])
 
@@ -110,19 +100,10 @@ class CalculatorCapability(ICapability):
             if isinstance(result, float) and result.is_integer():
                 result = int(result)
                 
-            model = PresentationModel(
-                type=PresentationType.REPORT,
-                title="Calculator",
-                subtitle="Evaluation Result",
-                icon="calculator",
-                data={"expression": expression, "result": str(result)},
-                actions=[],
-                metadata=PresentationMetadata(
-                    capabilities=[PresentationCapability.COPY],
-                    lifetime=PresentationLifetime.TRANSIENT
-                )
+            return ExecutionResult(
+                status=ExecutionStatus.SUCCESS,
+                output_data={"expression": expression, "result": result}
             )
-            return ExecutionResult(status=ExecutionStatus.SUCCESS, summary=str(result), presentation=model)
         except ZeroDivisionError:
             return ExecutionResult(status=ExecutionStatus.FAILURE, errors=["Division by zero."])
         except Exception as e:

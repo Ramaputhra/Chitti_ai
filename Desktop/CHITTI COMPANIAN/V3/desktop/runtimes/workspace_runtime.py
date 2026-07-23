@@ -60,17 +60,24 @@ class WorkspaceRuntime(IRuntime):
                 try:
                     with open(path, 'r', encoding='utf-8') as f:
                         data = json.load(f)
+                        
+                        # Handle window_positions if present
+                        window_positions = {}
+                        if "window_positions" in data:
+                            from desktop.models.workspace import WindowPosition
+                            for app, pos in data["window_positions"].items():
+                                window_positions[app] = WindowPosition(**pos)
+                        
                         profile = WorkspaceProfile(
                             id=data.get("id", filename.replace(".json", "")),
                             name=data.get("name", "Unknown Workspace"),
                             applications=data.get("applications", []),
-                            files=data.get("files", []),
                             folders=data.get("folders", []),
-                            urls=data.get("urls", []),
                             environment_variables=data.get("environment_variables", {}),
-                            startup_sequence=data.get("startup_sequence", []),
-                            post_actions=data.get("post_actions", []),
-                            tags=data.get("tags", [])
+                            startup=data.get("startup", []),
+                            after_actions=data.get("after_actions", []),
+                            tags=data.get("tags", []),
+                            window_positions=window_positions
                         )
                         self._workspaces[profile.id] = profile
                 except Exception as e:
@@ -84,3 +91,41 @@ class WorkspaceRuntime(IRuntime):
         
     def find_workspaces_by_tag(self, tag: str) -> List[WorkspaceProfile]:
         return [w for w in self._workspaces.values() if tag in w.tags]
+
+    def save_workspace(self, profile: WorkspaceProfile) -> bool:
+        """Save a workspace profile to disk and memory."""
+        try:
+            # Ensure directory exists
+            os.makedirs(self._profiles_dir, exist_ok=True)
+            
+            # Store in memory
+            self._workspaces[profile.id] = profile
+            
+            # Write to disk
+            filepath = os.path.join(self._profiles_dir, f"{profile.id}.json")
+            data = {
+                "id": profile.id,
+                "name": profile.name,
+                "applications": profile.applications,
+                "folders": profile.folders,
+                "environment_variables": profile.environment_variables,
+                "startup": profile.startup,
+                "after_actions": profile.after_actions,
+                "tags": profile.tags,
+                "window_positions": {
+                    app: {
+                        "x": pos.x, "y": pos.y, 
+                        "width": pos.width, "height": pos.height,
+                        "maximized": pos.maximized
+                    }
+                    for app, pos in profile.window_positions.items()
+                } if profile.window_positions else {}
+            }
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2)
+            
+            logger.info(f"Saved workspace profile: {profile.id}")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to save workspace profile: {e}")
+            return False

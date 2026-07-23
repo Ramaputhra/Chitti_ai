@@ -1,6 +1,11 @@
 from dataclasses import dataclass, field
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, TYPE_CHECKING
 from enum import Enum
+
+from desktop.models.events import SystemEvent
+
+if TYPE_CHECKING:
+    from desktop.workflow.models import WorkflowInstance
 
 class ExecutionNodeType(Enum):
     CAPABILITY = "CAPABILITY"
@@ -70,21 +75,21 @@ class ExecutionGraph:
 @dataclass
 class ExecutionGraphBuildingStarted(SystemEvent):
     event_type: str = "ExecutionGraphBuildingStarted"
-    instance: WorkflowInstance = None
+    instance: Optional['WorkflowInstance'] = None
 
 @dataclass
 class ExecutionGraphReady(SystemEvent):
     event_type: str = "ExecutionGraphReady"
-    instance: WorkflowInstance = None
-    graph: ExecutionGraph = None
+    instance: Optional['WorkflowInstance'] = None
+    graph: Optional[ExecutionGraph] = None
 
 @dataclass
 class GraphValidationFailed(SystemEvent):
     event_type: str = "GraphValidationFailed"
-    instance: WorkflowInstance = None
+    instance: Optional['WorkflowInstance'] = None
     reason: str = ""
 
 @dataclass
 class WorkflowReadyForScheduling(SystemEvent):
     event_type: str = "WorkflowReadyForScheduling"
-    instance: WorkflowInstance = None
+    instance: Optional['WorkflowInstance'] = None
