@@ -1,0 +1,52 @@
+id: chitti.automation.resume_coding
+name: Continue Coding Workspace
+trigger: internal
+steps:
+  - capability: PrepareEnvironment
+    parameters:
+      checks: ["VSCode", "Node", "Git", "Dependencies", "Port"]
+      on_fail: "InteractiveRecovery" # "Port occupied -> Offer Choices"
+      
+  - capability: RestoreWorkspace
+  
+  - capability: ExecuteCommand
+    parameters:
+      command: "{{project_profile.run_command}}"
+      
+  - capability: ObserveStartup
+    parameters:
+      target: "Terminal"
+      
+  - capability: ObserveReadyState
+    parameters:
+      condition: "Server running on localhost"
+      
+  - capability: LaunchApplication
+    parameters:
+      name: "Chrome"
+      url: "http://localhost:5173"
+      
+  - capability: ObserveContinuous
+    parameters:
+      target: ["BuildPipeline", "GitChanges", "WorkspaceChanges"]
+      
+  - capability: VerifyResumeState
+    parameters:
+      checks: ["Workspace restored", "Editors opened", "Terminal running", "Server responding", "Browser loaded"]
+      
+  - capability: GenerateResumeSummary
+    parameters:
+      include_git_diff: true
+      include_recent_files: true
+      
+  - capability: GenerateActivityInsights
+    parameters:
+      target: ["Git", "Builds", "TODOs"]
+      
+  - capability: PresentExperience
+    parameters:
+      experience: "WorkspaceOverviewExperience"
+      
+  - capability: NotifyUser
+    parameters:
+      message: "Welcome back, boss. Your workspace has been restored. You were working on {{goal.title}}. {{resume_summary}} {{activity_insights}}"

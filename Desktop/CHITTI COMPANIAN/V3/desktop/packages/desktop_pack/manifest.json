@@ -1,0 +1,22 @@
+{
+  "id": "chitti.pack.desktop_automation",
+  "name": "Desktop Automation Pack",
+  "version": "1.0.0",
+  "description": "Standardized OS-level desktop interaction capabilities.",
+  "dependencies": ["chitti.platform.environment", "chitti.platform.presentation"],
+  "capabilities": [
+    "FocusWindow", "SwitchWindow", "MoveWindow", "ResizeWindow", "MinimizeWindow", "MaximizeWindow", "RestoreWindow",
+    "KeyboardInput", "MouseInput", "Scroll", "DragDrop", "Hotkey",
+    "ReadClipboard", "WriteClipboard", "ClearClipboard",
+    "GetDisplays", "SetPrimaryDisplay", "SwitchDisplay", "GetResolution",
+    "GetFocusedApplication", "ListRunningApplications", "LaunchApplication", "TerminateApplication",
+    "ObserveDesktop"
+  ],
+  "experiences": ["DesktopOverviewExperience", "WindowManagementExperience"],
+  "automation_workflows": [
+    "workspace_setup.yaml",
+    "meeting_mode.yaml",
+    "coding_workspace.yaml",
+    "presentation_mode.yaml"
+  ]
+}

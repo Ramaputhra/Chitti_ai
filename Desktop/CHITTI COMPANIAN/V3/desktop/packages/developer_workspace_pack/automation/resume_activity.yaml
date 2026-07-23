@@ -1,0 +1,10 @@
+id: chitti.automation.resume_activity
+name: Resume Activity Framework
+trigger: intent
+intent: "Resume Activity"
+steps:
+  - capability: ResolveActivity
+    # Note: If confidence < threshold, triggers InteractiveRecoveryCapability to ask user.
+  - capability: DispatchActivity
+    parameters:
+      target_workflow: "{{resolved_workflow_id}}"

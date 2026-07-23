@@ -1,0 +1,9 @@
+id: chitti.automation.extract_all
+name: Extract All Archives
+trigger: manual
+steps:
+  - capability: SearchFiles
+    parameters:
+      extension: "*.zip, *.tar.gz"
+  - capability: Extract
+    foreach: "previous_step_results"

@@ -1,0 +1,8 @@
+{
+  "asset_id": "UI_OVERLAYS_SYSTEMBADGE",
+  "asset_name": "SystemBadge",
+  "category": "overlays",
+  "format": "png",
+  "resolution": "320x180",
+  "has_alpha": true
+}

@@ -1,0 +1,22 @@
+{
+  "behavior_id": "CHR_REM_CAL_001",
+  "behavior_name": "CalendarReminder",
+  "category": "reminders",
+  "fps": 14,
+  "total_frames": 14,
+  "duration_seconds": 1.0,
+  "loop": false,
+  "priority": "NORMAL",
+  "interruptible": true,
+  "transition_in": "CHR_TRANS_WAKE2IDLE_001",
+  "transition_out": "CHR_TRANS_IDLE2TALK_001",
+  "blend_mode": "OVERLAY",
+  "recommended_next_behaviors": [
+    "CHR_IDLE_001"
+  ],
+  "tags": [
+    "reminders",
+    "calendarreminder"
+  ],
+  "sound_file": "sound.wav"
+}

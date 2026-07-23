@@ -1,0 +1,7 @@
+{
+  "error_patterns": [
+    "SyntaxError",
+    "ModuleNotFoundError",
+    "TypeError"
+  ]
+}

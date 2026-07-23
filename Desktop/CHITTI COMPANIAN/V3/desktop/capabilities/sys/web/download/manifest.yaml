@@ -1,0 +1,14 @@
+capability_metadata:
+  capability_id: sys.web.download
+  version: 1.0.0
+
+parameters:
+  context: required
+  url: required
+  expected_path: required
+  timeout_sec: 
+    type: integer
+    default: 30
+
+security_safety:
+  safety_level: normal

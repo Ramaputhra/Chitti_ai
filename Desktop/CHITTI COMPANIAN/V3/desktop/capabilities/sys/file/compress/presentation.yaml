@@ -1,0 +1,3 @@
+presentation:
+  success: file.compress_completed
+  failure: file.compress_failed

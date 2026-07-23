@@ -1,0 +1,20 @@
+id: SCN-0001
+name: Greeting
+description: Basic greeting validation
+input:
+  text: Hello Chitti
+expected:
+  intent:
+    type: Greeting
+  workflow:
+    action: ExecuteSkill
+  response:
+    text: Hello! How can I help you today?
+  events:
+    - Language.TextRecognized
+    - Intent.Detected
+    - Workflow.Created
+    - Response.Generated
+performance:
+  max_latency: 500
+  max_memory: 100

@@ -1,0 +1,6 @@
+{
+    "roles": [
+        "banner", "navigation", "main", "complementary", "contentinfo",
+        "search", "article", "region"
+    ]
+}

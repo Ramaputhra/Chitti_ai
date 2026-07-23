@@ -1,0 +1,22 @@
+{
+  "behavior_id": "CHR_TRANS_TALK2IDLE_001",
+  "behavior_name": "TalkToIdle",
+  "category": "transitions",
+  "fps": 14,
+  "total_frames": 14,
+  "duration_seconds": 0.5,
+  "loop": false,
+  "priority": "NORMAL",
+  "interruptible": true,
+  "transition_in": null,
+  "transition_out": null,
+  "blend_mode": "OVERLAY",
+  "recommended_next_behaviors": [
+    "CHR_IDLE_001"
+  ],
+  "tags": [
+    "transitions",
+    "talktoidle"
+  ],
+  "sound_file": "sound.wav"
+}

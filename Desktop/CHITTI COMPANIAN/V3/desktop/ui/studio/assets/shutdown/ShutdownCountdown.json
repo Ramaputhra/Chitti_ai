@@ -1,0 +1,8 @@
+{
+  "asset_id": "UI_SHUTDOWN_SHUTDOWNCOUNTDOWN",
+  "asset_name": "ShutdownCountdown",
+  "category": "shutdown",
+  "format": "png",
+  "resolution": "320x180",
+  "has_alpha": true
+}

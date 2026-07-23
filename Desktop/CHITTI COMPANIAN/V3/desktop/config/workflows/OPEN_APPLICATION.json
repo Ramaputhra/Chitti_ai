@@ -1,0 +1,9 @@
+{
+  "workflow_id": "OPEN_APPLICATION",
+  "version": 1,
+  "steps": [
+    "ResolveApplication",
+    "LaunchApplication",
+    "VerifyApplication"
+  ]
+}

@@ -1,0 +1,68 @@
+id: "advanced.deep_research"
+version: "1.0"
+schema_version: 1
+goal: "Deep Research"
+summary: "End-to-end web research, content extraction, and report synthesis."
+category: "Web"
+author: "Engineering"
+required_inputs:
+  query: "The research query"
+outputs:
+  report: "$report_results.output"
+permissions: ["network", "desktop_control", "filesystem"]
+estimated_duration: "30s"
+tags: ["research", "web", "advanced"]
+nodes:
+  - id: "search"
+    action: "BrowserResearchCapability.search"
+    next: "filter"
+    checkpoint: true
+    parameters:
+      query: "{{query}}"
+    outputs:
+      results: "search_data"
+
+  - id: "filter"
+    action: "BrowserResearchCapability.filter_sources"
+    next: "extract"
+    checkpoint: true
+    parameters:
+      results: "$search_data.results"
+    outputs:
+      sources: "filtered_data"
+
+  - id: "extract"
+    action: "BrowserResearchCapability.extract_content"
+    next: "validate"
+    checkpoint: true
+    parameters:
+      sources: "$filtered_data.sources"
+    outputs:
+      documents: "extracted_data"
+
+  - id: "validate"
+    action: "BrowserResearchCapability.validate_evidence"
+    next: "synthesize"
+    checkpoint: true
+    parameters:
+      documents: "$extracted_data.documents"
+    outputs:
+      evidence: "validated_data"
+
+  - id: "synthesize"
+    action: "InferenceCapability.generate"
+    next: "save"
+    checkpoint: true
+    parameters:
+      system_prompt: "You are an expert researcher. Synthesize the provided evidence into a comprehensive Research Report. Include title, summary, body, sources, confidence, and generated_at fields in your response."
+      user_prompt: "Research Query: {{query}}\n\nEvidence:\n$validated_data.evidence"
+    outputs:
+      output: "report_results"
+
+  - id: "save"
+    action: "NotesCapability.create"
+    next: null
+    checkpoint: true
+    parameters:
+      title: "Research Report: {{query}}"
+      content: "$report_results.output"

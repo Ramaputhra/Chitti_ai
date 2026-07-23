@@ -1,0 +1,10 @@
+capability_metadata:
+  capability_id: sys.browser.hover
+  version: 1.0.0
+
+parameters:
+  context: required
+  selector: required
+
+security_safety:
+  safety_level: normal

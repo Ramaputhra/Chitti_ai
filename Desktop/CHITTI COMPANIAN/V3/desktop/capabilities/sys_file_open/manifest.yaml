@@ -1,0 +1,55 @@
+capability_metadata:
+  capability_id: sys.file.open
+  version: 1.0.0
+  author: core
+  platforms: [windows]
+  supports_learning: true
+  supports_cloud: true
+
+intent:
+  - open folder
+  - open directory
+  - open file
+  - launch
+
+parameters:
+  path: required
+
+planner_integration:
+  declarative_step:
+    capability_id: sys.file.open
+    parameters:
+      path: "$path"
+
+verification:
+  preferred:
+    - window_exists
+    - process_exists
+  fallback:
+    - vision
+
+presentation:
+  success: folder.opened
+  failure: folder.open_failed
+
+failure_policy:
+  recoverable:
+    - "window_timeout"
+  non_recoverable:
+    - "path_not_found"
+    - "access_denied"
+  retry:
+    max_attempts: 1
+
+security_safety:
+  safety_level: safe
+  confirmation_required: false
+  undo_supported: false
+
+performance_expectations:
+  execution_profile: fast
+  target_ms: 500
+  long_running: false
+
+aca:
+  parameterizable: true

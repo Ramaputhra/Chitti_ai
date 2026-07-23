@@ -1,0 +1,88 @@
+Below is the stack I would recommend **specifically for CHITTI**. The goal is to cover all of CHITTI's capabilities with the fewest, smallest, and most reusable models.
+
+| CHITTI Function                    | Provider                            | Default Model / Approach                  | Approx. Size |
+| ---------------------------------- | ----------------------------------- | ----------------------------------------- | -----------: |
+| Wake Word                          | Wake Word Provider                  | openWakeWord*                             |  **5–15 MB** |
+| Voice Activity Detection           | VAD Provider                        | Silero VAD                                |     **2 MB** |
+| Speech-to-Text                     | Speech Provider                     | Faster-Whisper Small                      |   **~400 MB** |
+| Text-to-Speech                     | TTS Provider                        | Piper                                     |    **30 MB** |
+| Language Detection                 | Speech Provider                     | Whisper Built-in Lang ID                  |          N/A |
+| Intent Classification              | Intent Provider                     | Semantic Understanding Runtime            |    **<1 MB** |
+| Tool Selection                     | Routing Provider                    | Semantic Understanding Runtime            |          N/A |
+| Parameter Extraction               | Entity Provider                     | 3-Tier (Rules -> Semantic -> LLM)         |          N/A |
+| Follow-up Decision                 | Decision Provider                   | Primary: Qwen2.5-1.5B<br>Secondary: Sarvam-2B | Reuse model |
+| Conversation Tone                  | Tone Provider                       | Primary: Qwen2.5-1.5B<br>Secondary: Sarvam-2B | Reuse model |
+| Humor Selection                    | Humor Provider                      | Primary: Qwen2.5-1.5B<br>Secondary: Sarvam-2B | Reuse model |
+| Notification Priority              | Priority Provider                   | Primary: Qwen2.5-1.5B<br>Secondary: Sarvam-2B | Reuse model |
+| Memory Importance                  | Importance Provider                 | Primary: Qwen2.5-1.5B<br>Secondary: Sarvam-2B | Reuse model |
+| Confidence Estimation              | Calibration Provider                | Confidence Calibration over Classification|          N/A |
+| Presentation Selector              | Presentation Provider               | Semantic Understanding Runtime            |          N/A |
+| HTML Template Selector             | Template Provider                   | Semantic Understanding Runtime            |          N/A |
+| Workspace Classifier               | Workspace Provider                  | Semantic Understanding Runtime            |          N/A |
+| Project Classifier                 | Project Provider                    | Semantic Understanding Runtime            |          N/A |
+| Reminder Classifier                | Reminder Provider                   | Semantic Understanding Runtime            |          N/A |
+| Semantic Search                    | Embedding Provider                  | multilingual-e5-small                     |   **118 MB** |
+| Memory Retrieval                   | Embedding Provider                  | multilingual-e5-small                     |  Reuse model |
+| File Search                        | Embedding Provider                  | multilingual-e5-small                     |  Reuse model |
+| Knowledge Retrieval                | Embedding Provider                  | multilingual-e5-small                     |  Reuse model |
+| Search Ranking                     | Search Provider                     | BM25 + Vector Hybrid + Metadata           |          N/A |
+| OCR                                | OCR Provider                        | PaddleOCR                                 | **20–30 MB** |
+| Screen Understanding               | Vision Provider                     | SmolVLM-256M                              |   **256 MB** |
+| Image Understanding                | Vision Provider                     | SmolVLM-256M                              |  Reuse model |
+| Visual Verification                | Vision Provider                     | SmolVLM-256M                              |  Reuse model |
+| UI Element Recognition             | Vision Provider                     | SmolVLM-256M                              |  Reuse model |
+| General Conversation               | Reasoning Provider                  | Primary: Qwen2.5-1.5B (GGUF)<br>Secondary: Sarvam-2B (GGUF) |   **~1-1.5 GB** |
+| Planning                           | Reasoning Provider                  | Primary: Qwen2.5-1.5B (GGUF)<br>Secondary: Sarvam-2B (GGUF) |  Reuse model |
+| Context Building                   | Reasoning Provider                  | Primary: Qwen2.5-1.5B<br>Secondary: Sarvam-2B               | Reuse models |
+| Web Summarization                  | Reasoning Provider                  | Primary: Qwen2.5-1.5B<br>Secondary: Sarvam-2B               |  Reuse model |
+| Learning New Intents               | Reasoning Provider                  | Primary: Qwen2.5-1.5B<br>Secondary: Sarvam-2B               |  Reuse model |
+| Local Intent Evolution             | Experience Learning Engine          | SQLite + Intent Library                   |  No AI model |
+
+_*Note on openWakeWord commercial usage: The code is Apache 2.0. The default pre-trained models are CC BY-NC-SA (non-commercial). For a commercial product, you must train your own custom wake word model (e.g., "Hey Chitti") using their open-source scripts to own it completely._
+
+---
+
+# Total AI Stack for CHITTI MVP
+
+| Model                                     | Approx. Size | License             |
+| ----------------------------------------- | -----------: | ------------------- |
+| openWakeWord                              |        15 MB | Apache 2.0 / CC-NC* |
+| Silero VAD                                |         2 MB | MIT                 |
+| Faster-Whisper Small                      |       ~400 MB | MIT                 |
+| Piper (TTS)                               |        30 MB | MIT                 |
+| intfloat/multilingual-e5-small            |       118 MB | MIT                 |
+| PaddleOCR                                 |        25 MB | Apache 2.0          |
+| SmolVLM-256M                              |       256 MB | Apache 2.0          |
+| Qwen2.5-1.5B-Instruct (GGUF Q4_K_M)       |       920 MB | Apache 2.0 (Primary Default)|
+| Sarvam-2B (GGUF Q4_K_M)                   |      1.54 GB | Apache 2.0 (Secondary Option)|
+| Playwright                                |          N/A | Apache 2.0          |
+| Stagehand                                 |          N/A | MIT                 |
+| Crawl4AI                                  |          N/A | Apache 2.0          |
+
+**Total runtime footprint:** **≈ 1.4 GB** (Fits effortlessly into a 4GB RAM system while supporting 100+ languages).
+
+---
+
+# Implementation Status (Phase D)
+
+## What We Used (Architecturally Integrated)
+While we have not yet installed the physical python dependencies (e.g., `pip install faster-whisper`), we have **architecturally integrated** the following through abstract runtimes and capabilities:
+
+- **Reasoning Provider (Qwen/Sarvam)**: Fully integrated via the `DecisionEngine` and `InferenceRuntime`. Used across the core capabilities for intent classification, summarization, and insight generation (e.g., `GenerateMeetingInsightsCapability`).
+- **Semantic Search (multilingual-e5-small)**: Integrated into the Companion Framework via the omniscient `SearchCompanionCapability`.
+- **Browser Automation (Playwright/Stagehand/Crawl4AI)**: Integrated via the `BrowserRuntime` and orchestrated by capabilities like `SearchAndCollectCapability` in the Research Companion.
+
+## What Needs to be Confirmed to Implement
+To transition from the frozen architecture to a running physical binary, the following dependencies and models must be confirmed and implemented:
+
+1. **Wake Word & Audio Pipeline**: 
+   - Confirm training of the custom wake word model via openWakeWord.
+   - Implement the physical bindings for Silero VAD and Faster-Whisper.
+2. **Text-to-Speech**: 
+   - Confirm the Piper TTS voice model and implement the audio playback stream within the `Behavior Engine`.
+3. **Local LLM Inference Engine**:
+   - Confirm the C++ backend or python binding (e.g., `llama.cpp` or `vLLM`) to load the GGUF Q4 models (Qwen2.5-1.5B / Sarvam-2B).
+4. **Vision & OCR (System Intelligence Suite)**:
+   - PaddleOCR and SmolVLM-256M remain entirely unimplemented. We must confirm hardware compatibility and build the `PerceptionRuntime` before tackling the System Intelligence Suite.
+5. **Desktop Automation Bindings**:
+   - Confirm the OS-level libraries (e.g., `pywinauto` or accessibility APIs) to execute the `PrepareCompanionWorkspaceCapability` (arranging windows, opening applications).

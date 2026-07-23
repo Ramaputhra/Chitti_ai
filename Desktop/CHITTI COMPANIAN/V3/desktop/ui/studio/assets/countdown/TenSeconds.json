@@ -1,0 +1,8 @@
+{
+  "asset_id": "UI_COUNTDOWN_TENSECONDS",
+  "asset_name": "TenSeconds",
+  "category": "countdown",
+  "format": "png",
+  "resolution": "320x180",
+  "has_alpha": true
+}

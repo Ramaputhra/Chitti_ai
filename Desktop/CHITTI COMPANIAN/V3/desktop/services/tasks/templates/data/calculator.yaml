@@ -1,0 +1,19 @@
+id: "core.calculator"
+version: "1.0"
+schema_version: 1
+goal: "Evaluate a mathematical expression"
+summary: "Provides safe evaluation of math strings."
+category: "Utilities"
+author: "Engineering"
+required_inputs:
+  expression: "The math expression to evaluate"
+outputs: {}
+permissions: []
+estimated_duration: "1s"
+tags: ["math", "calculator"]
+nodes:
+  - id: "calculate"
+    action: "CalculatorCapability.evaluate_expression"
+    next: null
+    parameters:
+      expression: "{{expression}}"

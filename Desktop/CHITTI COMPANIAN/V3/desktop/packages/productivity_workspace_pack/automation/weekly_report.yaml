@@ -1,0 +1,11 @@
+id: chitti.automation.weekly_report
+name: Weekly Report Generation
+trigger: manual
+steps:
+  - capability: ReadSpreadsheet
+  - capability: GenerateCharts
+  - capability: CreatePresentation
+  - capability: ExportPDF
+  - capability: NotifyUser
+    parameters:
+      message: "Weekly report is ready for review."

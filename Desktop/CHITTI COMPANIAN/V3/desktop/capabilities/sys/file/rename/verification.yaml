@@ -1,0 +1,12 @@
+verification:
+  preferred:
+    - destination_exists
+    - source_does_not_exist
+  conditional:
+    - if: "is_file == true"
+      then: 
+        - size_matches
+        - timestamp_matches
+  optional: []
+  fallback:
+    - vision

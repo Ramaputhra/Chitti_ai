@@ -1,0 +1,27 @@
+id: chitti.automation.daily_overview
+name: Daily Overview Framework
+trigger: intent
+intent: "Briefing"
+steps:
+  # Collect
+  - capability: RetrieveBriefingMemory
+  - capability: GetActivityMemory
+  - capability: ViewSchedule
+  - capability: ReadEmail
+  - capability: GitStatus
+  
+  # Analyze & Prioritize
+  - capability: PrioritizeBriefingItems
+  - capability: GenerateBriefingInsights
+  - capability: GenerateCompanionSuggestions
+  
+  # Present
+  - capability: PresentExperience
+    parameters:
+      experience: "DailyOverviewExperience"
+      
+  # Behavior & Control Handoff
+  - capability: NotifyUser
+    parameters:
+      message: "Good morning, boss. {{briefing_insights.summary}}. What would you like to do first?"
+      require_user_decision: true

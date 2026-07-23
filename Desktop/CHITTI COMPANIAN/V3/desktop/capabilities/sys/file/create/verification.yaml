@@ -1,0 +1,12 @@
+verification:
+  preferred:
+    - destination_exists
+  conditional:
+    - if: "is_directory == true"
+      then: [is_directory]
+    - if: "is_directory == false"
+      then: [is_file]
+  optional:
+    - size_matches
+  fallback:
+    - vision

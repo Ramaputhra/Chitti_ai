@@ -1,0 +1,11 @@
+capability_metadata:
+  capability_id: sys.web.extract_text
+  version: 1.0.0
+  description: Extracts readable text (e.g. markdown) from the current context without following pagination unless orchestrated.
+
+parameters:
+  context: required
+  selector: optional
+
+security_safety:
+  safety_level: normal

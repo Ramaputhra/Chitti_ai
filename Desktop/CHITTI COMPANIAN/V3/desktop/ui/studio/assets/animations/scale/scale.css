@@ -1,0 +1,8 @@
+/* Desktop UI Animation: scale */
+@keyframes scale {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.scale-anim {
+  animation: scale 0.3s ease-in-out;
+}

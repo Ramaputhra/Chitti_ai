@@ -1,0 +1,9 @@
+id: chitti.automation.research_summary
+name: Research Summary
+trigger: manual
+steps:
+  - capability: ReadDocument
+  - capability: CaptureNotes
+  - capability: SummarizeDocument
+  - capability: OrganizeNotes
+  - capability: CreatePresentation

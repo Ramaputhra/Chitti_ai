@@ -1,0 +1,18 @@
+:root {
+  --chitti-bg: #0f172a;
+  --chitti-surface: #1e293b;
+  --chitti-surface-border: #334155;
+  --chitti-text-primary: #f8fafc;
+  --chitti-text-secondary: #94a3b8;
+  --chitti-text-muted: #64748b;
+  --chitti-primary: #6366f1;
+  --chitti-primary-hover: #4f46e5;
+  --chitti-secondary: #06b6d4;
+  --chitti-accent: #f43f5e;
+  --chitti-success: #10b981;
+  --chitti-warning: #f59e0b;
+  --chitti-error: #ef4444;
+  --chitti-info: #3b82f6;
+  --chitti-radius: 12px;
+  --chitti-shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}

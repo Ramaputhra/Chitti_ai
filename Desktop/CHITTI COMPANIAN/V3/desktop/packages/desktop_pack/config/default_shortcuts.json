@@ -1,0 +1,10 @@
+{
+  "copy": "ctrl+c",
+  "paste": "ctrl+v",
+  "cut": "ctrl+x",
+  "undo": "ctrl+z",
+  "save": "ctrl+s",
+  "select_all": "ctrl+a",
+  "switch_app": "alt+tab",
+  "close_window": "alt+f4"
+}

@@ -1,0 +1,78 @@
+name: Smart Email Assistant
+version: 1.0.0
+description: "A companion session for understanding, prioritizing, and acting on email conversations."
+author: CHITTI Framework
+entry_point: init_email_companion
+mode: ON_DEMAND
+
+trigger:
+  type: Semantic
+  schema:
+    intent: "Manage Email Thread"
+    parameters:
+      thread_id: string
+      mode: string # "ON_DEMAND" or "BACKGROUND_OBSERVER"
+
+steps:
+  init_email_companion:
+    action: Capability
+    capability: desktop_pack.PrepareCompanionWorkspaceCapability
+    input:
+      profile: "EmailTriageProfile"
+      applications: ["Email Client"]
+      startup_actions: ["Sync unread", "Extract commitments"]
+    on_success: resolve_context
+  
+  resolve_context:
+    action: Capability
+    capability: productivity_pack.SearchCompanionCapability
+    input:
+      filters: ["Email", "Meetings", "Documents", "Goals"]
+      query: "{{ trigger.thread_id }}"
+    on_success: detect_commitments
+
+  detect_commitments:
+    action: Capability
+    capability: productivity_pack.DetectCommitmentsCapability
+    input:
+      thread_messages: "{{ resolve_context.Email }}"
+    on_success: check_continuity
+
+  check_continuity:
+    action: Capability
+    capability: productivity_pack.ConversationContinuityCapability
+    input:
+      question: "Have I already answered this or discussed it in a meeting?"
+      search_capability: "productivity_pack.SearchCompanionCapability"
+    on_success: build_email_experience
+
+  build_email_experience:
+    action: Presentation
+    layout: CardLayout
+    cards:
+      - type: EmailSummaryCard
+        data: "{{ resolve_context.Email.summary }}"
+      - type: InsightCard
+        data: "{{ detect_commitments.commitments }}"
+      - type: ContactCard
+        data: "{{ resolve_context.Email.sender_profile }}"
+      - type: MeetingCard
+        data: "{{ resolve_context.Meetings }}"
+      - type: ProjectCard
+        data: "{{ resolve_context.Projects }}"
+      - type: DraftReplyPanel
+        options: ["Professional", "Friendly", "Short", "Detailed", "Custom"]
+    on_success: observe_reply_status
+
+  observe_reply_status:
+    action: Observer
+    target: "EmailClient.SendAction"
+    on_event: update_conversation_lifecycle
+
+  update_conversation_lifecycle:
+    action: ModelUpdate
+    model: EmailDomainData
+    update:
+      lifecycle: "WAITING"
+      health: "WAITING_FOR_RESPONSE"
+    on_success: end_session

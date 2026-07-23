@@ -1,0 +1,9 @@
+verification:
+  preferred:
+    - destination_exists
+    - size_matches
+  optional:
+    - modified_timestamp
+    - hash_match
+  fallback:
+    - vision

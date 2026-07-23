@@ -1,0 +1,9 @@
+verification:
+  preferred:
+    - archive_exists
+    - archive_size_valid
+    - archive_readable
+    - archive_entry_count_matches
+  conditional: []
+  optional: []
+  fallback: []

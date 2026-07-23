@@ -1,0 +1,7 @@
+verification:
+  preferred:
+    - result_schema_valid
+    - result_count_valid
+  conditional: []
+  optional: []
+  fallback: []

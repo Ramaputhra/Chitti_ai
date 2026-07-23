@@ -1,0 +1,12 @@
+id: chitti.automation.meeting_followup
+name: Meeting Followup
+trigger: manual
+steps:
+  - capability: CaptureNotes
+  - capability: OrganizeNotes
+  - capability: CreateEvent
+    parameters:
+      description: "Followup action items"
+  - capability: ComposeEmail
+    parameters:
+      subject: "Meeting Summary & Action Items"

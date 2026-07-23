@@ -1,0 +1,10 @@
+planner_integration:
+  declarative_step:
+    capability_id: sys.file.compress
+    parameters:
+      sources: "$sources"
+      destination_dir: "$destination_dir"
+      archive_name: "$archive_name"
+      format: "$format"
+      compression_level: "$compression_level"
+      collision_policy: "$collision_policy"

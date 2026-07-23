@@ -1,0 +1,14 @@
+{
+    "benchmarks": [
+        {
+            "id": "001",
+            "name": "Find File",
+            "layer": "Bring-up",
+            "deterministic": true,
+            "required_capabilities": [
+                "FilesystemCapability"
+            ],
+            "description": "Find ABCD.pdf through the entire deterministic cognitive spine."
+        }
+    ]
+}

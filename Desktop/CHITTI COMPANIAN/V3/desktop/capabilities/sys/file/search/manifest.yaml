@@ -1,0 +1,86 @@
+capability_metadata:
+  capability_id: sys.file.search
+  version: 1.0.0
+  author: core
+  platforms: [windows]
+  supports_learning: true
+  supports_cloud: true
+
+compatibility:
+  minimum_runtime: 1.0
+  deprecated: false
+  replaces: null
+
+intent:
+  - find file
+  - search for
+  - list files
+
+parameters:
+  location: required
+  query:
+    type: string
+    default: "*"
+  recursive:
+    type: boolean
+    default: true
+  include_directories:
+    type: boolean
+    default: false
+  file_types:
+    type: list
+    default: []
+  modified_after:
+    type: string
+    default: ""
+  modified_before:
+    type: string
+    default: ""
+  min_size:
+    type: integer
+    default: -1
+  max_size:
+    type: integer
+    default: -1
+  limit:
+    type: integer
+    default: 50
+  sort_by:
+    type: string
+    default: "modified_desc"
+    options: [modified_desc, modified_asc, size_desc, size_asc, name_asc, name_desc]
+
+failure_policy:
+  recoverable:
+    - path_resolution_failed
+  non_recoverable:
+    - access_denied
+    - INVALID_PATH
+    - MISSING_REQUIRED_PARAMETER
+  retry:
+    max_attempts: 1
+
+security_safety:
+  safety_level: dynamic
+  rules:
+    - default:
+      safety_level: normal
+      confirmation_required: false
+  undo_supported: false
+
+performance_expectations:
+  execution_profile: normal
+  target_ms: 2000
+  long_running: false
+
+execution:
+  idempotent: true
+
+execution_cost:
+  cpu: medium
+  memory: medium
+  disk: high
+  network: none
+
+aca:
+  parameterizable: true

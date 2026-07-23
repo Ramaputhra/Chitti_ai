@@ -1,0 +1,19 @@
+{
+  "id": "chitti.pack.file_automation",
+  "name": "File Automation Pack",
+  "version": "1.0.0",
+  "description": "Standardized file automation capabilities relying on the frozen Environment Runtime.",
+  "dependencies": ["chitti.platform.environment", "chitti.platform.presentation"],
+  "capabilities": [
+    "SearchFiles", "FindDuplicates", "FindLargeFiles", "FindRecentFiles",
+    "OrganizeFolder", "RenameFiles", "ArchiveFiles", "CleanupFolder",
+    "Copy", "Move", "Delete", "Compress", "Extract",
+    "AnalyzeFolder", "CalculateFolderSize", "CompareFolders"
+  ],
+  "skills": ["OrganizeFolderSkill"],
+  "experiences": ["WorkspaceExperience"],
+  "automation_workflows": [
+    "organize_downloads.yaml",
+    "extract_all.yaml"
+  ]
+}

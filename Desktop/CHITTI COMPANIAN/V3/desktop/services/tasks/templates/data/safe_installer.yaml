@@ -1,0 +1,38 @@
+id: "system.safe_installer"
+version: "1.0"
+schema_version: 1
+goal: "Safely install software"
+summary: "Verifies, requests approval, and safely installs a software package."
+category: "System Operations"
+author: "Engineering"
+required_inputs:
+  package: "The package name (e.g. 7zip)"
+  method: "The installation method (e.g. winget, exe)"
+  strategy: "Verification strategy"
+outputs: {}
+permissions: ["system.install"]
+estimated_duration: "30s"
+tags: ["system", "install"]
+rollback:
+  strategy: "custom_template"
+nodes:
+  - id: "request_approval"
+    type: "approval"
+    message: "Approve installation of {{package}} via {{method}}?"
+    permissions: ["system.install"]
+    next: "install"
+    parameters: {}
+
+  - id: "install"
+    action: "SystemOperationsCapability.install"
+    next: "verify"
+    parameters:
+      package: "{{package}}"
+      method: "{{method}}"
+      
+  - id: "verify"
+    action: "SystemOperationsCapability.verify_installation"
+    next: null
+    parameters:
+      package: "{{package}}"
+      strategy: "{{strategy}}"

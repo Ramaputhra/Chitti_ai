@@ -1,0 +1,13 @@
+presentation:
+  success:
+    message_key: web.navigate.success
+    priority: normal
+    speech: informative
+    animation: working
+    followup: false
+  recovery_hint:
+    required: false
+  tone: informative
+  failure:
+    message_key: web.navigate.failed
+    priority: normal

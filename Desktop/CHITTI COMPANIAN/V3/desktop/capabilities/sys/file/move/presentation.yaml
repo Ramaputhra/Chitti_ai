@@ -1,0 +1,3 @@
+presentation:
+  success: file.moved
+  failure: file.move_failed

@@ -1,0 +1,22 @@
+{
+  "behavior_id": "CHR_GEST_POINT_SCR_001",
+  "behavior_name": "PointScreen",
+  "category": "presentation_gestures",
+  "fps": 14,
+  "total_frames": 14,
+  "duration_seconds": 0.8,
+  "loop": false,
+  "priority": "NORMAL",
+  "interruptible": true,
+  "transition_in": "CHR_TRANS_WAKE2IDLE_001",
+  "transition_out": "CHR_TRANS_IDLE2TALK_001",
+  "blend_mode": "OVERLAY",
+  "recommended_next_behaviors": [
+    "CHR_IDLE_001"
+  ],
+  "tags": [
+    "presentation_gestures",
+    "pointscreen"
+  ],
+  "sound_file": "sound.wav"
+}

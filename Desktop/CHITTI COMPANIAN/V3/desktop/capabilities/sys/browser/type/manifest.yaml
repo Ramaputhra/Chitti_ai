@@ -1,0 +1,17 @@
+capability_metadata:
+  capability_id: sys.browser.type
+  version: 1.0.0
+
+parameters:
+  context: required
+  selector: required
+  text: required
+  delay_ms:
+    type: integer
+    default: 0
+  clear_first:
+    type: boolean
+    default: true
+
+security_safety:
+  safety_level: normal

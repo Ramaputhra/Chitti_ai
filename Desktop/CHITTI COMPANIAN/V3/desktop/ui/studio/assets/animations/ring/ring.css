@@ -1,0 +1,8 @@
+/* Desktop UI Animation: ring */
+@keyframes ring {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.ring-anim {
+  animation: ring 0.3s ease-in-out;
+}

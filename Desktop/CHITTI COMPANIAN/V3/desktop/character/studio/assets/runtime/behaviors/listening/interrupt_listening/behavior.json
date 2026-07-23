@@ -1,0 +1,22 @@
+{
+  "behavior_id": "CHR_LISTEN_INTERRUPT_001",
+  "behavior_name": "InterruptListening",
+  "category": "listening",
+  "fps": 14,
+  "total_frames": 14,
+  "duration_seconds": 0.5,
+  "loop": false,
+  "priority": "HIGH",
+  "interruptible": true,
+  "transition_in": "CHR_TRANS_WAKE2IDLE_001",
+  "transition_out": "CHR_TRANS_IDLE2TALK_001",
+  "blend_mode": "OVERLAY",
+  "recommended_next_behaviors": [
+    "CHR_IDLE_001"
+  ],
+  "tags": [
+    "listening",
+    "interruptlistening"
+  ],
+  "sound_file": "sound.wav"
+}

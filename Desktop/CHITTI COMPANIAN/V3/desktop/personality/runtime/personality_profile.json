@@ -1,0 +1,19 @@
+{
+  "profile_id": "minimal",
+  "profile_name": "Minimal",
+  "professional": 0.7,
+  "friendly": 0.3,
+  "humorous": 0.95,
+  "empathetic": 0.3,
+  "motivational": 0.2,
+  "concise": 1.0,
+  "talkative": 0.1,
+  "curious": 0.7,
+  "playful": 0.5,
+  "formal": 0.5,
+  "confident": 0.8,
+  "patient": 0.9,
+  "encouraging": 0.8,
+  "supportive": 0.9,
+  "expressive": 0.7
+}

@@ -1,0 +1,56 @@
+capability_metadata:
+  capability_id: sys.file.recycle
+  version: 1.0.0
+  author: core
+  platforms: [windows]
+  supports_learning: true
+  supports_cloud: true
+
+compatibility:
+  minimum_runtime: 1.0
+  deprecated: false
+  replaces: null
+
+intent:
+  - delete files
+  - remove folder
+  - delete
+
+parameters:
+  targets: required
+
+failure_policy:
+  recoverable:
+    - path_resolution_failed
+    - TARGET_LOCKED
+  non_recoverable:
+    - access_denied
+    - SOURCE_NOT_FOUND
+    - MISSING_REQUIRED_PARAMETER
+  retry:
+    max_attempts: 1
+
+security_safety:
+  safety_level: normal
+  rules:
+    - default:
+      safety_level: normal
+      confirmation_required: false
+  undo_supported: true
+
+performance_expectations:
+  execution_profile: normal
+  target_ms: 2000
+  long_running: false
+
+execution:
+  idempotent: false
+
+execution_cost:
+  cpu: low
+  memory: low
+  disk: low
+  network: none
+
+aca:
+  parameterizable: true

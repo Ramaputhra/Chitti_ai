@@ -1,0 +1,22 @@
+{
+  "behavior_id": "CHR_WORK_ORG_FILES_001",
+  "behavior_name": "OrganizingFiles",
+  "category": "working",
+  "fps": 14,
+  "total_frames": 14,
+  "duration_seconds": 1.2,
+  "loop": true,
+  "priority": "NORMAL",
+  "interruptible": true,
+  "transition_in": "CHR_TRANS_WAKE2IDLE_001",
+  "transition_out": "CHR_TRANS_IDLE2TALK_001",
+  "blend_mode": "OVERLAY",
+  "recommended_next_behaviors": [
+    "CHR_IDLE_001"
+  ],
+  "tags": [
+    "working",
+    "organizingfiles"
+  ],
+  "sound_file": "sound.wav"
+}

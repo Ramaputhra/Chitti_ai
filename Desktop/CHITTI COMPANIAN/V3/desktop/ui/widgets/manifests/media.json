@@ -1,0 +1,22 @@
+{
+  "manifest_version": "1.0.0",
+  "widget_version": "1.0.0",
+  "widget_id": "widget_media",
+  "display_name": "Media Widget",
+  "category": "MEDIA",
+  "version": "1.0.0",
+  "description": "Canonical CHITTI Media Playback Widget (Supports YouTube, Spotify, VLC, Local Audio)",
+  "supported_runtime_sessions": ["Media"],
+  "default_attachment": "CHARACTER_ANCHOR",
+  "preferred_window_layer": "CHARACTER_WIDGET",
+  "render_profile": "WIDGET",
+  "theme": "Dark",
+  "supports_compact": true,
+  "supports_expanded": true,
+  "supports_notifications": true,
+  "supports_hot_reload": true,
+  "icon": "media_icon.svg",
+  "accent_color": "#89B4FA",
+  "minimum_size": { "w": 280, "h": 160 },
+  "preferred_size": { "w": 360, "h": 240 }
+}

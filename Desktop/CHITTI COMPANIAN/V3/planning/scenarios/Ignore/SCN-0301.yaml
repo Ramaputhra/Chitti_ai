@@ -1,0 +1,14 @@
+id: SCN-0301
+name: Ignore Noise
+description: Ensures the pipeline ignores garbage inputs and stops early
+input:
+  text: noise
+expected:
+  intent:
+    type: Ignore
+  events:
+    - Language.TextRecognized
+    - Intent.Ignored
+performance:
+  max_latency: 200
+  max_memory: 50

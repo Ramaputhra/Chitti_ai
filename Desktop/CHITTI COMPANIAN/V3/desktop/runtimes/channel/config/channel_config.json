@@ -1,0 +1,8 @@
+{
+  "websocket_port": 9090,
+  "heartbeat_interval_sec": 10,
+  "heartbeat_timeout_sec": 30,
+  "max_transfer_size_mb": 500,
+  "qr_pairing_expiration_sec": 60,
+  "download_expiration_hours": 24
+}

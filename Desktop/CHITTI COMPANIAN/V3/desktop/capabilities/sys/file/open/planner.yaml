@@ -1,0 +1,5 @@
+planner_integration:
+  declarative_step:
+    capability_id: sys.file.open
+    parameters:
+      path: "$path"

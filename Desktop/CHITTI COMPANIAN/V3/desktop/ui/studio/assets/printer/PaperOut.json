@@ -1,0 +1,8 @@
+{
+  "asset_id": "UI_PRINTER_PAPEROUT",
+  "asset_name": "PaperOut",
+  "category": "printer",
+  "format": "png",
+  "resolution": "320x180",
+  "has_alpha": true
+}

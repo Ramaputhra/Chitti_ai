@@ -1,0 +1,8 @@
+{
+  "asset_id": "UI_EMAIL_EMAILRECEIVED",
+  "asset_name": "EmailReceived",
+  "category": "email",
+  "format": "png",
+  "resolution": "320x180",
+  "has_alpha": true
+}

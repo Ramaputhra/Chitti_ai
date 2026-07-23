@@ -1,0 +1,8 @@
+planner_integration:
+  declarative_step:
+    capability_id: sys.file.create
+    parameters:
+      path: "$path"
+      is_directory: "$is_directory"
+      content: "$content"
+      collision_policy: "$collision_policy"

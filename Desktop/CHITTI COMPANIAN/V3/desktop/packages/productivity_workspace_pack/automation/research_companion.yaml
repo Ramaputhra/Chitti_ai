@@ -1,0 +1,31 @@
+id: chitti.automation.research_companion
+name: Research Companion Workflow
+trigger: intent
+intent: "Research"
+steps:
+  # Setup & Workspace
+  - capability: PlanResearch
+  - capability: PrepareCompanionWorkspace
+    parameters:
+      profile: "ResearchWorkspace" # Arranges Browser + Notes + Overview Dashboard
+      
+  # Execution Pipeline
+  - capability: SearchAndCollect
+  - capability: EvaluateSources
+  - capability: ExtractKnowledge
+  - capability: CrossCheck
+  - capability: SynthesizeKnowledge
+  
+  # Presentation & Observation
+  - capability: PresentExperience
+    parameters:
+      experience: "ResearchOverviewExperience"
+      
+  - capability: NotifyUser
+    parameters:
+      message: "I've started gathering sources and evaluating claims. I've populated the Knowledge Map. Let me know if you want me to compare any specific sources."
+      
+  # Continuous Monitoring Loop
+  - capability: ObserveBrowserTabs
+  - capability: ObserveDownloads
+  - capability: ObserveHighlights

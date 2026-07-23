@@ -1,0 +1,465 @@
+# Project Overview
+
+# CHITTI
+### AI Desktop Companion → Physical Robot
+
+Version: Vision 2.0
+Status: Active Development
+
+---
+
+# Vision
+
+Chitti is an emotionally expressive AI companion that begins as a desktop application and later evolves into a physical desktop robot.
+
+Unlike traditional voice assistants, Chitti is designed to feel like a companion rather than a tool.
+
+The desktop application is the primary product.
+
+The robot is simply another physical interface connected to the same brain.
+
+The long-term goal is to build a modular AI ecosystem where the intelligence remains independent of hardware.
+
+---
+
+# Core Philosophy
+
+Hardware should never contain business logic.
+
+Desktop application owns:
+
+- AI
+- Memory
+- Personality
+- Emotion
+- Conversation
+- Context
+- Scheduling
+- Skills
+- User Profile
+
+Hardware only executes commands.
+
+This allows:
+
+Desktop
+↓
+
+ESP32
+
+↓
+
+Raspberry Pi
+
+↓
+
+Future Robot
+
+↓
+
+Future Devices
+
+without rewriting the intelligence layer.
+
+---
+
+# High Level Architecture
+
+                Chitti Brain
+        (Desktop Companion Application)
+
+    ┌─────────────────────────────┐
+    │ UI Layer                    │
+    │ Voice Engine                │
+    │ Vision Engine               │
+    │ Conversation Engine         │
+    │ Memory Engine               │
+    │ Emotion Engine              │
+    │ Intent Engine               │
+    │ Scheduler                   │
+    │ AI Provider Layer           │
+    │ Plugin System               │
+    │ Hardware Manager            │
+    └──────────────┬──────────────┘
+                   │
+         Hardware Abstraction Layer
+                   │
+        USB / UART / BLE Protocol
+                   │
+         ESP32 Hardware Controller
+                   │
+      Display / Servo / Sensors
+
+---
+
+# Development Strategy
+
+Development follows this order.
+
+Phase 1
+
+Desktop Companion
+
+↓
+
+Phase 2
+
+Core AI Engine
+
+↓
+
+Phase 3
+
+Hardware Abstraction Layer
+
+↓
+
+Phase 4
+
+ESP32 Prototype
+
+↓
+
+Phase 5
+
+Custom Electronics
+
+↓
+
+Phase 6
+
+Production Robot
+
+Hardware development must never block desktop software.
+
+---
+
+# Current Goal
+
+Build the complete desktop companion before investing heavily in production electronics.
+
+The first hardware prototype is intentionally simple.
+
+Prototype Hardware:
+
+ESP32-S3
+
+OLED Display
+
+Speaker
+
+Microphone
+
+2 Servos
+
+USB Communication
+
+No large sensor cluster during MVP.
+
+Sensors will be added after the desktop software is stable.
+
+---
+
+# Major Modules
+
+## Desktop Application
+
+Responsible for:
+
+UI
+
+Voice
+
+Memory
+
+Conversation
+
+Emotion
+
+AI
+
+Scheduling
+
+Plugins
+
+Hardware communication
+
+---
+
+## AI Layer
+
+Provider independent.
+
+Supports:
+
+OpenAI
+
+Gemini
+
+Claude
+
+Local Models
+
+Future providers
+
+Changing providers should not require changes elsewhere.
+
+---
+
+## Memory Engine
+
+Supports:
+
+Short-term memory
+
+Long-term memory
+
+Conversation history
+
+Facts
+
+Preferences
+
+Relationships
+
+Context retrieval
+
+Memory should be modular and replaceable.
+
+---
+
+## Emotion Engine
+
+Responsible for:
+
+Mood
+
+Emotional state
+
+Expression
+
+Animation selection
+
+Voice tone
+
+Behavior modifiers
+
+Emotion is deterministic.
+
+LLMs never directly control emotion.
+
+---
+
+## Conversation Engine
+
+Responsible for:
+
+Dialogue state
+
+Interruptions
+
+Confirmations
+
+Context
+
+Follow-up questions
+
+Conversation recovery
+
+---
+
+## Intent Engine
+
+Handles:
+
+Local commands
+
+Scheduling
+
+Desktop automation
+
+Hardware commands
+
+Plugin invocation
+
+Only unresolved requests go to the LLM.
+
+---
+
+## Skill System
+
+Every capability is a Skill.
+
+Examples:
+
+Reminder
+
+Alarm
+
+Weather
+
+Calendar
+
+Clipboard
+
+Music
+
+Desktop Control
+
+Vision
+
+Email
+
+Future plugins
+
+---
+
+## Hardware Manager
+
+The desktop never directly manipulates GPIO.
+
+Instead:
+
+Hardware.lookLeft()
+
+Hardware.setEmotion()
+
+Hardware.playSound()
+
+Hardware.displayText()
+
+Hardware.captureSensor()
+
+The hardware implementation may change without affecting the rest of the application.
+
+---
+
+# ESP32 Firmware Philosophy
+
+Firmware is intentionally lightweight.
+
+Responsibilities:
+
+Receive commands
+
+Drive servos
+
+Update display
+
+Read sensors
+
+Report status
+
+The firmware should never own conversation logic.
+
+---
+
+# Design Principles
+
+Modular
+
+Deterministic
+
+Replaceable
+
+Hardware-independent
+
+Scalable
+
+Testable
+
+Offline-first where possible
+
+Every subsystem should have a well-defined interface.
+
+---
+
+# Repository Organization
+
+The repository is organized into:
+
+Documentation
+
+Desktop Application
+
+Firmware
+
+Hardware
+
+Protocols
+
+Testing
+
+Assets
+
+Tools
+
+Build
+
+Releases
+
+No subsystem should directly depend on unrelated modules.
+
+---
+
+# Coding Standards
+
+Prefer interfaces over concrete implementations.
+
+Use dependency injection where appropriate.
+
+Avoid global state.
+
+Write unit tests for business logic.
+
+Document public APIs.
+
+Keep modules loosely coupled.
+
+Every feature must be independently testable.
+
+---
+
+# Definition of Success
+
+A successful implementation should allow:
+
+Desktop companion working independently.
+
+Hardware connected via a simple protocol.
+
+Future hardware replacement without changing business logic.
+
+Future AI provider replacement without changing application logic.
+
+Future plugin expansion without modifying the core.
+
+This architecture should support years of expansion without requiring major rewrites.
+
+---
+
+# What This Project Is Not
+
+This is NOT:
+
+A chatbot
+
+A simple voice assistant
+
+Firmware-first robotics
+
+An ESP32-only project
+
+A hardcoded automation tool
+
+---
+
+# What This Project Is
+
+An extensible AI companion platform.
+
+The desktop application is the permanent brain.
+
+The robot is simply one physical embodiment of that intelligence.
+
+Every engineering decision should reinforce this principle.

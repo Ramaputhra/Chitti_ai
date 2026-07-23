@@ -1,0 +1,22 @@
+{
+  "manifest_version": "1.0.0",
+  "widget_version": "1.0.0",
+  "widget_id": "widget_reminder",
+  "display_name": "Reminder Widget",
+  "category": "PRODUCTIVITY",
+  "version": "1.0.0",
+  "description": "Canonical CHITTI Reminder Widget",
+  "supported_runtime_sessions": ["Reminder"],
+  "default_attachment": "CHARACTER_ANCHOR",
+  "preferred_window_layer": "CHARACTER_WIDGET",
+  "render_profile": "WIDGET",
+  "theme": "Dark",
+  "supports_compact": true,
+  "supports_expanded": true,
+  "supports_notifications": true,
+  "supports_hot_reload": true,
+  "icon": "reminder_icon.svg",
+  "accent_color": "#F9E2AF",
+  "minimum_size": { "w": 280, "h": 140 },
+  "preferred_size": { "w": 340, "h": 200 }
+}

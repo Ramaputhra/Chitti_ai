@@ -1,0 +1,22 @@
+{
+  "id": "chitti.pack.productivity_workspace",
+  "name": "Productivity Workspace Pack",
+  "version": "1.0.0",
+  "description": "Cross-vendor abstraction for Documents, Spreadsheets, Presentations, Notes, and PDFs.",
+  "dependencies": ["chitti.platform.environment", "chitti.platform.presentation"],
+  "capabilities": [
+    "CreateDocument", "ReadDocument", "EditDocument", "CompareDocuments", "SummarizeDocument", "ExportDocument",
+    "ReadSpreadsheet", "AnalyzeSpreadsheet", "GenerateCharts", "ExtractTables", "CalculateStatistics",
+    "CreatePresentation", "UpdatePresentation", "ExportPresentation", "ReviewPresentation",
+    "CaptureNotes", "OrganizeNotes", "SearchNotes",
+    "ReadPDF", "MergePDF", "SplitPDF", "ExtractPDF", "SignPDF", "ExportPDF",
+    "ObserveDocumentChanges", "ObserveSpreadsheetUpdates", "ObservePresentationChanges", "ObservePDFGeneration"
+  ],
+  "experiences": [
+    "DocumentOverviewExperience", "SpreadsheetAnalysisExperience", "PresentationDeckExperience",
+    "KnowledgeWorkspaceExperience", "ReportBuilderExperience", "MeetingSummaryExperience"
+  ],
+  "automation_workflows": [
+    "weekly_report.yaml", "research_summary.yaml", "meeting_followup.yaml"
+  ]
+}

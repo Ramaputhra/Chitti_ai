@@ -1,0 +1,13 @@
+presentation:
+  success:
+    message_key: filesystem.delete.success
+    priority: high
+    speech: informative
+    animation: delete_success
+    followup: false
+  recovery_hint:
+    required: false
+  tone: serious
+  failure:
+    message_key: filesystem.delete.failed
+    priority: high

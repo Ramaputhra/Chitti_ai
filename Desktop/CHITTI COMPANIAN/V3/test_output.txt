@@ -1,0 +1,58 @@
+[Boot] Phase 2: Initializing (Readiness Barrier)...
+[Boot] ✅ All runtimes READY.
+[Boot] Phase 3: Starting...
+=========================================
+AI Runtime
+Provider : llama.cpp
+Model    : qwen2.5-1.5b-instruct
+Context  : 8192
+Streaming: Enabled
+Health   : READY
+=========================================
+    [PlannerRuntime] Started using strategy: 1.0.0-deterministic
+    [WorkflowRuntime] Started. Subscribed to ExecutionPlan.
+    [ExpressionRuntime] Started with 2 renderers.
+[Boot] System Boot Complete.
+
+[Kernel] Interaction Loop Started.
+
+
+======================================
+--- USER INPUT: Execute command get_identity ---
+======================================
+
+======================================
+--- USER INPUT: hello ---
+======================================
+
+======================================
+--- USER INPUT: what is 2+2 ---
+======================================
+
+======================================
+--- USER INPUT: open calculator ---
+======================================
+
+======================================
+--- USER INPUT: close calculator ---
+======================================
+
+======================================
+--- USER INPUT: Perform unknown action ---
+======================================
+
+Shutting down...
+[Kernel] Shutting down runtimes...
+    [ExpressionRuntime] Stopped.
+    [WorkflowRuntime] Stopped.
+    [PlannerRuntime] Stopped.
+[Kernel] Flushing EventBus...
+[Kernel] Shutdown complete. Goodbye.
+
+[Kernel] SIGINT Received. Initiating shutdown sequence...
+[Kernel] Shutting down runtimes...
+    [ExpressionRuntime] Stopped.
+    [WorkflowRuntime] Stopped.
+    [PlannerRuntime] Stopped.
+[Kernel] Flushing EventBus...
+[Kernel] Shutdown complete. Goodbye.

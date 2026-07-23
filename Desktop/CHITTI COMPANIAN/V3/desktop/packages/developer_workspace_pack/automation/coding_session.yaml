@@ -1,0 +1,15 @@
+id: chitti.automation.coding_session
+name: Coding Session
+trigger: manual
+steps:
+  - capability: OpenWorkspace
+    parameters:
+      target: "previous"
+  - capability: RestoreWorkspace
+  - capability: GitPull
+  - capability: ExecuteCommand
+    parameters:
+      command: "npm run dev"
+  - capability: NotifyUser
+    parameters:
+      message: "Development server is running."

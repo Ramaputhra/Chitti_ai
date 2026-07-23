@@ -1,0 +1,13 @@
+id: SCN-1002
+name: Interrupt Execution
+description: Verifies that triggering a STOP mid-session ends the session in INTERRUPTED state
+input:
+  text: Hello Chitti
+expected:
+  events:
+    - Session.Started
+    - System.Interrupt
+    - Session.Ended
+performance:
+  max_latency: 500
+  max_memory: 100

@@ -1,0 +1,192 @@
+{
+    "OFFLINE": {
+        "id": "offline",
+        "interruptible": false,
+        "minimum_duration": 0,
+        "outputs": {
+            "visual": { "animation": "Offline", "visible": false },
+            "audio": {},
+            "servo": { "motion": "head_down" }
+        }
+    },
+    "STARTING": {
+        "id": "starting",
+        "interruptible": false,
+        "minimum_duration": 1000,
+        "outputs": {
+            "visual": { "animation": "Starting", "visible": true },
+            "audio": {},
+            "servo": { "motion": "neutral_forward" }
+        }
+    },
+    "ERROR": {
+        "id": "error",
+        "interruptible": true,
+        "minimum_duration": 2000,
+        "outputs": {
+            "visual": { "animation": "Error", "visible": true },
+            "audio": { "sound": "error_buzz.wav" },
+            "servo": { "motion": "shake_head" }
+        }
+    },
+    "LISTENING": {
+        "id": "listening",
+        "interruptible": true,
+        "minimum_duration": 500,
+        "outputs": {
+            "visual": { "animation": "Blush_loop", "visible": true },
+            "audio": { "sound": "listening_blip.wav" },
+            "servo": { "motion": "look_up_and_center" }
+        }
+    },
+    "TALKING": {
+        "id": "talking",
+        "interruptible": true,
+        "minimum_duration": 100,
+        "outputs": {
+            "visual": { "animation": "Talking", "visible": true },
+            "audio": {},
+            "servo": { "motion": "head_tilt_speaking" }
+        }
+    },
+    "FAILURE": {
+        "id": "failure",
+        "interruptible": true,
+        "minimum_duration": 1500,
+        "outputs": {
+            "visual": { "animation": "Failure", "visible": true },
+            "audio": { "sound": "error_buzz.wav" },
+            "servo": { "motion": "shake_head" }
+        }
+    },
+    "UNDERSTANDING": {
+        "id": "understanding",
+        "interruptible": true,
+        "minimum_duration": 300,
+        "outputs": {
+            "visual": { "animation": "Understanding", "visible": true },
+            "audio": {},
+            "servo": { "motion": "look_up_and_center" }
+        }
+    },
+    "THINKING": {
+        "id": "thinking",
+        "interruptible": true,
+        "minimum_duration": 600,
+        "outputs": {
+            "visual": { "animation": "Thinking", "visible": true },
+            "audio": {},
+            "servo": { "motion": "look_up_and_center" }
+        }
+    },
+    "WORKING": {
+        "id": "working",
+        "interruptible": true,
+        "minimum_duration": 500,
+        "outputs": {
+            "visual": { "animation": "Working", "visible": true },
+            "audio": { "sound": "task_started.wav" },
+            "servo": { "motion": "jitter_busy" }
+        }
+    },
+    "READING": {
+        "id": "reading",
+        "interruptible": true,
+        "minimum_duration": 500,
+        "outputs": {
+            "visual": { "animation": "Reading", "visible": true },
+            "audio": {},
+            "servo": { "motion": "scan_left_right" }
+        }
+    },
+    "WRITING": {
+        "id": "writing",
+        "interruptible": true,
+        "minimum_duration": 500,
+        "outputs": {
+            "visual": { "animation": "Writing", "visible": true },
+            "audio": {},
+            "servo": { "motion": "scan_left_right" }
+        }
+    },
+    "SUCCESS": {
+        "id": "success",
+        "interruptible": false,
+        "minimum_duration": 1200,
+        "outputs": {
+            "visual": { "animation": "Success", "visible": true },
+            "audio": { "sound": "success_chime.wav" },
+            "servo": { "motion": "nod_small" }
+        }
+    },
+    "MONITORING": {
+        "id": "monitoring",
+        "interruptible": true,
+        "minimum_duration": 1000,
+        "outputs": {
+            "visual": { "animation": "Monitoring", "visible": true },
+            "audio": {},
+            "servo": { "motion": "slow_random_panning" }
+        }
+    },
+    "READY": {
+        "id": "ready",
+        "interruptible": true,
+        "minimum_duration": 500,
+        "outputs": {
+            "visual": { "animation": "Ready", "visible": true },
+            "audio": {},
+            "servo": { "motion": "neutral_forward" }
+        }
+    },
+    "IDLE": {
+        "id": "idle",
+        "interruptible": true,
+        "minimum_duration": 0,
+        "outputs": {
+            "visual": { "animation": "Idle", "visible": true },
+            "audio": {},
+            "servo": { "motion": "slow_random_panning" }
+        }
+    },
+    "WAITING": {
+        "id": "waiting",
+        "interruptible": true,
+        "minimum_duration": 500,
+        "outputs": {
+            "visual": { "animation": "Waiting", "visible": true },
+            "audio": {},
+            "servo": { "motion": "neutral_forward" }
+        }
+    },
+    "EXERCISING": {
+        "id": "exercising",
+        "interruptible": true,
+        "minimum_duration": 0,
+        "outputs": {
+            "visual": { "animation": "Exercising", "visible": true },
+            "audio": {},
+            "servo": { "motion": "bounce" }
+        }
+    },
+    "SLEEPING": {
+        "id": "sleeping",
+        "interruptible": true,
+        "minimum_duration": 0,
+        "outputs": {
+            "visual": { "animation": "Sleeping", "visible": false },
+            "audio": {},
+            "servo": { "motion": "head_down" }
+        }
+    },
+    "GOODBYE": {
+        "id": "goodbye",
+        "interruptible": false,
+        "minimum_duration": 1500,
+        "outputs": {
+            "visual": { "animation": "Goodbye", "visible": true },
+            "audio": {},
+            "servo": { "motion": "head_down" }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+id: chitti.automation.organize_downloads
+name: Organize Downloads Folder
+trigger: manual
+steps:
+  - capability: OrganizeFolder
+    parameters:
+      target: "%USERPROFILE%\\Downloads"
+      strategy: "by_extension"

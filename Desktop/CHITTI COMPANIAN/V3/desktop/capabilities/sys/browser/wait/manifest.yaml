@@ -1,0 +1,19 @@
+capability_metadata:
+  capability_id: sys.browser.wait
+  version: 1.0.0
+  author: core
+  platforms: [windows, macos, linux]
+  supports_learning: true
+
+parameters:
+  context: required
+  condition: required # e.g., element_visible, element_hidden, url_matches, title_matches, network_idle, document_ready, download_completed, dialog_open, dialog_closed
+  selector: optional
+  value: optional
+  timeout_ms:
+    type: integer
+    default: 5000
+
+security_safety:
+  safety_level: normal
+  confirmation_required: false

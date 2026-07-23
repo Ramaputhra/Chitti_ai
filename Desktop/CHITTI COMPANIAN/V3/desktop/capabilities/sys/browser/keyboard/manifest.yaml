@@ -1,0 +1,10 @@
+capability_metadata:
+  capability_id: sys.browser.keyboard
+  version: 1.0.0
+
+parameters:
+  context: required
+  key: required # e.g., Enter, Tab, Escape, ArrowDown
+
+security_safety:
+  safety_level: normal

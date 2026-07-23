@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHITTI Remote Companion</title>
+    <style>
+        :root {
+            --bg-color: #000000; /* AMOLED Black */
+            --card-bg: rgba(30, 41, 59, 0.6); /* 6% Glassmorphism */
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent: #38bdf8;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Top Header */
+        .header {
+            padding: 14px 18px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mascot-badge {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0284c7, #6366f1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        .title-group { display: flex; flex-direction: column; }
+        .app-title { font-size: 15px; font-weight: 700; }
+        .mascot-state { font-size: 12px; color: var(--accent); }
+
+        .heartbeat-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--success);
+            box-shadow: 0 0 8px var(--success);
+        }
+
+        /* Offline Banner */
+        .offline-banner {
+            background-color: var(--warning);
+            color: #000;
+            text-align: center;
+            padding: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            display: none;
+        }
+
+        /* Main Scroll Area */
+        .main-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .tab-content { display: none; flex-direction: column; gap: 16px; }
+        .tab-content.active { display: flex; }
+
+        /* Glassmorphism Cards */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border-radius: 14px;
+            padding: 16px;
+            border: 1px solid var(--card-border);
+        }
+
+        .card-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        /* Grid for Shortcuts */
+        .shortcuts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .shortcut-card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .shortcut-card:active { transform: scale(0.96); }
+        .shortcut-icon { font-size: 24px; }
+        .shortcut-label { font-size: 13px; font-weight: 600; }
+
+        /* Bottom Navigation Bar */
+        .nav-bar {
+            display: flex;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid var(--card-border);
+            padding: 8px 0;
+        }
+
+        .nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: var(--text-secondary);
+            font-size: 11px;
+            cursor: pointer;
+            padding: 4px 0;
+        }
+        .nav-item.active { color: var(--accent); font-weight: 600; }
+
+        /* Chat Timeline */
+        .chat-scroll {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 400px;
+        }
+
+        .msg-bubble {
+            max-width: 82%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .msg-user { align-self: flex-end; background-color: #0284c7; color: #fff; }
+        .msg-chitti { align-self: flex-start; background: rgba(30, 41, 59, 0.9); border: 1px solid var(--card-border); }
+
+        /* Inputs & Buttons */
+        .chat-input-bar { display: flex; gap: 8px; margin-top: 10px; }
+        input[type="text"], input[type="password"] {
+            flex: 1; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--card-border);
+            color: var(--text-primary); padding: 10px 14px; border-radius: 8px; outline: none;
+        }
+        button {
+            background-color: var(--accent); color: #0f172a; border: none;
+            padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer;
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+            display: none; align-items: center; justify-content: center; z-index: 1000;
+            padding: 20px;
+        }
+        .modal-card {
+            background: #1e293b; border-radius: 16px; border: 1px solid var(--card-border);
+            padding: 20px; width: 100%; max-width: 360px; display: flex; flex-direction: column; gap: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="offline-banner" class="offline-banner">Reconnecting to CHITTI...</div>
+
+    <!-- Header -->
+    <div class="header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="mascot-badge">C</div>
+            <div class="title-group">
+                <span class="app-title">CHITTI Remote</span>
+                <span id="mascot-state" class="mascot-state">State: Idle</span>
+            </div>
+        </div>
+        <div id="heartbeat-dot" class="heartbeat-dot" title="Connection: Healthy"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Tab: Home -->
+        <div id="tab-home" class="tab-content active">
+            <div class="card">
+                <div class="card-title">Companion System Status</div>
+                <div style="display: flex; justify-content: space-between; font-size: 14px;">
+                    <span>Trusted Device:</span>
+                    <span style="color: var(--accent);" id="home-device-name">Galaxy S24</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 14px; margin-top: 8px;">
+                    <span>Security Level:</span>
+                    <span style="color: var(--success);">Level 1 (Session Token)</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Quick Actions</div>
+                <div class="shortcuts-grid">
+                    <div class="shortcut-card" onclick="triggerLockPrompt()">
+                        <span class="shortcut-icon">🔒</span>
+                        <span class="shortcut-label">Lock PC</span>
+                    </div>
+                    <div class="shortcut-card" onclick="sendShortcut('SLEEP')">
+                        <span class="shortcut-icon">🌙</span>
+                        <span class="shortcut-label">Sleep PC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Chat -->
+        <div id="tab-chat" class="tab-content">
+            <div class="card" style="display: flex; flex-direction: column; height: 100%;">
+                <div class="card-title">Conversation with CHITTI</div>
+                <div id="chat-scroll" class="chat-scroll">
+                    <div class="msg-bubble msg-chitti">Hello! I am CHITTI, your AI Companion. How can I help you today?</div>
+                </div>
+                <div class="chat-input-bar">
+                    <input type="text" id="chat-input" placeholder="Find Project_Final.pdf or type message...">
+                    <button onclick="sendChatMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Activity -->
+        <div id="tab-activity" class="tab-content">
+            <div class="card">
+                <div class="card-title">Live Task Dashboard</div>
+                <div id="task-timeline">
+                    <div style="border-left: 2px solid var(--accent); padding-left: 10px; margin-bottom: 10px;">
+                        <div style="font-weight: 600; font-size: 14px;">System Idle</div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">Waiting for user commands...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Shortcuts -->
+        <div id="tab-shortcuts" class="tab-content">
+            <div class="card">
+                <div class="card-title">Desktop Power & Timer Controls</div>
+                <div class="shortcuts-grid">
+                    <div class="shortcut-card" onclick="triggerLockPrompt()">
+                        <span class="shortcut-icon">🔒</span>
+                        <span class="shortcut-label">Lock PC</span>
+                    </div>
+                    <div class="shortcut-card" onclick="sendShortcut('SLEEP')">
+                        <span class="shortcut-icon">🌙</span>
+                        <span class="shortcut-label">Sleep PC</span>
+                    </div>
+                    <div class="shortcut-card" onclick="sendShortcut('SHUTDOWN_TIMER_30')">
+                        <span class="shortcut-icon">⏱️</span>
+                        <span class="shortcut-label">30m Shutdown</span>
+                    </div>
+                    <div class="shortcut-card" onclick="sendShortcut('CANCEL_TIMER')">
+                        <span class="shortcut-icon">❌</span>
+                        <span class="shortcut-label">Cancel Timer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Profile -->
+        <div id="tab-profile" class="tab-content">
+            <div class="card">
+                <div class="card-title">Profile & Pair Metadata</div>
+                <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
+                    <div><strong>User:</strong> Local User</div>
+                    <div><strong>AI Companion:</strong> CHITTI V2</div>
+                    <div><strong>Trusted Device:</strong> Galaxy S24</div>
+                    <div><strong>Pair Date:</strong> 2026-07-22</div>
+                    <div><strong>Last Connected:</strong> Just Now</div>
+                    <div><strong>Connection:</strong> LAN Direct (WebSocket)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Settings -->
+        <div id="tab-settings" class="tab-content">
+            <div class="card">
+                <div class="card-title">Companion Security Settings</div>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <button style="background: rgba(255,255,255,0.1); color: var(--text-primary);" onclick="promptChangePin()">Change Trust PIN</button>
+                    <button style="background: var(--error); color: #fff;" onclick="forgetDevice()">Forget Trusted Device</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <div class="nav-item active" onclick="switchTab('home')"><span>🏠</span><span>Home</span></div>
+        <div class="nav-item" onclick="switchTab('chat')"><span>💬</span><span>Chat</span></div>
+        <div class="nav-item" onclick="switchTab('activity')"><span>📊</span><span>Activity</span></div>
+        <div class="nav-item" onclick="switchTab('shortcuts')"><span>⚡</span><span>Shortcuts</span></div>
+        <div class="nav-item" onclick="switchTab('profile')"><span>👤</span><span>Profile</span></div>
+        <div class="nav-item" onclick="switchTab('settings')"><span>⚙️</span><span>Settings</span></div>
+    </div>
+
+    <!-- Lock Confirmation Modal -->
+    <div id="lock-modal" class="modal-overlay">
+        <div class="modal-card">
+            <h3 style="color: var(--accent);">Confirm Lock Desktop</h3>
+            <p style="font-size: 12px; color: var(--text-secondary);">The following operations continue while desktop is locked:</p>
+            <ul style="font-size: 11px; margin-left: 16px; color: var(--success);">
+                <li>Chat, File Search, Upload/Download, Background Tasks, Timers</li>
+            </ul>
+            <p style="font-size: 12px; color: var(--text-secondary);">Interactive automation & desktop screenshot wait until unlock.</p>
+            <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                <button style="background: rgba(255,255,255,0.1); color: #fff;" onclick="closeLockModal()">Cancel</button>
+                <button onclick="confirmLock()">Lock PC</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let ws = null;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function triggerLockPrompt() { document.getElementById('lock-modal').style.display = 'flex'; }
+        function closeLockModal() { document.getElementById('lock-modal').style.display = 'none'; }
+        function confirmLock() {
+            closeLockModal();
+            if (ws) ws.send(JSON.stringify({ type: "shortcut", action: "LOCK_PC" }));
+        }
+
+        function sendShortcut(action) {
+            if (ws) ws.send(JSON.stringify({ type: "shortcut", action: action }));
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            if (input.value && ws) {
+                const scroll = document.getElementById('chat-scroll');
+                scroll.innerHTML += `<div class="msg-bubble msg-user">${input.value}</div>`;
+                ws.send(JSON.stringify({ type: "chat", text: input.value }));
+                input.value = "";
+                scroll.scrollTop = scroll.scrollHeight;
+            }
+        }
+
+        function promptChangePin() {
+            const pin = prompt("Enter new 6-12 digit Companion Trust PIN:");
+            if (pin && ws) ws.send(JSON.stringify({ type: "CHANGE_PIN", new_pin: pin }));
+        }
+
+        function forgetDevice() {
+            if (confirm("Revoke trust for this device?") && ws) {
+                ws.send(JSON.stringify({ type: "FORGET_DEVICE" }));
+            }
+        }
+
+        function connect() {
+            const host = window.location.hostname || "localhost";
+            ws = new WebSocket(`ws://${host}:9090`);
+
+            ws.onopen = () => {
+                document.getElementById('offline-banner').style.display = 'none';
+                document.getElementById('heartbeat-dot').style.backgroundColor = 'var(--success)';
+            };
+            ws.onclose = () => {
+                document.getElementById('offline-banner').style.display = 'block';
+                document.getElementById('heartbeat-dot').style.backgroundColor = 'var(--error)';
+                setTimeout(connect, 2000);
+            };
+            ws.onmessage = (e) => {
+                try {
+                    const data = JSON.parse(e.data);
+                    if (data.type === "VISUAL_STATE") {
+                        document.getElementById('mascot-state').innerText = "State: " + data.state;
+                    }
+                } catch(err) {}
+            };
+        }
+
+        connect();
+    </script>
+</body>
+</html>

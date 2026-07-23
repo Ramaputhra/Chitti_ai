@@ -1,0 +1,7 @@
+id: application.launch
+parameters:
+  application:
+    type: string
+permissions:
+  desktop
+requires_confirmation: false

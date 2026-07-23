@@ -1,0 +1,12 @@
+class LogEvents:
+    """
+    Standardized event IDs for structured logging.
+    """
+    APP_START = "APP_START"
+    APP_STOP = "APP_STOP"
+    CONFIG_LOADED = "CONFIG_LOADED"
+    THEME_CHANGED = "THEME_CHANGED"
+    VOICE_STARTED = "VOICE_STARTED"
+    MEMORY_SAVED = "MEMORY_SAVED"
+    PLUGIN_LOADED = "PLUGIN_LOADED"
+    HARDWARE_CONNECTED = "HARDWARE_CONNECTED"

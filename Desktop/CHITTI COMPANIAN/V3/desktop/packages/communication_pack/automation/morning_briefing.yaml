@@ -1,0 +1,13 @@
+id: chitti.automation.morning_briefing
+name: Morning Briefing
+trigger: manual
+steps:
+  - capability: ViewSchedule
+    parameters:
+      timeframe: "today"
+  - capability: ReadEmail
+    parameters:
+      filter: "unread"
+  - capability: NotifyUser
+    parameters:
+      message: "Morning briefing ready."

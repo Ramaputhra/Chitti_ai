@@ -1,0 +1,15 @@
+planner_integration:
+  declarative_step:
+    capability_id: sys.file.search
+    parameters:
+      location: "$location"
+      query: "$query"
+      recursive: "$recursive"
+      include_directories: "$include_directories"
+      file_types: "$file_types"
+      modified_after: "$modified_after"
+      modified_before: "$modified_before"
+      min_size: "$min_size"
+      max_size: "$max_size"
+      limit: "$limit"
+      sort_by: "$sort_by"

@@ -1,0 +1,70 @@
+id: "desktop.write_document"
+version: "1.0"
+schema_version: 1
+goal: "Write Document"
+summary: "Opens an application, types a document, and saves it."
+category: "Desktop Automation"
+author: "Engineering"
+required_inputs:
+  application: "The application to use (e.g. notepad)"
+  text: "The body of the document"
+  filename: "The name of the file to save as"
+outputs: {}
+permissions: ["keyboard", "mouse", "windows"]
+estimated_duration: "5s"
+tags: ["automation", "desktop", "document"]
+recovery:
+  strategy: "restart_task"
+nodes:
+  - id: "launch"
+    action: "DesktopAutomationCapability.launch"
+    next: "wait_ready"
+    parameters:
+      application: "{{application}}"
+      
+  - id: "wait_ready"
+    action: "DesktopAutomationCapability.wait"
+    next: "type_text"
+    parameters:
+      duration: 1
+      
+  - id: "type_text"
+    action: "DesktopAutomationCapability.type_text"
+    next: "save"
+    parameters:
+      text: "{{text}}"
+      
+  - id: "save"
+    action: "DesktopAutomationCapability.hotkey"
+    next: "wait_dialog"
+    parameters:
+      keys: ["ctrl", "s"]
+      
+  - id: "wait_dialog"
+    action: "DesktopAutomationCapability.wait"
+    next: "type_filename"
+    parameters:
+      duration: 1
+      
+  - id: "type_filename"
+    action: "DesktopAutomationCapability.type_text"
+    next: "confirm"
+    parameters:
+      text: "{{filename}}"
+      
+  - id: "confirm"
+    action: "DesktopAutomationCapability.hotkey"
+    next: "wait_save"
+    parameters:
+      keys: ["enter"]
+      
+  - id: "wait_save"
+    action: "DesktopAutomationCapability.wait"
+    next: "close"
+    parameters:
+      duration: 1
+      
+  - id: "close"
+    action: "DesktopAutomationCapability.close_window"
+    next: null
+    parameters: {}

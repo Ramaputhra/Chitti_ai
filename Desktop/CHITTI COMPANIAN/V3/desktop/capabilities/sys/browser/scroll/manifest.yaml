@@ -1,0 +1,14 @@
+capability_metadata:
+  capability_id: sys.browser.scroll
+  version: 1.0.0
+
+parameters:
+  context: required
+  direction: required # up, down, left, right, top, bottom
+  amount: 
+    type: integer
+    default: 500
+  selector: optional
+
+security_safety:
+  safety_level: normal

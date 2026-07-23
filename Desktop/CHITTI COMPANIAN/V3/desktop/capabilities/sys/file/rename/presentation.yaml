@@ -1,0 +1,3 @@
+presentation:
+  success: file.renamed
+  failure: file.rename_failed

@@ -1,0 +1,8 @@
+/* Desktop UI Animation: pulse */
+@keyframes pulse {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.pulse-anim {
+  animation: pulse 0.3s ease-in-out;
+}

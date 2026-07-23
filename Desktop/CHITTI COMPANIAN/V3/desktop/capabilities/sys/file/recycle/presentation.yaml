@@ -1,0 +1,13 @@
+presentation:
+  success:
+    message_key: filesystem.recycle.success
+    priority: normal
+    speech: informative
+    animation: recycle_success
+    followup: true
+  recovery_hint:
+    required: true
+  tone: reassuring
+  failure:
+    message_key: filesystem.recycle.failed
+    priority: high

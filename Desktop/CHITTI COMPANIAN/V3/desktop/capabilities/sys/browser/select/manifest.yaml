@@ -1,0 +1,11 @@
+capability_metadata:
+  capability_id: sys.browser.select
+  version: 1.0.0
+
+parameters:
+  context: required
+  selector: required
+  values: required # List of values or texts to select
+
+security_safety:
+  safety_level: normal

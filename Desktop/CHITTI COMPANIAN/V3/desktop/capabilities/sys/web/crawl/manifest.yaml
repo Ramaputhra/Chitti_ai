@@ -1,0 +1,13 @@
+capability_metadata:
+  capability_id: sys.web.crawl
+  version: 1.0.0
+  description: Deep navigation to map a domain structure while respecting Rule 23 constraints.
+
+parameters:
+  url: required
+  max_depth: 
+    type: integer
+    default: 2
+
+security_safety:
+  safety_level: normal

@@ -1,0 +1,67 @@
+capability_metadata:
+  capability_id: sys.file.move
+  version: 1.0.0
+  author: core
+  platforms: [windows]
+  supports_learning: true
+  supports_cloud: true
+
+compatibility:
+  minimum_runtime: 1.0
+  deprecated: false
+  replaces: null
+
+intent:
+  - move file
+  - move folder
+  - relocate
+
+parameters:
+  source: required
+  destination: required
+  overwrite:
+    type: boolean
+    default: false
+
+failure_policy:
+  recoverable:
+    - path_resolution_failed
+    - file_locked
+    - destination_locked
+  non_recoverable:
+    - source_not_found
+    - access_denied
+    - FILE_ALREADY_EXISTS
+  retry:
+    max_attempts: 1
+
+security_safety:
+  safety_level: dynamic
+  rules:
+    - condition: "is_protected_system_path(destination) or is_protected_system_path(source)"
+      safety_level: dangerous
+      confirmation_required: true
+    - condition: "overwrite == true"
+      safety_level: dangerous
+      confirmation_required: true
+    - default:
+      safety_level: normal
+      confirmation_required: false
+  undo_supported: true # Technically we could move it back if we recorded original paths
+
+performance_expectations:
+  execution_profile: normal
+  target_ms: 1000
+  long_running: false
+
+execution:
+  idempotent: false
+
+execution_cost:
+  cpu: low
+  memory: low
+  disk: medium
+  network: none
+
+aca:
+  parameterizable: true

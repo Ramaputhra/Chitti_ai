@@ -1,0 +1,69 @@
+capability_metadata:
+  capability_id: sys.file.rename
+  version: 1.0.0
+  author: core
+  platforms: [windows]
+  supports_learning: true
+  supports_cloud: true
+
+compatibility:
+  minimum_runtime: 1.0
+  deprecated: false
+  replaces: null
+
+intent:
+  - rename file
+  - change name
+  - rename folder
+
+parameters:
+  source: required
+  destination: required
+  collision_policy:
+    type: string
+    default: fail
+    options: [fail, overwrite]
+
+failure_policy:
+  recoverable:
+    - path_resolution_failed
+    - DESTINATION_LOCKED
+  non_recoverable:
+    - access_denied
+    - FILE_ALREADY_EXISTS
+    - INVALID_PATH
+    - SOURCE_NOT_FOUND
+    - USE_MOVE_CAPABILITY
+  retry:
+    max_attempts: 1
+
+security_safety:
+  safety_level: dynamic
+  rules:
+    - condition: "collision_policy == 'overwrite'"
+      safety_level: dangerous
+      confirmation_required: true
+    - condition: "is_protected_system_path(source)"
+      safety_level: dangerous
+      confirmation_required: true
+    - default:
+      safety_level: normal
+      confirmation_required: false
+  undo_supported: true
+
+performance_expectations:
+  execution_profile: normal
+  target_ms: 1000
+  long_running: false
+
+execution:
+  idempotent: false
+
+execution_cost:
+  cpu: low
+  memory: low
+  disk: low
+  network: none
+
+aca:
+  parameterizable: true

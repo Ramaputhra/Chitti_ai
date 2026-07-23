@@ -1,0 +1,13 @@
+capability_metadata:
+  capability_id: sys.web.search
+  version: 1.0.0
+  description: Perform background search queries. Resolves through the SearchRuntime.
+
+parameters:
+  query: required
+  limit: 
+    type: integer
+    default: 10
+
+security_safety:
+  safety_level: normal

@@ -1,0 +1,57 @@
+capability_metadata:
+  capability_id: sys.file.copy
+  version: 1.0.0
+  author: core
+  platforms: [windows]
+  supports_learning: true
+  supports_cloud: true
+
+compatibility:
+  minimum_runtime: 1.0
+  deprecated: false
+  replaces: null
+
+intent:
+  - copy file
+  - copy folder
+  - duplicate
+
+parameters:
+  source: required
+  destination: required
+  overwrite:
+    type: boolean
+    default: false
+
+failure_policy:
+  recoverable:
+    - path_resolution_failed
+    - file_locked
+  non_recoverable:
+    - source_not_found
+    - access_denied
+    - FILE_ALREADY_EXISTS
+  retry:
+    max_attempts: 1
+
+security_safety:
+  safety_level: safe
+  confirmation_required: false
+  undo_supported: false
+
+performance_expectations:
+  execution_profile: normal
+  target_ms: 1000
+  long_running: false
+
+execution:
+  idempotent: false # Could be true if overwrite=true, but false by default since it errors if exists
+
+execution_cost:
+  cpu: low
+  memory: low
+  disk: medium
+  network: none
+
+aca:
+  parameterizable: true

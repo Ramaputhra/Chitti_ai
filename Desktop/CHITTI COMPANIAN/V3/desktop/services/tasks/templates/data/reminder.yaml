@@ -1,0 +1,21 @@
+id: "automation.reminder"
+version: "1.0"
+schema_version: 1
+goal: "Set a reminder"
+summary: "Sets a timer to remind the user about a task."
+category: "Automation"
+author: "Engineering"
+required_inputs:
+  duration_seconds: "Number of seconds"
+  message: "Reminder message"
+outputs: {}
+permissions: []
+estimated_duration: "1s"
+tags: ["reminder", "timer"]
+nodes:
+  - id: "set_timer"
+    action: "TimerCapability.set_timer"
+    next: null
+    parameters:
+      duration_seconds: "{{duration_seconds}}"
+      message: "{{message}}"

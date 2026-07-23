@@ -1,0 +1,8 @@
+{
+  "asset_id": "UI_ALARM_ALARMCOUNTDOWN",
+  "asset_name": "AlarmCountdown",
+  "category": "alarm",
+  "format": "png",
+  "resolution": "320x180",
+  "has_alpha": true
+}

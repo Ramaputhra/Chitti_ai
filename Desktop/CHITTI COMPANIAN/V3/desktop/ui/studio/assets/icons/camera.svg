@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#0f172a" rx="16"/>
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#3b82f6" stroke-width="2" rx="12"/>
+  <circle cx="100" cy="80" r="30" fill="#3b82f6" opacity="0.8"/>
+  <text x="100" y="140" fill="#f8fafc" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">CAMERA</text>
+  <text x="100" y="165" fill="#64748b" font-family="sans-serif" font-size="10" text-anchor="middle">DESKTOP UI ICON</text>
+</svg>

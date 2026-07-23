@@ -1,0 +1,8 @@
+{
+  "asset_id": "UI_SHUTDOWN_SHUTDOWNCANCELLED",
+  "asset_name": "ShutdownCancelled",
+  "category": "shutdown",
+  "format": "png",
+  "resolution": "320x180",
+  "has_alpha": true
+}

@@ -1,0 +1,19 @@
+id: "desktop.open_app"
+version: "1.0"
+schema_version: 1
+goal: "Open an application"
+summary: "Opens a desktop application by name."
+category: "Desktop"
+author: "Engineering"
+required_inputs:
+  app_name: "Name of the application"
+outputs: {}
+permissions: ["desktop_control"]
+estimated_duration: "3s"
+tags: ["desktop", "app"]
+nodes:
+  - id: "open_application"
+    action: "AppLauncherCapability.open_application"
+    next: null
+    parameters:
+      path_or_name: "{{app_name}}"

@@ -1,0 +1,8 @@
+{
+  "asset_id": "UI_ALARM_ALARMSNOOZED",
+  "asset_name": "AlarmSnoozed",
+  "category": "alarm",
+  "format": "png",
+  "resolution": "320x180",
+  "has_alpha": true
+}

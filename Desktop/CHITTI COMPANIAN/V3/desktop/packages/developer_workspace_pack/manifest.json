@@ -1,0 +1,19 @@
+{
+  "id": "chitti.pack.developer_workspace",
+  "name": "Developer Workspace Pack",
+  "version": "1.0.0",
+  "description": "Assistant capabilities inside the developer workspace.",
+  "dependencies": ["chitti.platform.environment", "chitti.platform.presentation"],
+  "capabilities": [
+    "OpenWorkspace", "CloseWorkspace", "SwitchWorkspace", "RestoreWorkspace",
+    "OpenFile", "RevealFile", "GoToLine", "SearchProject",
+    "GitStatus", "GitCommit", "GitPull", "GitPush", "GitCheckoutBranch",
+    "ExecuteCommand", "WatchTerminal", "StopCommand",
+    "ReadProblems", "ReadLogs", "StartDebugger", "StopDebugger",
+    "ObserveBuild", "ObserveDebugger", "ObserveGitChanges", "ObserveWorkspace"
+  ],
+  "experiences": ["BuildMonitorExperience", "WorkspaceOverviewExperience", "DebugSessionExperience", "TerminalExperience", "GitStatusExperience"],
+  "automation_workflows": [
+    "coding_session.yaml", "review_pull_request.yaml", "release_build.yaml"
+  ]
+}

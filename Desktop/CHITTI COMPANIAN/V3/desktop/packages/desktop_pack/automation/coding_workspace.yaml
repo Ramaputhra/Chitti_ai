@@ -1,0 +1,25 @@
+id: chitti.automation.coding_workspace
+name: Coding Workspace
+trigger: manual
+steps:
+  - capability: LaunchApplication
+    parameters:
+      alias: "vscode"
+  - capability: LaunchApplication
+    parameters:
+      alias: "chrome"
+  - capability: LaunchApplication
+    parameters:
+      alias: "terminal"
+  - capability: MoveWindow
+    parameters:
+      alias: "vscode"
+      bounds: "left_half"
+  - capability: MoveWindow
+    parameters:
+      alias: "chrome"
+      bounds: "top_right_quarter"
+  - capability: MoveWindow
+    parameters:
+      alias: "terminal"
+      bounds: "bottom_right_quarter"

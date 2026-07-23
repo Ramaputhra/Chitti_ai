@@ -1,0 +1,17 @@
+id: "utilities.time"
+version: "1.0"
+schema_version: 1
+goal: "Get current time"
+summary: "Retrieves the system's current time."
+category: "Utilities"
+author: "Engineering"
+required_inputs: {}
+outputs: {}
+permissions: []
+estimated_duration: "1s"
+tags: ["time"]
+nodes:
+  - id: "get_time"
+    action: "TimeCapability.get_current_time"
+    next: null
+    parameters: {}

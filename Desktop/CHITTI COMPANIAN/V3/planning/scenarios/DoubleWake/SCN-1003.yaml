@@ -1,0 +1,13 @@
+id: SCN-1003
+name: Double Wake
+description: Verifies that triggering a wake word while a session is active is safely ignored
+input:
+  text: Hello Chitti
+expected:
+  events:
+    - Session.Started
+    - Response.Generated
+    - Session.Ended
+performance:
+  max_latency: 500
+  max_memory: 100

@@ -1,0 +1,20 @@
+id: SCN-0101
+name: Identity
+description: Bot identity query
+input:
+  text: Who are you?
+expected:
+  intent:
+    type: Identity
+  workflow:
+    action: ExecuteSkill
+  response:
+    text: I am Chitti, your AI Companion.
+  events:
+    - Language.TextRecognized
+    - Intent.Detected
+    - Workflow.Created
+    - Response.Generated
+performance:
+  max_latency: 500
+  max_memory: 100

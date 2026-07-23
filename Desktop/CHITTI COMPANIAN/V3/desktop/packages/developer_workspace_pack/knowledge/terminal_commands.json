@@ -1,0 +1,5 @@
+{
+  "npm run dev": ["start", "dev", "serve"],
+  "npm run build": ["build", "compile"],
+  "npm run test": ["test", "spec"]
+}

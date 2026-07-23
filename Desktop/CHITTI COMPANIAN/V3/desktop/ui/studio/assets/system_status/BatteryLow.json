@@ -1,0 +1,8 @@
+{
+  "asset_id": "UI_SYSTEM_STATUS_BATTERYLOW",
+  "asset_name": "BatteryLow",
+  "category": "system_status",
+  "format": "png",
+  "resolution": "320x180",
+  "has_alpha": true
+}

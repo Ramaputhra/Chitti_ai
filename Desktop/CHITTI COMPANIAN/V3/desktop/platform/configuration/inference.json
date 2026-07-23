@@ -1,0 +1,10 @@
+{
+  "provider": "llama_cpp",
+  "default_model": "qwen2.5-1.5b-instruct",
+  "gpu_layers": 35,
+  "threads": 8,
+  "context_size": 8192,
+  "batch_size": 512,
+  "stream": true,
+  "warmup": true
+}

@@ -1,0 +1,12 @@
+capability_metadata:
+  capability_id: sys.browser.mouse
+  version: 1.0.0
+
+parameters:
+  context: required
+  action: required # move, click, down, up
+  x: required
+  y: required
+
+security_safety:
+  safety_level: normal

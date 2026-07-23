@@ -1,0 +1,8 @@
+{
+  "asset_id": "UI_SHUTDOWN_SHUTDOWNSCHEDULED",
+  "asset_name": "ShutdownScheduled",
+  "category": "shutdown",
+  "format": "png",
+  "resolution": "320x180",
+  "has_alpha": true
+}

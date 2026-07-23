@@ -1,0 +1,6 @@
+verification:
+  preferred:
+    - original_path_missing
+  conditional: []
+  optional: []
+  fallback: []

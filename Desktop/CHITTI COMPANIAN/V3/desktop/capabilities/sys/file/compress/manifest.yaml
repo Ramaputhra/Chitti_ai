@@ -1,0 +1,74 @@
+capability_metadata:
+  capability_id: sys.file.compress
+  version: 1.0.0
+  author: core
+  platforms: [windows]
+  supports_learning: true
+  supports_cloud: true
+
+compatibility:
+  minimum_runtime: 1.0
+  deprecated: false
+  replaces: null
+
+intent:
+  - compress files
+  - zip folder
+  - create archive
+
+parameters:
+  sources: required
+  destination_dir: required
+  archive_name: required
+  format:
+    type: string
+    default: "zip"
+    options: [zip, tar, gztar, bztar, xztar]
+  compression_level:
+    type: integer
+    default: -1
+  collision_policy:
+    type: string
+    default: fail
+    options: [fail, overwrite]
+
+failure_policy:
+  recoverable:
+    - path_resolution_failed
+    - DESTINATION_LOCKED
+  non_recoverable:
+    - access_denied
+    - FILE_ALREADY_EXISTS
+    - INVALID_PATH
+    - SOURCE_NOT_FOUND
+    - MISSING_REQUIRED_PARAMETER
+  retry:
+    max_attempts: 1
+
+security_safety:
+  safety_level: dynamic
+  rules:
+    - condition: "collision_policy == 'overwrite'"
+      safety_level: dangerous
+      confirmation_required: true
+    - default:
+      safety_level: normal
+      confirmation_required: false
+  undo_supported: false
+
+performance_expectations:
+  execution_profile: long_running
+  target_ms: 10000
+  long_running: true
+
+execution:
+  idempotent: false
+
+execution_cost:
+  cpu: high
+  memory: medium
+  disk: high
+  network: none
+
+aca:
+  parameterizable: true

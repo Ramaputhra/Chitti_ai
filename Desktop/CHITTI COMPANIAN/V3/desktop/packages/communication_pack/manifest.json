@@ -1,0 +1,17 @@
+{
+  "id": "chitti.pack.communication",
+  "name": "Communication Pack",
+  "version": "1.0.0",
+  "description": "Standardized, provider-agnostic communication primitives.",
+  "dependencies": ["chitti.platform.environment", "chitti.platform.presentation"],
+  "capabilities": [
+    "ReadEmail", "SearchEmail", "ComposeEmail", "SendEmail", "ReplyEmail", "ForwardEmail", "WatchInbox",
+    "ViewSchedule", "CreateEvent", "UpdateEvent", "CancelEvent", "FindAvailability", "Reminder", "WatchCalendarChanges",
+    "NotifyUser", "DismissNotification", "WatchNotification",
+    "RestRequest", "WebhookListener", "WebhookTrigger", "WatchWebhook"
+  ],
+  "experiences": ["InboxOverviewExperience", "DailyScheduleExperience", "NotificationCenterExperience"],
+  "automation_workflows": [
+    "morning_briefing.yaml"
+  ]
+}

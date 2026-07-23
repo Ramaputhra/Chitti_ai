@@ -1,0 +1,17 @@
+id: chitti.automation.review_pull_request
+name: Review Pull Request
+trigger: manual
+steps:
+  - capability: GitCheckoutBranch
+    parameters:
+      branch: "{{target_branch}}"
+  - capability: ExecuteCommand
+    parameters:
+      command: "npm run build"
+  - capability: ExecuteCommand
+    parameters:
+      command: "npm run test"
+  - capability: ReadProblems
+  - capability: NotifyUser
+    parameters:
+      message: "PR Review Environment Ready."

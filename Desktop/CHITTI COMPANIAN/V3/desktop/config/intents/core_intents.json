@@ -1,0 +1,20 @@
+{
+  "OPEN_APPLICATION": {
+    "version": 1,
+    "priority": 100,
+    "aliases": [
+      "browser open",
+      "open browser",
+      "launch application",
+      "app start"
+    ]
+  },
+  "CLOSE_APPLICATION": {
+    "version": 1,
+    "priority": 100,
+    "aliases": [
+      "browser close",
+      "close application"
+    ]
+  }
+}

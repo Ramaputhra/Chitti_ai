@@ -1,0 +1,45 @@
+id: chitti.automation.document_companion
+name: Document Companion Lifecycle
+trigger: intent
+intent: "Open Document"
+steps:
+  - capability: ResolveDocument
+    parameters:
+      query: "{{user_query}}"
+      on_low_confidence: "InteractiveRecovery" # E.g., Ask "Proposal_v3 or Proposal_Final?"
+      
+  - capability: VerifyDocument
+    parameters:
+      checks: ["Exists", "HashMatch", "Renamed", "Moved", "NewerVersion"]
+      on_fail: "SmartDocumentRecovery"
+      
+  - capability: LaunchApplication
+    parameters:
+      app_type: "DocumentViewer"
+      
+  - capability: RestoreDocumentContext
+    parameters:
+      restore: ["Cursor", "Scroll", "Zoom", "Highlights"]
+      
+  - capability: AnalyzeActivity
+    parameters:
+      targets: ["UnreadSections", "ChangedPages", "VersionDiffs", "UnresolvedComments"]
+      
+  - capability: GenerateResumeSummary
+    
+  - capability: AnchorConversation
+    parameters:
+      bind_to: "ActiveDocument"
+      
+  - capability: PresentExperience
+    parameters:
+      experience: "DocumentOverviewExperience"
+      
+  - capability: NotifyUser
+    parameters:
+      message: "Here is {{document.name}}, boss. You left off on page {{document.active_page}}. {{resume_summary}}"
+      
+  - capability: ObserveDocumentChanges
+    parameters:
+      target: "{{document.path}}"
+      on_close: "CaptureActivity"

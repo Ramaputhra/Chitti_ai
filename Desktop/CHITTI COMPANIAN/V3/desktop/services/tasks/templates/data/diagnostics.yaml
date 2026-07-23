@@ -1,0 +1,17 @@
+id: "core.diagnostics"
+version: "1.0"
+schema_version: 1
+goal: "Validate the Template Runtime execution"
+summary: "Diagnostic tool to test execution pipelines."
+category: "Engineering"
+author: "Engineering"
+required_inputs: {}
+outputs: {}
+permissions: []
+estimated_duration: "1s"
+tags: ["diagnostics", "engineering"]
+nodes:
+  - id: "test_identity"
+    action: "IdentityCapability.identify"
+    next: null
+    parameters: {}

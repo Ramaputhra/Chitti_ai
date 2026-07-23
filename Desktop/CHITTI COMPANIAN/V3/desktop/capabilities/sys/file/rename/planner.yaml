@@ -1,0 +1,7 @@
+planner_integration:
+  declarative_step:
+    capability_id: sys.file.rename
+    parameters:
+      source: "$source"
+      destination: "$destination"
+      collision_policy: "$collision_policy"

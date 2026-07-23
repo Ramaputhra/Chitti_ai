@@ -1,0 +1,10 @@
+{
+  "react": {
+    "build_dir": "build",
+    "output_artifact": "index.html"
+  },
+  "python": {
+    "build_dir": "dist",
+    "output_artifact": "*.whl"
+  }
+}

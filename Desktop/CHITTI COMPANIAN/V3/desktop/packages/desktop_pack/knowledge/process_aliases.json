@@ -1,0 +1,11 @@
+{
+  "aliases": {
+    "chrome": "Google Chrome",
+    "vscode": "Visual Studio Code",
+    "word": "Microsoft Word",
+    "excel": "Microsoft Excel",
+    "spotify": "Spotify",
+    "terminal": "Windows Terminal",
+    "cmd": "Command Prompt"
+  }
+}

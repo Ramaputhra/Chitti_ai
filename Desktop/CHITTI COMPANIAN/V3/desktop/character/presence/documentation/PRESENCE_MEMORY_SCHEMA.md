@@ -1,0 +1,61 @@
+# CHITTI V2 — PRESENCE MEMORY SCHEMA (v2.0.0)
+
+## 1. Schema Metadata
+- **Platform Schema Version:** `1.0.0`
+- **Presence Memory Version:** `2.0.0`
+- **File Target:** `desktop/character/presence/presence_memory.json`
+
+---
+
+## 2. JSON Schema Definition
+
+```json
+{
+  "platform_schema_version": "1.0.0",
+  "presence_memory_version": "2.0.0",
+  "last_position_x": 1520,
+  "last_position_y": 340,
+  "last_dock_edge": "right",
+  "last_monitor": 0,
+  "last_window_scale": 1.0,
+  "last_presence_state": "CHARACTER_WINDOW",
+  "last_presentation_x": 100,
+  "last_presentation_y": 100,
+  "last_widget_layout": "default",
+  "last_widget_visibility": true,
+  "active_runtime_session": {
+    "session_id": "sess_runtime_001",
+    "runtime_type": "assistant",
+    "owner_capability": "general_assistant",
+    "current_state": "RUNNING",
+    "resume_supported": true,
+    "restore_token": "token_res_default",
+    "session_context": {
+      "progress": 1.0,
+      "step": 1
+    }
+  },
+  "last_active_presentation": "none",
+  "last_conversation_state": "COMPLETED",
+  "last_wake_source": "wake_word",
+  "last_input_mode": "Wake Word",
+  "last_character_scale": 1.0,
+  "last_dock_animation": "SPRING_DOCK",
+  "last_theme": "dark_fluent",
+  "last_motion_theme": "fluent_motion",
+  "last_screen_resolution": "1920x1080",
+  "last_dpi_scale": 1.0,
+  "last_desktop_workspace": "workspace_1",
+  "last_restore_bounds": {
+    "x": 1520,
+    "y": 340,
+    "w": 400,
+    "h": 400
+  }
+}
+```
+
+---
+
+## 3. Migration Policy
+Legacy presence memory files (v1.0.0) without explicit version headers are automatically migrated to Schema v2.0.0 on application startup without user intervention.

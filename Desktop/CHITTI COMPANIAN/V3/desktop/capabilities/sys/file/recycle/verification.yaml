@@ -1,0 +1,7 @@
+verification:
+  preferred:
+    - shell_api_success
+    - original_path_missing
+  conditional: []
+  optional: []
+  fallback: []

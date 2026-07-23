@@ -1,0 +1,72 @@
+capability_metadata:
+  capability_id: sys.file.create
+  version: 1.0.0
+  author: core
+  platforms: [windows]
+  supports_learning: true
+  supports_cloud: true
+
+compatibility:
+  minimum_runtime: 1.0
+  deprecated: false
+  replaces: null
+
+intent:
+  - create file
+  - create folder
+  - make directory
+  - touch
+
+parameters:
+  path: required
+  is_directory:
+    type: boolean
+    default: false
+  content:
+    type: string
+    default: ""
+  collision_policy:
+    type: string
+    default: fail
+    options: [fail, overwrite, skip]
+
+failure_policy:
+  recoverable:
+    - path_resolution_failed
+  non_recoverable:
+    - access_denied
+    - FILE_ALREADY_EXISTS
+    - INVALID_PATH
+  retry:
+    max_attempts: 1
+
+security_safety:
+  safety_level: dynamic
+  rules:
+    - condition: "collision_policy == 'overwrite'"
+      safety_level: dangerous
+      confirmation_required: true
+    - condition: "is_protected_system_path(path)"
+      safety_level: dangerous
+      confirmation_required: true
+    - default:
+      safety_level: normal
+      confirmation_required: false
+  undo_supported: true
+
+performance_expectations:
+  execution_profile: normal
+  target_ms: 1000
+  long_running: false
+
+execution:
+  idempotent: false
+
+execution_cost:
+  cpu: low
+  memory: low
+  disk: low
+  network: none
+
+aca:
+  parameterizable: true

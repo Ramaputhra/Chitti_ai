@@ -1,0 +1,8 @@
+verification:
+  preferred:
+    - destination_exists
+    - source_absent
+  optional:
+    - size_matches
+  fallback:
+    - vision

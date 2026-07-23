@@ -1,0 +1,17 @@
+capability_metadata:
+  capability_id: sys.browser.click
+  version: 1.0.0
+
+parameters:
+  context: required
+  selector: required
+  button: 
+    type: string
+    default: "left"
+  modifiers: optional
+  force: 
+    type: boolean
+    default: false
+
+security_safety:
+  safety_level: normal

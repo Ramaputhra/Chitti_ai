@@ -1,0 +1,49 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--chitti-bg, #0f172a);
+  color: var(--chitti-text-primary, #f8fafc);
+  min-height: 100vh;
+}
+
+.header {
+  border-bottom: 2px solid var(--chitti-surface-border, #334155);
+  padding-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--chitti-text-primary, #f8fafc);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.summaryArea {
+  grid-column: span 12;
+}
+
+.metricsArea {
+  grid-column: span 8;
+}
+
+.insightsArea {
+  grid-column: span 4;
+}
+
+.timelineArea {
+  grid-column: span 12;
+}
+
+@media (max-width: 1024px) {
+  .metricsArea,
+  .insightsArea {
+    grid-column: span 12;
+  }
+}

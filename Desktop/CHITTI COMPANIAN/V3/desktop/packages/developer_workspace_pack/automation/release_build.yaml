@@ -1,0 +1,12 @@
+id: chitti.automation.release_build
+name: Release Build
+trigger: manual
+steps:
+  - capability: GitPull
+  - capability: ExecuteCommand
+    parameters:
+      command: "make release"
+  - capability: GitStatus
+  - capability: NotifyUser
+    parameters:
+      message: "Release build completed successfully."

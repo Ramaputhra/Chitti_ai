@@ -1,0 +1,12 @@
+{
+  "browser": {
+    "primary": "chrome.exe",
+    "fallback": "msedge.exe",
+    "category": "System"
+  },
+  "notepad": {
+    "primary": "notepad.exe",
+    "fallback": null,
+    "category": "System"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "browser": [
+    "browser",
+    "chrome",
+    "బ్రౌజర్",
+    "క్రోమ్",
+    "internet"
+  ],
+  "open": [
+    "open",
+    "launch",
+    "start",
+    "ఓపెన్",
+    "తెరువు",
+    "ప్రారంభించు"
+  ],
+  "close": [
+    "close",
+    "exit",
+    "quit",
+    "మూసివేయు"
+  ]
+}

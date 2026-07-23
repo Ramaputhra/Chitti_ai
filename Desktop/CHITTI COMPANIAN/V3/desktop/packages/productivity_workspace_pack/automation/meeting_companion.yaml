@@ -1,0 +1,40 @@
+id: chitti.automation.meeting_companion
+name: Meeting Companion Framework
+trigger: intent
+intent: "Manage Meeting"
+steps:
+  - capability: ResolveMeeting
+    parameters:
+      query: "{{user_query}}"
+      
+  # Sub-flow dispatcher based on MeetingLifecycle
+  - condition: "{{meeting.meeting_lifecycle}} == 'PREPARING' or {{meeting.meeting_lifecycle}} == 'SCHEDULED'"
+    steps:
+      - capability: GatherMeetingContext
+      - capability: GenerateMeetingInsights
+      - capability: PrepareMeetingWorkspace # Opens MS Teams, documents, arranging windows.
+      - capability: PresentExperience
+        parameters:
+          experience: "MeetingOverviewExperience"
+          mode: "PREPARATION"
+      - capability: NotifyUser
+        parameters:
+          message: "You're meeting John in 20 minutes. Last week you agreed to discuss pricing. I've prepared your workspace."
+          
+  - condition: "{{meeting.meeting_lifecycle}} == 'IN_MEETING'"
+    steps:
+      - capability: PresentExperience
+        parameters:
+          experience: "MeetingOverviewExperience"
+          mode: "LIVE" # Shows live notes, timer, current agenda block
+          
+  - condition: "{{meeting.meeting_lifecycle}} == 'FOLLOW_UP'"
+    steps:
+      - capability: ProcessMeetingFollowUp
+      - capability: PresentExperience
+        parameters:
+          experience: "MeetingOverviewExperience"
+          mode: "POST_MEETING"
+      - capability: NotifyUser
+        parameters:
+          message: "I've drafted the follow-up email and extracted three action items. Would you like to review them?"

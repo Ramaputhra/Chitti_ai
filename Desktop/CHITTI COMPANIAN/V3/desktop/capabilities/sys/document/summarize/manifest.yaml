@@ -1,0 +1,28 @@
+capability_metadata:
+  capability_id: sys.document.summarize
+  version: 1.0.0
+  author: core
+  platforms: [windows]
+  supports_learning: true
+
+intent:
+  - summarize pdf
+  - read pdf
+  - document summary
+
+parameters:
+  path: required
+
+failure_policy:
+  recoverable:
+    - window_timeout
+  non_recoverable:
+    - path_not_found
+    - invalid_format
+
+security_safety:
+  safety_level: safe
+  confirmation_required: false
+
+execution:
+  idempotent: true

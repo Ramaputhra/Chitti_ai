@@ -1,0 +1,35 @@
+id: "files.search"
+version: "1.0"
+schema_version: 1
+goal: "Search for files"
+summary: "Searches the file system, ranks results, and presents them."
+category: "Files"
+author: "Engineering"
+required_inputs:
+  query: "The filename to search for"
+outputs: {}
+permissions: []
+estimated_duration: "3s"
+tags: ["files", "search"]
+nodes:
+  - id: "search"
+    action: "FileSearchCapability.search"
+    next: "rank"
+    parameters:
+      query: "{{query}}"
+    outputs:
+      results: "search_results"
+
+  - id: "rank"
+    action: "FileSearchCapability.rank"
+    next: "present"
+    parameters:
+      results: "$search_results.results"
+    outputs:
+      results: "ranked_results"
+
+  - id: "present"
+    action: "FileSearchCapability.present"
+    next: null
+    parameters:
+      results: "$ranked_results.results"

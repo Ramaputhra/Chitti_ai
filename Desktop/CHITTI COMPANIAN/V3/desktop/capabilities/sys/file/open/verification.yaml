@@ -1,0 +1,6 @@
+verification:
+  preferred:
+    - window_exists
+    - process_exists
+  fallback:
+    - vision

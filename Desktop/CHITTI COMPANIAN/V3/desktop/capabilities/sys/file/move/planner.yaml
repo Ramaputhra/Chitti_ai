@@ -1,0 +1,7 @@
+planner_integration:
+  declarative_step:
+    capability_id: sys.file.move
+    parameters:
+      source: "$source"
+      destination: "$destination"
+      overwrite: "$overwrite"

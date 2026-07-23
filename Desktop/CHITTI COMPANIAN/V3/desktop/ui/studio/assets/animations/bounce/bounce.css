@@ -1,0 +1,8 @@
+/* Desktop UI Animation: bounce */
+@keyframes bounce {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.bounce-anim {
+  animation: bounce 0.3s ease-in-out;
+}

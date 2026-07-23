@@ -1,0 +1,10 @@
+capability_metadata:
+  capability_id: sys.browser.locate
+  version: 1.0.0
+
+parameters:
+  context: required
+  target_description: required # e.g. "DOM", "ARIA", "CSS"
+
+security_safety:
+  safety_level: normal
