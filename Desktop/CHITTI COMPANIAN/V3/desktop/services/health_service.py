@@ -30,7 +30,7 @@ class ComponentHealth:
     response_time_ms: Optional[float] = None
 
 
-@dataclassaclass
+@dataclass
 class SystemHealth:
     """Aggregated system health status."""
     overall_status: ComponentStatus
