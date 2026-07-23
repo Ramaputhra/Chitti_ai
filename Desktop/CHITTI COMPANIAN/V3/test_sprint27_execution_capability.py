@@ -121,7 +121,13 @@ def run_sprint27_execution():
             # We mock the EventBus emission since we are not directly connected in this script
             event_bus.publish({"action": "capability_started", "app": node.arguments.get("app_name"), "dir": node.arguments.get("directory"), "file": node.arguments.get("file_path")})
             
-            invocation = ToolInvocation(tool_name=node.tool_name, arguments=node.arguments)
+            invocation = ToolInvocation(
+                id=str(uuid.uuid4()),
+                tool_name=node.tool_name, 
+                arguments=node.arguments,
+                confidence=1.0,
+                source="test_execution"
+            )
             out = cap.execute(invocation)
             outputs.append(out)
             

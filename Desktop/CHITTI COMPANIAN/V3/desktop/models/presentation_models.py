@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Dict, Any, Optional
+import time
 
 class PresentationPriority(Enum):
     HIGH = "HIGH"
@@ -89,3 +90,12 @@ class PresenceStateChangedEvent:
 class FollowUpWindowOpenedEvent:
     workflow_id: str
     timestamp: float
+
+@dataclass
+class ExpressionDelivered:
+    """Event fired when an expression has been fully delivered to the user."""
+    expression_id: str
+    format_name: str
+    content: Any
+    timestamp: float = field(default_factory=time.time)
+    metadata: Dict[str, Any] = field(default_factory=dict)

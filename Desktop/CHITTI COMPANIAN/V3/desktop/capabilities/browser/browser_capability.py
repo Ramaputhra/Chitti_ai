@@ -1,14 +1,14 @@
 from typing import List, Dict, Any
 
 from desktop.platform.shared.interfaces.service import ServiceState
+from desktop.platform.shared.interfaces.capability import ICapability
 from desktop.platform.shared.models.capability import CapabilityDescriptor
 from desktop.platform.shared.models.tool import ToolDescriptor, ToolParameter
 from desktop.platform.shared.models.execution import ExecutionContext, ExecutionResult
 from desktop.platform.shared.models.ai import ToolInvocation
-from desktop.runtimes.capability.base import BaseCapability
-from desktop.runtimes.browser.browser_manager import BrowserManager
+from desktop.capabilities.sys.browser.shared.browser_manager import BrowserManager
 
-class BrowserCapability(BaseCapability):
+class BrowserCapability(ICapability):
     """
     Directly controls the managed Browser Session.
     """

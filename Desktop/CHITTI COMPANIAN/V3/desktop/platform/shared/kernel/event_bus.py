@@ -25,24 +25,30 @@ class InMemoryEventBus(IEventBus):
         logger.info("InMemoryEventBus shut down.")
 
     def publish(self, event: Event) -> None:
+        # Handle both Event objects and plain dicts
+        if isinstance(event, dict):
+            event_id = event.get("action", str(hash(str(event))))
+        else:
+            event_id = getattr(event, "id", str(hash(str(event))))
+            
         if not self._is_initialized:
-            logger.warning(f"EventBus received event {event.id} but is not initialized.")
+            logger.warning(f"EventBus received event {event_id} but is not initialized.")
             return
             
         # Notify specific subscribers
-        if event.id in self._subscribers:
-            for callback in self._subscribers[event.id]:
+        if event_id in self._subscribers:
+            for callback in self._subscribers[event_id]:
                 try:
                     callback(event)
                 except Exception as e:
-                    logger.error(f"Error in subscriber for event {event.id}: {e}")
+                    logger.error(f"Error in subscriber for event {event_id}: {e}")
                     
         # Notify global subscribers
         for callback in self._global_subscribers:
             try:
                 callback(event)
             except Exception as e:
-                logger.error(f"Error in global subscriber for event {event.id}: {e}")
+                logger.error(f"Error in global subscriber for event {event_id}: {e}")
 
     def subscribe(self, event_id: str, callback: Callable[[Event], None]) -> None:
         if event_id not in self._subscribers:

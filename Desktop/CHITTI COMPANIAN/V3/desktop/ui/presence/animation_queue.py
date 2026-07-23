@@ -1,7 +1,7 @@
 import asyncio
 import time
 from collections import deque
-from typing import Optional, Callable, Awaitable
+from typing import Optional, Callable, Awaitable, Any
 from desktop.ui.presence.presence_state import PresenceState, PresencePriority
 
 class AnimationQueue:
