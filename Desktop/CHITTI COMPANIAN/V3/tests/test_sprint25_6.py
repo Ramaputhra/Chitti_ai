@@ -64,111 +64,111 @@ import unittest
 
 class TestSprint25_6Integration(unittest.TestCase):
     def test_run_verbose_integration(self):
-    logger = VerboseLogger()
-    event_bus = InMemoryEventBus()
-    event_bus.initialize()
-    
-    registry = RuntimeCapabilityRegistry(logger)
-    registry.initialize()
-    
-    caps = [
-        TimeCapability(),
-        DistanceCapability(),
-        NavigationCapability(),
-        BrowserCapability(),
-        OCRCapability(),
-        SearchCapability(),
-        ResumeWorkCapability()
-    ]
-    
-    print("\n==========================================================")
-    print("RuntimeCapabilityRegistry Content Initialization")
-    print("==========================================================")
-    for cap in caps:
-        registry.register_capability(cap)
-        print(f"Registered Capability: {cap.name}")
-        desc = cap.describe()
-        print(f"Descriptor: name={desc.name}, version={desc.version}, tools={[t.name for t in desc.tools]}")
+        logger = VerboseLogger()
+        event_bus = InMemoryEventBus()
+        event_bus.initialize()
         
-    execution_runtime = ExecutionRuntime(registry, event_bus)
-
-    test_cases = [
-        ("TimeCapability", "cap_time_query", "get_time", {}),
-        ("DistanceCapability", "cap_distance_query", "get_distance", {"origin": "Home", "destination": "Work"}),
-        ("NavigationCapability", "cap_live_navigation", "navigate", {"active_artifact": None}),
-        ("BrowserCapability", "cap_browser_automation", "browser_action", {"action": "open", "url": "https://chitti.ai"}),
-        ("OCRCapability", "cap_ocr_vision", "ocr_capture", {"source_window": "VSCode"}),
-        ("SearchCapability", "cap_external_search", "search", {"query": "Latest AI models"}),
-        ("ResumeWorkCapability", "cap_resume_work", "resume_activity", {"project_name": "AI Development"})
-    ]
-
-    events = []
-    def on_event(event):
-        events.append(event.payload.get("event"))
+        registry = RuntimeCapabilityRegistry(logger)
+        registry.initialize()
         
-    event_bus.subscribe_all(on_event)
-
-    for class_name, cap_id, tool_name, params in test_cases:
-        events.clear()
+        caps = [
+            TimeCapability(),
+            DistanceCapability(),
+            NavigationCapability(),
+            BrowserCapability(),
+            OCRCapability(),
+            SearchCapability(),
+            ResumeWorkCapability()
+        ]
         
         print("\n==========================================================")
-        print(f"Executing Scenario: {class_name}")
+        print("RuntimeCapabilityRegistry Content Initialization")
         print("==========================================================")
-        
-        print(f"[AIRuntime Resolution] Resolved Intent -> {tool_name}")
-        print(f"[Planner Resolution] Mapped to capability_id: {class_name}")
-        
-        translator = WorkflowTranslatorStub(cap_id, tool_name, params)
-        workflow = translator.translate()
-        
-        class DummyCapabilityReference:
-            def __init__(self, cid):
-                self.capability_id = cid
-                self.version = "1.0"
-        object.__setattr__(workflow.steps[0], 'capability', DummyCapabilityReference(class_name))
-        
-        class DummyParameterBinding:
-            def __init__(self, k, v):
-                self.parameter = k
-                self.reference = v
-        object.__setattr__(workflow.steps[0], 'parameter_bindings', [DummyParameterBinding(k, v) for k, v in params.items()])
-        object.__setattr__(workflow, 'plan_id', "plan_123")
-        
-        try:
-            print(f"[Registry Resolution] Resolving {class_name} from RuntimeCapabilityRegistry")
-            cap = registry.get_capability(class_name)
-            if cap:
-                print(f"[Capability Descriptor] {cap.describe()}")
-            else:
-                print(f"[ERROR] Capability {class_name} not found in registry")
-                continue
-                
-            print(f"[ExecutionRuntime Invocation] Executing Workflow {workflow.workflow_id}")
-            execution_runtime.execute_workflow(workflow)
-        except Exception as e:
-            print(f"[Execution ERROR]: {e}")
+        for cap in caps:
+            registry.register_capability(cap)
+            print(f"Registered Capability: {cap.name}")
+            desc = cap.describe()
+            print(f"Descriptor: name={desc.name}, version={desc.version}, tools={[t.name for t in desc.tools]}")
             
-        task_event = next((e for e in events if e.__class__.__name__ == "TaskCompletedEvent"), None)
-        failed_event = next((e for e in events if e.__class__.__name__ == "TaskFailedEvent"), None)
-        if task_event:
-            output = task_event.output_data
-            print(f"[ExecutionResult] status=SUCCESS")
-            
-            if "data" in output:
-                canonical = output["data"]
-                print(f"[VerificationRuntime Result] {canonical.verification_result}")
-                print(f"[ConversationArtifact] {canonical.conversation_artifact}")
-                print(f"[PresentationDescriptor] {canonical.presentation_descriptor}")
-                print(f"[MemoryCandidate] {canonical.memory_candidate}")
-            else:
-                print(f"[Warning] 'data' key missing from TaskCompletedEvent output.")
-                print(f"Raw Output: {output}")
-        elif failed_event:
-            print(f"[ExecutionResult] status=FAILED, error={failed_event.error_message}")
-        else:
-            print("[ERROR] No TaskCompletedEvent or TaskFailedEvent emitted.")
+        execution_runtime = ExecutionRuntime(registry, event_bus)
 
-        self.assertTrue(True) # Dummy assertion as the integration simulates events
+        test_cases = [
+            ("TimeCapability", "cap_time_query", "get_time", {}),
+            ("DistanceCapability", "cap_distance_query", "get_distance", {"origin": "Home", "destination": "Work"}),
+            ("NavigationCapability", "cap_live_navigation", "navigate", {"active_artifact": None}),
+            ("BrowserCapability", "cap_browser_automation", "browser_action", {"action": "open", "url": "https://chitti.ai"}),
+            ("OCRCapability", "cap_ocr_vision", "ocr_capture", {"source_window": "VSCode"}),
+            ("SearchCapability", "cap_external_search", "search", {"query": "Latest AI models"}),
+            ("ResumeWorkCapability", "cap_resume_work", "resume_activity", {"project_name": "AI Development"})
+        ]
+
+        events = []
+        def on_event(event):
+            events.append(event.payload.get("event"))
+            
+        event_bus.subscribe_all(on_event)
+
+        for class_name, cap_id, tool_name, params in test_cases:
+            events.clear()
+            
+            print("\n==========================================================")
+            print(f"Executing Scenario: {class_name}")
+            print("==========================================================")
+            
+            print(f"[AIRuntime Resolution] Resolved Intent -> {tool_name}")
+            print(f"[Planner Resolution] Mapped to capability_id: {class_name}")
+            
+            translator = WorkflowTranslatorStub(cap_id, tool_name, params)
+            workflow = translator.translate()
+            
+            class DummyCapabilityReference:
+                def __init__(self, cid):
+                    self.capability_id = cid
+                    self.version = "1.0"
+            object.__setattr__(workflow.steps[0], 'capability', DummyCapabilityReference(class_name))
+            
+            class DummyParameterBinding:
+                def __init__(self, k, v):
+                    self.parameter = k
+                    self.reference = v
+            object.__setattr__(workflow.steps[0], 'parameter_bindings', [DummyParameterBinding(k, v) for k, v in params.items()])
+            object.__setattr__(workflow, 'plan_id', "plan_123")
+            
+            try:
+                print(f"[Registry Resolution] Resolving {class_name} from RuntimeCapabilityRegistry")
+                cap = registry.get_capability(class_name)
+                if cap:
+                    print(f"[Capability Descriptor] {cap.describe()}")
+                else:
+                    print(f"[ERROR] Capability {class_name} not found in registry")
+                    continue
+                    
+                print(f"[ExecutionRuntime Invocation] Executing Workflow {workflow.workflow_id}")
+                execution_runtime.execute_workflow(workflow)
+            except Exception as e:
+                print(f"[Execution ERROR]: {e}")
+                
+            task_event = next((e for e in events if e.__class__.__name__ == "TaskCompletedEvent"), None)
+            failed_event = next((e for e in events if e.__class__.__name__ == "TaskFailedEvent"), None)
+            if task_event:
+                output = task_event.output_data
+                print(f"[ExecutionResult] status=SUCCESS")
+                
+                if "data" in output:
+                    canonical = output["data"]
+                    print(f"[VerificationRuntime Result] {canonical.verification_result}")
+                    print(f"[ConversationArtifact] {canonical.conversation_artifact}")
+                    print(f"[PresentationDescriptor] {canonical.presentation_descriptor}")
+                    print(f"[MemoryCandidate] {canonical.memory_candidate}")
+                else:
+                    print(f"[Warning] 'data' key missing from TaskCompletedEvent output.")
+                    print(f"Raw Output: {output}")
+            elif failed_event:
+                print(f"[ExecutionResult] status=FAILED, error={failed_event.error_message}")
+            else:
+                print("[ERROR] No TaskCompletedEvent or TaskFailedEvent emitted.")
+
+            self.assertTrue(True) # Dummy assertion as the integration simulates events
 
 if __name__ == "__main__":
     unittest.main()

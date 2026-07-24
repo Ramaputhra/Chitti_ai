@@ -6,6 +6,9 @@ from desktop.models.capability_models import CapabilityManifest
 
 logger = logging.getLogger(__name__)
 
+# Alias for backward compatibility
+CapabilityResolver = CapabilityResolverRuntime
+
 class CapabilityResolverRuntime:
     """
     First-class runtime responsible for determining WHICH capability (or capabilities) can satisfy a goal.

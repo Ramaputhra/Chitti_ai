@@ -7,7 +7,7 @@ from desktop.models.browser_workspace import (
 from desktop.models.conversation import (
     SearchArtifact, ShoppingArtifact, DocumentationArtifact, AuthenticationArtifact
 )
-from desktop.models.execution_plan import ExecutionPlan, ExecutionPlanNode
+from desktop.platform.shared.models.workflow import ExecutionPlan as ExecPlan, WorkflowStep as ExecPlanNode
 from desktop.packages.desktop_pack.capabilities.browser_intelligence import (
     BrowserNavigationCapability,
     BrowserDOMCapability,
@@ -15,46 +15,68 @@ from desktop.packages.desktop_pack.capabilities.browser_intelligence import (
     BrowserCommerceCapability,
     BrowserAuthenticationCapability
 )
+import asyncio
 
 def create_tool_invocation(tool_name: str, arguments: Dict[str, Any]) -> ToolInvocation:
     """Helper factory to enforce canonical ToolInvocation contract construction."""
     import uuid
+    import time
     return ToolInvocation(
         id=f"inv_{uuid.uuid4().hex[:8]}",
         tool_name=tool_name,
         arguments=arguments,
         confidence=1.0,
-        source="BrowserIntelligenceRegressionSuite"
+        source="BrowserIntelligenceRegressionSuite",
+        timestamp=time.time()
     )
 
 class MockPlannerRuntime:
-    def build_shopping_plan(self) -> ExecutionPlan:
+    def build_shopping_plan(self):
         print("\n==========================================================")
         print("[PlannerRuntime] Compiling ExecutionPlan for Intent: 'Find a 4K monitor on Amazon'")
-        n1 = ExecutionPlanNode("n1", "BrowserNavigationCapability", "browser_navigate", {"url": "https://amazon.com/s?k=4k+monitor"})
-        n2 = ExecutionPlanNode("n2", "BrowserDOMCapability", "browser_dom", {}, dependencies=["n1"])
-        n3 = ExecutionPlanNode("n3", "BrowserSearchCapability", "browser_search", {}, dependencies=["n2"])
-        return ExecutionPlan(plan_id="plan_shop", nodes=[n1, n2, n3])
+        # Use Workflow/WorkflowStep from platform.shared.models.workflow
+        from desktop.platform.shared.models.workflow import Workflow, WorkflowStep
+        steps = [
+            WorkflowStep(action="EXECUTE_CAPABILITY", step_id="n1", parameters={"tool_name": "browser_navigate", "url": "https://amazon.com/s?k=4k+monitor"}),
+            WorkflowStep(action="EXECUTE_CAPABILITY", step_id="n2", parameters={"tool_name": "browser_dom"}, depends_on=["n1"]),
+            WorkflowStep(action="EXECUTE_CAPABILITY", step_id="n3", parameters={"tool_name": "browser_search"}, depends_on=["n2"]),
+        ]
+        return Workflow(workflow_id="plan_shop", steps=steps, source_intent="Shopping")
 
 class MockExecutionRuntime:
     def __init__(self, registry: Dict[str, Any]):
         self.registry = registry
 
-    def execute_plan(self, plan: ExecutionPlan) -> List[Any]:
+    async def execute_plan_async(self, workflow) -> List[Any]:
         print("==========================================================")
-        print(f"[ExecutionRuntime] Traversing ExecutionPlan: {plan.plan_id}")
+        print(f"[ExecutionRuntime] Traversing ExecutionPlan: {workflow.workflow_id}")
         results = []
-        for node in plan.nodes:
-            cap = self.registry.get(node.capability_id)
-            out = cap.execute(create_tool_invocation(node.tool_name, node.arguments))
-            results.append(out)
+        for step in workflow.steps:
+            tool_name = step.parameters.get("tool_name", step.action)
+            cap_name = step.action.replace("EXECUTE_CAPABILITY", "")
+            # Find capability by tool name
+            cap = None
+            for name, c in self.registry.items():
+                if hasattr(c, 'validate'):
+                    inv = create_tool_invocation(tool_name, step.parameters)
+                    if c.validate(inv):
+                        cap = c
+                        break
+            if cap:
+                inv = create_tool_invocation(tool_name, step.parameters)
+                out = await cap.execute(inv, None)
+                results.append(out)
         return results
+    
+    def execute_plan(self, workflow) -> List[Any]:
+        """Synchronous wrapper for backward compatibility."""
+        return asyncio.run(self.execute_plan_async(workflow))
 
 class MockConversationRuntime:
     def __init__(self):
         self.active_workspace = None
 
-    def create_workspace(self, intent: str) -> BrowserWorkspace:
+    def create_workspace(self, intent: str):
         self.active_workspace = BrowserWorkspace(
             workspace_id="ws_001",
             workspace_name="Shopping Workspace",
@@ -71,10 +93,10 @@ class MockConversationRuntime:
             if is_information:
                 summary = self.active_workspace.to_summary()
                 print("[ConversationRuntime] Generating explanation using BrowserWorkspaceSummary.")
-                print(f"[PresentationRuntime] Rendering summary of '{summary.workspace_name}' ({len(summary.active_artifacts)} artifacts).")
+                print(f"[PresentationRuntime] Rendering summary of '{summary.workspace_name}'.")
                 print("[ExecutionRuntime] BYPASSED. Spine not traversed.")
             else:
-                print(f"[ConversationRuntime] Resolving action against active BrowserWorkspace ({len(self.active_workspace.artifacts)} artifacts).")
+                print(f"[ConversationRuntime] Resolving action against active BrowserWorkspace.")
                 print("[PlannerRuntime] Dispatching targeted ExecutionPlan.")
         else:
             print("[ConversationRuntime] No active BrowserWorkspace.")
@@ -130,9 +152,13 @@ class TestSprint28BrowserIntelligence(unittest.TestCase):
         conversation.handle_followup("Open the first result.", is_information=False)
         
         # Simulate execution of clicking first result -> Commerce page
-        n_com1 = ExecutionPlanNode("n_c1", "BrowserDOMCapability", "browser_dom", {})
-        n_com2 = ExecutionPlanNode("n_c2", "BrowserCommerceCapability", "browser_commerce", {}, dependencies=["n_c1"])
-        com_results = executor.execute_plan(ExecutionPlan(plan_id="plan_item", nodes=[n_com1, n_com2]))
+        from desktop.platform.shared.models.workflow import Workflow, WorkflowStep
+        com_steps = [
+            WorkflowStep(action="EXECUTE_CAPABILITY", step_id="n_c1", parameters={"tool_name": "browser_dom"}),
+            WorkflowStep(action="EXECUTE_CAPABILITY", step_id="n_c2", parameters={"tool_name": "browser_commerce"}, depends_on=["n_c1"]),
+        ]
+        com_workflow = Workflow(workflow_id="plan_item", steps=com_steps, source_intent="Shopping")
+        com_results = executor.execute_plan(com_workflow)
         self.assertEqual(len(com_results), 2)
         
         shop_art = ShoppingArtifact(

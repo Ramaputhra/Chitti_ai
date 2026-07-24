@@ -113,3 +113,8 @@ class WorkflowContext:
     variables: Dict[str, Any] = field(default_factory=dict)
     started_at: float = field(default_factory=time.time)
 
+
+# Backward compatibility aliases
+ExecutionPlan = Workflow
+ExecutionPlanNode = WorkflowStep
+

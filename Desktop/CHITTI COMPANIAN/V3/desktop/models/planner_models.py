@@ -44,6 +44,10 @@ class WorkflowPlan:
     version: int = 1
     steps: List[WorkflowStep] = field(default_factory=list)
 
+# Aliases for backward compatibility
+ExecutionPlan = WorkflowPlan
+ExecutionStep = WorkflowStep
+
 @dataclass
 class CapabilityResolvedEvent:
     intent_id: str

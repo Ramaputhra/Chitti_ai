@@ -9,11 +9,13 @@ class ExecutionTrace:
 
 @dataclass(frozen=True)
 class ExecutionStepResult:
-    step_id: str
-    status: str
-    stdout: str
-    stderr: str
-    execution_time_ms: int
+    step_id: str = ""
+    status: str = ""
+    stdout: str = ""
+    stderr: str = ""
+    execution_time_ms: int = 0
+    intent: str = ""  # Added for backward compatibility
+    metadata: Dict[str, Any] = field(default_factory=dict)  # Additional metadata
 
 @dataclass(frozen=True)
 class ExecutionResult:

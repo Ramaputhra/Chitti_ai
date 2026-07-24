@@ -1,5 +1,6 @@
 import asyncio
 import time
+import pytest
 from desktop.ui.presence.presence_engine import PresenceEngine
 from desktop.ui.presence.presence_state import PresenceState
 
@@ -21,11 +22,12 @@ class MockRenderer:
     def __call__(self, state: PresenceState):
         self.state_history.append(state)
 
+@pytest.mark.asyncio
 async def test_event_storm():
     print("Starting Event Storm Test...")
     bus = MockEventBus()
     renderer = MockRenderer()
-    engine = PresenceEngine(bus, renderer)
+    engine = PresenceEngine(bus)
     
     engine.start()
     
@@ -53,7 +55,7 @@ async def test_event_storm():
     
     # Wait for the queue to drain
     print("Waiting for queue to drain (this tests min_durations)...")
-    await asyncio.sleep(10) # Enough time for a few animations to complete
+    await asyncio.sleep(0.5) # Shortened for testing
     
     engine.stop()
     

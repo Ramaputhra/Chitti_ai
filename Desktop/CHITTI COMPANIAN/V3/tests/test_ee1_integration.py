@@ -16,7 +16,8 @@ class TestEE1Integration(unittest.TestCase):
     def test_input_adapter(self):
         adapter = InputAdapter()
         exp = adapter.translate("test", {}, {})
-        self.assertEqual(exp.raw_input, "test")
+        # Updated to use new Experience API
+        self.assertEqual(exp.goal, "test")
 
 if __name__ == '__main__':
     unittest.main()
