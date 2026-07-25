@@ -33,12 +33,10 @@ class WorkflowRuntime(IRuntime):
 
     async def start(self) -> bool:
         logger.info("[WorkflowRuntime] Started. Subscribed to ExecutionPlan.")
-        print("    [WorkflowRuntime] Started. Subscribed to ExecutionPlan.")
         return True
 
     async def stop(self) -> bool:
         logger.info("[WorkflowRuntime] Stopped.")
-        print("    [WorkflowRuntime] Stopped.")
         return True
 
     def health(self) -> HealthState:

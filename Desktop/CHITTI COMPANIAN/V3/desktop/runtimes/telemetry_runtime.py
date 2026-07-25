@@ -1,8 +1,11 @@
+import logging
 from datetime import datetime
 from desktop.models.lifecycle import IRuntime, HealthState
 from desktop.app.context import KernelContext
 from desktop.models.events import ExecutionCompletedEvent, ExecutionTelemetryEvent
 from desktop.models.telemetry import ExecutionTelemetry
+
+logger = logging.getLogger(__name__)
 
 class TelemetryRuntime(IRuntime):
     """
@@ -22,11 +25,11 @@ class TelemetryRuntime(IRuntime):
         return True
 
     async def start(self) -> bool:
-        print("    [TelemetryRuntime] Started. Listening for execution events.")
+        logger.info("[TelemetryRuntime] Started. Listening for execution events.")
         return True
 
     async def stop(self) -> bool:
-        print("    [TelemetryRuntime] Stopped.")
+        logger.info("[TelemetryRuntime] Stopped.")
         return True
 
     def health(self) -> HealthState:
