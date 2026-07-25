@@ -1,6 +1,6 @@
 # GRAPHIC DESIGNER HANDBOOK & ASSET REPLACEMENT GUIDE (PROCEED.md)
 
-Welcome to the **CHITTI V2 Desktop UI Studio Asset Pipeline**. This guide provides exact instructions for graphic designers and UI engineers on how to replace placeholder PNG overlays, SVG icons, sounds, and CSS animations.
+Welcome to the **Vizzu V2 Desktop UI Studio Asset Pipeline**. This guide provides exact instructions for graphic designers and UI engineers on how to replace placeholder PNG overlays, SVG icons, sounds, and CSS animations.
 
 ---
 

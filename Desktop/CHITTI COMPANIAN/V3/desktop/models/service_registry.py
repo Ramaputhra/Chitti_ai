@@ -20,7 +20,7 @@ class ServiceLifecycle(Enum):
 @dataclass
 class ServiceDescriptor:
     """
-    Base class for everything executable or discoverable in CHITTI.
+    Base class for everything executable or discoverable in Vizzu.
     Rule 278: Declarative metadata only.
     """
     id: str

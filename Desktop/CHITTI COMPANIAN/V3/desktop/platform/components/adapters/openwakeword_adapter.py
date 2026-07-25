@@ -8,7 +8,7 @@ class OpenWakeWordAdapter:
     Adapter for the openWakeWord model.
     Constantly evaluates audio, but safely ignores triggers when the orchestrator is active.
     """
-    def __init__(self, event_bus: Any, model_path: str = "desktop/models/audio/chitti.onnx"):
+    def __init__(self, event_bus: Any, model_path: str = "desktop/models/audio/vizzu.onnx"):
         self.event_bus = event_bus
         self.model_path = model_path
         self.ignore_triggers = False

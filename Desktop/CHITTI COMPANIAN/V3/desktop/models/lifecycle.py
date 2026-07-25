@@ -19,7 +19,7 @@ class HealthState(Enum):
 
 class IRuntime(ABC):
     """
-    Standard interface for all CHITTI runtimes (Rule 172).
+    Standard interface for all Vizzu runtimes (Rule 172).
     """
     
     @property

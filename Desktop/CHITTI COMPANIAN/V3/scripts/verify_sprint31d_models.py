@@ -73,7 +73,7 @@ async def run_verification():
     
     episode = Episode(
         episode_id="ep_test_31d",
-        intent={"subtype": "text_response", "query": "Hello CHITTI"},
+        intent={"subtype": "text_response", "query": "Hello Vizzu"},
         execution_plan=plan,
         execution_trace=trace,
         verification_result=v_res,

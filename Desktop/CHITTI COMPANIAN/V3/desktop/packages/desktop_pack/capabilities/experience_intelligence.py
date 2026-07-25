@@ -75,7 +75,7 @@ class ExperienceBuilderCapability(ICapability):
             participants=ExperienceParticipants(
                 human=HumanParticipants(people=["User_A"]),
                 system=SystemParticipants(applications=["VS Code"], capabilities=["ExperienceBuilderCapability"], 
-                                          repositories=["chitti_v3"], services=[], llms=["Gemini"], devices=["LocalDesktop"], os_components=[])
+                                          repositories=["vizzu_v3"], services=[], llms=["Gemini"], devices=["LocalDesktop"], os_components=[])
             ),
             evidence=EvidenceReferences(browser_summaries=[], vision_summaries=[], activity_artifacts=["act_001"], 
                                       conversation_summaries=[], execution_results=[], presentation_artifacts=[]),

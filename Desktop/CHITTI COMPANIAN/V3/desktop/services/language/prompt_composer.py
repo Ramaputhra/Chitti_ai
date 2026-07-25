@@ -31,11 +31,11 @@ class PromptComposer(IPromptComposer):
         return {}
 
     def _build_system(self) -> str:
-        return "You are CHITTI, an advanced AI desktop companion and future embodied robot."
+        return "You are Vizzu, an advanced AI desktop companion and future embodied robot."
 
     def _build_developer(self) -> str:
         return (
-            "You are operating within the CHITTI Intelligence Runtime. "
+            "You are operating within the Vizzu Intelligence Runtime. "
             "You must output JSON intent structures when requesting tools. "
             "You cannot execute tools directly; the Tool Manager will execute them on your behalf."
         )

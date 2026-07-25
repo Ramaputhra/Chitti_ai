@@ -1,6 +1,6 @@
 # Repository Ownership & Governance
 
-This document establishes clear boundaries and ownership across the CHITTI repository. It exists to prevent architectural drift, duplicate structures, and circular dependencies.
+This document establishes clear boundaries and ownership across the Vizzu repository. It exists to prevent architectural drift, duplicate structures, and circular dependencies.
 
 ## Module Ownership
 

@@ -21,7 +21,7 @@ class OverlayRenderer:
     def format_debug_text(self, state: DebugOverlayState) -> str:
         stack_str = " -> ".join(state.scene_stack) if state.scene_stack else "Empty"
         return (
-            f"=== CHITTI CHARACTER RUNTIME DEBUG ===\n"
+            f"=== Vizzu CHARACTER RUNTIME DEBUG ===\n"
             f"Current Scene: {state.current_scene}\n"
             f"Prev Scene   : {state.previous_scene}\n"
             f"Scene Stack  : [{stack_str}]\n"

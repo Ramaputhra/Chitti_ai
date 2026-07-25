@@ -1,4 +1,4 @@
-# CHITTI V2 — DESKTOP WIDGET FRAMEWORK ARCHITECTURE
+# Vizzu V2 — DESKTOP WIDGET FRAMEWORK ARCHITECTURE
 
 ## 1. Executive Summary
 The **Desktop Widget Framework** (`desktop/ui/widgets/`) is the ONLY platform responsible for desktop widgets. It operates as a strict consumer of the Desktop UI Runtime Foundation.

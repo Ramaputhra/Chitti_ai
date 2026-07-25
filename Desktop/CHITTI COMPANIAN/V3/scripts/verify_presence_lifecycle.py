@@ -32,7 +32,7 @@ async def run_verification():
     print("\n[2/9] Verifying Wake Sources (Global Hotkey & Wake Word)...")
     presence.hotkey_listener.trigger_hotkey_press()
     if presence.current_state == PresenceStateEnum.CHARACTER_WINDOW:
-        print("✅ Global Hotkey trigger verified: Restored CHITTI to CHARACTER_WINDOW from System Tray.")
+        print("✅ Global Hotkey trigger verified: Restored Vizzu to CHARACTER_WINDOW from System Tray.")
     else:
         print("❌ Global Hotkey wake verification FAILED.")
         all_passed = False

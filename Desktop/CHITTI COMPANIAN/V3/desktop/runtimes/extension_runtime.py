@@ -18,7 +18,7 @@ class ExtensionRuntime:
         self.platform_api = platform_api
         self.service_registry = service_registry
         self.validator = PluginValidator()
-        # In a real app, this version comes from CHITTI_PLATFORM_SPEC or config
+        # In a real app, this version comes from Vizzu_PLATFORM_SPEC or config
         self.compatibility_checker = CompatibilityChecker(current_platform_version="1.0.0")
         self.sandboxes: Dict[str, PluginSandbox] = {}
         

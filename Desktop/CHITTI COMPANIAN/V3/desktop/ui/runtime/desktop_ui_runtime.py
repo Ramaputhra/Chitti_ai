@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 class DesktopUIRuntime:
     """
     S36D-1: Master Desktop UI Runtime Foundation Facade.
-    The canonical desktop rendering platform for CHITTI.
+    The canonical desktop rendering platform for Vizzu.
     Generic Desktop Operating Layer governing Windows, Overlays, Notifications, Floating Windows, Dialogs,
     Rendering Profiles, Motion Integration, Layout Engine, Asset Pipeline, and Theme System.
     PROHIBITED: Desktop UI Runtime SHALL NEVER render Character PNG assets or move Character Window directly.

@@ -44,7 +44,7 @@ class Event:
 
 class IEventBus(Protocol):
     """
-    Interface for the CHITTI Event Bus.
+    Interface for the Vizzu Event Bus.
     The communication backbone of the system.
     """
 

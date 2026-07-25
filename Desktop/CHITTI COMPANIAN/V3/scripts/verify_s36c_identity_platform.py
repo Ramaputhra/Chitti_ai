@@ -23,7 +23,7 @@ async def run_verification():
 
     print("[1/9] Verifying IdentityProfile Loading & Metadata...")
     profile = ir.active_profile
-    if profile and profile.short_name == "CHITTI" and len(profile.wake_names) >= 2:
+    if profile and profile.short_name == "Vizzu" and len(profile.wake_names) >= 2:
         print(f"✅ IdentityProfile loaded cleanly (Name: '{profile.display_name}', Creator: '{profile.creator}').")
     else:
         print("❌ IdentityProfile loading FAILED.")
@@ -45,7 +45,7 @@ async def run_verification():
     q2 = ir.get_canonical_response("Who created you?")
     q3 = ir.get_canonical_response("What is your purpose?")
     
-    if q1 and "CHITTI V2" in q1 and q2 and "Ramaputhra" in q2 and q3:
+    if q1 and "Vizzu V2" in q1 and q2 and "Ramaputhra" in q2 and q3:
         print(f"✅ Canonical identity queries grounded cleanly ('Who are you?' -> '{q1[:45]}...').")
     else:
         print("❌ Canonical response retrieval FAILED.")
@@ -53,7 +53,7 @@ async def run_verification():
 
     print("\n[4/9] Verifying Identity Context Builder (System Prompt Generation)...")
     prompt_ctx = ir.build_prompt_context(["speech_rules", "boundaries"])
-    if "Character Name: CHITTI" in prompt_ctx and "SPEECH_RULES" in prompt_ctx:
+    if "Character Name: Vizzu" in prompt_ctx and "SPEECH_RULES" in prompt_ctx:
         print("✅ Identity Context Builder generated system prompt context cleanly.")
     else:
         print("❌ Context Builder verification FAILED.")

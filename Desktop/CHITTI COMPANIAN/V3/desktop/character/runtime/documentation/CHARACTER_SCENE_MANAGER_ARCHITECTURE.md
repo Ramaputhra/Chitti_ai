@@ -1,4 +1,4 @@
-# CHITTI V2 — CHARACTER SCENE MANAGER ARCHITECTURE
+# Vizzu V2 — CHARACTER SCENE MANAGER ARCHITECTURE
 
 ## 1. Executive Summary
 The **Character Scene Manager** (`desktop/character/runtime/scene/`) is the highest-level orchestration component INSIDE `Character Runtime`. It determines HOW `Character Runtime` executes `BehaviorScript` according to the current runtime scene.

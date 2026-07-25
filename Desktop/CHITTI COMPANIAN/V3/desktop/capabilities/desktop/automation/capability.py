@@ -18,7 +18,7 @@ class DesktopAutomationCapability(ICapability):
 
     PROTECTED_PROCESSES = {
         "csrss.exe", "lsass.exe", "services.exe", "smss.exe", "winlogon.exe",
-        "svchost.exe", "explorer.exe", "dwm.exe", "python.exe", "pythonw.exe", "chitti.exe"
+        "svchost.exe", "explorer.exe", "dwm.exe", "python.exe", "pythonw.exe", "vizzu.exe"
     }
 
     ACTIVE_RENDER_APPS = {
@@ -121,7 +121,7 @@ class DesktopAutomationCapability(ICapability):
         # Check Protected Process Safety Policy
         target = str(parameters.get("target", parameters.get("application", ""))).lower()
         if action in ["kill_process", "suspend_process"] and target in self.PROTECTED_PROCESSES:
-            err = f"Security Exception: Modifying system or CHITTI process '{target}' is strictly prohibited."
+            err = f"Security Exception: Modifying system or Vizzu process '{target}' is strictly prohibited."
             return ExecutionResult(
                 status=ExecutionStatus.FAILURE,
                 summary=err,

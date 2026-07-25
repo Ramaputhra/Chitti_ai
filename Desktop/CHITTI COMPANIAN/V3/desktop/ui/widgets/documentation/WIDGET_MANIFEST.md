@@ -1,4 +1,4 @@
-# CHITTI V2 — WIDGET MANIFEST SPECIFICATION
+# Vizzu V2 — WIDGET MANIFEST SPECIFICATION
 
 Every desktop widget provides a JSON manifest in `desktop/ui/widgets/manifests/`.
 
@@ -12,7 +12,7 @@ Every desktop widget provides a JSON manifest in `desktop/ui/widgets/manifests/`
   "display_name": "Media Widget",
   "category": "MEDIA",
   "version": "1.0.0",
-  "description": "Canonical CHITTI Media Playback Widget",
+  "description": "Canonical Vizzu Media Playback Widget",
   "supported_runtime_sessions": ["Media"],
   "default_attachment": "CHARACTER_ANCHOR",
   "preferred_window_layer": "CHARACTER_WIDGET",

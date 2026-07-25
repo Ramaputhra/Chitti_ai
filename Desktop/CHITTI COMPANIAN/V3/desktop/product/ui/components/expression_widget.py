@@ -11,7 +11,7 @@ from desktop.platform.shared.interfaces.event_bus import Event
 
 class ExpressionWidget(QWidget):
     """
-    Renders CHITTI's expressions using .mp4 clips if available,
+    Renders Vizzu's expressions using .mp4 clips if available,
     falling back to large emojis.
     """
     def __init__(self, context: ApplicationContext):

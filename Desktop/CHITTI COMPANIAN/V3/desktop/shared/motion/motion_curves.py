@@ -3,7 +3,7 @@ from typing import Callable, Dict
 
 class MotionCurves:
     """
-    S36E: Canonical Easing & Motion Curves for CHITTI Platform.
+    S36E: Canonical Easing & Motion Curves for Vizzu Platform.
     No runtime SHALL define custom easing curves locally.
     """
     @staticmethod

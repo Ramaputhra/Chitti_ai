@@ -51,7 +51,7 @@ class Benchmark002OrganizeDownloads(CognitiveBenchmark):
         )
         
     def setup(self, event_bus: Any, registry: Any) -> Goal:
-        self.temp_dir = tempfile.mkdtemp(prefix="chitti_downloads_")
+        self.temp_dir = tempfile.mkdtemp(prefix="vizzu_downloads_")
         
         # Create dummy files
         files = ["invoice.pdf", "movie.mp4", "photo.jpg", "archive.zip", "resume.docx"]

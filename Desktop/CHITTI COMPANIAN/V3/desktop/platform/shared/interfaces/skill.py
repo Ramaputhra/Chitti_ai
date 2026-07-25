@@ -5,7 +5,7 @@ from desktop.platform.shared.models.intent import Intent
 
 class ISkill(Protocol):
     """
-    Standard interface for all CHITTI capabilities/plugins.
+    Standard interface for all Vizzu capabilities/plugins.
     """
     def id(self) -> str:
         ...

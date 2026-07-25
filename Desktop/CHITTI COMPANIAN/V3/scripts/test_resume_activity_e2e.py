@@ -23,10 +23,10 @@ from desktop.models.cognition import ConversationIntent
 from desktop.models.execution import ExecutionResult
 
 async def run_e2e():
-    print("🚀 Starting CHITTI Resume Activity E2E Physical Test")
+    print("🚀 Starting Vizzu Resume Activity E2E Physical Test")
     
     # --- 1. Load Profile ---
-    profile_path = r"C:\Users\Sm!le\Desktop\CHITTI_E2E\profiles\resume_e2e.json"
+    profile_path = r"C:\Users\Sm!le\Desktop\Vizzu_E2E\profiles\resume_e2e.json"
     if not os.path.exists(profile_path):
         print(f"❌ Test profile not found at {profile_path}")
         return

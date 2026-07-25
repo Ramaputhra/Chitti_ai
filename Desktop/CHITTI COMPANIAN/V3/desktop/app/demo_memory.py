@@ -31,7 +31,7 @@ async def verify_memory_runtime():
     wf_2 = "workflow_B"
     
     print("\n[Test 1] Conversation Memory (Append-Only)")
-    memory.append_interaction(session_id, "interaction_001", "user", "Hello, CHITTI.")
+    memory.append_interaction(session_id, "interaction_001", "user", "Hello, Vizzu.")
     memory.append_interaction(session_id, "interaction_002", "assistant", "Hello! How can I help?")
     
     history = memory.get_recent_interactions(session_id)

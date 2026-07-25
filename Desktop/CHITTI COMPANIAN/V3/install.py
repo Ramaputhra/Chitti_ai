@@ -4,7 +4,7 @@ import subprocess
 import venv
 
 def main():
-    print("Setting up CHITTI COMPANIAN V3 environment...")
+    print("Setting up Vizzu COMPANIAN V3 environment...")
     
     venv_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "venv")
     

@@ -1,6 +1,6 @@
 import os
 
-agents_md_path = r"C:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\.agents\AGENTS.md"
+agents_md_path = r"C:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\.agents\AGENTS.md"
 
 rule = """
 

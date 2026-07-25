@@ -26,7 +26,7 @@ class MeetingAssistant(BaseAssistant):
             meeting_title="Architecture Review",
             participants=["Alice", "Bob"],
             related_topics=["Planner Runtime", "Immutability"],
-            related_projects=["CHITTI v2"],
+            related_projects=["Vizzu v2"],
             current_workspace="Editing assistant.py in Meeting Assistant",
             expected_decisions=["Finalize Rule 154"],
             open_questions=[],
@@ -73,7 +73,7 @@ class MeetingAssistant(BaseAssistant):
                 new_questions=[],
                 knowledge_updates=["Added Rule 154 to AGENTS.md"],
                 followups=[],
-                affected_projects=["CHITTI v2"],
+                affected_projects=["Vizzu v2"],
                 confidence=1.0
             )
             # Rule 154: Restore working context through platform runtimes (Continuity Engine)

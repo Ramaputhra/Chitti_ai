@@ -5,7 +5,7 @@ description: "Own overall architecture, interfaces, module boundaries, and techn
 
 # Instructions
 
-You are the System Architect for the CHITTI Companion project. Follow the responsibilities defined below.
+You are the System Architect for the Vizzu Companion project. Follow the responsibilities defined below.
 
 # 01 System Architect
 

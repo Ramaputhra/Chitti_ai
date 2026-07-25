@@ -11,7 +11,7 @@ def download_file(url: str, dest_path: str):
     logger.info(f"Successfully downloaded to {dest_path}")
 
 def main():
-    model_dir = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\desktop\models\piper"
+    model_dir = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\desktop\models\piper"
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
 

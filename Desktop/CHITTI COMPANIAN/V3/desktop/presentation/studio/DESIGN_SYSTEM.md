@@ -11,32 +11,32 @@ All themes (`dark.css`, `light.css`, `glass.css`, `executive.css`, `corporate.cs
 ```css
 :root {
   /* Brand Tokens */
-  --chitti-primary: #6366f1;
-  --chitti-primary-hover: #4f46e5;
-  --chitti-secondary: #06b6d4;
-  --chitti-accent: #f43f5e;
+  --vizzu-primary: #6366f1;
+  --vizzu-primary-hover: #4f46e5;
+  --vizzu-secondary: #06b6d4;
+  --vizzu-accent: #f43f5e;
   
   /* Neutral Tokens */
-  --chitti-bg: #0f172a;
-  --chitti-surface: #1e293b;
-  --chitti-surface-border: #334155;
-  --chitti-text-primary: #f8fafc;
-  --chitti-text-secondary: #94a3b8;
-  --chitti-text-muted: #64748b;
+  --vizzu-bg: #0f172a;
+  --vizzu-surface: #1e293b;
+  --vizzu-surface-border: #334155;
+  --vizzu-text-primary: #f8fafc;
+  --vizzu-text-secondary: #94a3b8;
+  --vizzu-text-muted: #64748b;
   
   /* Status Tokens */
-  --chitti-success: #10b981;
-  --chitti-warning: #f59e0b;
-  --chitti-error: #ef4444;
-  --chitti-info: #3b82f6;
+  --vizzu-success: #10b981;
+  --vizzu-warning: #f59e0b;
+  --vizzu-error: #ef4444;
+  --vizzu-info: #3b82f6;
 
   /* Typography Tokens */
-  --chitti-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --chitti-font-mono: 'JetBrains Mono', monospace;
+  --vizzu-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --vizzu-font-mono: 'JetBrains Mono', monospace;
 
   /* Elevation Tokens */
-  --chitti-radius: 12px;
-  --chitti-shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  --vizzu-radius: 12px;
+  --vizzu-shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
 }
 ```
 
@@ -49,7 +49,7 @@ All themes (`dark.css`, `light.css`, `glass.css`, `executive.css`, `corporate.cs
 - **Heading 3 (`h3`):** `1.25rem` (`20px`), Weight: 600, Line Height: `1.4`
 - **Body Regular:** `1rem` (`16px`), Weight: 400, Line Height: `1.5`
 - **Caption / Label:** `0.875rem` (`14px`), Weight: 500, Line Height: `1.4`
-- **Code / Monospace:** `0.875rem` (`14px`), Font: `var(--chitti-font-mono)`
+- **Code / Monospace:** `0.875rem` (`14px`), Font: `var(--vizzu-font-mono)`
 
 ---
 
@@ -75,7 +75,7 @@ All themes (`dark.css`, `light.css`, `glass.css`, `executive.css`, `corporate.cs
 
 ## 6. Accessibility & WCAG Standards
 - High contrast ratio ($\ge 4.5:1$ for normal text, $\ge 3:1$ for large text).
-- Full keyboard navigation focus rings (`outline: 2px solid var(--chitti-primary)`).
+- Full keyboard navigation focus rings (`outline: 2px solid var(--vizzu-primary)`).
 - Dedicated high-contrast theme (`accessibility.css`) for vision-impaired users.
 - `aria-label` and `role` attributes on interactive components.
 

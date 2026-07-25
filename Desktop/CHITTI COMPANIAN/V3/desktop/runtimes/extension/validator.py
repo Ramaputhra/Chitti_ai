@@ -56,7 +56,7 @@ class CompatibilityChecker:
         self.current_platform_version = current_platform_version
 
     def check(self, manifest: PluginManifest) -> bool:
-        # Ensure the plugin supports this version of CHITTI
+        # Ensure the plugin supports this version of Vizzu
         if manifest.minimum_platform_version > self.current_platform_version:
             logging.error(f"Plugin {manifest.plugin_id} requires newer platform: {manifest.minimum_platform_version}")
             return False

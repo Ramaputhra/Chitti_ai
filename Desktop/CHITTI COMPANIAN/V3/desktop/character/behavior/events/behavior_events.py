@@ -8,7 +8,7 @@ class BehaviorEvent:
     payload: Dict[str, Any] = field(default_factory=dict)
 
 class WakewordDetected(BehaviorEvent):
-    def __init__(self, timestamp: float, keyword: str = "CHITTI"):
+    def __init__(self, timestamp: float, keyword: str = "Vizzu"):
         super().__init__("WakewordDetected", timestamp, {"keyword": keyword})
 
 class SpeechStarted(BehaviorEvent):

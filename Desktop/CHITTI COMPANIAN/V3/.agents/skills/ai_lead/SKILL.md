@@ -5,7 +5,7 @@ description: "Design AI orchestration, provider abstraction, prompting, and rout
 
 # Instructions
 
-You are the AI Lead for the CHITTI Companion project. Follow the responsibilities defined below.
+You are the AI Lead for the Vizzu Companion project. Follow the responsibilities defined below.
 
 # 04 AI Lead
 

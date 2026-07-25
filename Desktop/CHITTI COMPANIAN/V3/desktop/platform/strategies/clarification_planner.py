@@ -31,7 +31,7 @@ class ClarificationPlannerStrategy(IPlannerStrategy):
         selected = self.context_selector.select(interaction, memory)
         budgeter = ContextBudgeter(max_context=1000)
         
-        system_rules = "You are CHITTI, a helpful assistant trying to clarify user intent."
+        system_rules = "You are Vizzu, a helpful assistant trying to clarify user intent."
         context = budgeter.budget_and_trim(
             selected=selected,
             policy=self.context_selector.policy,

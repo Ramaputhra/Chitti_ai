@@ -20,7 +20,7 @@ class ExpressionDeveloperTool(QWidget):
         layout = QVBoxLayout(self)
         layout.addWidget(QLabel("Available Expressions:"))
         
-        base_path = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\Expressions"
+        base_path = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\Expressions"
         if os.path.exists(base_path):
             for expr in os.listdir(base_path):
                 if os.path.isdir(os.path.join(base_path, expr)):

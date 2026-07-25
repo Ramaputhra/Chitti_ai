@@ -1,7 +1,7 @@
 import os
 import glob
 
-base_dir = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\architecture"
+base_dir = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\architecture"
 decisions_dir = os.path.join(base_dir, "decisions")
 
 renames = {
@@ -22,7 +22,7 @@ replacements = {
     "APPLICATION_STARTUP.md": "RUNTIME_INITIALIZATION.md",
     "Application Kernel Spec": "Core Runtime Spec",
     "Application Startup": "Runtime Initialization",
-    "The master blueprint for the Application Architecture orchestration design.": "The master blueprint for CHITTI's Runtime-based AI Desktop Companion architecture."
+    "The master blueprint for the Application Architecture orchestration design.": "The master blueprint for Vizzu's Runtime-based AI Desktop Companion architecture."
 }
 
 golden_rule_5 = "> **5. Every runtime, planner, scheduler, and capability must exist only to improve the AI Desktop Companion experience. Architectural complexity must always provide measurable product value.**\n\n## 1. Purpose"

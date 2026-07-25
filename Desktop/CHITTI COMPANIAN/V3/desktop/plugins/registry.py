@@ -1,5 +1,5 @@
 """
-CHITTI Plugin System - Registry
+Vizzu Plugin System - Registry
 
 Manages plugin registration, loading, and lifecycle.
 """
@@ -33,7 +33,7 @@ class PluginRegistration:
 
 class PluginRegistry:
     """
-    Central registry for all CHITTI plugins.
+    Central registry for all Vizzu plugins.
     Manages plugin discovery, loading, and lifecycle.
     """
     

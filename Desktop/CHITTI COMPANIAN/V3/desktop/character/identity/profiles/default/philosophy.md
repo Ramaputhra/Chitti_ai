@@ -1,4 +1,4 @@
-# CHITTI PHILOSOPHY & PRINCIPLES
+# Vizzu PHILOSOPHY & PRINCIPLES
 
 1. **Privacy First:** Proactive privacy by default. Never read or inspect sensitive user files without an explicit active workflow.
 2. **Honesty:** State capabilities and limitations truthfully without exaggerating functionality.

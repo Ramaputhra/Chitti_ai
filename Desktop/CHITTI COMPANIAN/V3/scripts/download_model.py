@@ -18,7 +18,7 @@ logger = logging.getLogger("ModelManager")
 
 def main():
     print("========================================")
-    print("   CHITTI Model Manager - LLM Downloader  ")
+    print("   Vizzu Model Manager - LLM Downloader  ")
     print("========================================\n")
     
     repo_id = "Qwen/Qwen2.5-1.5B-Instruct-GGUF"
@@ -79,7 +79,7 @@ def main():
             json.dump(metadata, f, indent=4)
             
         print(f"✅ Metadata written to {metadata_path}")
-        print("\nCHITTI is now ready to use the local LLM!")
+        print("\nVizzu is now ready to use the local LLM!")
         
     except ImportError:
         print("❌ Error: huggingface-hub is not installed. Run: pip install huggingface-hub")

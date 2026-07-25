@@ -44,10 +44,10 @@ class AuthThread(QThread):
 class WelcomePage(QWizardPage):
     def __init__(self):
         super().__init__()
-        self.setTitle("Welcome to CHITTI")
+        self.setTitle("Welcome to Vizzu")
         self.setSubTitle("Your personal morning companion.")
         layout = QVBoxLayout()
-        label = QLabel("This wizard will guide you through setting up CHITTI for the first time.\n\nClick Next to begin the System Check.")
+        label = QLabel("This wizard will guide you through setting up Vizzu for the first time.\n\nClick Next to begin the System Check.")
         layout.addWidget(label)
         self.setLayout(layout)
 
@@ -129,10 +129,10 @@ class AuthPage(QWizardPage):
         self.setLayout(layout)
         
         local_app_data = os.getenv("LOCALAPPDATA", os.path.expanduser("~"))
-        self.chitti_dir = os.path.join(local_app_data, "CHITTI")
-        self.cred_path = os.path.join(self.chitti_dir, "credentials", "credentials.json")
-        self.gmail_token = os.path.join(self.chitti_dir, "tokens", "gmail_token.json")
-        self.calendar_token = os.path.join(self.chitti_dir, "tokens", "calendar_token.json")
+        self.vizzu_dir = os.path.join(local_app_data, "Vizzu")
+        self.cred_path = os.path.join(self.vizzu_dir, "credentials", "credentials.json")
+        self.gmail_token = os.path.join(self.vizzu_dir, "tokens", "gmail_token.json")
+        self.calendar_token = os.path.join(self.vizzu_dir, "tokens", "calendar_token.json")
         
         self.auth_thread = None
 
@@ -189,7 +189,7 @@ class AudioTestPage(QWizardPage):
     def play_test(self):
         if self.piper_provider:
             # Actually invoke Piper to speak
-            self.piper_provider.speak("Hello, my name is CHITTI. Audio is working perfectly.")
+            self.piper_provider.speak("Hello, my name is Vizzu. Audio is working perfectly.")
         else:
             print("Audio test: BEEP")
 
@@ -198,7 +198,7 @@ class MicTestPage(QWizardPage):
     def __init__(self):
         super().__init__()
         self.setTitle("Microphone Test")
-        self.setSubTitle("Ensure CHITTI can hear you.")
+        self.setSubTitle("Ensure Vizzu can hear you.")
         layout = QVBoxLayout()
         label = QLabel("Microphone detection is active.\nIn a full build, the VU meter would display here.\nClick Finish to complete setup.")
         layout.addWidget(label)
@@ -208,7 +208,7 @@ class MicTestPage(QWizardPage):
 class FirstRunWizard(QWizard):
     def __init__(self, piper_provider=None):
         super().__init__()
-        self.setWindowTitle("CHITTI First Run Setup")
+        self.setWindowTitle("Vizzu First Run Setup")
         self.resize(600, 500)
         
         self.addPage(WelcomePage())
@@ -230,9 +230,9 @@ def run_wizard(piper_provider=None):
     
     # Mark as complete
     local_app_data = os.getenv("LOCALAPPDATA", os.path.expanduser("~"))
-    chitti_dir = os.path.join(local_app_data, "CHITTI")
-    os.makedirs(chitti_dir, exist_ok=True)
-    with open(os.path.join(chitti_dir, ".setup_complete"), "w") as f:
+    vizzu_dir = os.path.join(local_app_data, "Vizzu")
+    os.makedirs(vizzu_dir, exist_ok=True)
+    with open(os.path.join(vizzu_dir, ".setup_complete"), "w") as f:
         f.write("Setup completed.")
 
 if __name__ == "__main__":

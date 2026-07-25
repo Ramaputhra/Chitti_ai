@@ -3,7 +3,7 @@ from desktop.capabilities.work_continuity.models import Recommendation, Interrup
 class InterruptionPolicyEngine:
     """
     Evaluates recommendations against the user's current focus state to enforce Rule 138:
-    "CHITTI must never interrupt focused work unless the expected value of the interruption
+    "Vizzu must never interrupt focused work unless the expected value of the interruption
     exceeds the estimated disruption cost."
     """
     def evaluate(self, recommendation: Recommendation, current_focus: FocusState) -> Recommendation:

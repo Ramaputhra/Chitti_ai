@@ -27,7 +27,7 @@ class LLMCapabilityRecommendationStrategy:
         selected = self.context_selector.select(interaction, memory)
         budgeter = ContextBudgeter(max_context=2000)
         
-        system_rules = f"You are CHITTI. Recommend capabilities from the following registry:\n{registry_manifest}"
+        system_rules = f"You are Vizzu. Recommend capabilities from the following registry:\n{registry_manifest}"
         context = budgeter.budget_and_trim(
             selected=selected,
             policy=self.context_selector.policy,

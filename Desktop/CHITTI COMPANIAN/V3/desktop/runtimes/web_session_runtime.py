@@ -10,7 +10,7 @@ class WebSessionRuntime:
     def __init__(self):
         self.cookies: Dict[str, str] = {}
         self.headers: Dict[str, str] = {
-            "User-Agent": "CHITTI WebIntelligence/1.0"
+            "User-Agent": "Vizzu WebIntelligence/1.0"
         }
         self.auth_state: Dict[str, Any] = {}
         self.proxies: Optional[Dict[str, str]] = None

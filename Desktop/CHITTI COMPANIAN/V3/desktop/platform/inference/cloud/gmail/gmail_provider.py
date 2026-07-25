@@ -31,9 +31,9 @@ class GmailProvider(IMailProvider):
 
         # Credentials path (managed by First Run Wizard)
         local_app_data = os.getenv("LOCALAPPDATA", os.path.expanduser("~"))
-        chitti_dir = os.path.join(local_app_data, "CHITTI")
-        self.credentials_path = os.path.join(chitti_dir, "credentials", "credentials.json")
-        self.token_path = os.path.join(chitti_dir, "tokens", "gmail_token.json")
+        vizzu_dir = os.path.join(local_app_data, "Vizzu")
+        self.credentials_path = os.path.join(vizzu_dir, "credentials", "credentials.json")
+        self.token_path = os.path.join(vizzu_dir, "tokens", "gmail_token.json")
 
     @property
     def name(self) -> str:

@@ -1,4 +1,4 @@
-# CHITTI V2 — CHARACTER EVENT CONTRACT FREEZE
+# Vizzu V2 — CHARACTER EVENT CONTRACT FREEZE
 
 ## 1. Executive Summary
 This document freezes all canonical Character Platform Event Contracts. Future runtimes SHALL consume these exact event names. No future sprint may rename them.

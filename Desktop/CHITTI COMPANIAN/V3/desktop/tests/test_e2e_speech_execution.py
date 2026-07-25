@@ -1,5 +1,5 @@
 """
-CHITTI E2E Tests: TTS, SST, and Execution Pipeline
+Vizzu E2E Tests: TTS, SST, and Execution Pipeline
 
 Comprehensive end-to-end tests for:
 - TTS (Text-to-Speech) pipeline
@@ -70,7 +70,7 @@ class E2ETestReport:
     
     def print_report(self):
         print("\n" + "="*70)
-        print("🔬 CHITTI E2E TEST REPORT: TTS-SST-EXECUTION")
+        print("🔬 Vizzu E2E TEST REPORT: TTS-SST-EXECUTION")
         print("="*70)
         
         summary = self.summary()
@@ -1051,7 +1051,7 @@ class TestSpeechOrchestrator:
             
             # Simulate wake word event
             wake_event = {
-                "payload": {"model": "hey_chitti", "confidence": 0.95}
+                "payload": {"model": "hey_vizzu", "confidence": 0.95}
             }
             orchestrator.on_wake_word(wake_event)
             
@@ -1306,7 +1306,7 @@ class TestIntegratedPipeline:
         try:
             # Simulate complete workflow
             workflow = {
-                "user_says": "Hey Chitti, open VS Code",
+                "user_says": "Hey Vizzu, open VS Code",
                 "transcribed": "open VS Code",
                 "intent": "LaunchApplication",
                 "entities": {"app": "code"},
@@ -1351,7 +1351,7 @@ class TestIntegratedPipeline:
 def run_all_tests():
     """Run all E2E tests and generate report."""
     print("\n" + "#"*70)
-    print("🚀 CHITTI E2E PRODUCTION TESTS: TTS-SST-EXECUTION")
+    print("🚀 Vizzu E2E PRODUCTION TESTS: TTS-SST-EXECUTION")
     print("#"*70)
     
     report = E2ETestReport()

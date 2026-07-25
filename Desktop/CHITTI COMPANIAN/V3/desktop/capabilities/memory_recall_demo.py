@@ -25,7 +25,7 @@ async def execute_demo():
         description="Editing workflow.py and models.py",
         intent="IMPLEMENTING",
         application="Code.exe",
-        project="CHITTI",
+        project="Vizzu",
         importance=0.8,
         confidence=0.95,
         novelty=0.5,
@@ -55,7 +55,7 @@ async def execute_demo():
     
     answer = await recall.execute({"intent_filter": "IMPLEMENTING"})
     
-    print(f"\nCHITTI Recalls: {answer}")
+    print(f"\nVizzu Recalls: {answer}")
 
 if __name__ == "__main__":
     asyncio.run(execute_demo())

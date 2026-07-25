@@ -11,7 +11,7 @@ from desktop.ui.runtime.preview.mock_session_provider import MockSessionProvider
 
 def run_desktop_ui_preview():
     print("==========================================================")
-    print("CHITTI V2 — DESKTOP UI PREVIEW STUDIO")
+    print("Vizzu V2 — DESKTOP UI PREVIEW STUDIO")
     print("==========================================================\n")
 
     wm = WidgetManager()

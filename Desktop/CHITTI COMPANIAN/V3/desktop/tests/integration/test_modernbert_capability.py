@@ -31,7 +31,7 @@ class TestDesktopIntentCapability(unittest.TestCase):
         self.manifest_path = os.path.join(self.test_dir.name, "modernbert.yaml")
         
         manifest_data = {
-            "component_id": "chitti_intent_modernbert",
+            "component_id": "vizzu_intent_modernbert",
             "component_type": "ai_model",
             "provider_backend": "transformers",
             "runtime": "python",
@@ -65,9 +65,9 @@ class TestDesktopIntentCapability(unittest.TestCase):
         mock_pipeline_builder.return_value = mock_pipeline
         
         # Load the adapter
-        adapter = TextClassificationProvider("answerdotai/ModernBERT-base", "chitti_intent_modernbert", self.tracker)
-        self.comp_runtime.load_component("chitti_intent_modernbert", adapter)
-        self.comp_runtime.warm_component("chitti_intent_modernbert")
+        adapter = TextClassificationProvider("answerdotai/ModernBERT-base", "vizzu_intent_modernbert", self.tracker)
+        self.comp_runtime.load_component("vizzu_intent_modernbert", adapter)
+        self.comp_runtime.warm_component("vizzu_intent_modernbert")
         
         # Execute the flow
         context = RuntimeContext(priority=1)
@@ -101,9 +101,9 @@ class TestDesktopIntentCapability(unittest.TestCase):
         mock_pipeline.return_value = [{'label': 'UNKNOWN', 'score': 0.45}]
         mock_pipeline_builder.return_value = mock_pipeline
         
-        adapter = TextClassificationProvider("mock", "chitti_intent_modernbert", self.tracker)
-        self.comp_runtime.load_component("chitti_intent_modernbert", adapter)
-        self.comp_runtime.warm_component("chitti_intent_modernbert")
+        adapter = TextClassificationProvider("mock", "vizzu_intent_modernbert", self.tracker)
+        self.comp_runtime.load_component("vizzu_intent_modernbert", adapter)
+        self.comp_runtime.warm_component("vizzu_intent_modernbert")
         
         result = self.intent_service.classify("Something confusing", RuntimeContext())
         self.assertEqual(result.payload.intent, "UNKNOWN")

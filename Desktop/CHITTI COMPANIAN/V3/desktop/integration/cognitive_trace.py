@@ -16,7 +16,7 @@ class TraceNode:
 @dataclass
 class CognitiveTrace:
     """
-    A complete reasoning trace of a single CHITTI request.
+    A complete reasoning trace of a single Vizzu request.
     Records Observe -> Understand -> Context -> Memory -> Prediction -> Planner -> Workflow -> Execution.
     """
     trace_id: str

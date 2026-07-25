@@ -130,7 +130,7 @@ class ConversationSessionRuntime:
             self.context.update_from_execution(tool, payload.get("metadata", {}))
             
     def _on_tts_finished(self, event_data: Any):
-        # A turn is completed when CHITTI finishes speaking
+        # A turn is completed when Vizzu finishes speaking
         if self.state == SessionState.ACTIVE_SESSION:
             self.event_bus.publish(Event(
                 "ConversationTurnCompleted",

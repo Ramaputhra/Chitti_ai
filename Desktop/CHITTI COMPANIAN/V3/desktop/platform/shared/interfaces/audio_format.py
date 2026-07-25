@@ -10,7 +10,7 @@ class IAudioFormatManager(Protocol):
     """
     def to_standard_format(self, packet: AudioPacket) -> AudioPacket:
         """
-        Converts any incoming packet into the CHITTI standard:
+        Converts any incoming packet into the Vizzu standard:
         16kHz, 16-bit PCM, Mono, Little Endian.
         """
         ...

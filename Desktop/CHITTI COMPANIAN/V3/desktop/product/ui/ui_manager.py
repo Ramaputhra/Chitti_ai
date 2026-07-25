@@ -7,7 +7,7 @@ from desktop.product.ui.expression_shell import ExpressionShell
 
 class UIManager:
     """
-    Manages all UI components for CHITTI.
+    Manages all UI components for Vizzu.
     Ensures that temporary windows are spawned and destroyed correctly,
     while the ExpressionShell remains persistent.
     """

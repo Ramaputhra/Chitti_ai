@@ -3,7 +3,7 @@ from typing import Dict, Protocol
 
 class IVersionManager(Protocol):
     """
-    Interface for the CHITTI Version Manager.
+    Interface for the Vizzu Version Manager.
     Exposes immutable version and runtime environment data.
     """
 

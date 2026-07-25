@@ -23,7 +23,7 @@ class DeveloperConsoleWindow(QMainWindow):
     def __init__(self, event_bus: IEventBus) -> None:
         super().__init__()
         self.event_bus = event_bus
-        self.setWindowTitle("CHITTI Runtime Inspector")
+        self.setWindowTitle("Vizzu Runtime Inspector")
         self.resize(1100, 800)
 
         self.bridge = UIBridge()
@@ -267,7 +267,7 @@ class DeveloperConsoleWindow(QMainWindow):
         self.tabs.addTab(tab, "Developer Tools")
 
     def _update_live_status(self):
-        text = "CHITTI Runtime Inspector\n────────────────────────────────────────────\n\nLIVE STATUS\n\n"
+        text = "Vizzu Runtime Inspector\n────────────────────────────────────────────\n\nLIVE STATUS\n\n"
         for k, v in self.sys_state.items():
             text += f"{k:<15} {v}\n"
         text += "────────────────────────────────────────────"

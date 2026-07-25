@@ -19,7 +19,7 @@ class InstallationManager:
     def verify_installation(self) -> bool:
         if getattr(sys, 'frozen', False):
             appdata = os.environ.get("APPDATA", "")
-            base_dir = os.path.join(appdata, "CHITTI_V2")
+            base_dir = os.path.join(appdata, "Vizzu_V2")
             if not os.path.exists(base_dir):
                 print(f"[Verification] Missing directory: {base_dir}")
                 return False
@@ -33,6 +33,6 @@ class InstallationManager:
     def provision_first_run(self):
         if getattr(sys, 'frozen', False):
             appdata = os.environ.get("APPDATA", "")
-            base_dir = os.path.join(appdata, "CHITTI_V2")
+            base_dir = os.path.join(appdata, "Vizzu_V2")
             os.makedirs(os.path.join(base_dir, "database"), exist_ok=True)
             os.makedirs(os.path.join(base_dir, "logs"), exist_ok=True)

@@ -29,7 +29,7 @@ class OpenWakeWordProvider(IWakeWordProvider):
         self._state = ServiceState.STOPPED
         self._model = None
         self._is_listening = False
-        self._target_wake_word = "hey_chitti"  # Assuming we use a custom or default
+        self._target_wake_word = "hey_vizzu"  # Assuming we use a custom or default
         
         # Openwakeword defaults
         self._threshold = 0.2
@@ -49,7 +49,7 @@ class OpenWakeWordProvider(IWakeWordProvider):
             return
             
         try:
-            # For demonstration, we use a pre-trained model like "hey_jarvis" or similar if hey_chitti isn't trained.
+            # For demonstration, we use a pre-trained model like "hey_jarvis" or similar if hey_vizzu isn't trained.
             # In production, we'd load a custom model.
             openwakeword.utils.download_models() # ensures default models are present
             # We'll use a default model to avoid crash if custom doesn't exist

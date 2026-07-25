@@ -13,14 +13,14 @@ from desktop.platform.shared.models.capability import CapabilityDescriptor
 
 class WorkspaceCapability(ICapability):
     """
-    Manages Workspace Profiles, enabling CHITTI to setup or teardown app layouts.
+    Manages Workspace Profiles, enabling Vizzu to setup or teardown app layouts.
     """
     def __init__(self, logger: ILoggingService) -> None:
         self.logger = logger
         self._state = ServiceState.STOPPED
         
         local_app_data = os.getenv("LOCALAPPDATA", os.path.expanduser("~"))
-        self.profiles_dir = os.path.join(local_app_data, "CHITTI", "profiles")
+        self.profiles_dir = os.path.join(local_app_data, "Vizzu", "profiles")
 
     @property
     def name(self) -> str:

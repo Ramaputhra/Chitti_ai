@@ -1,4 +1,4 @@
-# CHITTI V2 — WIDGET SESSION CONTRACT
+# Vizzu V2 — WIDGET SESSION CONTRACT
 
 ## 1. Overview
 Widgets bind to runtime sessions (`UISession`).

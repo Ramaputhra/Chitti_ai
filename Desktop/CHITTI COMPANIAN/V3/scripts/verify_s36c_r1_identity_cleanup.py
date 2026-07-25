@@ -34,9 +34,9 @@ async def run_verification():
         print("❌ Wake configuration cleanup FAILED: Found wake keys in identity.json.")
         all_passed = False
 
-    print("\n[2/10] Verifying Clean Display Name ('CHITTI')...")
-    if data.get("display_name") == "CHITTI":
-        print("✅ Clean display_name verified ('CHITTI' without version suffixes).")
+    print("\n[2/10] Verifying Clean Display Name ('Vizzu')...")
+    if data.get("display_name") == "Vizzu":
+        print("✅ Clean display_name verified ('Vizzu' without version suffixes).")
     else:
         print(f"❌ Display name cleanup FAILED: Got '{data.get('display_name')}'")
         all_passed = False
@@ -59,7 +59,7 @@ async def run_verification():
     print("\n[5/10] Verifying Canonical Self Responses Grounding...")
     q1 = ir.get_canonical_response("Who are you?")
     q2 = ir.get_canonical_response("Who created you?")
-    if q1 and "CHITTI" in q1 and q2 and "Rama" in q2:
+    if q1 and "Vizzu" in q1 and q2 and "Rama" in q2:
         print(f"✅ Canonical responses verified ('Who created you?' -> '{q2}').")
     else:
         print("❌ Canonical self responses verification FAILED.")

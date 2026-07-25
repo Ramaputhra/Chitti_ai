@@ -13,8 +13,8 @@ class RollbackManager:
     def execute_rollback(self):
         print("[RollbackManager] Crash loop detected. Executing V2 artifact rollback.")
         appdata = os.environ.get("APPDATA", "")
-        base_dir = os.path.join(appdata, "CHITTI_V2")
-        db_path = os.path.join(base_dir, "database", "chitti_memory.db")
+        base_dir = os.path.join(appdata, "Vizzu_V2")
+        db_path = os.path.join(base_dir, "database", "vizzu_memory.db")
         bak_path = db_path + ".bak"
         
         if os.path.exists(bak_path):

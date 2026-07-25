@@ -33,7 +33,7 @@ class ICommunicationQueue(ABC):
 
 class INarrationRuntime(ABC):
     """
-    The Silence Engine. Decides *how* and *if* CHITTI should communicate 
+    The Silence Engine. Decides *how* and *if* Vizzu should communicate 
     based on the current BehaviorContext and active SuppressionPolicies.
     Never generates localized text.
     """

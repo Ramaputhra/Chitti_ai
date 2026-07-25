@@ -1,7 +1,7 @@
 def test_scn_2001_check_mail_and_speak():
     """
     SCN-2001
-    Hey Chitti -> Check Mail -> Summarize -> Speak
+    Hey Vizzu -> Check Mail -> Summarize -> Speak
     """
     assert True  # Placeholder for actual E2E test harness
 
@@ -29,6 +29,6 @@ def test_scn_2004_browser_search_extract():
 def test_scn_2005_calendar_respond():
     """
     SCN-2005
-    Hey Chitti -> What's on my calendar? -> Respond
+    Hey Vizzu -> What's on my calendar? -> Respond
     """
     assert True

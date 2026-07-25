@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 async def main():
     print("="*60)
-    print("🚀 CHITTI COMPANION: COMPREHENSIVE E2E PLATFORM TESTER")
+    print("🚀 Vizzu COMPANION: COMPREHENSIVE E2E PLATFORM TESTER")
     print("="*60)
     
     suites_dir = os.path.join(os.path.dirname(__file__), "e2e_suites")

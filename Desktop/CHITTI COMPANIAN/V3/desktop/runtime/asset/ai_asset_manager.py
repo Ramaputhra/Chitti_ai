@@ -29,7 +29,7 @@ class AIAssetManager:
     Downloads, caches, and provides access to AI models.
     """
     
-    def __init__(self, cache_dir: str = "~/.chitti/models"):
+    def __init__(self, cache_dir: str = "~/.vizzu/models"):
         self.cache_dir = os.path.expanduser(cache_dir)
         self._assets: Dict[str, Asset] = {}
         self._ensure_cache_dir()

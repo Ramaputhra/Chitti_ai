@@ -12,7 +12,7 @@ The planner shouldn't blindly reject low confidence decisions. Policies decide (
 
 ## Rule 21 – Every workflow should be replayable
 Workflows must be immutable, deterministic, contain complete parameters, and have no hidden state so they can be replayed months later for debugging.
-*(Note: Additionally, CHITTI must always prefer graceful degradation and reduced functionality over termination for optional providers).*
+*(Note: Additionally, Vizzu must always prefer graceful degradation and reduced functionality over termination for optional providers).*
 
 ## Rule 22 – Separate Events from State
 State (`Planning`, `Idle`, `Waiting`, `Blocked`) is different from Events (`PlannerStarted`, `PlannerFinished`, `PlannerCancelled`). They solve different problems.
@@ -110,10 +110,10 @@ Capabilities must never proactively access sensitive user data without an explic
 Presence must never influence planning, reasoning, or expressions. It controls only desktop visibility.
 
 ## Rule 54 – Background Availability
-Docked does not mean inactive. All Runtime subsystems continue operating while CHITTI is docked.
+Docked does not mean inactive. All Runtime subsystems continue operating while Vizzu is docked.
 
 ## Rule 55 – Important Events Wake Presence
-Only workflows above the configured priority threshold may request CHITTI to become visible.
+Only workflows above the configured priority threshold may request Vizzu to become visible.
 
 ## Rule 56 – Presence Never Interrupts Interaction
 Presence transitions must never interrupt Listening, Thinking, Speaking, or Active workflows.
@@ -131,7 +131,7 @@ Capabilities must never fetch, scrape, or parse web content directly. All browse
 Only the Browser Runtime may control browser automation. Capabilities, planners, or inference providers must never directly invoke Playwright, Selenium, or browser APIs.
 
 ## Rule 61 – Browser Runtime Preserves User Trust
-Browser automation must always remain observable to the user. CHITTI must not perform hidden browser interactions that could surprise the user. Long-running or sensitive browser actions should be visible and interruptible.
+Browser automation must always remain observable to the user. Vizzu must not perform hidden browser interactions that could surprise the user. Long-running or sensitive browser actions should be visible and interruptible.
 
 ## Rule 62 – Task Orchestrator Owns Long-Running Goals
 Long-running, multi-step objectives must be orchestrated exclusively by the Task Orchestrator. The Action Planner remains stateless and produces only the initial routing decision.
@@ -213,7 +213,7 @@ Observations are transient. Episodes are durable. Knowledge is permanent.
 The Android Companion (or any external client) must never directly invoke capabilities or manipulate the execution pipeline. Every request from Android must enter the Conversation Runtime through the Channel Router exactly as if it originated from voice or local desktop UI.
 
 ## Rule 241 — Communication Session Origin
-Every user interaction shall originate from exactly one Communication Session. No runtime may infer or create user interactions outside an active session except notifications explicitly initiated by CHITTI.
+Every user interaction shall originate from exactly one Communication Session. No runtime may infer or create user interactions outside an active session except notifications explicitly initiated by Vizzu.
 
 ## Rule 236 — Referential Transparency
 A valid Workflow deterministically invokes a capability and emits the correct immutable ExecutionEvents. Given the same workflow state, execution must produce the identical sequence of events.
@@ -240,7 +240,7 @@ Higher-level memories are derived from lower-level memories and retain traceabil
 Recommendations must optimize user continuity rather than abstract productivity metrics.
 
 ## Rule 138 — Cost of Interruption
-CHITTI must never interrupt focused work unless the expected value of the interruption exceeds the estimated disruption cost.
+Vizzu must never interrupt focused work unless the expected value of the interruption exceeds the estimated disruption cost.
 
 ## Rule 139 — Explainable Recommendations
 Every proactive recommendation must be explainable. Users must know why a suggestion was made.
@@ -324,7 +324,7 @@ Inference requests must specify required capabilities (e.g., reasoning level, la
 Model selection is a scheduling concern owned exclusively by the Compute/Model Manager Runtime. Assistants and Planners do not select models.
 
 ## Rule 165 — Updates Are Transactional
-Platform updates are transactional. Partial updates must never leave CHITTI in an inconsistent state. They must either fully commit or fully rollback via a Recovery Point.
+Platform updates are transactional. Partial updates must never leave Vizzu in an inconsistent state. They must either fully commit or fully rollback via a Recovery Point.
 
 ## Rule 166 — Continuity Ownership
 Runtime continuity is restored exclusively through the Continuity Runtime. The Update Runtime only acts as the orchestrator and must never reconstruct cognitive continuity itself.
@@ -621,7 +621,7 @@ The Prediction Runtime may only emit forecasts and insights. All proactive behav
 No new core runtime should be introduced unless it represents a fundamentally new cognitive responsibility that cannot be expressed by composing the existing runtimes (World, Activity, Productivity, Analytics, Prediction, Presentation, Memory, Search).
 
 ## Rule 109 — Structured Perception Takes Precedence Over Visual Perception
-When multiple perception sources describe the same information, CHITTI must prefer structured providers (e.g., Browser Intelligence, IDE providers, Calendar providers) over OCR-derived visual interpretations. Visual Intelligence serves as a semantic fallback for interfaces that lack structured access.
+When multiple perception sources describe the same information, Vizzu must prefer structured providers (e.g., Browser Intelligence, IDE providers, Calendar providers) over OCR-derived visual interpretations. Visual Intelligence serves as a semantic fallback for interfaces that lack structured access.
 
 ## Rule 110 — Capabilities Describe Intent; Execution Providers Perform Actions
 Capabilities must never directly manipulate operating system resources. All physical execution flows through Execution Providers coordinated by the Execution Runtime.
@@ -695,19 +695,19 @@ Derived context is cacheable and invalidated by meaningful world changes.
 ## Rule 250 — Live Demonstration
 **Every sprint must end with a live demonstration.** The primary output of a sprint is a working user experience, not just merged code.
 
-## CHITTI AI Integration Constitution
+## Vizzu AI Integration Constitution
 
 ### Rule 1 — Prefer Existing AI Models
 Before implementing any AI-related feature, check whether the required capability is already covered by an approved model in Dependencies.txt.
 If an approved model exists:
 - Download it.
-- Integrate it into CHITTI.
+- Integrate it into Vizzu.
 - Expose it through the AI Runtime.
 - Reuse it everywhere.
 Do not implement custom AI logic that duplicates an approved model's purpose.
 
 ### Rule 2 — Approved AI Stack
-The following models are the official AI stack for CHITTI and must be treated as the default implementation unless there is a documented technical reason otherwise:
+The following models are the official AI stack for Vizzu and must be treated as the default implementation unless there is a documented technical reason otherwise:
 - Wake Word: openWakeWord
 - Voice Activity Detection: Silero VAD
 - Speech Recognition: Faster-Whisper
@@ -723,7 +723,7 @@ The following models are the official AI stack for CHITTI and must be treated as
 - OCR: PaddleOCR
 - Vision: SmolVLM-256M
 - Planning & Conversation: Gemma 3 1B or Qwen2.5-1.5B
-These models are the engineering baseline for CHITTI.
+These models are the engineering baseline for Vizzu.
 
 ### Rule 3 — Never Reimplement Well-Established AI
 Do not write custom implementations for well-established AI capabilities (Intent classification, Entity extraction, Semantic search, OCR, Wake word detection, Speech recognition, Tone detection, Confidence estimation, Presentation selection) already provided by approved models.
@@ -747,7 +747,7 @@ If AntiGravity decides not to use an approved model, it must explain: Why the mo
 The approved AI stack defines the default providers, not permanent implementations. Every approved model must be integrated behind a provider interface so it can be replaced with a superior implementation without changing Capabilities, Workflows, Service APIs, or Runtime interfaces.
 
 ### Rule 9 — AI Models Are Dependencies, Not Features
-Treat every approved model as an external dependency, similar to SQLite or PySide6. The application's intelligence comes from Models + Architecture + Workflow + Memory + Desktop Automation + Planning = CHITTI. A model alone is not CHITTI, and CHITTI should never depend on one specific model implementation.
+Treat every approved model as an external dependency, similar to SQLite or PySide6. The application's intelligence comes from Models + Architecture + Workflow + Memory + Desktop Automation + Planning = Vizzu. A model alone is not Vizzu, and Vizzu should never depend on one specific model implementation.
 
 ### Rule 10 — AI Models Must Be Interchangeable
 Every AI provider must be replaceable without modifying Capabilities, Workflows, Services, or the AI Runtime. Replacing ModernBERT with another intent classifier, or Whisper with another speech engine, should require changes only inside the provider adapter and the YAML manifest.
@@ -777,7 +777,7 @@ Credentials must never be stored in Memory Runtime, SQLite, Conversation history
 OpenRouter is the default implementation. The architecture must allow future providers without modifying Workflow Runtime, Planner Runtime, AI Runtime, or Capabilities. Only the Cloud Provider Adapter should change.
 
 ### Rule 209 — Commercial Licensing & openWakeWord
-The CHITTI stack is completely commercially viable (Apache 2.0 / MIT) with one exception: `openWakeWord` default pre-trained models are CC BY-NC-SA (non-commercial). For any commercial deployment, a custom wake word model MUST be trained using their Apache 2.0 open-source framework to avoid licensing violations.
+The Vizzu stack is completely commercially viable (Apache 2.0 / MIT) with one exception: `openWakeWord` default pre-trained models are CC BY-NC-SA (non-commercial). For any commercial deployment, a custom wake word model MUST be trained using their Apache 2.0 open-source framework to avoid licensing violations.
 
 ## Rule 240 – Runtime Prohibition
 No new runtime may be introduced unless an ADR demonstrates that its responsibilities cannot reasonably belong to an existing runtime.
@@ -813,7 +813,7 @@ Speech exists only when it adds information beyond what the user can already per
 Avatar is the primary communication channel. The hierarchy is: Animation > Sound > Speech.
 
 ## Rule 43 – Minimized Presence
-Minimized is not inactive. Edge-docked CHITTI remains fully alive.
+Minimized is not inactive. Edge-docked Vizzu remains fully alive.
 
 ## Rule 242 — Inference Independence
 
@@ -874,7 +874,7 @@ No architectural assumption shall be accepted as validation evidence. Every arch
 Any future Sprint Validation Report must include three mandatory artifacts: Repository Impact Report (design changes), Implementation Report (code changes), and Runtime Evidence Report (actual execution logs).
 
 ## Rule 259 — Permanent Engineering Workflow Standard
-Beginning with Sprint 31B, every sprint SHALL strictly follow the `CHITTI_ENGINEERING_PROCESS_STANDARD.md` workflow. This mandatory lifecycle includes Planning, Architecture Review, Implementation, Implementation Review, Certification, and Handoff Contract generation. No sprint may begin until the previous sprint is fully certified and frozen. Every review SHALL conclude with the "WHAT'S NEXT" format and an Antigravity prompt.
+Beginning with Sprint 31B, every sprint SHALL strictly follow the `Vizzu_ENGINEERING_PROCESS_STANDARD.md` workflow. This mandatory lifecycle includes Planning, Architecture Review, Implementation, Implementation Review, Certification, and Handoff Contract generation. No sprint may begin until the previous sprint is fully certified and frozen. Every review SHALL conclude with the "WHAT'S NEXT" format and an Antigravity prompt.
 
 ## Frozen Architecture & Safe Evolution Directive
 

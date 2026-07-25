@@ -55,7 +55,7 @@ class MockLogger:
 
 def main():
     logging.basicConfig(level=logging.INFO)
-    print("=== CHITTI VOICE INPUT PREVIEW ===")
+    print("=== Vizzu VOICE INPUT PREVIEW ===")
     
     # Allow Ctrl+C to kill the PySide6 app from the terminal
     signal.signal(signal.SIGINT, signal.SIG_DFL)
@@ -68,7 +68,7 @@ def main():
     
     # 1. Output (Piper & VoiceRuntime)
     piper = PiperProvider(event_bus=event_bus, logger=mlogger)
-    piper.load_model(r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\desktop\models\piper\en_US-amy-medium.onnx")
+    piper.load_model(r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\desktop\models\piper\en_US-amy-medium.onnx")
     
     registry = SpeechSynthRegistry(logger=mlogger)
     registry.register_provider(piper)

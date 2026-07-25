@@ -25,7 +25,7 @@ class FileRepository:
     Abstracted File Intelligence repository backing the local Hybrid Search.
     Follows Rule 8 (Local Knowledge First) by decoupling from raw Windows queries.
     """
-    def __init__(self, db_path: str = "chitti_files.db"):
+    def __init__(self, db_path: str = "vizzu_files.db"):
         self.db_path = db_path
         self._init_db()
         

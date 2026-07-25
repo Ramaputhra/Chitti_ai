@@ -7,7 +7,7 @@ from desktop.models.ai_result import AIResult
 class ProviderAdapter(ABC):
     """
     The abstraction contract for all Inference and Execution Backends.
-    This interface ensures the rest of CHITTI never couples to specific 
+    This interface ensures the rest of Vizzu never couples to specific 
     libraries like Transformers, ONNX, or llama.cpp.
     """
     

@@ -1,7 +1,7 @@
-# CHITTI V2 — CHARACTER STUDIO GUIDE
+# Vizzu V2 — CHARACTER STUDIO GUIDE
 
 ## 1. Executive Summary
-Character Studio (`desktop/character/studio/`) serves as the single canonical repository for all character source vector assets, 2D PNG frame sequences, behavior metadata, props, sounds, and documentation in CHITTI V2.
+Character Studio (`desktop/character/studio/`) serves as the single canonical repository for all character source vector assets, 2D PNG frame sequences, behavior metadata, props, sounds, and documentation in Vizzu V2.
 
 ---
 

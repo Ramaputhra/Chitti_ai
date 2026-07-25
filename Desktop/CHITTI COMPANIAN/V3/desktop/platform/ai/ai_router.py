@@ -31,7 +31,7 @@ class AdaptiveAIRouter:
 
     def route_request(self, request: RemoteRequest) -> Dict[str, Any]:
         """
-        Main entry point for any AI Request in CHITTI.
+        Main entry point for any AI Request in Vizzu.
         """
         request_id = str(uuid.uuid4())
         start_time = time.time()

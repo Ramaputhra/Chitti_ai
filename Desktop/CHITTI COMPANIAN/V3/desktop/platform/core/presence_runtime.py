@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 class PresenceRuntime:
     """
-    Implements the desktop lifecycle state machine for the CHITTI avatar.
+    Implements the desktop lifecycle state machine for the Vizzu avatar.
     """
     def __init__(self, event_bus: Any):
         self.event_bus = event_bus

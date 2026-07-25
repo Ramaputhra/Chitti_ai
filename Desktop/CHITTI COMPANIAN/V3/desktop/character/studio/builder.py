@@ -67,7 +67,7 @@ def create_frame_png(filepath, behavior_id, behavior_name, frame_num, total_fram
         draw.rectangle([20 + f * box_w, 140, 20 + (f + 1) * box_w - 2, 160], fill=color)
         
     draw.text((20, 220), "Replace with production artwork", fill=(244, 63, 94, 255), font=font)
-    draw.text((20, 250), "CHITTI Character Studio V1.0", fill=(148, 163, 184, 255), font=font)
+    draw.text((20, 250), "Vizzu Character Studio V1.0", fill=(148, 163, 184, 255), font=font)
     
     img.save(filepath, "PNG")
 

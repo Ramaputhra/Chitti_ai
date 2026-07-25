@@ -6,7 +6,7 @@ from typing import Any, Dict
 @dataclass
 class ExpressionModel:
     """
-    The unified target state for all CHITTI actuators at a given point in time.
+    The unified target state for all Vizzu actuators at a given point in time.
     Fulfills Engineering Rule #16 (Unified Actuation Rule).
     """
     eyes_state: Dict[str, Any] = field(default_factory=dict)

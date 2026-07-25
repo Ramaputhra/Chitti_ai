@@ -1,4 +1,4 @@
-# CHITTI V2 — SEMANTIC WINDOW LAYER MODEL
+# Vizzu V2 — SEMANTIC WINDOW LAYER MODEL
 
 ## 1. Executive Summary
 The **Semantic Window Layer System** (`window_layers.py`) decouples Desktop UI Z-ordering from operating system specific APIs. Window ordering is governed by canonical semantic layers.

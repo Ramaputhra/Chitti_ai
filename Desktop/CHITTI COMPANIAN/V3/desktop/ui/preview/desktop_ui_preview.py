@@ -10,7 +10,7 @@ from desktop.ui.runtime.desktop_ui_runtime import DesktopUIRuntime
 
 def run_preview_studio():
     print("==========================================================")
-    print("CHITTI V2 — DESKTOP UI RUNTIME FOUNDATION PREVIEW STUDIO")
+    print("Vizzu V2 — DESKTOP UI RUNTIME FOUNDATION PREVIEW STUDIO")
     print("==========================================================\n")
 
     runtime = DesktopUIRuntime()

@@ -31,7 +31,7 @@ class AckLevel(Enum):
 @dataclass
 class FrontendProtocolMessage:
     """
-    The standard JSON-serializable wire envelope for all CHITTI UI communication.
+    The standard JSON-serializable wire envelope for all Vizzu UI communication.
     Rule 320: This envelope is stable and strictly versioned.
     """
     protocol_version: int

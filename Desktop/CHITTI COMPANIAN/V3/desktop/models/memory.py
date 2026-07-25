@@ -143,7 +143,7 @@ class EpisodeQuality:
 class Episode:
     """
     Phase 3 Contract #6: Ultimate, immutable record coupling Intent, Execution, and Verification.
-    Acts as the basic unit of CHITTI's experience.
+    Acts as the basic unit of Vizzu's experience.
     """
     episode_id: str
     intent: Any

@@ -1,10 +1,10 @@
 """
-CHITTI V2 — ROOT ENTRY POINT
+Vizzu V2 — ROOT ENTRY POINT
 =============================================================================
 CLASSIFICATION : ARCHITECTURAL BOOTSTRAP STUB (Non-Production)
 RSM-1 CID-002  : This file is intentionally a prototype that demonstrates
                  the BootstrapManager contract only. It is NOT the production
-                 launch point and MUST NOT be used to run CHITTI.
+                 launch point and MUST NOT be used to run Vizzu.
 
 PRODUCTION ENTRY: desktop/app/main.py
   Run: python desktop/app/main.py

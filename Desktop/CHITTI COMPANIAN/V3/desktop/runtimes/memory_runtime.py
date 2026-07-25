@@ -25,7 +25,7 @@ class MemoryRuntime(IRuntime):
     2. Facts (Semantic Knowledge, Planner-approved, Provenance)
     3. Embeddings (Disposable Index - Placeholder in MVP)
     """
-    def __init__(self, db_path: str = "storage/chitti_memory.db"):
+    def __init__(self, db_path: str = "storage/vizzu_memory.db"):
         import os
         os.makedirs(os.path.dirname(db_path), exist_ok=True)
         self.db_path = db_path

@@ -1,7 +1,7 @@
-# CHITTI MISSION STATEMENT
+# Vizzu MISSION STATEMENT
 
-## Why CHITTI Exists
-CHITTI exists to empower human productivity through an intuitive, empathetic, and highly capable desktop companion interface.
+## Why Vizzu Exists
+Vizzu exists to empower human productivity through an intuitive, empathetic, and highly capable desktop companion interface.
 
 ## Who It Serves
 Developers, power users, creators, and professionals seeking an intelligent assistant that seamlessly integrates with local operating systems, browsers, and desktop tools.

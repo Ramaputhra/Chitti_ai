@@ -13,7 +13,7 @@ class MockSpeechProvider(ISpeechProvider):
         self.logger.info("MockSpeechProvider: Transcribing audio...")
         # Since this is a mock, we will just return a placeholder.
         # Developer injection mode handles bypassing this entirely.
-        return "Hello Chitti"
+        return "Hello Vizzu"
 
 
 class MockSpeechSynthesizer(ISpeechSynthesizer):

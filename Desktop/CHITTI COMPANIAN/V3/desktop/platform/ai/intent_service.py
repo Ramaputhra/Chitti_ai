@@ -63,7 +63,7 @@ class IntentService:
             return result
 
     def _log_verified_intent(self, text: str, intent: str):
-        """Append to the local intent dataset for future CHITTI-Intent v1 training."""
+        """Append to the local intent dataset for future Vizzu-Intent v1 training."""
         import json
         with open(self.dataset_path, "a", encoding="utf-8") as f:
             f.write(json.dumps({"text": text, "intent": intent}) + "\n")

@@ -43,7 +43,7 @@ class AvatarTTSDevTool(QWidget):
         layout = QVBoxLayout(self)
         
         self.input_field = QLineEdit()
-        self.input_field.setPlaceholderText("Type what CHITTI should say...")
+        self.input_field.setPlaceholderText("Type what Vizzu should say...")
         layout.addWidget(self.input_field)
         
         self.speak_btn = QPushButton("Speak")
@@ -79,7 +79,7 @@ class AvatarTTSDevTool(QWidget):
         self.event_bus.publish(Event("WakeDetected", "Mic", {}))
 
 def main():
-    print("=== CHITTI AVATAR TTS INTEGRATION ===")
+    print("=== Vizzu AVATAR TTS INTEGRATION ===")
     
     app = QApplication(sys.argv)
     
@@ -90,7 +90,7 @@ def main():
     
     # Piper TTS
     piper = PiperProvider(event_bus=event_bus, logger=mlogger)
-    model_path = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\desktop\models\piper\en_US-amy-medium.onnx"
+    model_path = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\desktop\models\piper\en_US-amy-medium.onnx"
     if os.path.exists(model_path):
         piper.load_model(model_path)
     else:

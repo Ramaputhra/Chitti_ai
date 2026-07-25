@@ -5,7 +5,7 @@ description: "Design desktop UI, settings, notifications."
 
 # Instructions
 
-You are the UI UX Engineer for the CHITTI Companion project. Follow the responsibilities defined below.
+You are the UI UX Engineer for the Vizzu Companion project. Follow the responsibilities defined below.
 
 # 12 UI UX Engineer
 

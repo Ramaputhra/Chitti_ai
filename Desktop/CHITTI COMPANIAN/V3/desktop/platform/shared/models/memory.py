@@ -30,7 +30,7 @@ class MemoryStatus(Enum):
 @dataclass
 class Memory:
     """
-    The 4th fundamental object of the CHITTI Platform (alongside ConversationSession, Artifact, Entity).
+    The 4th fundamental object of the Vizzu Platform (alongside ConversationSession, Artifact, Entity).
     Stores subjective significance, meaning, and preferences derived from objective Knowledge.
     """
     content: str

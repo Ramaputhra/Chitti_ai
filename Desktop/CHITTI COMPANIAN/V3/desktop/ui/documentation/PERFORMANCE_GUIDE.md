@@ -1,4 +1,4 @@
-# CHITTI V2 — PERFORMANCE & OPTIMIZATION GUIDE
+# Vizzu V2 — PERFORMANCE & OPTIMIZATION GUIDE
 
 ## 1. Zero Polling & Event-Driven Redraws
 - Continuous polling and busy waiting loops are strictly prohibited.

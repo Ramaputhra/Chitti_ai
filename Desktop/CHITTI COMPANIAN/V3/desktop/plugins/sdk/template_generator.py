@@ -1,5 +1,5 @@
 """
-CHITTI Plugin Template Generator
+Vizzu Plugin Template Generator
 
 Usage:
     python -m desktop.plugins.sdk.template_generator create <plugin_name> [--type capability]
@@ -60,7 +60,7 @@ class MyPlugin(BasePlugin):
     "author": "",
     "description": "",
     "type": "capability",
-    "chitti_version": ">=3.0.0",
+    "vizzu_version": ">=3.0.0",
     "permissions": []
 }'''
         }
@@ -99,7 +99,7 @@ class MyEventHandler(BasePlugin):
     "author": "",
     "description": "",
     "type": "event_handler",
-    "chitti_version": ">=3.0.0",
+    "vizzu_version": ">=3.0.0",
     "permissions": []
 }'''
         }
@@ -153,7 +153,7 @@ class MyIntegration(BasePlugin):
     "author": "",
     "description": "",
     "type": "integration",
-    "chitti_version": ">=3.0.0",
+    "vizzu_version": ">=3.0.0",
     "permissions": ["internet"],
     "config_schema": {
         "api_key": {"type": "string", "required": true},
@@ -181,12 +181,12 @@ class MyCommands(BasePlugin):
         """Return list of command mappings."""
         return [
             {
-                "trigger": "hey chitti, do the thing",
+                "trigger": "hey vizzu, do the thing",
                 "action": "my_plugin.do_thing",
                 "description": "Does the thing"
             },
             {
-                "trigger": "hey chitti, another action",
+                "trigger": "hey vizzu, another action",
                 "action": "my_plugin.another_action",
                 "description": "Does another thing"
             }
@@ -206,7 +206,7 @@ class MyCommands(BasePlugin):
     "author": "",
     "description": "",
     "type": "command_extension",
-    "chitti_version": ">=3.0.0",
+    "vizzu_version": ">=3.0.0",
     "permissions": []
 }'''
         }
@@ -248,21 +248,21 @@ def create_plugin(name: str, plugin_type: str = "capability"):
     # Create README
     readme = f'''# {name.replace("_", " ").title()}
 
-A CHITTI plugin.
+A Vizzu plugin.
 
 ## Installation
 
 ```bash
 # Local development
-python -m chitti plugin install ./{plugin_dir}
+python -m vizzu plugin install ./{plugin_dir}
 
 # Publish to marketplace
-chitti marketplace publish
+vizzu marketplace publish
 ```
 
 ## Configuration
 
-Configure in CHITTI settings under Plugins > {name}.
+Configure in Vizzu settings under Plugins > {name}.
 
 ## Development
 
@@ -285,7 +285,7 @@ python -m build
     print("   2. Edit plugin.json with your details")
     print("   3. Implement your plugin logic")
     print("   4. Add tests in tests/")
-    print("   5. Test with: python -m chitti plugin test")
+    print("   5. Test with: python -m vizzu plugin test")
     
     return True
 
@@ -306,7 +306,7 @@ def list_templates():
 
 
 def main():
-    parser = argparse.ArgumentParser(description="CHITTI Plugin Generator")
+    parser = argparse.ArgumentParser(description="Vizzu Plugin Generator")
     subparsers = parser.add_subparsers(dest="command", help="Commands")
     
     # Create command

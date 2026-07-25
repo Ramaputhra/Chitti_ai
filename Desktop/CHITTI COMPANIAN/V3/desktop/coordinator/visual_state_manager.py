@@ -20,7 +20,7 @@ class CanonicalVisualState(Enum):
 
 class VisualStateManager:
     """
-    S36E: Visual State Manager exposing ONE canonical visual state for CHITTI.
+    S36E: Visual State Manager exposing ONE canonical visual state for Vizzu.
     """
     def __init__(self, initial_state: CanonicalVisualState = CanonicalVisualState.IDLE):
         self._state = initial_state

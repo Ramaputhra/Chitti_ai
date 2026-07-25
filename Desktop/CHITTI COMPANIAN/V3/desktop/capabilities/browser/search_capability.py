@@ -12,7 +12,7 @@ from desktop.runtimes.browser.models import SearchResult
 
 class SearchCapability(BaseCapability):
     """
-    Allows CHITTI to search the web using the Browser Runtime.
+    Allows Vizzu to search the web using the Browser Runtime.
     """
     def __init__(self, browser_manager: BrowserManager):
         super().__init__()

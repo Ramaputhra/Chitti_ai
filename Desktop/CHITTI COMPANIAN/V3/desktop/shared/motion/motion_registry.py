@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 class MotionRegistry:
     """
     S36E: Centralized Motion Registry.
-    The ONLY source of motion definitions across the entire CHITTI platform.
+    The ONLY source of motion definitions across the entire Vizzu platform.
     Supports hot-reloading motion profiles during development.
     """
     def __init__(self):

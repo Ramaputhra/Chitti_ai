@@ -10,7 +10,7 @@ class DocumentParser(ABC):
 class MarkItDownParser(DocumentParser):
     """
     MVP Implementation representing a unified markdown extraction layer.
-    Abstracted so CHITTI doesn't tightly couple to the actual library (e.g. microsoft/markitdown).
+    Abstracted so Vizzu doesn't tightly couple to the actual library (e.g. microsoft/markitdown).
     """
     def extract(self, file_path: str) -> DocumentContent:
         # In a real environment, we would do:

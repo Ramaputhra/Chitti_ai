@@ -47,7 +47,7 @@ class PackageComponent:
 @dataclass
 class PackageManifest:
     """
-    Universal distribution schema for any CHITTI feature package.
+    Universal distribution schema for any Vizzu feature package.
     """
     id: str
     version: str

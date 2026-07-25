@@ -98,7 +98,7 @@ class ProactiveAgent:
             await self._offer_assistance(project, delta_apps, acceptance_rate)
             
     def _mock_retrieve_previous(self, project: str) -> Optional[dict]:
-        if project == "CHITTI_Companion":
+        if project == "Vizzu_Companion":
             return {
                 "applications": {"VS Code", "Terminal", "Chrome", "Explorer"}
             }

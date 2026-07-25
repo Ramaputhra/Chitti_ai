@@ -20,7 +20,7 @@ class WidgetManifest:
     display_name: str = "Default Widget"
     category: str = "UTILITY"
     version: str = "1.0.0"  # Alias for backward compatibility
-    description: str = "Canonical CHITTI Desktop Widget"
+    description: str = "Canonical Vizzu Desktop Widget"
     supported_runtime_sessions: List[str] = field(default_factory=list)
     default_attachment: str = "CHARACTER_ANCHOR"
     preferred_window_layer: str = "CHARACTER_WIDGET"

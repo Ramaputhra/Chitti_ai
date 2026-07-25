@@ -23,7 +23,7 @@ def test_configuration_service_hierarchy() -> None:
         assert service.get("missing.key", "default") == "default"
 
         # Test Env Vars overriding file
-        os.environ["CHITTI_APP_THEME"] = "dark"
+        os.environ["Vizzu_APP_THEME"] = "dark"
         assert service.get("app.theme") == "dark"
 
         # Test Runtime Overrides overriding everything
@@ -32,5 +32,5 @@ def test_configuration_service_hierarchy() -> None:
 
     finally:
         os.unlink(temp_path)
-        if "CHITTI_APP_THEME" in os.environ:
-            del os.environ["CHITTI_APP_THEME"]
+        if "Vizzu_APP_THEME" in os.environ:
+            del os.environ["Vizzu_APP_THEME"]

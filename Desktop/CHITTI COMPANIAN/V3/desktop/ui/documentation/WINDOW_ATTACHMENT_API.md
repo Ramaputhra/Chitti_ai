@@ -1,4 +1,4 @@
-# CHITTI V2 — GENERIC WINDOW ATTACHMENT API
+# Vizzu V2 — GENERIC WINDOW ATTACHMENT API
 
 ## 1. Overview
 The **Generic Window Attachment API** (`window_attachment.py`) provides an abstract attachment framework allowing desktop windows to bind to diverse target types without knowing widget implementations.

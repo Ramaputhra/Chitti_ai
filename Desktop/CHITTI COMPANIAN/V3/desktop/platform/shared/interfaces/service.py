@@ -12,7 +12,7 @@ class ServiceState(Enum):
 
 class IService(Protocol):
     """
-    Standard interface for all long-running subsystems in CHITTI.
+    Standard interface for all long-running subsystems in Vizzu.
     Allows the ServiceManager to generically orchestrate the application.
     """
     @property

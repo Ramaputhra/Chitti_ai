@@ -84,7 +84,7 @@ class Meeting:
 
 class MeetingIntelligenceCapability:
     """
-    Meeting Intelligence capability for CHITTI.
+    Meeting Intelligence capability for Vizzu.
     
     Tools:
     - start_meeting_recording: Start recording a meeting

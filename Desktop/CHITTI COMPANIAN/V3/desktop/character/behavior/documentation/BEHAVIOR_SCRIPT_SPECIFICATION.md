@@ -1,7 +1,7 @@
-# CHITTI V2 — BEHAVIOR SCRIPT SPECIFICATION
+# Vizzu V2 — BEHAVIOR SCRIPT SPECIFICATION
 
 ## 1. Executive Summary
-This specification defines the declarative **BehaviorScript** model and the event-driven orchestration architecture of CHITTI V2 (`desktop/character/behavior/`).
+This specification defines the declarative **BehaviorScript** model and the event-driven orchestration architecture of Vizzu V2 (`desktop/character/behavior/`).
 
 `BehaviorScript` is the primary, declarative output produced by `BehaviorScheduler`. It describes character behavior intentions, trigger conditions, and loop rules without hardcoding playback timestamps.
 

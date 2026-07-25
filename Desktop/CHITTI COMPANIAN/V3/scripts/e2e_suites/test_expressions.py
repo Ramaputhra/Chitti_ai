@@ -9,7 +9,7 @@ async def run_test():
     
     try:
         # 1. Inject STT Event (Whisper output)
-        transcript = MockEvent("USER_TRANSCRIPT_GENERATED", source="FasterWhisper", payload={"text": "Hello Chitti"})
+        transcript = MockEvent("USER_TRANSCRIPT_GENERATED", source="FasterWhisper", payload={"text": "Hello Vizzu"})
         host.event_bus.publish(transcript)
         
         # 2. Asynchronously wait for the pipeline to complete

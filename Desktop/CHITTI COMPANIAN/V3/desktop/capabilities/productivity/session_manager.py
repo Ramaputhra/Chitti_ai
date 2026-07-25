@@ -53,8 +53,8 @@ class SessionManagerCapability(Capability):
         # In a real implementation, this would query MemoryRuntime for Episode type=WORK_SESSION matching the alias
         # For MVP, we mock the return to demonstrate the flow
         mock_plan = [
-            {"step": 1, "action": "Launch VS Code", "target": "D:\\Projects\\CHITTI"},
-            {"step": 2, "action": "Launch Terminal", "target": "D:\\Projects\\CHITTI"},
+            {"step": 1, "action": "Launch VS Code", "target": "D:\\Projects\\Vizzu"},
+            {"step": 2, "action": "Launch Terminal", "target": "D:\\Projects\\Vizzu"},
             {"step": 3, "action": "Launch Browser", "target": "GitHub - Project"}
         ]
         
@@ -72,6 +72,6 @@ class SessionManagerCapability(Capability):
         return CapabilityResult(
             success=True,
             data={
-                "summary": f"Yesterday you worked on the CHITTI desktop project for 3 hours and 18 minutes. You mainly used VS Code, Windows Terminal, and Chrome."
+                "summary": f"Yesterday you worked on the Vizzu desktop project for 3 hours and 18 minutes. You mainly used VS Code, Windows Terminal, and Chrome."
             }
         )

@@ -1,4 +1,4 @@
-# CHITTI V2 — UNIFIED TIMELINE MODEL
+# Vizzu V2 — UNIFIED TIMELINE MODEL
 
 ## 1. Overview
 The **Timeline Model** (`timeline_scheduler.py`) aggregates timeline streams from all independent runtimes into a unified chronological sequence.

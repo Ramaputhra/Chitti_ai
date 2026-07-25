@@ -10,7 +10,7 @@ import re
 
 
 class ErrorCode(str, Enum):
-    """Standardized error codes for CHITTI."""
+    """Standardized error codes for Vizzu."""
     # Validation errors (1000-1999)
     VALIDATION_ERROR = "VALIDATION_ERROR"
     INVALID_INPUT = "INVALID_INPUT"

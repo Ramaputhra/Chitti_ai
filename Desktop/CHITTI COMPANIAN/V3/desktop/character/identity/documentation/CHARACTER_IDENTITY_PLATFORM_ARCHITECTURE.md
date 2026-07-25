@@ -1,4 +1,4 @@
-# CHITTI V2 — CHARACTER IDENTITY PLATFORM ARCHITECTURE
+# Vizzu V2 — CHARACTER IDENTITY PLATFORM ARCHITECTURE
 
 ## 1. Executive Summary
 The **Character Identity Platform** (`desktop/character/identity/`) serves as the single canonical knowledge base for Character Name, Identity, Biography, Mission, Philosophy, Beliefs, Creator Information, Speech Rules, Self Knowledge, Capabilities, Limitations, and Canonical Self Responses.

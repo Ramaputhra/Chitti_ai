@@ -1,7 +1,7 @@
 """
-CHITTI Plugin System - Base Classes
+Vizzu Plugin System - Base Classes
 
-Defines the core plugin interface and base classes for CHITTI extensibility.
+Defines the core plugin interface and base classes for Vizzu extensibility.
 """
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 
 class PluginType(str, Enum):
-    """Types of plugins supported by CHITTI."""
+    """Types of plugins supported by Vizzu."""
     CAPABILITY = "capability"
     EVENT_HANDLER = "event_handler"
     COMMAND_EXTENSION = "command_extension"
@@ -46,7 +46,7 @@ class PluginMetadata:
     plugin_type: PluginType = PluginType.CAPABILITY
     dependencies: List[str] = field(default_factory=list)
     permissions: List[str] = field(default_factory=list)
-    min_chitti_version: str = "1.0.0"
+    min_vizzu_version: str = "1.0.0"
     tags: List[str] = field(default_factory=list)
     homepage: str = ""
     license: str = "MIT"
@@ -63,7 +63,7 @@ class PluginConfig:
 
 class IPlugin(ABC):
     """
-    Base interface for all CHITTI plugins.
+    Base interface for all Vizzu plugins.
     All plugins must implement this interface.
     """
     
@@ -106,7 +106,7 @@ class IPlugin(ABC):
 
 class ICapabilityPlugin(IPlugin):
     """
-    Plugin that provides new capabilities to CHITTI.
+    Plugin that provides new capabilities to Vizzu.
     """
     
     @abstractmethod

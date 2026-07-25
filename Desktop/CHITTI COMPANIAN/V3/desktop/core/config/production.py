@@ -61,7 +61,7 @@ class HealthConfig(BaseModel):
 class StorageConfig(BaseModel):
     """Storage configuration."""
     type: str = "sqlite"  # sqlite, memory, redis
-    path: str = "storage/chitti.db"
+    path: str = "storage/vizzu.db"
     backup_enabled: bool = True
     backup_interval: int = Field(default=3600, ge=60)  # seconds
 
@@ -71,7 +71,7 @@ class LoggingConfig(BaseModel):
     level: str = Field(default="INFO", pattern="^(DEBUG|INFO|WARNING|ERROR|CRITICAL)$")
     format: str = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     file_enabled: bool = True
-    file_path: str = "logs/chitti.log"
+    file_path: str = "logs/vizzu.log"
     max_bytes: int = Field(default=10_000_000, ge=1_000_000)
     backup_count: int = Field(default=5, ge=1)
 
@@ -84,22 +84,22 @@ class RuntimeConfig(BaseModel):
     shutdown_timeout: int = Field(default=10, ge=1)
 
 
-class CHITTIConfig(BaseSettings):
+class VizzuConfig(BaseSettings):
     """
-    Main CHITTI configuration with environment variable support.
+    Main Vizzu configuration with environment variable support.
     
     Supports loading from:
-    - Environment variables (prefix: CHITTI_)
+    - Environment variables (prefix: Vizzu_)
     - .env file
     - Default values
     
     Example .env:
-        CHITTI_LLM__PROVIDER=ollama
-        CHITTI_LLM__MODEL=mistral
-        CHITTI_SPEECH__ENABLED=true
+        Vizzu_LLM__PROVIDER=ollama
+        Vizzu_LLM__MODEL=mistral
+        Vizzu_SPEECH__ENABLED=true
     """
     model_config = SettingsConfigDict(
-        env_prefix="CHITTI_",
+        env_prefix="Vizzu_",
         env_nested_delimiter="__",
         env_file=".env",
         env_file_encoding="utf-8",
@@ -108,7 +108,7 @@ class CHITTIConfig(BaseSettings):
     )
     
     # Application
-    app_name: str = "CHITTI"
+    app_name: str = "Vizzu"
     version: str = "1.0.0"
     debug: bool = False
     environment: str = Field(default="development", pattern="^(development|staging|production)$")
@@ -167,19 +167,19 @@ class CHITTIConfig(BaseSettings):
 
 
 # Global config instance (lazy loaded)
-_config: Optional[CHITTIConfig] = None
+_config: Optional[VizzuConfig] = None
 
 
-def get_config() -> CHITTIConfig:
+def get_config() -> VizzuConfig:
     """Get or create the global configuration instance."""
     global _config
     if _config is None:
-        _config = CHITTIConfig()
+        _config = VizzuConfig()
     return _config
 
 
-def reload_config() -> CHITTIConfig:
+def reload_config() -> VizzuConfig:
     """Reload configuration from environment."""
     global _config
-    _config = CHITTIConfig()
+    _config = VizzuConfig()
     return _config

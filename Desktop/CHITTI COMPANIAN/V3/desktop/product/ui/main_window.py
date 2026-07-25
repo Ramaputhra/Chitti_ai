@@ -6,17 +6,17 @@ from desktop.product.ui.components.expression_widget import ExpressionWidget
 
 class MainWindow(QMainWindow):
     """
-    The main UI shell for the CHITTI Companion.
+    The main UI shell for the Vizzu Companion.
     """
     def __init__(self, context: ApplicationContext) -> None:
         super().__init__()
         self.context = context
-        self.setWindowTitle(f"CHITTI Companion v{self.context.version.version()}")
+        self.setWindowTitle(f"Vizzu Companion v{self.context.version.version()}")
         self.resize(1024, 768)
 
         # Basic UI scaffolding
         layout = QVBoxLayout()
-        label = QLabel("CHITTI AI Companion Shell")
+        label = QLabel("Vizzu AI Companion Shell")
         layout.addWidget(label)
 
         # Expression UI rendering

@@ -4,7 +4,7 @@ import time
 
 def run_benchmarks():
     print("========================================")
-    print("  CHITTI BENCHMARK RUNNER")
+    print("  Vizzu BENCHMARK RUNNER")
     print("========================================\n")
     
     benchmarks = [

@@ -25,7 +25,7 @@ async def run_verification():
     print("[1/8] Verifying LanguageManager & Language Switching...")
     vr.set_language("te") # Telugu
     l1 = vr.language_manager.current_language
-    detected = vr.language_manager.detect_language("నమస్కారం CHITTI")
+    detected = vr.language_manager.detect_language("నమస్కారం Vizzu")
     vr.set_language("en") # Reset to English
     
     if l1 == "te" and detected == "te":
@@ -55,7 +55,7 @@ async def run_verification():
         all_passed = False
 
     print("\n[4/8] Verifying NarrationComposer & EmotionMarkupEngine...")
-    text_sample = "Welcome to CHITTI! This is an EXCELLENT presentation."
+    text_sample = "Welcome to Vizzu! This is an EXCELLENT presentation."
     narration = vr.speech_runtime.composer.compose_narration(text_sample, emotion_hint="CELEBRATION")
     markup = vr.speech_runtime.markup_engine.process_markup(narration.normalized_text, emotion_tag="CELEBRATION")
     

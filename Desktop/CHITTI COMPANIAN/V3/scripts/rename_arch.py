@@ -1,13 +1,13 @@
 import os
 import glob
 
-base_dir = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\architecture"
+base_dir = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\architecture"
 decisions_dir = os.path.join(base_dir, "decisions")
 
 renames = {
     "BOOT_SEQUENCE.md": "APPLICATION_STARTUP.md",
     "THREADING_MODEL.md": "CONCURRENCY_MODEL.md",
-    "CHITTI_OS_ARCHITECTURE.md": "CHITTI_ARCHITECTURE.md",
+    "Vizzu_OS_ARCHITECTURE.md": "Vizzu_ARCHITECTURE.md",
     "KERNEL_SPEC.md": "APPLICATION_KERNEL_SPEC.md"
 }
 
@@ -20,12 +20,12 @@ for old_name, new_name in renames.items():
 
 # 2. Text Replacements
 replacements = {
-    "CHITTI OS": "CHITTI Runtime",
+    "Vizzu OS": "Vizzu Runtime",
     "OS Architecture": "Application Architecture",
     "Operating Environment": "Desktop Companion Runtime",
     "BOOT_SEQUENCE.md": "APPLICATION_STARTUP.md",
     "THREADING_MODEL.md": "CONCURRENCY_MODEL.md",
-    "CHITTI_OS_ARCHITECTURE.md": "CHITTI_ARCHITECTURE.md",
+    "Vizzu_OS_ARCHITECTURE.md": "Vizzu_ARCHITECTURE.md",
     "KERNEL_SPEC.md": "APPLICATION_KERNEL_SPEC.md",
     "Boot Sequence": "Application Startup",
     "Threading Model": "Concurrency Model",

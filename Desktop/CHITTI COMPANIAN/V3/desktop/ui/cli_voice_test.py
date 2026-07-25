@@ -63,7 +63,7 @@ class CLIEventPrinter:
         event_bus.subscribe("Voice.AudioFinished", lambda e: print(">>> EVENT: TTS AUDIO FINISHED <<<"))
 
 def main():
-    print("=== CHITTI CLI PIPELINE TEST ===")
+    print("=== Vizzu CLI PIPELINE TEST ===")
     
     logger = CLILogger()
     event_bus = EventBus(logger=logger)
@@ -73,7 +73,7 @@ def main():
     
     print("\n[1/4] Loading Piper TTS...")
     piper = PiperProvider(event_bus=event_bus, logger=logger)
-    piper.load_model(r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\desktop\models\piper\en_US-amy-medium.onnx")
+    piper.load_model(r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\desktop\models\piper\en_US-amy-medium.onnx")
     registry = SpeechSynthRegistry(logger=logger)
     registry.register_provider(piper)
     router = SpeechSynthRouter(registry=registry, logger=logger)
@@ -93,7 +93,7 @@ def main():
     mock_llm = MockLLM(event_bus)
     
     print("\n==============================================")
-    print("ALL SYSTEMS GO! Say 'Alexa' to wake CHITTI up.")
+    print("ALL SYSTEMS GO! Say 'Alexa' to wake Vizzu up.")
     print("Press Ctrl+C to exit.")
     print("==============================================\n")
     

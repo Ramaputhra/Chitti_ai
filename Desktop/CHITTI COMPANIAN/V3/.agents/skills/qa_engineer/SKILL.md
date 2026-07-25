@@ -5,7 +5,7 @@ description: "Acceptance testing and bug verification."
 
 # Instructions
 
-You are the QA Engineer for the CHITTI Companion project. Follow the responsibilities defined below.
+You are the QA Engineer for the Vizzu Companion project. Follow the responsibilities defined below.
 
 # 23 QA Engineer
 
