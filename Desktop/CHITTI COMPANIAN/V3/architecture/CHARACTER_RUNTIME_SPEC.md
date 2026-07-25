@@ -6,7 +6,7 @@
 > **5. Every runtime, planner, scheduler, and capability must exist only to improve the AI Desktop Companion experience. Architectural complexity must always provide measurable product value.**
 
 ## 1. Purpose
-Defines CHITTI's personality, speaking style, and behavioral quirks. It guarantees the companion feels alive and consistent without requiring LLM inference for standard responses.
+Defines Vizzu's personality, speaking style, and behavioral quirks. It guarantees the companion feels alive and consistent without requiring LLM inference for standard responses.
 
 ## 2. Responsibilities
 - Provide a **100% deterministic** response selection from curated JSON datasets based on intent or state.

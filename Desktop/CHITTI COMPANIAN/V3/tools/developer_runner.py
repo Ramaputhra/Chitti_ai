@@ -31,7 +31,7 @@ async def run_developer_mode():
     config = RuntimeConfiguration(use_llm=True, transport="developer")
     
     while True:
-        print("\n--- Booting CHITTI Cognitive Engine (Architecture Validation) ---")
+        print("\n--- Booting Vizzu Cognitive Engine (Architecture Validation) ---")
         
         boot = BootManager(config=config)
         boot.is_demo_mode = False

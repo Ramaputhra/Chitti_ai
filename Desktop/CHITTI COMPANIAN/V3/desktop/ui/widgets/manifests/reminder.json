@@ -5,7 +5,7 @@
   "display_name": "Reminder Widget",
   "category": "PRODUCTIVITY",
   "version": "1.0.0",
-  "description": "Canonical CHITTI Reminder Widget",
+  "description": "Canonical Vizzu Reminder Widget",
   "supported_runtime_sessions": ["Reminder"],
   "default_attachment": "CHARACTER_ANCHOR",
   "preferred_window_layer": "CHARACTER_WIDGET",

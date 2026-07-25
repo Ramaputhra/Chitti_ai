@@ -1,11 +1,11 @@
-# CHITTI PROJECT – FULL BRUTAL ARCHITECTURE AUDIT
+# Vizzu PROJECT – FULL BRUTAL ARCHITECTURE AUDIT
 
 **Date:** 2026-07-15
 **Role:** Chief Software Architect + Technical Auditor
 **Focus:** Architecture Verification & Project Maturity Assessment (Zero-Bias)
 
 > [!WARNING]
-> This audit does not trust documentation. All conclusions are derived from direct inspection of the source repository `C:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3`.
+> This audit does not trust documentation. All conclusions are derived from direct inspection of the source repository `C:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3`.
 
 ---
 

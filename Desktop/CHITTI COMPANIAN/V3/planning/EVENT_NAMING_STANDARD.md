@@ -1,4 +1,4 @@
-# CHITTI Event Naming Standard
+# Vizzu Event Naming Standard
 
 **Rule: Never use random event names.**
 

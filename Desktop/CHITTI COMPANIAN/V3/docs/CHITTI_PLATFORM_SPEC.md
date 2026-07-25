@@ -1,7 +1,7 @@
-# CHITTI Platform Specification
-**The Constitution of CHITTI**
+# Vizzu Platform Specification
+**The Constitution of Vizzu**
 
-This document serves as the master architectural reference for CHITTI, a desktop AI platform. It defines the identity, core components, and invariant principles governing the platform's evolution.
+This document serves as the master architectural reference for Vizzu, a desktop AI platform. It defines the identity, core components, and invariant principles governing the platform's evolution.
 
 ---
 
@@ -11,10 +11,10 @@ This document serves as the master architectural reference for CHITTI, a desktop
 To build a highly capable, contextually aware desktop AI companion that seamlessly integrates into the user's workflow without causing disruption or friction.
 
 ### Vision
-A deterministic-first platform where AI enhances execution but does not dictate it. CHITTI acts as an invisible collaborator until actively needed or when proactively delivering immense value.
+A deterministic-first platform where AI enhances execution but does not dictate it. Vizzu acts as an invisible collaborator until actively needed or when proactively delivering immense value.
 
 ### Design Goals
-- **Decoupled Architecture**: Absolute separation between what CHITTI decides to do (Logic), how CHITTI does it (Execution), and how CHITTI communicates it (Behavior/Personality).
+- **Decoupled Architecture**: Absolute separation between what Vizzu decides to do (Logic), how Vizzu does it (Execution), and how Vizzu communicates it (Behavior/Personality).
 - **Determinism**: Workflows must be predictable, replayable, and safe.
 - **Contextual Awareness**: Real-time awareness of the desktop environment without continuous polling.
 - **Proactive Modularity**: Experiences run independently of the core conversational loop.
@@ -29,7 +29,7 @@ A deterministic-first platform where AI enhances execution but does not dictate 
 - Personality must never block execution.
 - LLM enhances; it never controls deterministic operations.
 - Every interaction should reduce friction for the user.
-- CHITTI behaves as a companion, not merely a command executor.
+- Vizzu behaves as a companion, not merely a command executor.
 
 ---
 
@@ -98,22 +98,22 @@ Persistent storage is highly localized and cleanly owned by distinct runtimes.
 | Store | Location | Owner Runtime | Purpose |
 | :--- | :--- | :--- | :--- |
 | **Config** | `.gemini/config/` | System Kernel | Bootstrapping core platform variables |
-| **Profile** | `AppData/CHITTI/profile/` | Profile Runtime | WHO the user is (Identity, Voice, Experience toggles) |
-| **Settings** | `AppData/CHITTI/settings/` | Settings Runtime | HOW CHITTI behaves (Theme, FPS, Logging) |
-| **Memory** | `AppData/CHITTI/memory/` | Memory Runtime | Short/Long-term recall (via IMemoryIndex) |
-| **Journal** | `AppData/CHITTI/journal/` | Memory/Context | Time-series interaction history |
-| **Knowledge** | `AppData/CHITTI/knowledge/` | Knowledge Runtime | Persistent facts, RAG indices, project contexts |
-| **Workspace** | `AppData/CHITTI/workspaces/`| Workspace Runtime | Definitions for layouts, apps, and window positions |
-| **Plugins** | `AppData/CHITTI/plugins/` | Plugin Sandbox | 3rd-party code and manifests |
-| **Cache** | `AppData/CHITTI/cache/` | System Kernel | Transient data |
-| **Models** | `AppData/CHITTI/models/` | Model/Compute | Local AI weights/loras |
-| **Logs** | `AppData/CHITTI/logs/` | Logger | System tracing and telemetry |
+| **Profile** | `AppData/Vizzu/profile/` | Profile Runtime | WHO the user is (Identity, Voice, Experience toggles) |
+| **Settings** | `AppData/Vizzu/settings/` | Settings Runtime | HOW Vizzu behaves (Theme, FPS, Logging) |
+| **Memory** | `AppData/Vizzu/memory/` | Memory Runtime | Short/Long-term recall (via IMemoryIndex) |
+| **Journal** | `AppData/Vizzu/journal/` | Memory/Context | Time-series interaction history |
+| **Knowledge** | `AppData/Vizzu/knowledge/` | Knowledge Runtime | Persistent facts, RAG indices, project contexts |
+| **Workspace** | `AppData/Vizzu/workspaces/`| Workspace Runtime | Definitions for layouts, apps, and window positions |
+| **Plugins** | `AppData/Vizzu/plugins/` | Plugin Sandbox | 3rd-party code and manifests |
+| **Cache** | `AppData/Vizzu/cache/` | System Kernel | Transient data |
+| **Models** | `AppData/Vizzu/models/` | Model/Compute | Local AI weights/loras |
+| **Logs** | `AppData/Vizzu/logs/` | Logger | System tracing and telemetry |
 
 ---
 
 ## 5. AI Architecture
 
-CHITTI utilizes AI, but restricts its authority.
+Vizzu utilizes AI, but restricts its authority.
 
 ```text
 Deterministic First
@@ -128,13 +128,13 @@ Learning (Feedback ingestion)
         ↓
 Promotion (To permanent rules or memory)
 ```
-**Golden Rule of AI in CHITTI:** The LLM is an advanced capability provider. It receives structured `LLMRequest` objects from the platform. It does not dictate system state, control the scheduler, or directly interact with the file system.
+**Golden Rule of AI in Vizzu:** The LLM is an advanced capability provider. It receives structured `LLMRequest` objects from the platform. It does not dictate system state, control the scheduler, or directly interact with the file system.
 
 ---
 
 ## 6. Extension Points
 
-CHITTI is designed for growth through the following extension points:
+Vizzu is designed for growth through the following extension points:
 - **Capabilities:** Atomic, deterministic python scripts (e.g., `sys.file.open`) mapped to intents.
 - **Experiences:** Proactive workflows triggered by presence/system states, utilizing modular `IExperienceSectionProvider`s.
 - **Skills:** Bundled capabilities and knowledge targeting a specific domain.
@@ -145,7 +145,7 @@ CHITTI is designed for growth through the following extension points:
 
 ## 7. Engineering Rules
 
-Development on CHITTI is governed by a strict set of rules defined in `AGENTS.md`. 
+Development on Vizzu is governed by a strict set of rules defined in `AGENTS.md`. 
 The most critical rule defining the frozen state of this platform is **Rule 264**.
 
 ### Rule 264 – Runtime Stability
@@ -185,7 +185,7 @@ The most critical rule defining the frozen state of this platform is **Rule 264*
 > Plugins extend the registry only. They never modify Planner, Scheduler, Behavior, or Knowledge runtimes directly.
 
 ### Rule 276 — Universal Service Registration
-> Every executable component in CHITTI must be registered before it can participate in planning or execution. Unregistered services are invisible to the platform.
+> Every executable component in Vizzu must be registered before it can participate in planning or execution. Unregistered services are invisible to the platform.
 
 ### Rule 277 — Deterministic Planner Selection
 > The Planner must select services through deterministic registry queries. Direct references to implementation classes are prohibited.
@@ -467,7 +467,7 @@ The most critical rule defining the frozen state of this platform is **Rule 264*
 
 ## Architecture Impact Review
 
-Before adding any new runtime to CHITTI, a mandatory 6-point Architecture Impact Review must be passed:
+Before adding any new runtime to Vizzu, a mandatory 6-point Architecture Impact Review must be passed:
 1. **Ownership** – Does another runtime already own this responsibility?
 2. **Boundary** – Does it violate any Engineering Rules or layer separation?
 3. **Dependencies** – Does it introduce cycles or hidden coupling?

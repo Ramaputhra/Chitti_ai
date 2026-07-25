@@ -1,4 +1,4 @@
-# CHITTI V2 — EPIC 40 WAVE 3 SPRINT W3S2-A
+# Vizzu V2 — EPIC 40 WAVE 3 SPRINT W3S2-A
 # WORKFLOW TEMPLATES & USER WORKFLOWS: PRE-IMPLEMENTATION AUDIT REPORT
 
 ======================================================================
@@ -10,7 +10,7 @@ A mandatory pre-implementation engineering audit was conducted for **Epic 40 Wav
 ### Core Audit Finding:
 The repository **already contains ~85% of workflow template infrastructure** in `WorkflowTemplateRegistry` (`desktop/workflow/registry.py`), `WorkflowTemplate` / `WorkflowDefinition` (`desktop/workflow/models.py`), and `WorkflowRuntime` (`desktop/runtimes/workflow_runtime.py`).
 
-To satisfy Sprint W3S2-A without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, CHITTI V2 SHALL **extend `WorkflowTemplateRegistry`** to add `save_template()`, `delete_template()`, `rename_template()`, and `search_templates()`, and populate standard preset JSON files in `config/workflows/` (Developer Mode, Presentation Mode, Work Mode, Meeting Mode, Gaming Mode), rather than creating duplicate persistence layers or new top-level runtimes.
+To satisfy Sprint W3S2-A without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, Vizzu V2 SHALL **extend `WorkflowTemplateRegistry`** to add `save_template()`, `delete_template()`, `rename_template()`, and `search_templates()`, and populate standard preset JSON files in `config/workflows/` (Developer Mode, Presentation Mode, Work Mode, Meeting Mode, Gaming Mode), rather than creating duplicate persistence layers or new top-level runtimes.
 
 ---
 

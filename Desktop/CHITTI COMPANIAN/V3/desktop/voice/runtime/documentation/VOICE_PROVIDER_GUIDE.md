@@ -1,6 +1,6 @@
-# CHITTI V2 — VOICE PROVIDER GUIDE
+# Vizzu V2 — VOICE PROVIDER GUIDE
 
-Welcome to the **CHITTI V2 Voice Provider Integration Guide**. This guide explains how to add new TTS providers, map provider capabilities, and generate canonical `SpeechTimeline` objects.
+Welcome to the **Vizzu V2 Voice Provider Integration Guide**. This guide explains how to add new TTS providers, map provider capabilities, and generate canonical `SpeechTimeline` objects.
 
 ---
 

@@ -1,14 +1,14 @@
-# CHITTI V2 — MANDATORY REPOSITORY AI MODEL AUDIT REPORT
+# Vizzu V2 — MANDATORY REPOSITORY AI MODEL AUDIT REPORT
 **(Comprehensive Inventory: Local, Open Source, Cloud, & Commercial AI Technologies)**
 
 ======================================================================
 ## 1. EXECUTIVE SUMMARY
 ======================================================================
 
-A mandatory, repository-wide engineering audit was conducted across every AI model, inference engine, SDK, runtime, API, and provider currently integrated into **CHITTI V2**.
+A mandatory, repository-wide engineering audit was conducted across every AI model, inference engine, SDK, runtime, API, and provider currently integrated into **Vizzu V2**.
 
 ### Core Audit Takeaway:
-CHITTI V2 is architected with a **Local-First, Privacy-Preserving posture**. All core perceptual capabilities (**OCR**, **STT**, **TTS**, **VAD**, **Vision Overlay**, **Memory Embeddings**) operate **100% offline** using local open-source ONNX and PyTorch weights. Cloud LLM APIs (OpenRouter, Gemini, OpenAI) exist strictly as **optional remote capability providers**, managed via the deterministic `AIRouter` and the new `ProviderManager` platform.
+Vizzu V2 is architected with a **Local-First, Privacy-Preserving posture**. All core perceptual capabilities (**OCR**, **STT**, **TTS**, **VAD**, **Vision Overlay**, **Memory Embeddings**) operate **100% offline** using local open-source ONNX and PyTorch weights. Cloud LLM APIs (OpenRouter, Gemini, OpenAI) exist strictly as **optional remote capability providers**, managed via the deterministic `AIRouter` and the new `ProviderManager` platform.
 
 ---
 

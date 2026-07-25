@@ -1,9 +1,9 @@
 {
-  "id": "chitti.pack.developer_workspace",
+  "id": "vizzu.pack.developer_workspace",
   "name": "Developer Workspace Pack",
   "version": "1.0.0",
   "description": "Assistant capabilities inside the developer workspace.",
-  "dependencies": ["chitti.platform.environment", "chitti.platform.presentation"],
+  "dependencies": ["vizzu.platform.environment", "vizzu.platform.presentation"],
   "capabilities": [
     "OpenWorkspace", "CloseWorkspace", "SwitchWorkspace", "RestoreWorkspace",
     "OpenFile", "RevealFile", "GoToLine", "SearchProject",

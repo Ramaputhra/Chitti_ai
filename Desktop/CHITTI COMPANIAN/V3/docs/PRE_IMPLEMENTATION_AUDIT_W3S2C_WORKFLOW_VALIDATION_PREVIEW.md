@@ -1,4 +1,4 @@
-# CHITTI V2 — EPIC 40 WAVE 3 SPRINT W3S2-C
+# Vizzu V2 — EPIC 40 WAVE 3 SPRINT W3S2-C
 # WORKFLOW VALIDATION & PREVIEW: PRE-IMPLEMENTATION AUDIT REPORT
 
 ======================================================================
@@ -10,7 +10,7 @@ A mandatory pre-implementation engineering audit was conducted for **Epic 40 Wav
 ### Core Audit Finding:
 The repository **already contains ~85% of validation, preview, and dry-run infrastructure** across `WorkflowRuntime` (`desktop/runtimes/workflow_runtime.py`), `VerificationRuntime` (`desktop/runtimes/verification_runtime.py`), `CapabilityRegistry` (`desktop/runtimes/capability/registry.py`), `ExecutionPlan` (`desktop/models/cognition.py`), and `ExecutionTrace` (`desktop/models/execution.py`).
 
-To satisfy Sprint W3S2-C without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, CHITTI V2 SHALL **extend `WorkflowRuntime`** to add `validate_plan()`, `preview_plan()`, and `dry_run()` methods, rather than creating new validation runtimes or duplicate preview engines.
+To satisfy Sprint W3S2-C without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, Vizzu V2 SHALL **extend `WorkflowRuntime`** to add `validate_plan()`, `preview_plan()`, and `dry_run()` methods, rather than creating new validation runtimes or duplicate preview engines.
 
 ---
 

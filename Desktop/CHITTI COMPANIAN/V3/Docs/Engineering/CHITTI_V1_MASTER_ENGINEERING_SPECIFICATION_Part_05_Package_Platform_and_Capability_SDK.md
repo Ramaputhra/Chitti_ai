@@ -1,4 +1,4 @@
-# CHITTI V1 MASTER ENGINEERING SPECIFICATION
+# Vizzu V1 MASTER ENGINEERING SPECIFICATION
 
 # Part 5
 # Package Platform, Capability SDK & Environment Platform
@@ -7,7 +7,7 @@
 
 # 1. Objective
 
-The Package Platform enables CHITTI to install, manage, update and execute capabilities independently from the core runtime.
+The Package Platform enables Vizzu to install, manage, update and execute capabilities independently from the core runtime.
 
 The desktop application remains lightweight while functionality is delivered through modular packages.
 
@@ -350,4 +350,4 @@ without changing Runtime Kernel.
 
 # Part 5 Summary
 
-The Package Platform transforms CHITTI into a modular AI operating environment where capabilities, models, plugins and future extensions remain independently deployable while preserving deterministic execution and runtime isolation.
+The Package Platform transforms Vizzu into a modular AI operating environment where capabilities, models, plugins and future extensions remain independently deployable while preserving deterministic execution and runtime isolation.

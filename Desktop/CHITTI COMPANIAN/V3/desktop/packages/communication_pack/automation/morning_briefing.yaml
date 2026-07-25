@@ -1,4 +1,4 @@
-id: chitti.automation.morning_briefing
+id: vizzu.automation.morning_briefing
 name: Morning Briefing
 trigger: manual
 steps:

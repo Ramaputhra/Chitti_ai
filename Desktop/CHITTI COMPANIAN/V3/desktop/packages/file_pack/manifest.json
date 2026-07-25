@@ -1,9 +1,9 @@
 {
-  "id": "chitti.pack.file_automation",
+  "id": "vizzu.pack.file_automation",
   "name": "File Automation Pack",
   "version": "1.0.0",
   "description": "Standardized file automation capabilities relying on the frozen Environment Runtime.",
-  "dependencies": ["chitti.platform.environment", "chitti.platform.presentation"],
+  "dependencies": ["vizzu.platform.environment", "vizzu.platform.presentation"],
   "capabilities": [
     "SearchFiles", "FindDuplicates", "FindLargeFiles", "FindRecentFiles",
     "OrganizeFolder", "RenameFiles", "ArchiveFiles", "CleanupFolder",

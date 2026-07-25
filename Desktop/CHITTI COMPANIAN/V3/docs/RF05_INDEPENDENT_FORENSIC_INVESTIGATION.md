@@ -1,7 +1,7 @@
 # RF05 INDEPENDENT FORENSIC INVESTIGATION
 
 ## EXECUTIVE SUMMARY
-As an independent forensic software investigator, I have audited the CHITTI V2 (EPIC RF05) repository to verify whether previous engineering claims hold true when examined strictly against source code and actual production execution paths. I have treated all prior reports, certificates, and verification scripts as untrusted.
+As an independent forensic software investigator, I have audited the Vizzu V2 (EPIC RF05) repository to verify whether previous engineering claims hold true when examined strictly against source code and actual production execution paths. I have treated all prior reports, certificates, and verification scripts as untrusted.
 
 **Conclusion:** Extensive portions of the system, including core entry points, intent resolution (AI), and capabilities, are **SIMULATED** or **BYPASSED**. The verification scripts created during the RF sprints systematically bypass the production entry point, mock the planner, and instantiate internal objects directly. Therefore, numerous previous "PASS" claims are invalidated.
 
@@ -10,7 +10,7 @@ As an independent forensic software investigator, I have audited the CHITTI V2 (
 ## FINDINGS
 
 ### 1. Production Verification Harness (Core Spine)
-- **Repository Path:** `CHITTI_PRODUCTION_VERIFICATION_HARNESS.py`
+- **Repository Path:** `Vizzu_PRODUCTION_VERIFICATION_HARNESS.py`
 - **Class:** `None` (Functions: `progressive_boot`, `test_launch_calculator`)
 - **Method:** `progressive_boot`, `test_launch_calculator`
 - **Evidence:** The script hardcodes `use_llm=False`, entirely bypassing the `InferenceRuntime`, `AIRuntime`, and `ConversationRuntime`. It relies on a `DeterministicPlannerStrategy` to mock intent resolution. Additionally, it injects `InteractionEnvelope` directly onto the EventBus instead of using a legitimate User -> Production Entry Point.
@@ -23,7 +23,7 @@ As an independent forensic software investigator, I have audited the CHITTI V2 (
 - **Repository Path:** `desktop/platform/providers/ocr/liteocr_provider.py`
 - **Class:** `LiteOCRProvider`
 - **Method:** `extract_text`
-- **Evidence:** The provider does not load an ONNX model, nor does it process the given image. It hardcodes a sample text (`"CHITTI V2 LiteOCR Modernized Vision Output"`) and returns a perfectly structured dummy `OCRArtifact`.
+- **Evidence:** The provider does not load an ONNX model, nor does it process the given image. It hardcodes a sample text (`"Vizzu V2 LiteOCR Modernized Vision Output"`) and returns a perfectly structured dummy `OCRArtifact`.
 - **Execution Path:** `ExecutionRuntime` → `LiteOCRProvider.extract_text`
 - **Observed Behaviour:** Returns a hardcoded string and mock bounding boxes regardless of input.
 - **Confidence:** 100%

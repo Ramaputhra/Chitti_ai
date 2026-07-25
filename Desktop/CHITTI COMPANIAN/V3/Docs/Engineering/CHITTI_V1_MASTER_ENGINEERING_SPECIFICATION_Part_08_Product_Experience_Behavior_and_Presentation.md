@@ -1,4 +1,4 @@
-# CHITTI V1 MASTER ENGINEERING SPECIFICATION
+# Vizzu V1 MASTER ENGINEERING SPECIFICATION
 
 # Part 8
 # Product Experience, Behavior & Presentation Platform
@@ -17,7 +17,7 @@ Its sole purpose is communication.
 
 # 2. Presentation Philosophy
 
-CHITTI is a Desktop Companion.
+Vizzu is a Desktop Companion.
 
 Not a chatbot.
 
@@ -67,7 +67,7 @@ Mobile Companion
 
 Purpose
 
-Determine HOW CHITTI behaves.
+Determine HOW Vizzu behaves.
 
 Responsibilities
 

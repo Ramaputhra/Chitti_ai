@@ -1,4 +1,4 @@
-id: chitti.automation.weekly_report
+id: vizzu.automation.weekly_report
 name: Weekly Report Generation
 trigger: manual
 steps:

@@ -1,4 +1,4 @@
-# CHITTI V2 — EPIC 40 WAVE 3 SPRINT W3S2-B
+# Vizzu V2 — EPIC 40 WAVE 3 SPRINT W3S2-B
 # CONDITIONAL WORKFLOWS, VARIABLES & PARAMETERS: PRE-IMPLEMENTATION AUDIT REPORT
 
 ======================================================================
@@ -10,7 +10,7 @@ A mandatory pre-implementation engineering audit was conducted for **Epic 40 Wav
 ### Core Audit Finding:
 The repository **already contains ~80% of conditional evaluation, variable substitution, and parameter binding infrastructure** across `WorkflowRuntime` (`desktop/runtimes/workflow_runtime.py`), `WorkflowRequest.parameters` (`desktop/models/cognition.py`), `ExecutionStep.output_payload` (`desktop/models/execution.py`), and `VerificationRuntime` (`desktop/runtimes/verification_runtime.py`).
 
-To satisfy Sprint W3S2-B without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, CHITTI V2 SHALL **extend `WorkflowRuntime`** to add helper methods `_evaluate_step_condition()` and `_resolve_step_parameters()`, rather than creating new runtimes, parsers, or duplicate variable/parameter engines.
+To satisfy Sprint W3S2-B without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, Vizzu V2 SHALL **extend `WorkflowRuntime`** to add helper methods `_evaluate_step_condition()` and `_resolve_step_parameters()`, rather than creating new runtimes, parsers, or duplicate variable/parameter engines.
 
 ---
 

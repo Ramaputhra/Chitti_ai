@@ -1,4 +1,4 @@
-# CHITTI Service Registry & Dependency Graph
+# Vizzu Service Registry & Dependency Graph
 
 This document defines the application's core service topology, tracking the startup sequence and lifecycle ownership.
 

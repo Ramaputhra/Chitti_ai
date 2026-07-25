@@ -1,4 +1,4 @@
-id: chitti.automation.resume_coding
+id: vizzu.automation.resume_coding
 name: Continue Coding Workspace
 trigger: internal
 steps:

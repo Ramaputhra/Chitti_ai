@@ -28,7 +28,7 @@
 | 16 | `GGUFInferenceProvider` | `platform/inference/inference/gguf_provider.py` | Production Ready (model-dependent) | YES (use_llm=True) | 1 (kernel.py) | 1 (InferenceRuntime) | MEDIUM | YES (if model missing) | YES | NO | Canonical | Ensure `qwen2.5-1.5b-instruct-q4_k_m.gguf` exists; verify `llama_cpp` installed |
 | 17 | `ExpressionRuntime` | `runtimes/expression_runtime.py` | Production Ready | YES | 1 (compose_runtimes) | 0 | LOW | NO | YES | NO | Canonical | No repair needed |
 | 18 | `DistanceCapability` (not registered) | `packages/desktop_pack/capabilities/distance.py` | Not Registered (broken wiring) | NO | 0 | 1 (DeterministicPlannerStrategy references it) | MEDIUM | YES | YES | NO | Unknown | Register in `CapabilityProvider` or remove from planner routing |
-| 19 | `FasterWhisperProvider.process_audio_stream` | line 107–121 | Hardcoded stub | YES (called during stream) | 1 (FasterWhisperProvider) | 0 | LOW | NO (streaming only) | YES | NO | Canonical | Remove hardcoded `"Hello Chitti"` stream yielding; implement real `faster_whisper` stream |
+| 19 | `FasterWhisperProvider.process_audio_stream` | line 107–121 | Hardcoded stub | YES (called during stream) | 1 (FasterWhisperProvider) | 0 | LOW | NO (streaming only) | YES | NO | Canonical | Remove hardcoded `"Hello Vizzu"` stream yielding; implement real `faster_whisper` stream |
 
 ---
 
@@ -52,7 +52,7 @@
 **Severity:** If the model file is not bundled with the release, the entire `use_llm=True` brain is non-functional.
 
 #### BLOCKER R3 — FasterWhisperProvider.process_audio_stream: Hardcoded Stub
-**Evidence:** `faster_whisper_provider.py:107–121`: `process_audio_stream` yields hardcoded `"Hello Chi"` and `"Hello Chitti"` regardless of audio input. If the voice pipeline calls this method (for streaming), all transcriptions will return "Hello Chitti".
+**Evidence:** `faster_whisper_provider.py:107–121`: `process_audio_stream` yields hardcoded `"Hello Chi"` and `"Hello Vizzu"` regardless of audio input. If the voice pipeline calls this method (for streaming), all transcriptions will return "Hello Vizzu".
 
 **Note:** `_on_transcribe_buffer` correctly calls `process_audio` (not `process_audio_stream`), and `process_audio` is real. The streaming method is only a partial stub. Risk is LOW-MEDIUM.
 
@@ -95,7 +95,7 @@
 
 ---
 
-### Q5. What truly prevents CHITTI V2 from shipping?
+### Q5. What truly prevents Vizzu V2 from shipping?
 
 **Exactly two confirmed functional gaps exist in the production execution path:**
 
@@ -117,7 +117,7 @@ The production system requires `llama_cpp`, `openwakeword`, `faster_whisper`, an
 |---|---|---|
 | 1 | Fix `DistanceCapability` and `ResumeActivityCapability` registration or remove from planner routing | Prevents confirmed crash path for DistanceIntent and ResumeActivityIntent |
 | 2 | Add startup dependency/model validation with loud failure | Prevents silent broken state on release machines without model files |
-| 3 | Fix `FasterWhisperProvider.process_audio_stream` hardcoded stub | Prevents voice streaming returning "Hello Chitti" for all input |
+| 3 | Fix `FasterWhisperProvider.process_audio_stream` hardcoded stub | Prevents voice streaming returning "Hello Vizzu" for all input |
 | 4 | Implement `LLMPlannerStrategy` | Enables dynamic plan formulation. Required for production intelligence but not for current demo scenarios |
 | 5 | Register `DistanceCapability` with real geographic API | Functional capability for distance queries |
 | 6 | Register `OCRCapability` + implement `LiteOCRProvider` | Screen understanding feature |
@@ -128,7 +128,7 @@ The production system requires `llama_cpp`, `openwakeword`, `faster_whisper`, an
 
 ## FINAL VERDICT
 
-> **Can CHITTI V2 ship today?**  
+> **Can Vizzu V2 ship today?**  
 > **NO — but for a much narrower reason than the RG01 report suggested.**
 
 The system is architecturally sound and the core AI pipeline (text input → LLM intent resolution → capability execution → expression rendering) works correctly end-to-end **when model files are present**.

@@ -1,4 +1,4 @@
-# CHITTI V2 — EPIC 39 WAVE 2 SPRINT W2S2
+# Vizzu V2 — EPIC 39 WAVE 2 SPRINT W2S2
 # DOCUMENT INTELLIGENCE: PRE-IMPLEMENTATION AUDIT REPORT
 
 ======================================================================
@@ -10,7 +10,7 @@ A mandatory pre-implementation audit was conducted for **Epic 39 Wave 2 Sprint W
 ### Core Audit Finding:
 The repository **already contains ~80% of the Document Intelligence infrastructure** in `desktop/capabilities/files/` (`DocumentIntelligenceCapability`, `MarkItDownParser`, `ChunkBuilder`, `DocumentContent`, `FileRepository`).
 
-To satisfy Sprint W2S2 without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, CHITTI V2 SHALL **extend existing modules** (`desktop/capabilities/files/document_parser.py` and `document_intelligence.py`) to connect OCR fallback from the `ProviderManager` platform, rather than creating duplicate parsers or new top-level platforms.
+To satisfy Sprint W2S2 without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, Vizzu V2 SHALL **extend existing modules** (`desktop/capabilities/files/document_parser.py` and `document_intelligence.py`) to connect OCR fallback from the `ProviderManager` platform, rather than creating duplicate parsers or new top-level platforms.
 
 ---
 

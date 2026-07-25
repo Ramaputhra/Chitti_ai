@@ -65,7 +65,7 @@ Production Release
 
 
 -------------------------
-I strongly agree with the goal: **don't derail**. For a project like Chitti, the biggest risk isn't technical difficulty—it's scope creep. If you keep changing direction mid-build, the project can easily double or triple in duration.
+I strongly agree with the goal: **don't derail**. For a project like Vizzu, the biggest risk isn't technical difficulty—it's scope creep. If you keep changing direction mid-build, the project can easily double or triple in duration.
 
 I would adopt a **phase-gated workflow** with one strict rule:
 
@@ -75,7 +75,7 @@ No exceptions.
 
 ---
 
-# CHITTI Master Development Plan (v1.0)
+# Vizzu Master Development Plan (v1.0)
 
 ```
 PHASE 00
@@ -581,7 +581,7 @@ Responsible for audio acquisition, VAD, language detection, Voice Authentication
 
 ## Phase 3 — Intent Runtime
 Responsible for deterministic STT text normalization, local multilingual intent recognition, entity extraction, slot filling, and confidence scoring. 
-*(Goal: Immediately make CHITTI smarter and faster without LLM for known commands).*
+*(Goal: Immediately make Vizzu smarter and faster without LLM for known commands).*
 
 ## Phase 4 — Workflow Orchestration
 Responsible for breaking a request into tasks, workflow generation, sequential task chains, and conditional branches. (Includes Workflow Runtime, Planner Runtime, and Execution Graph Runtime).
@@ -595,7 +595,7 @@ Responsible for queue management, parallel execution, dependency tracking, failu
 └── Resource Runtime
 
 ## Phase 6 — Behavior Runtime Layer
-These runtimes define how CHITTI presents itself and react to execution events. They do not execute work.
+These runtimes define how Vizzu presents itself and react to execution events. They do not execute work.
 ├── Character Runtime
 ├── Emotion Runtime
 ├── Narration Runtime

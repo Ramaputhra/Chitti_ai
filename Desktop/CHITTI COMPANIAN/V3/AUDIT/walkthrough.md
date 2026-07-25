@@ -1,6 +1,6 @@
 # Walkthrough: Phase 5.6 (Experience 001 Architecture Certification)
 
-This is it. The **Platform Freeze Gate** has been formally executed. We have certified CHITTI's architecture and permanently locked in the runtime boundaries.
+This is it. The **Platform Freeze Gate** has been formally executed. We have certified Vizzu's architecture and permanently locked in the runtime boundaries.
 
 ## What Was Built
 
@@ -21,7 +21,7 @@ I generated a robust suite (`test_experience_001_certification.py`) that program
 - **Suite 9** explicitly asserts the single responsibility boundaries of every runtime.
 
 ### 3. The Final Deliverable
-The test suite executed successfully, and I have generated the official certification artifact. You can read the final scorecard here: [EXPERIENCE_001_CERTIFICATION.md](file:///c:/Users/Sm!le/Desktop/CHITTI%20COMPANIAN/V3/EXPERIENCE_001_CERTIFICATION.md). 
+The test suite executed successfully, and I have generated the official certification artifact. You can read the final scorecard here: [EXPERIENCE_001_CERTIFICATION.md](file:///c:/Users/Sm!le/Desktop/Vizzu%20COMPANIAN/V3/EXPERIENCE_001_CERTIFICATION.md). 
 
 > **Experience 001 Architecture v1.0 is certified and frozen. All subsequent capabilities, workflows, AI integrations, and presentation features must conform to this architecture. Any structural modification to certified runtime layers requires an approved Architecture Decision Record (ADR) and re-certification of the affected architecture.**
 

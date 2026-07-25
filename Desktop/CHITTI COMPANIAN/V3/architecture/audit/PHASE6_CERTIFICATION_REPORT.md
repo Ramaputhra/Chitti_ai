@@ -5,7 +5,7 @@
 **Architecture Scope:** Behavior Manager, Emotion Runtime, Narration Runtime, Character Runtime, Expression Runtime, TTS Runtime
 
 ## Executive Summary
-Phase 6 successfully constructed CHITTI's **Behavior Runtime Layer**. This layer sits entirely isolated from the deterministic execution core. It strictly dictates *how* CHITTI communicates based on personality profiles, without altering *what* CHITTI executes. 
+Phase 6 successfully constructed Vizzu's **Behavior Runtime Layer**. This layer sits entirely isolated from the deterministic execution core. It strictly dictates *how* Vizzu communicates based on personality profiles, without altering *what* Vizzu executes. 
 
 Crucially, the Behavior Layer operates without runtime LLM generation for dialogue or emotion, relying on lightning-fast, purely deterministic JSON templates and configuration matrices. This guarantees latency-free, predictable companionship.
 
@@ -15,9 +15,9 @@ Crucially, the Behavior Layer operates without runtime LLM generation for dialog
 
 - ✅ **Behavior Consistency:** Emotion, narration, dialogue, expression, and voice remain synchronized at all times.
 - ✅ **Companionship Over Logging:** Internal orchestration (PlannerStarted, GraphCreated) is never narrated. Only user-valuable events are vocalized.
-- ✅ **Silence Intelligence:** CHITTI's Narration filter knows exactly when *not* to speak, collapsing redundant updates and suppressing speech during background tasks.
+- ✅ **Silence Intelligence:** Vizzu's Narration filter knows exactly when *not* to speak, collapsing redundant updates and suppressing speech during background tasks.
 - ✅ **Multilingual Continuity:** Switching between English and Telugu is handled natively by the Character Runtime's JSON Engine without restarting any systems.
-- ✅ **Long-Session Stability:** Anti-Repetition filters and Animation Blending stacks ensure CHITTI does not loop, spam, or glitch during continuous 8-hour sessions.
+- ✅ **Long-Session Stability:** Anti-Repetition filters and Animation Blending stacks ensure Vizzu does not loop, spam, or glitch during continuous 8-hour sessions.
 
 ---
 
@@ -35,7 +35,7 @@ The architecture successfully mitigates the following Companion Chaos Scenarios:
 
 ### C. Failure Loop Protection
 * **Injection**: A node failing and retrying 5 times consecutively.
-* **Result**: `PASS`. `ICommunicationQueue` collapses the retry spam. CHITTI apologizes once, then remains silent during automated recovery attempts.
+* **Result**: `PASS`. `ICommunicationQueue` collapses the retry spam. Vizzu apologizes once, then remains silent during automated recovery attempts.
 
 ### D. Rapid Emotion Switching
 * **Injection**: Rapid transitions (Focused -> Waiting -> Concerned -> Happy) within 1 second.
@@ -60,4 +60,4 @@ The architecture successfully mitigates the following Companion Chaos Scenarios:
 5. **TTS Runtime**: Streaming audio orchestrator managing Logical Channels, Ducking, and Lip-Sync Viseme generation.
 
 ## Conclusion
-Phase 6 is locked. CHITTI is now officially a desktop companion, not just an automation tool. 
+Phase 6 is locked. Vizzu is now officially a desktop companion, not just an automation tool. 

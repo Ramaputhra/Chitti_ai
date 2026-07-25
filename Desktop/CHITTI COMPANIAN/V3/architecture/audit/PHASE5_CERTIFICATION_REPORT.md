@@ -1,12 +1,12 @@
 # Phase 5 Certification Report: Execution Core
 
 **Document Version:** 1.0
-**Architecture Version:** CHITTI OS v5.0 (Execution Core)
+**Architecture Version:** Vizzu OS v5.0 (Execution Core)
 **Date:** 2026-07-18
 **Status:** 🟢 CERTIFIED (GO FOR PHASE 6)
 
 ## 1. Executive Summary
-This document certifies that the Phase 5 Execution Core (Sprints 5.1 through 5.6) has successfully passed the absolute limits of desktop validation, concurrency, chaos injection, and human behavior edge cases. CHITTI's deterministic execution engine is officially proven stable, resilient, and ready to host the Behavior Runtime Layer without risking architectural collapse.
+This document certifies that the Phase 5 Execution Core (Sprints 5.1 through 5.6) has successfully passed the absolute limits of desktop validation, concurrency, chaos injection, and human behavior edge cases. Vizzu's deterministic execution engine is officially proven stable, resilient, and ready to host the Behavior Runtime Layer without risking architectural collapse.
 
 ## 2. Validation Test Matrix (The Chaos Gauntlet)
 

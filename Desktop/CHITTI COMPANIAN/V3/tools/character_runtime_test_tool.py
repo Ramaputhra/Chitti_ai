@@ -12,7 +12,7 @@ from desktop.character.behavior.script.behavior_script import BehaviorScript, Sc
 
 def run_test_tool():
     print("==========================================================")
-    print("CHITTI V2 — CHARACTER RUNTIME & SCENE MANAGER ANIMATOR PREVIEW TOOL")
+    print("Vizzu V2 — CHARACTER RUNTIME & SCENE MANAGER ANIMATOR PREVIEW TOOL")
     print("==========================================================\n")
     
     runtime = CharacterRuntime()

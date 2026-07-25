@@ -1,4 +1,4 @@
-# CHITTI V1 MASTER ENGINEERING SPECIFICATION
+# Vizzu V1 MASTER ENGINEERING SPECIFICATION
 
 # Part 9
 # Engineering Governance, Quality Assurance & Future Roadmap
@@ -7,7 +7,7 @@
 
 # 1. Objective
 
-This document defines governance rules ensuring CHITTI evolves without architectural drift.
+This document defines governance rules ensuring Vizzu evolves without architectural drift.
 
 ---
 
@@ -313,10 +313,10 @@ Product Before Prototype
 
 # 16. Final Vision
 
-CHITTI is designed as a modular AI Desktop Companion platform capable of evolving through independent runtimes, packages, capabilities, and presentation systems without sacrificing determinism, maintainability, or scalability.
+Vizzu is designed as a modular AI Desktop Companion platform capable of evolving through independent runtimes, packages, capabilities, and presentation systems without sacrificing determinism, maintainability, or scalability.
 
 ---
 
 # Part 9 Summary
 
-This governance framework ensures every future release preserves architectural integrity while enabling long-term evolution of the CHITTI platform.
+This governance framework ensures every future release preserves architectural integrity while enabling long-term evolution of the Vizzu platform.

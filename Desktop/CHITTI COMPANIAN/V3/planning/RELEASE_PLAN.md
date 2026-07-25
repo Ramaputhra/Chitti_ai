@@ -1,10 +1,10 @@
-# CHITTI Product Release Roadmap
+# Vizzu Product Release Roadmap
 
 *Architecture is no longer the bottleneck. User experience is.*
 From this point forward, every sprint answers one question: **What new thing can the user accomplish today that they couldn't yesterday?**
 
 ## Version 0.1 — Personal Assistant
-**Goal:** Use CHITTI every day instead of manually checking these apps.
+**Goal:** Use Vizzu every day instead of manually checking these apps.
 - Email triage
 - Calendar assistant
 - Meeting preparation
@@ -30,7 +30,7 @@ From this point forward, every sprint answers one question: **What new thing can
 - Storyboard assistance
 
 ## Version 0.4 — Autonomous Agent
-**Goal:** CHITTI starts working even when you don't explicitly ask.
+**Goal:** Vizzu starts working even when you don't explicitly ask.
 - Monitor email
 - Watch folders
 - Scheduled reports
@@ -41,7 +41,7 @@ From this point forward, every sprint answers one question: **What new thing can
 ## Version 1.0 — Desktop Companion
 **Goal:** Flawless daily operation.
 By this point, it should feel natural to say:
-- *"Hey Chitti..."*
+- *"Hey Vizzu..."*
 - *"Continue my work."*
 - *"Prepare my meeting."*
 - *"Summarize today's emails."*

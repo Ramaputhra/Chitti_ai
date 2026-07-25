@@ -1,4 +1,4 @@
-# CHITTI V1 Integration Master Blueprint
+# Vizzu V1 Integration Master Blueprint
 
 ## Mission
 

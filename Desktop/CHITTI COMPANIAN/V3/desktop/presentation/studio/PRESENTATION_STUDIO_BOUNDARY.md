@@ -1,4 +1,4 @@
-# CHITTI V2 — PRESENTATION STUDIO & CHARACTER STUDIO BOUNDARY SPECIFICATION
+# Vizzu V2 — PRESENTATION STUDIO & CHARACTER STUDIO BOUNDARY SPECIFICATION
 
 ## 1. Executive Summary
 This document defines the strict architectural boundary between the **Presentation Platform** (`desktop/presentation/`) and the **Character Platform** (`desktop/character/`).

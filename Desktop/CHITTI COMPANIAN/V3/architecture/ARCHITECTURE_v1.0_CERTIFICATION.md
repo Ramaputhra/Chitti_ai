@@ -4,7 +4,7 @@
 **Status:** 🟢 **Frozen & Certified**
 
 ## Overview
-This document officially certifies the completion of Phase 7 and the freezing of the CHITTI runtime architecture (v1.0). From this point forward, the core architecture is considered stable. Feature growth will occur within the Knowledge & Skill Ecosystem (Phase 8+).
+This document officially certifies the completion of Phase 7 and the freezing of the Vizzu runtime architecture (v1.0). From this point forward, the core architecture is considered stable. Feature growth will occur within the Knowledge & Skill Ecosystem (Phase 8+).
 
 ## Frozen Runtimes
 The following runtimes and their core contracts are frozen under **Rule 264 (Runtime Stability)**:

@@ -1,4 +1,4 @@
-id: chitti.automation.release_build
+id: vizzu.automation.release_build
 name: Release Build
 trigger: manual
 steps:

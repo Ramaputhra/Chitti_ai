@@ -1,9 +1,9 @@
 {
-  "id": "chitti.pack.browser_automation",
+  "id": "vizzu.pack.browser_automation",
   "name": "Browser Automation Pack",
   "version": "1.0.0",
   "description": "Standardized browser automation capabilities relying on the frozen Environment Runtime.",
-  "dependencies": ["chitti.platform.environment", "chitti.platform.presentation"],
+  "dependencies": ["vizzu.platform.environment", "vizzu.platform.presentation"],
   "capabilities": [
     "SearchWeb", "ExtractArticle", "ReadPage", "DownloadFile"
   ]

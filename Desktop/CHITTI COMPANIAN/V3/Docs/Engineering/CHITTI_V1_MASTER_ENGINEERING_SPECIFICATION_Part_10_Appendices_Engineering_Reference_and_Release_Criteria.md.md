@@ -1,4 +1,4 @@
-# CHITTI V1 MASTER ENGINEERING SPECIFICATION
+# Vizzu V1 MASTER ENGINEERING SPECIFICATION
 
 # Part 10
 # Appendices, Engineering Reference & Release Criteria
@@ -9,7 +9,7 @@
 
 # 1. Purpose
 
-This appendix serves as the permanent engineering reference for CHITTI V1.
+This appendix serves as the permanent engineering reference for Vizzu V1.
 
 Unlike previous sections that define architecture and behavior, this appendix acts as the day-to-day engineering handbook used during development, maintenance, debugging, and future expansion.
 
@@ -705,7 +705,7 @@ Rendering layer.
 
 # 18. Future Vision
 
-The CHITTI architecture is intentionally modular.
+The Vizzu architecture is intentionally modular.
 
 Future releases shall extend the platform by adding:
 
@@ -723,7 +723,7 @@ without redesigning the Runtime Kernel.
 
 # 19. Final Engineering Statement
 
-CHITTI V1 is defined as a deterministic, event-driven, modular AI Desktop Companion Platform.
+Vizzu V1 is defined as a deterministic, event-driven, modular AI Desktop Companion Platform.
 
 Reasoning, execution, verification, memory, presentation, and hardware remain independent architectural domains connected through explicit runtime contracts.
 
@@ -731,7 +731,7 @@ Every future contribution SHALL preserve these architectural boundaries.
 
 ---
 
-# End of CHITTI V1 MASTER ENGINEERING SPECIFICATION
+# End of Vizzu V1 MASTER ENGINEERING SPECIFICATION
 
 **Document Version:** 1.0 Draft
 
@@ -748,4 +748,4 @@ Every future contribution SHALL preserve these architectural boundaries.
 - Part 9 — Engineering Governance, Quality Assurance & Future Roadmap
 - Part 10 — Appendices, Engineering Reference & Release Criteria
 
-**Status:** Architecture Frozen for CHITTI V1 Integration Release
+**Status:** Architecture Frozen for Vizzu V1 Integration Release

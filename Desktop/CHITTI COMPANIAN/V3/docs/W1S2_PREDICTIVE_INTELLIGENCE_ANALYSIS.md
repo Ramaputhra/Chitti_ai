@@ -1,11 +1,11 @@
-# CHITTI V2 — SPRINT W1S2 PREDICTIVE INTELLIGENCE ANALYSIS
+# Vizzu V2 — SPRINT W1S2 PREDICTIVE INTELLIGENCE ANALYSIS
 **(EPIC 38 — WAVE 1 — SPRINT W1S2: OS INTELLIGENCE & LIVE SYSTEM CONTROL)**
 
 ======================================================================
 ## 1. EXECUTIVE SUMMARY
 ======================================================================
 
-An engineering analysis of **Predictive System Intelligence** for **EPIC 38 — WAVE 1 — SPRINT W1S2: OS INTELLIGENCE** was conducted. Predictive intelligence equips CHITTI with deterministic forecasting capabilities (Disk exhaustion, Memory pressure, Battery runtime, Network throughput, and Render completion) derived **exclusively** from the rolling 60-sample in-memory metrics buffer in `HealthMonitor`.
+An engineering analysis of **Predictive System Intelligence** for **EPIC 38 — WAVE 1 — SPRINT W1S2: OS INTELLIGENCE** was conducted. Predictive intelligence equips Vizzu with deterministic forecasting capabilities (Disk exhaustion, Memory pressure, Battery runtime, Network throughput, and Render completion) derived **exclusively** from the rolling 60-sample in-memory metrics buffer in `HealthMonitor`.
 
 ### Core Technical Constraints:
 1. **Zero Machine Learning / Heavy Dependencies:** Predictions rely on pure, lightweight deterministic math (Least Squares Linear Slope & Moving Averages). No PyTorch, scikit-learn, or external AI models.

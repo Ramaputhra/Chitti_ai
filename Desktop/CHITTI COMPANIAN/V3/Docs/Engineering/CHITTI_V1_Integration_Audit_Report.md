@@ -1,4 +1,4 @@
-# CHITTI V1 Integration Audit Report
+# Vizzu V1 Integration Audit Report
 
 ## Executive Summary
 

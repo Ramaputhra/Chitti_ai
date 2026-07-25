@@ -1,4 +1,4 @@
-# CHITTI Engineering Decisions
+# Vizzu Engineering Decisions
 
 This document records the rationale behind major architectural and engineering decisions. It serves as an immutable knowledge base to explain *why* the system was designed this way, preventing future redesigns from repeating old debates.
 

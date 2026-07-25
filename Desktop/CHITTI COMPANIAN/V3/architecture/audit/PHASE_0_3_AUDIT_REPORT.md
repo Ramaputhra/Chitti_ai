@@ -5,7 +5,7 @@
 **Scope:** Phase 0 (Constitution), Phase 1 (Core Infrastructure), Phase 2 (Speech Runtime), Phase 3 (Intent Runtime).
 
 ## Executive Summary
-An exhaustive engineering audit was performed across the `desktop/` source code and `architecture/` specifications to verify compliance with the Runtime Constitution. The foundation of CHITTI is remarkably solid, with strict adherence to the deterministic-first philosophy. However, several critical technical debt items and compliance violations were discovered in the underlying configuration loading and dependency injection implementations that must be resolved before proceeding.
+An exhaustive engineering audit was performed across the `desktop/` source code and `architecture/` specifications to verify compliance with the Runtime Constitution. The foundation of Vizzu is remarkably solid, with strict adherence to the deterministic-first philosophy. However, several critical technical debt items and compliance violations were discovered in the underlying configuration loading and dependency injection implementations that must be resolved before proceeding.
 
 ## Top Findings Summary
 1. **[Medium] Hardcoded Config Paths:** JSON loaders in the Intent Runtime bypass dependency injection.

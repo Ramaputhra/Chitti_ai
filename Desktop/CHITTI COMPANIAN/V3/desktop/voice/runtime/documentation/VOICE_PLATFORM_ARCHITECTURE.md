@@ -1,4 +1,4 @@
-# CHITTI V2 — VOICE PLATFORM ARCHITECTURE
+# Vizzu V2 — VOICE PLATFORM ARCHITECTURE
 
 ## 1. Executive Summary
 The **Voice Runtime & Speech Platform** (`desktop/voice/runtime/`) serves as the canonical owner of language management, voice profiles, speech styles, custom pronunciation dictionaries, TTS synthesis, speech queuing, speech sessions, speech timelines, speech events, and speech caching.

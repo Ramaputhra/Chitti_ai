@@ -1,11 +1,11 @@
-# CHITTI V2 — MASTER SYSTEM FLOW ARCHITECTURE
+# Vizzu V2 — MASTER SYSTEM FLOW ARCHITECTURE
 **(Single Canonical End-to-End System Graph)**
 
 ======================================================================
 ## 1. EXECUTIVE STATEMENT
 ======================================================================
 
-This document contains the **single canonical engineering flow chart** for CHITTI V2. Every subsystem, runtime, capability, state machine, event pipeline, rendering engine, memory storage, and coordination manager is connected in **one unified flow graph**.
+This document contains the **single canonical engineering flow chart** for Vizzu V2. Every subsystem, runtime, capability, state machine, event pipeline, rendering engine, memory storage, and coordination manager is connected in **one unified flow graph**.
 
 ---
 
@@ -152,7 +152,7 @@ flowchart LR
         TTSEngine["TTS Engine (Voice Synthesis & Audio Buffer)"]
         SpeechTimeline["Speech Timeline (Sentence Boundaries & Audio Duration)"]
         LipsyncGenerator["Lipsync Marker Generator"]
-        CharacterIdentity["Character Identity Platform (display_name: CHITTI)"]
+        CharacterIdentity["Character Identity Platform (display_name: Vizzu)"]
         PersonalityEngine["Personality Engine (Emotion State & Narration Rules)"]
     end
 

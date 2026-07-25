@@ -1,10 +1,10 @@
 import os
 
-path = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\Project Goals\Dependencies.txt"
+path = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\Project Goals\Dependencies.txt"
 
-content = """Below is the stack I would recommend **specifically for CHITTI**. The goal is to cover all of CHITTI's capabilities with the fewest, smallest, and most reusable models.
+content = """Below is the stack I would recommend **specifically for Vizzu**. The goal is to cover all of Vizzu's capabilities with the fewest, smallest, and most reusable models.
 
-| CHITTI Function                    | Provider                  | Default Model                             |              Approx. Size |
+| Vizzu Function                    | Provider                  | Default Model                             |              Approx. Size |
 | ---------------------------------- | ------------------------- | ----------------------------------------- | ------------------------: |
 | Wake Word                          | Wake Word Provider        | openWakeWord                              |               **5–15 MB** |
 | Voice Activity Detection           | VAD Provider              | Silero VAD                                |                  **2 MB** |
@@ -44,7 +44,7 @@ content = """Below is the stack I would recommend **specifically for CHITTI**. T
 
 ---
 
-# Models Reused Across Multiple CHITTI Features
+# Models Reused Across Multiple Vizzu Features
 
 | Model                         | Covers                                                                                          |
 | ----------------------------- | ----------------------------------------------------------------------------------------------- |
@@ -61,20 +61,20 @@ content = """Below is the stack I would recommend **specifically for CHITTI**. T
 
 ---
 
-# Models You Should Eventually Train for CHITTI
+# Models You Should Eventually Train for Vizzu
 
-| Future CHITTI Model | Base Model    | Purpose                       | Estimated Size |
+| Future Vizzu Model | Base Model    | Purpose                       | Estimated Size |
 | ------------------- | ------------- | ----------------------------- | -------------: |
-| CHITTI-Intent       | XLM-RoBERTa   | Desktop intent classification |     **500 MB** |
-| CHITTI-Router       | XLM-RoBERTa   | Capability routing            |     **500 MB** |
-| CHITTI-Presenter    | XLM-RoBERTa   | Presentation selection        |     **500 MB** |
-| CHITTI-Memory       | TinyBERT      | Memory importance             |      **30 MB** |
-| CHITTI-Tone         | TinyBERT      | Voice tone & humor            |      **30 MB** |
-| CHITTI-Confidence   | TinyBERT      | Confidence estimation         |      **30 MB** |
+| Vizzu-Intent       | XLM-RoBERTa   | Desktop intent classification |     **500 MB** |
+| Vizzu-Router       | XLM-RoBERTa   | Capability routing            |     **500 MB** |
+| Vizzu-Presenter    | XLM-RoBERTa   | Presentation selection        |     **500 MB** |
+| Vizzu-Memory       | TinyBERT      | Memory importance             |      **30 MB** |
+| Vizzu-Tone         | TinyBERT      | Voice tone & humor            |      **30 MB** |
+| Vizzu-Confidence   | TinyBERT      | Confidence estimation         |      **30 MB** |
 
 ---
 
-# Total AI Stack for CHITTI MVP
+# Total AI Stack for Vizzu MVP
 
 | Model                          | Approx. Size |
 | ------------------------------ | -----------: |
@@ -102,7 +102,7 @@ You don't actually need to keep all these models in memory. I would implement a 
 * **Unknown request or complex planning:** load Gemma 3 1B or Qwen2.5-1.5B.
 * **After the task completes:** unload large models after a configurable idle timeout.
 
-This keeps CHITTI lightweight while still providing all the capabilities you've planned.
+This keeps Vizzu lightweight while still providing all the capabilities you've planned.
 """
 
 with open(path, "w", encoding="utf-8") as f:

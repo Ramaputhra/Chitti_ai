@@ -1,16 +1,16 @@
-# CHITTI COMPANIAN: MVP Experiences
+# Vizzu COMPANIAN: MVP Experiences
 
-This document replaces traditional feature roadmaps. CHITTI's progress is measured exclusively by end-to-end experiences that a non-technical person can demonstrate in under one minute. 
+This document replaces traditional feature roadmaps. Vizzu's progress is measured exclusively by end-to-end experiences that a non-technical person can demonstrate in under one minute. 
 
 **Rule: An experience is not complete until the entire pipeline (Listen -> Understand -> Act -> Respond) executes flawlessly.**
 
 ---
 
 ## Experience 001: The Speech Pipeline MVP
-**User Says:** *"Chitti, open Downloads."*
+**User Says:** *"Vizzu, open Downloads."*
 
 **Success Criteria:**
-- **Listen:** Wake Word (openWakeWord) detects "Chitti". VAD (Silero) crops the silence. Faster-Whisper transcribes "Open Downloads".
+- **Listen:** Wake Word (openWakeWord) detects "Vizzu". VAD (Silero) crops the silence. Faster-Whisper transcribes "Open Downloads".
 - **Understand:** Semantic Runtime extracts the intent (System/FolderOpen) and entity (Downloads).
 - **Act:** Execution Engine opens the Windows Downloads folder.
 - **Respond:** Piper TTS synthesizes and plays *"Opening your Downloads folder."*
@@ -19,7 +19,7 @@ This document replaces traditional feature roadmaps. CHITTI's progress is measur
 ---
 
 ## Experience 002: Capability Library Staging
-**User Says:** *"Chitti, open my folder,"* followed by subsequent copy, move, rename, and delete commands.
+**User Says:** *"Vizzu, open my folder,"* followed by subsequent copy, move, rename, and delete commands.
 
 **Success Criteria:**
 - **Incremental Staging:** Capabilities are built incrementally across Phase A (Reference), Phase B (Safe Write), and Phase C (Dangerous).
@@ -32,7 +32,7 @@ This document replaces traditional feature roadmaps. CHITTI's progress is measur
 ---
 
 ## Experience 003: Memory & Semantic Retrieval
-**User Says:** *"Chitti, where did I save my screenplay?"*
+**User Says:** *"Vizzu, where did I save my screenplay?"*
 
 **Success Criteria:**
 - **Understand:** Recognizes a semantic query rather than a direct path.
@@ -42,16 +42,16 @@ This document replaces traditional feature roadmaps. CHITTI's progress is measur
 ---
 
 ## Experience 004: Visual Desktop Reasoning
-**User Says:** *"Chitti, what is on my screen?"*
+**User Says:** *"Vizzu, what is on my screen?"*
 
 **Success Criteria:**
 - **Act:** Triggers an automatic desktop screenshot. PaddleOCR and SmolVLM process the image. 
-- **Respond:** TTS responds with a contextual summary (e.g., *"You are looking at a code editor with the CHITTI project open, and a web browser on the right."*)
+- **Respond:** TTS responds with a contextual summary (e.g., *"You are looking at a code editor with the Vizzu project open, and a web browser on the right."*)
 
 ---
 
 ## Experience 005: Multi-Step Execution
-**User Says:** *"Chitti, copy these files into a new folder named 'Archive'."*
+**User Says:** *"Vizzu, copy these files into a new folder named 'Archive'."*
 
 **Success Criteria:**
 - **Listen/Understand:** Extracts multi-step entities (Selection context, Create Folder, Move/Copy).

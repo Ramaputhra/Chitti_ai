@@ -1,11 +1,11 @@
-# CHITTI V2 — VISION PLATFORM: MULTI-PROVIDER OCR ARCHITECTURE AUDIT
+# Vizzu V2 — VISION PLATFORM: MULTI-PROVIDER OCR ARCHITECTURE AUDIT
 **(OCR Engine Modernization & LiteOCR Integration Analysis)**
 
 ======================================================================
 ## 1. EXECUTIVE SUMMARY
 ======================================================================
 
-A mandatory, non-destructive pre-implementation engineering audit was conducted for **CHITTI V2 Vision Platform: Multi-Provider OCR Architecture Modernization**.
+A mandatory, non-destructive pre-implementation engineering audit was conducted for **Vizzu V2 Vision Platform: Multi-Provider OCR Architecture Modernization**.
 
 ### Key Audit Finding:
 The Vision Platform architecture is **100% FROZEN**. Current OCR operations in `OCRCapability` (`desktop/packages/desktop_pack/capabilities/ocr.py`) tightly bind directly to EasyOCR (`easyocr.Reader`).

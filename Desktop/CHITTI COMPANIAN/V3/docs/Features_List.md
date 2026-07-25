@@ -4,7 +4,7 @@ I excluded features that were intentionally postponed (robotics, cloud, mobile c
 
 ---
 
-# CHITTI Desktop Companion MVP Checklist
+# Vizzu Desktop Companion MVP Checklist
 
 ## Phase A — Companion Core
 

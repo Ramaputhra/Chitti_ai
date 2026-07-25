@@ -17,7 +17,7 @@ class DeveloperShell(ITransport):
     async def start(self):
         self._running = True
         print("\n===================================")
-        print("CHITTI V1.1 Product Validation Runner")
+        print("Vizzu V1.1 Product Validation Runner")
         print("Type '/restart' to reboot kernel, '/exit' to stop.")
         print("===================================\n")
 
@@ -32,7 +32,7 @@ class DeveloperShell(ITransport):
         loop = asyncio.get_event_loop()
         while self._running:
             try:
-                line = await loop.run_in_executor(None, input, "CHITTI > ")
+                line = await loop.run_in_executor(None, input, "Vizzu > ")
                 text = line.strip()
                 if not text:
                     continue
@@ -64,4 +64,4 @@ class DeveloperShell(ITransport):
 
     async def deliver(self, expr: RenderedExpression, event_bus):
         if "text" in expr.formats:
-            print(f"\nCHITTI: {expr.formats['text']}\n")
+            print(f"\nVizzu: {expr.formats['text']}\n")

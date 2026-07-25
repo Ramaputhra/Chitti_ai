@@ -3,7 +3,7 @@
 ## 1. Architecture Freeze (v1.0)
 We successfully completed Phase 5.3 (Act - Planning & Desktop Execution) and formally froze the runtime architecture. 
 - **Execution Spine**: `SemanticRuntime` -> `IntentTranslationRuntime` -> `CapabilityResolverRuntime` -> `PlannerRuntime` -> `WorkflowRuntime` -> `CapabilityRuntime` -> `VerificationRuntime` -> `PresentationRuntime`.
-- We successfully validated the vertical slice using the **Experience 001** ("Chitti, open Downloads") test.
+- We successfully validated the vertical slice using the **Experience 001** ("Vizzu, open Downloads") test.
 
 ## 2. Desktop Automation Evaluation (not yet confirmed)
 Before locking in a desktop capability stack, we conducted a rigorous evaluation of available Windows automation libraries.

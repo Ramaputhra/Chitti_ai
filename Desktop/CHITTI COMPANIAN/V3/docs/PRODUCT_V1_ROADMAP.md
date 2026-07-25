@@ -1,4 +1,4 @@
-# CHITTI Desktop Companion MVP Master Roadmap
+# Vizzu Desktop Companion MVP Master Roadmap
 
 *This checklist serves as the definitive roadmap for MVP completion. Every sprint must complete one coherent capability group.*
 

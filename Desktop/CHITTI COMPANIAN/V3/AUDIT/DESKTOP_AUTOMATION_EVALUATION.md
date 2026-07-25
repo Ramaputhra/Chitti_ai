@@ -39,7 +39,7 @@ The core objective is to identify libraries that supersede others to minimize th
 
 ### `pywinctl` vs `pywin32`
 - **Overlap:** Window geometry, finding monitors, minimizing/maximizing.
-- **Winner:** `pywin32`. `pywinctl` is excellent for cross-platform apps, but CHITTI is strictly a Windows desktop companion. Adding a cross-platform abstraction layer that ultimately just calls `pywin32` under the hood is unnecessary bloat.
+- **Winner:** `pywin32`. `pywinctl` is excellent for cross-platform apps, but Vizzu is strictly a Windows desktop companion. Adding a cross-platform abstraction layer that ultimately just calls `pywin32` under the hood is unnecessary bloat.
 - **Decision:** Reject `pywinctl`.
 
 ### `PyAutoGUI`

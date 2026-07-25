@@ -2,7 +2,7 @@ id: SCN-1002
 name: Interrupt Execution
 description: Verifies that triggering a STOP mid-session ends the session in INTERRUPTED state
 input:
-  text: Hello Chitti
+  text: Hello Vizzu
 expected:
   events:
     - Session.Started

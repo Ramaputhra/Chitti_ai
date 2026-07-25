@@ -1,4 +1,4 @@
-# CHITTI V2 — PERMANENT ENGINEERING POLICY
+# Vizzu V2 — PERMANENT ENGINEERING POLICY
 # FROZEN ARCHITECTURE & SAFE EVOLUTION DIRECTIVE
 **(Rules 260 – 269 Enforced Across All Future Sprints)**
 
@@ -6,7 +6,7 @@
 ## 1. POLICY DIRECTIVE ACKNOWLEDGMENT
 ======================================================================
 
-The **FROZEN ARCHITECTURE & SAFE EVOLUTION DIRECTIVE** has been accepted as a **PERMANENT, NON-NEGOTIABLE ENGINEERING POLICY** for CHITTI V2. It is permanently appended to `.agents/AGENTS.md` (Rules 260 – 269) and governs all future design, implementation, and certification tasks.
+The **FROZEN ARCHITECTURE & SAFE EVOLUTION DIRECTIVE** has been accepted as a **PERMANENT, NON-NEGOTIABLE ENGINEERING POLICY** for Vizzu V2. It is permanently appended to `.agents/AGENTS.md` (Rules 260 – 269) and governs all future design, implementation, and certification tasks.
 
 ---
 
@@ -66,7 +66,7 @@ Any proposal that changes repository structure SHALL require explicit approval f
                            ENFORCED & ACTIVE
                              RULES 260 - 269
 
-   CHITTI V2 has reached architectural maturity.
+   Vizzu V2 has reached architectural maturity.
    Stability, compatibility, and zero-regression strictly govern all
    future engineering phases.
 ######################################################################

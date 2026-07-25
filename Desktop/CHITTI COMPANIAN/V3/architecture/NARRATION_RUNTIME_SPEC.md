@@ -6,7 +6,7 @@
 > **5. Every runtime, planner, scheduler, and capability must exist only to improve the AI Desktop Companion experience. Architectural complexity must always provide measurable product value.**
 
 ## 1. Purpose
-Decides *when* and *what* CHITTI should speak during execution to maintain transparency and progress communication without overwhelming the user.
+Decides *when* and *what* Vizzu should speak during execution to maintain transparency and progress communication without overwhelming the user.
 
 ## 2. Responsibilities
 - Track active workflows and emit progress updates (e.g., "Downloading...", "Extracting...").

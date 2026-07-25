@@ -1,8 +1,8 @@
-# CHITTI ENGINEERING PROCESS STANDARD
+# Vizzu ENGINEERING PROCESS STANDARD
 **Permanent Workflow Rule**
 *Effective From Sprint 31B Onward*
 
-The CHITTI project has now entered the Native Cognitive Intelligence phase.
+The Vizzu project has now entered the Native Cognitive Intelligence phase.
 Beginning with Sprint 31B and continuing for all future development, every sprint SHALL strictly follow the engineering workflow below. This workflow becomes a permanent engineering standard.
 
 ---
@@ -206,4 +206,4 @@ Mobile Companion
 Future Ecosystem
 
 ---
-*This workflow is now the permanent engineering standard for the CHITTI project. It SHALL remain in force unless explicitly superseded by a future Architecture Governance decision.*
+*This workflow is now the permanent engineering standard for the Vizzu project. It SHALL remain in force unless explicitly superseded by a future Architecture Governance decision.*

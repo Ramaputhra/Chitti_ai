@@ -1,6 +1,6 @@
-Below is the stack I would recommend **specifically for CHITTI**. The goal is to cover all of CHITTI's capabilities with the fewest, smallest, and most reusable models.
+Below is the stack I would recommend **specifically for Vizzu**. The goal is to cover all of Vizzu's capabilities with the fewest, smallest, and most reusable models.
 
-| CHITTI Function                    | Provider                            | Default Model / Approach                  | Approx. Size |
+| Vizzu Function                    | Provider                            | Default Model / Approach                  | Approx. Size |
 | ---------------------------------- | ----------------------------------- | ----------------------------------------- | -----------: |
 | Wake Word                          | Wake Word Provider                  | openWakeWord*                             |  **5–15 MB** |
 | Voice Activity Detection           | VAD Provider                        | Silero VAD                                |     **2 MB** |
@@ -38,11 +38,11 @@ Below is the stack I would recommend **specifically for CHITTI**. The goal is to
 | Learning New Intents               | Reasoning Provider                  | Primary: Qwen2.5-1.5B<br>Secondary: Sarvam-2B               |  Reuse model |
 | Local Intent Evolution             | Experience Learning Engine          | SQLite + Intent Library                   |  No AI model |
 
-_*Note on openWakeWord commercial usage: The code is Apache 2.0. The default pre-trained models are CC BY-NC-SA (non-commercial). For a commercial product, you must train your own custom wake word model (e.g., "Hey Chitti") using their open-source scripts to own it completely._
+_*Note on openWakeWord commercial usage: The code is Apache 2.0. The default pre-trained models are CC BY-NC-SA (non-commercial). For a commercial product, you must train your own custom wake word model (e.g., "Hey Vizzu") using their open-source scripts to own it completely._
 
 ---
 
-# Total AI Stack for CHITTI MVP
+# Total AI Stack for Vizzu MVP
 
 | Model                                     | Approx. Size | License             |
 | ----------------------------------------- | -----------: | ------------------- |

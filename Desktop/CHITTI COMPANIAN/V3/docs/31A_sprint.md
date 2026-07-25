@@ -20,7 +20,7 @@
 - **`test_sprint31a_experience_intelligence.py`**: Created the DAG regression suite proving the pipeline works.
 
 ### Architectural Implementations
-- **The Permanent Workflow Standard**: Created and enforced `CHITTI_ENGINEERING_PROCESS_STANDARD.md`.
+- **The Permanent Workflow Standard**: Created and enforced `Vizzu_ENGINEERING_PROCESS_STANDARD.md`.
 - **Memory Boundary Fortification**: Permanently separated Cognitive Compilation from Memory Storage by reserving the `MemoryCompiler` architecture.
 - **Certification**: Generated 10+ architectural artifacts, impact reports, and the final Platform Certificate.
 

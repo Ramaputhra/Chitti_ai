@@ -17,17 +17,17 @@ The Presentation layer owns:
 ---
 
 ### 1. Constitutional Updates
-#### [MODIFY] [AGENTS.md](file:///c:/Users/Sm!le/Desktop/CHITTI%20COMPANIAN/V3/.agents/AGENTS.md)
+#### [MODIFY] [AGENTS.md](file:///c:/Users/Sm!le/Desktop/Vizzu%20COMPANIAN/V3/.agents/AGENTS.md)
 Append the Presentation Constitution:
 - **Rule 40**: Presentation never determines truth. Verification determines truth. Presentation determines how verified truth reaches the user.
 - **Rule 41**: Speech exists only when it adds information beyond what the user can already perceive.
 - **Rule 42**: Avatar is the primary communication channel. Animation > Sound > Speech.
-- **Rule 43**: Minimized is not inactive. Edge-docked CHITTI remains fully alive.
+- **Rule 43**: Minimized is not inactive. Edge-docked Vizzu remains fully alive.
 
 ---
 
 ### 2. Presentation Models
-#### [NEW] [presentation_models.py](file:///c:/Users/Sm!le/Desktop/CHITTI%20COMPANIAN/V3/desktop/models/presentation_models.py)
+#### [NEW] [presentation_models.py](file:///c:/Users/Sm!le/Desktop/Vizzu%20COMPANIAN/V3/desktop/models/presentation_models.py)
 - **`PresentationPriority`**: Enum (HIGH, NORMAL, LOW)
 - **`PresentationPolicy`**: Declarative structure (voice, avatar_animation, sound_effect, toast, followup_window, allow_interrupt, priority).
 - **`PresentationDecision`**: Built decision containing response_text, language, voice, avatar_animation, etc.
@@ -37,26 +37,26 @@ Append the Presentation Constitution:
 ---
 
 ### 3. Response Builder
-#### [NEW] [response_builder.py](file:///c:/Users/Sm!le/Desktop/CHITTI%20COMPANIAN/V3/desktop/platform/core/response_builder.py)
+#### [NEW] [response_builder.py](file:///c:/Users/Sm!le/Desktop/Vizzu%20COMPANIAN/V3/desktop/platform/core/response_builder.py)
 - Converts verified results into communication (e.g., `Response(text="Compression completed.", importance=NORMAL)`). The Presentation Runtime never builds sentences.
 
 ---
 
 ### 4. Presentation & Presence Runtimes
-#### [NEW] [presentation_runtime.py](file:///c:/Users/Sm!le/Desktop/CHITTI%20COMPANIAN/V3/desktop/platform/core/presentation_runtime.py)
+#### [NEW] [presentation_runtime.py](file:///c:/Users/Sm!le/Desktop/Vizzu%20COMPANIAN/V3/desktop/platform/core/presentation_runtime.py)
 - Subscribes strictly to `VERIFICATION_COMPLETED`, `WORKFLOW_FAILED`, `SYSTEM_NOTIFICATION`.
 - Applies the Presentation Constitution to determine speech vs animation. Manages the Response Builder and invokes the Presence Engine.
 
-#### [NEW] [presence_runtime.py](file:///c:/Users/Sm!le/Desktop/CHITTI%20COMPANIAN/V3/desktop/platform/core/presence_runtime.py)
+#### [NEW] [presence_runtime.py](file:///c:/Users/Sm!le/Desktop/Vizzu%20COMPANIAN/V3/desktop/platform/core/presence_runtime.py)
 - Implements the entire lifecycle state machine (`ACTIVE` -> `FOLLOW_UP_WINDOW` -> `EDGE_DOCKED_IDLE` -> `RELAXED_IDLE` -> `GOODBYE` -> `RESIDENT_MODE`).
 
 ---
 
 ### 5. Expression Adapter & Kernel
-#### [NEW] [expression_adapter.py](file:///c:/Users/Sm!le/Desktop/CHITTI%20COMPANIAN/V3/desktop/platform/components/adapters/expression_adapter.py)
+#### [NEW] [expression_adapter.py](file:///c:/Users/Sm!le/Desktop/Vizzu%20COMPANIAN/V3/desktop/platform/components/adapters/expression_adapter.py)
 - Bridge to Piper (TTS) and the Avatar. No business logic.
 
-#### [MODIFY] [runtime_kernel.py](file:///c:/Users/Sm!le/Desktop/CHITTI%20COMPANIAN/V3/desktop/platform/core/runtime_kernel.py)
+#### [MODIFY] [runtime_kernel.py](file:///c:/Users/Sm!le/Desktop/Vizzu%20COMPANIAN/V3/desktop/platform/core/runtime_kernel.py)
 - Routes `WORKFLOW_COMPLETED` to `PresentationRuntime` and `PresenceRuntime`. The Kernel never directly manipulates UI.
 
 ---

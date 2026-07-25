@@ -1,4 +1,4 @@
-# CHITTI Milestones
+# Vizzu Milestones
 
 While Sprints define the engineering schedule, Milestones define the product roadmap and user experience goals.
 
@@ -11,12 +11,12 @@ While Sprints define the engineering schedule, Milestones define the product roa
 - **Status**: ✅ **COMPLETE**
 
 ## M2: Conversation Runtime
-- **Goal**: "Chitti can understand a real spoken sentence and respond using a real speech synthesizer without any external AI."
+- **Goal**: "Vizzu can understand a real spoken sentence and respond using a real speech synthesizer without any external AI."
 - **Key Deliverables**: Wake Word detection, Audio State Machine, Interrupt handling, Conversation Manager, real STT, real TTS.
 - **Status**: ⏳ **IN PROGRESS**
 
 ## M3: Real Voice Conversation
-- **Goal**: End-to-end offline conversation ("Hey Chitti" -> STT -> Skill -> TTS -> Audio) using local models (Whisper/Piper). No Gemini yet.
+- **Goal**: End-to-end offline conversation ("Hey Vizzu" -> STT -> Skill -> TTS -> Audio) using local models (Whisper/Piper). No Gemini yet.
 - **Status**: ⬜ **PLANNED**
 
 ## M3: Intelligence Runtime
@@ -24,7 +24,7 @@ While Sprints define the engineering schedule, Milestones define the product roa
 - **Status**: ⬜ **PLANNED**
 
 ## M4: Desktop Companion
-- **Goal**: Enable actual desktop integration (Desktop Runtime, Desktop Tools) allowing CHITTI to interact with Windows.
+- **Goal**: Enable actual desktop integration (Desktop Runtime, Desktop Tools) allowing Vizzu to interact with Windows.
 - **Status**: ⬜ **PLANNED**
 
 ## M5: Memory

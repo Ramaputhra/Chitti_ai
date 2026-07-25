@@ -1,6 +1,6 @@
-# CHITTI V2 — PERSONALITY SETTINGS GUI GUIDE
+# Vizzu V2 — PERSONALITY SETTINGS GUI GUIDE
 
-Welcome to the **CHITTI V2 Personality Settings GUI Guide**. This document describes the recommended UI layout for personality controls, trait sliders, presets, live preview, and import/export operations.
+Welcome to the **Vizzu V2 Personality Settings GUI Guide**. This document describes the recommended UI layout for personality controls, trait sliders, presets, live preview, and import/export operations.
 
 ---
 

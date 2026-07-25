@@ -1,7 +1,7 @@
 # Architecture Compliance Report
 
 ## Overview
-Evaluates the codebase against the `CHITTI_ARCHITECTURE.md` and `ENGINEERING_RULES.md`.
+Evaluates the codebase against the `Vizzu_ARCHITECTURE.md` and `ENGINEERING_RULES.md`.
 
 ## Findings
 

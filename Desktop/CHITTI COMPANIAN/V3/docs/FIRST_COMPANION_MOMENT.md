@@ -1,6 +1,6 @@
-# FIRST COMPANION MOMENT (CHITTI V1.1)
+# FIRST COMPANION MOMENT (Vizzu V1.1)
 
-This document defines the complete end-to-end acceptance criteria for CHITTI's first production-quality feature: **Resume Activity**. 
+This document defines the complete end-to-end acceptance criteria for Vizzu's first production-quality feature: **Resume Activity**. 
 
 It serves as the contract against which every implementation is validated.
 
@@ -10,7 +10,7 @@ It serves as the contract against which every implementation is validated.
 The user issues the command:
 > **"Continue my React project."**
 
-CHITTI restores the last coding session using verified OS execution and Activity Memory, providing a seamless "Companion Moment."
+Vizzu restores the last coding session using verified OS execution and Activity Memory, providing a seamless "Companion Moment."
 
 ---
 

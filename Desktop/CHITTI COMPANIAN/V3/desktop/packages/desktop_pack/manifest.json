@@ -1,9 +1,9 @@
 {
-  "id": "chitti.pack.desktop_automation",
+  "id": "vizzu.pack.desktop_automation",
   "name": "Desktop Automation Pack",
   "version": "1.0.0",
   "description": "Standardized OS-level desktop interaction capabilities.",
-  "dependencies": ["chitti.platform.environment", "chitti.platform.presentation"],
+  "dependencies": ["vizzu.platform.environment", "vizzu.platform.presentation"],
   "capabilities": [
     "FocusWindow", "SwitchWindow", "MoveWindow", "ResizeWindow", "MinimizeWindow", "MaximizeWindow", "RestoreWindow",
     "KeyboardInput", "MouseInput", "Scroll", "DragDrop", "Hotkey",

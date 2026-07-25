@@ -38,7 +38,7 @@ We bypassed the single implementation plan in favor of producing 19 highly speci
 - **Bug Fixes**: Resolved an initial issue where in-memory databases (`:memory:`) were being destroyed on connection closure, as well as fixing a nested dataclass serialization bug.
 
 ## 5. Artifacts and Finalization
-- **`CHITTI_V2_Native_Cognitive_Memory_Core_Certificate.md`**: Officially issued.
+- **`Vizzu_V2_Native_Cognitive_Memory_Core_Certificate.md`**: Officially issued.
 - **`Sprint31B_Handoff_Contract.md`**: Created to define the rigid boundary that the upcoming Sprint 31C will strictly consume `MemoryEpisodes` and never raw `Experiences`.
 - **`PROJECT_STATUS.md`**: Updated the V2.0 roadmap, marking Sprint 31B COMPLETE and pointing to Sprint 31C as the next step.
 - **`FLOW_CHART.md`**: Upgraded the visual diagrams to reflect Sprint 31A and 31B accurately.
@@ -53,12 +53,12 @@ We are completely halted and safely frozen. When we resume, we will begin:
 
 **Antigravity Prompt for Next Session:**
 ```text
-# CHITTI V2.0
+# Vizzu V2.0
 # Sprint 31C
 # Knowledge Graph Foundation
 # Phase 1: Planning & Architecture
 
-The V2.0 Cognitive Architecture is actively following the CHITTI_ENGINEERING_PROCESS_STANDARD.
+The V2.0 Cognitive Architecture is actively following the Vizzu_ENGINEERING_PROCESS_STANDARD.
 Sprint 31B is FROZEN and produces the `MemoryEpisode` stored within the `MemoryRuntime`.
 
 **OBJECTIVE:**

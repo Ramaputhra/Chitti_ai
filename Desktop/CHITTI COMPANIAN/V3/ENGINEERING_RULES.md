@@ -15,7 +15,7 @@
 
 ## Architectural Rules
 
-The following rules dictate the architectural patterns and code quality expectations for the entire CHITTI project.
+The following rules dictate the architectural patterns and code quality expectations for the entire Vizzu project.
 
 ## 1. Interface-First Design
 Every major component must be defined by an `I[Name]` interface in `desktop/core/interfaces/` before its concrete implementation is built in `desktop/services/`.
@@ -40,7 +40,7 @@ Cloud providers may enhance capability (e.g., via LLMs or premium TTS) but must 
 ## 7. Universal Provider Pattern
 Every external dependency must follow the exact same architectural pattern:
 `Interface -> Router -> Provider Registry -> Provider Implementation`.
-This guarantees CHITTI can swap models/providers without structural rewrites.
+This guarantees Vizzu can swap models/providers without structural rewrites.
 
 ## 8. LLM Tool Execution
 **LLM providers must never execute tools directly.**
@@ -96,7 +96,7 @@ Artifacts stay immutable forever. Entity Extraction, Canonicalization, and Alias
 **Subscribers to `PresenceStateChanged` must operate independently.** A failure, timeout, or exception in one subscriber must never prevent delivery of the event to other subscribers. Event dispatch must isolate subscriber failures and continue processing remaining listeners.
 
 ## 36. Presence is Declarative
-**Presence describes what CHITTI is doing, never how it is expressed.** States must represent declarative phases of execution (e.g. `LISTENING`, `THINKING`, `WORKING`). They must never define physical or UI mechanisms (e.g. `PLAY_BLUSH`, `NOD_HEAD`). Translating declarative state into expression is the exclusive responsibility of the Expression Runtime.
+**Presence describes what Vizzu is doing, never how it is expressed.** States must represent declarative phases of execution (e.g. `LISTENING`, `THINKING`, `WORKING`). They must never define physical or UI mechanisms (e.g. `PLAY_BLUSH`, `NOD_HEAD`). Translating declarative state into expression is the exclusive responsibility of the Expression Runtime.
 
 ## 37. Expression Runtime Coordination
 **The Expression Runtime determines what expression should occur and when.** Individual output runtimes (visual, audio, servo, lighting, haptics, etc.) determine *how* that expression is rendered on their respective medium. The Expression Runtime must never manipulate output implementations directly.
@@ -151,7 +151,7 @@ Workflow Runtime, Planner Runtime, Execution Graph Runtime, Scheduler Runtime, a
 Runtimes shall receive dependencies exclusively through constructor injection. Service locators, global singletons, and runtime-owned dependency creation are prohibited.
 
 ## Rule 241 — Communication Session Origin
-Every user interaction shall originate from exactly one Communication Session. No runtime may infer or create user interactions outside an active session except notifications explicitly initiated by CHITTI.
+Every user interaction shall originate from exactly one Communication Session. No runtime may infer or create user interactions outside an active session except notifications explicitly initiated by Vizzu.
 
 ## Rule 14 — Audio Runtime Identity Constraint
 The Audio Runtime identifies speakers but never authenticates users. Authentication decisions belong exclusively to the Policy Runtime.the EventBus.
@@ -208,4 +208,4 @@ Narration Runtime shall never contain localized text, templates, language rules,
 Narration exists to enhance companionship, not to narrate every system action. If silence provides a better user experience than speech, silence is the correct behavior.
 
 ## Rule 262 — Companion First
-Every new feature must answer one question before implementation: "Does this improve CHITTI as a desktop companion?" If the answer is no, the feature should be reconsidered, simplified, or implemented as an optional capability rather than increasing architectural complexity.
+Every new feature must answer one question before implementation: "Does this improve Vizzu as a desktop companion?" If the answer is no, the feature should be reconsidered, simplified, or implemented as an optional capability rather than increasing architectural complexity.

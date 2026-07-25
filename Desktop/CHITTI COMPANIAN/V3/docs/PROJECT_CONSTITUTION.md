@@ -2,7 +2,7 @@
 
 This is the highest authority in the repository. It contains only immutable rules.
 
-1. CHITTI is a Desktop Companion.
+1. Vizzu is a Desktop Companion.
 2. Companion before Automation.
 3. Product-first development.
 4. Experience-first sprints.
@@ -17,7 +17,7 @@ This is the highest authority in the repository. It contains only immutable rule
 13. Architecture changes require explicit approval.
 14. Blueprint overrides historical sprint decisions.
 15. The repository exists to ship a product—not to explore architecture.
-16. **Temporal Rule**: CHITTI never thinks in terms of "timers", "alarms", or "monitoring" as separate systems. Every future action that waits for a point in time or a condition must be represented as a `ScheduledEvent` managed by the `TimeRuntime`. New waiting mechanisms must extend this model rather than creating parallel implementations.
+16. **Temporal Rule**: Vizzu never thinks in terms of "timers", "alarms", or "monitoring" as separate systems. Every future action that waits for a point in time or a condition must be represented as a `ScheduledEvent` managed by the `TimeRuntime`. New waiting mechanisms must extend this model rather than creating parallel implementations.
 17. **Context Provider Rule**: Context Providers produce deterministic evidence. Evidence must be correlated and compressed before entering Memory. Semantic interpretation belongs exclusively to higher cognitive layers (Memory, Embeddings, Planner) and never to Context Providers.
 22. **Provider-Agnostic Composition Rule**: Context Providers must emit provider-specific evidence only. EpisodeBuilder is the sole component responsible for constructing provider-agnostic WORK_SESSION episodes. Context Providers must never write directly to Memory or perform cross-provider aggregation.
 23. **Shared Evaluation Rule**: Shared evaluation logic must remain provider-independent. Algorithms that rank, score, compress, or summarize evidence belong to shared evaluators, not individual Context Providers.
@@ -34,7 +34,7 @@ This is the highest authority in the repository. It contains only immutable rule
 34. **Evidence-Driven Intent Modeling Rule**: Intent modeling must remain evidence-driven. Intent extraction may propose one or more deterministic intent candidates derived from workflow outcomes and supporting evidence, but it must never select a primary intent, infer project semantics, or establish user goals. Final intent selection belongs exclusively to the Planner.
 35. **Planner Authority Rule**: The Planner is the sole component authorized to establish an active goal or user intent. Deterministic components may reconstruct history, assess outcomes, and propose intent candidates, but they must never resolve ambiguity or claim final understanding.
 36. **Goal Continuity Rule**: Goal continuity must be evidence-driven. A goal may continue, pause, complete, or be abandoned only through observable continuity between current reasoning context and previously established goals. The Planner must never assume abandonment solely because a new goal has appeared.
-37. **Product Delivery Rule**: Every sprint after Sprint 133 must conclude with at least one complete, user-visible capability that can be demonstrated end-to-end from the CHITTI application. Architectural work alone is no longer sufficient to complete a sprint.
+37. **Product Delivery Rule**: Every sprint after Sprint 133 must conclude with at least one complete, user-visible capability that can be demonstrated end-to-end from the Vizzu application. Architectural work alone is no longer sufficient to complete a sprint.
 
 ***
 **ARCHITECTURE FREEZE: Perception & Cognition Framework (Rules 41–56 in AGENT.md)**

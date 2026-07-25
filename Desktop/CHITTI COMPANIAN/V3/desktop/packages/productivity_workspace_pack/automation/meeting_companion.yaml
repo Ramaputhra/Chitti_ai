@@ -1,4 +1,4 @@
-id: chitti.automation.meeting_companion
+id: vizzu.automation.meeting_companion
 name: Meeting Companion Framework
 trigger: intent
 intent: "Manage Meeting"

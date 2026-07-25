@@ -1,7 +1,7 @@
-# CHITTI Runtime Architecture Index
+# Vizzu Runtime Architecture Index
 
 - [V1 Frozen Architecture](V1_FROZEN_ARCHITECTURE.md)
-- [CHITTI Runtime Architecture](CHITTI_ARCHITECTURE.md)
+- [Vizzu Runtime Architecture](Vizzu_ARCHITECTURE.md)
 - [Core Runtime Spec](APPLICATION_CORE_SPEC.md)
 - [Runtime Spec](RUNTIME_SPEC.md)
 - [Supervisor Spec](SUPERVISOR_SPEC.md)

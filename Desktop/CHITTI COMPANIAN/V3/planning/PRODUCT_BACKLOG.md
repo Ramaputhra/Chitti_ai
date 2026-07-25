@@ -1,6 +1,6 @@
-# CHITTI Product Backlog
+# Vizzu Product Backlog
 
-*This is the single living document driving CHITTI's product evolution. Every change from this point onward comes from this backlog—not from inventing new architectural layers.*
+*This is the single living document driving Vizzu's product evolution. Every change from this point onward comes from this backlog—not from inventing new architectural layers.*
 
 ## P0 (Critical)
 *Focus: Operational Confidence. Collect telemetry and fix friction before adding features.*

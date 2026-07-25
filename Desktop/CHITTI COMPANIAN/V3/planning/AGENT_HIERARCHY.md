@@ -1,6 +1,6 @@
-# CHITTI Companion Agent Hierarchy
+# Vizzu Companion Agent Hierarchy
 
-The CHITTI project operates on a strict 4-layer organizational hierarchy to ensure robust planning, execution, and validation of all software and hardware components.
+The Vizzu project operates on a strict 4-layer organizational hierarchy to ensure robust planning, execution, and validation of all software and hardware components.
 
 ```mermaid
 graph TD

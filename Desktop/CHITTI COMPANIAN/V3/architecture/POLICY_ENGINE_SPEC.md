@@ -18,7 +18,7 @@ Centralized security, authentication, and permission evaluation for protected de
 - **Action Evaluation:** Intercept protected intents or workflows and either grant, deny, or suspend them pending authentication.
 - **PIN Fallback Logic:** If an action requires authentication and voice fails (or is skipped), prompt the Application UI to display a secure dialog.
   - Timeout strictly after 30 seconds.
-  - Upon timeout or cancellation, automatically close the dialog, drop the pending request, and return CHITTI to the system tray.
+  - Upon timeout or cancellation, automatically close the dialog, drop the pending request, and return Vizzu to the system tray.
 
 ## 3. Interfaces
 - **Subscribes to:** `SpeakerVerified`, `IntentRecognized` (or Workflow requests).

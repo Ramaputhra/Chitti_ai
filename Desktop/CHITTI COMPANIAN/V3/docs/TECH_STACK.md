@@ -1,6 +1,6 @@
 # TECH_STACK.md
 
-# CHITTI Technology Stack
+# Vizzu Technology Stack
 
 Version: 2.0
 

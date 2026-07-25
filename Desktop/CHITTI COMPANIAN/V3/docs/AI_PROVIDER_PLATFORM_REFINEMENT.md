@@ -1,4 +1,4 @@
-# CHITTI V2 — AI PROVIDER PLATFORM ARCHITECTURE REFINEMENT
+# Vizzu V2 — AI PROVIDER PLATFORM ARCHITECTURE REFINEMENT
 **(Generic Provider Platform & Multi-Engine Subsystem Integration)**
 
 ======================================================================
@@ -8,7 +8,7 @@
 An architectural refinement was performed to evolve the Vision Platform OCR modernization into a **Generic AI Provider Platform**.
 
 ### Core Architecture Guarantee:
-Instead of creating a single-purpose OCR infrastructure, CHITTI V2 establishes a **unified, extensible Provider Platform** (`desktop/platform/providers/`) designed to host multiple AI provider categories (**OCR**, **STT**, **TTS**, **Vision Models**, **LLM Providers**) under a single, deterministic lifecycle without ever requiring future architecture redesigns.
+Instead of creating a single-purpose OCR infrastructure, Vizzu V2 establishes a **unified, extensible Provider Platform** (`desktop/platform/providers/`) designed to host multiple AI provider categories (**OCR**, **STT**, **TTS**, **Vision Models**, **LLM Providers**) under a single, deterministic lifecycle without ever requiring future architecture redesigns.
 
 All downstream platforms (Planner, Memory, Context Engine, Character Platform, Remote Companion) remain **100% oblivious** to active backend engines. `OCRArtifact` and standard domain contracts remain strictly invariant.
 
