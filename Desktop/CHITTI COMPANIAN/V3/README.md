@@ -413,18 +413,101 @@ desktop/
 
 ## 🚀 QUICK START
 
+### Prerequisites
+- **Python 3.13+**
+- **Git**
+
+---
+
+## 📦 How to Install
+
+### Option 1: Using uv (Recommended)
+
 ```bash
-# Install dependencies
-pip install -r requirements.txt
-pip install psutil faster-whisper
+cd "/workspace/project/Chitti_ai/Desktop/CHITTI COMPANIAN/V3"
 
-# Run the application
-PYTHONPATH=. python main.py
+# Install with uv
+uv sync
 
-# Run tests
-PYTHONPATH=. python -m pytest desktop/tests/ -v
-PYTHONPATH=. python desktop/tests/test_e2e_speech_execution.py
+# Or install all dependencies including dev
+uv sync --all-extras
 ```
+
+### Option 2: Using pip
+
+```bash
+cd "/workspace/project/Chitti_ai/Desktop/CHITTI COMPANIAN/V3"
+
+# Install core dependencies
+pip install -e .
+
+# Install dev dependencies
+pip install -e ".[dev]"
+
+# Install optional ML dependencies
+pip install faster-whisper piper-tts openwakeword
+```
+
+---
+
+## ▶️ How to Run
+
+### Production Mode (with GUI)
+```bash
+cd "/workspace/project/Chitti_ai/Desktop/CHITTI COMPANIAN/V3"
+PYTHONPATH=. python desktop/app/main.py
+```
+
+### Demo Mode (stable)
+```bash
+PYTHONPATH=. python desktop/app/main.py --demo
+```
+
+### With LLM (requires Ollama or API keys)
+```bash
+PYTHONPATH=. python desktop/app/main.py --use-llm
+```
+
+### CLI Mode Only
+```bash
+PYTHONPATH=. python main.py
+```
+
+---
+
+### 🔧 Environment Variables (Optional)
+
+```bash
+# OpenAI API
+export OPENAI_API_KEY="your-key"
+
+# Google Gemini
+export GOOGLE_API_KEY="your-key"
+
+# Ollama (local LLM)
+export OLLAMA_HOST="http://localhost:11434"
+```
+
+---
+
+## 🧪 Running Tests
+
+```bash
+cd "/workspace/project/Chitti_ai/Desktop/CHITTI COMPANIAN/V3"
+PYTHONPATH=. python -m pytest tests/ -v
+```
+
+---
+
+## 📋 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| `numpy` not found | `pip install numpy` |
+| `PySide6` not found | `pip install PySide6` |
+| Audio issues | Install `sounddevice`, `soundfile` |
+| Wake word issues | `pip install openwakeword` |
+| Import errors | Set `PYTHONPATH=.` before running |
 
 ---
 
