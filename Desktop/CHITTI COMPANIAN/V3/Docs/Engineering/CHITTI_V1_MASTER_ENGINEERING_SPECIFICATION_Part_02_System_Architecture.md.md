@@ -1,4 +1,4 @@
-# CHITTI V1 MASTER ENGINEERING SPECIFICATION
+# Vizzu V1 MASTER ENGINEERING SPECIFICATION
 
 ## Part 2 --- System Architecture
 
@@ -6,7 +6,7 @@
 
 # 1. Architectural Style
 
-CHITTI SHALL follow an event-driven, modular runtime architecture. Every
+Vizzu SHALL follow an event-driven, modular runtime architecture. Every
 subsystem communicates through well-defined events and contracts.
 
 # 2. High-Level Runtime Graph

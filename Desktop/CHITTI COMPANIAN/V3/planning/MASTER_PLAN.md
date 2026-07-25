@@ -1,4 +1,4 @@
-# CHITTI Master Development Plan
+# Vizzu Master Development Plan
 
 **Core Rule:** A phase cannot start until the previous phase is frozen and approved. No exceptions.
 

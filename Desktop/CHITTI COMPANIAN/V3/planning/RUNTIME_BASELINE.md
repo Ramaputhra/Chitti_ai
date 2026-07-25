@@ -1,4 +1,4 @@
-# CHITTI Runtime Baseline
+# Vizzu Runtime Baseline
 
 The core runtime foundation architecture is strictly versioned and frozen. 
 No changes may be made to these foundational paradigms without a formal architecture review.

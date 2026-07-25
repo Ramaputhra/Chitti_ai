@@ -1,7 +1,7 @@
-# CHITTI V2 RELEASE BACKLOG
+# Vizzu V2 RELEASE BACKLOG
 ## DEFINITIVE ENGINEERING BACKLOG (RG01)
 
-This backlog is the single source of truth for all remaining engineering work required to ship CHITTI V2. Every item listed is a release blocker.
+This backlog is the single source of truth for all remaining engineering work required to ship Vizzu V2. Every item listed is a release blocker.
 
 ---
 
@@ -26,7 +26,7 @@ This backlog is the single source of truth for all remaining engineering work re
 - **Category:** C (MOCK)
 - **Priority:** P0 (Blocks Release)
 - **Release Critical:** YES
-- **Evidence:** `extract_text` returns a static `OCRArtifact` containing "CHITTI V2 LiteOCR Modernized Vision Output" rather than invoking ONNX/Vision models.
+- **Evidence:** `extract_text` returns a static `OCRArtifact` containing "Vizzu V2 LiteOCR Modernized Vision Output" rather than invoking ONNX/Vision models.
 - **User Impact:** Users cannot highlight, translate, or copy text from images or the screen.
 - **Architecture Impact:** Downstream capabilities relying on layout trees or canonical OCR artifacts will fail or process dummy data.
 - **Required Action:** Implement actual ONNX model inference within `LiteOCRProvider` to parse input images and return real bounding boxes and confidence scores.
@@ -69,7 +69,7 @@ This backlog is the single source of truth for all remaining engineering work re
 - **Priority:** P0 (Blocks Release)
 - **Release Critical:** YES
 - **Evidence:** The verification scripts manually inject `MockContext` and `MockEventBus`. The runtime is not definitively registered or proven within the production `BootManager`.
-- **User Impact:** CHITTI cannot passively track what projects/apps the user is working on, breaking Goal/Project runtime correlations.
+- **User Impact:** Vizzu cannot passively track what projects/apps the user is working on, breaking Goal/Project runtime correlations.
 - **Architecture Impact:** `UserActivityEvent` relies on the production EventBus to populate `AnalyticsRuntime`. If unwired, timelines remain empty.
 - **Required Action:** Formally register `DesktopActivityRuntime` in the `BootManager` and ensure it subscribes to/publishes to the production `EventBus`.
 
@@ -111,6 +111,6 @@ This backlog is the single source of truth for all remaining engineering work re
 - **Priority:** P1 (Critical Feature)
 - **Release Critical:** YES
 - **Evidence:** The source files contain interface definitions mostly populated with `pass` and `NotImplementedError`. 
-- **User Impact:** CHITTI's visual avatar will not animate, show emotion, or narrate appropriately based on context.
+- **User Impact:** Vizzu's visual avatar will not animate, show emotion, or narrate appropriately based on context.
 - **Architecture Impact:** Expression Runtime fails to emit state changes to the UI renderer.
 - **Required Action:** Implement the core state machines inside the behavior runtimes.

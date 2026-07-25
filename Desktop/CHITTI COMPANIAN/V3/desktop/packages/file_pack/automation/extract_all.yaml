@@ -1,4 +1,4 @@
-id: chitti.automation.extract_all
+id: vizzu.automation.extract_all
 name: Extract All Archives
 trigger: manual
 steps:

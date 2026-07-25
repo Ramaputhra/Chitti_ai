@@ -1,6 +1,6 @@
 # Capability Matrix
 
-This dashboard tracks the product-level maturity of the CHITTI Companion system across all disciplines.
+This dashboard tracks the product-level maturity of the Vizzu Companion system across all disciplines.
 
 | Capability               | Status | Notes |
 | ------------------------ | ------ | ----- |

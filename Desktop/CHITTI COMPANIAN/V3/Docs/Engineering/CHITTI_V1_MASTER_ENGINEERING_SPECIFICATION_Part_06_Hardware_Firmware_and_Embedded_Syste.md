@@ -1,4 +1,4 @@
-# CHITTI V1 MASTER ENGINEERING SPECIFICATION
+# Vizzu V1 MASTER ENGINEERING SPECIFICATION
 
 # Part 6
 # Hardware, Firmware & Embedded System
@@ -7,7 +7,7 @@
 
 # 1. Objective
 
-This document defines the embedded hardware architecture, firmware layers, communication interfaces, power management, and deterministic control systems used by CHITTI V1.
+This document defines the embedded hardware architecture, firmware layers, communication interfaces, power management, and deterministic control systems used by Vizzu V1.
 
 The embedded subsystem provides reliable sensing, motion, audio, and device control while remaining independent from desktop AI services.
 
@@ -15,7 +15,7 @@ The embedded subsystem provides reliable sensing, motion, audio, and device cont
 
 # 2. Embedded Architecture
 
-CHITTI consists of two embedded controllers.
+Vizzu consists of two embedded controllers.
 
 Head Unit
 

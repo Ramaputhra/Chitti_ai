@@ -1,11 +1,11 @@
-# 🚀 CHITTI FEATURE ROADMAP
+# 🚀 Vizzu FEATURE ROADMAP
 ## Missing Features to Implement
 
 ---
 
 ## 📊 MISSING FEATURES ANALYSIS
 
-### Current State: CHITTI has 150+ tools, 18 categories
+### Current State: Vizzu has 150+ tools, 18 categories
 ### Gap Analysis: Missing critical features for full AI desktop companion
 
 ---
@@ -319,7 +319,7 @@ pip install screen-time-tracker
 
 ## 📊 FEATURE COMPARISON
 
-| Feature | CHITTI | Siri | Alexa | Google |
+| Feature | Vizzu | Siri | Alexa | Google |
 |---------|--------|------|-------|--------|
 | Screen Capture | ❌ | ✅ | ❌ | ✅ |
 | Calendar Scheduling | Basic | ✅ | ✅ | ✅ |

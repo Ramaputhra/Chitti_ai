@@ -1,4 +1,4 @@
-id: chitti.automation.document_companion
+id: vizzu.automation.document_companion
 name: Document Companion Lifecycle
 trigger: intent
 intent: "Open Document"

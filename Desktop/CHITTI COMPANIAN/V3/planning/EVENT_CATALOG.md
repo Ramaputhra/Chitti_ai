@@ -1,4 +1,4 @@
-# CHITTI Event Catalog
+# Vizzu Event Catalog
 
 This document establishes the canonical list of standard event IDs emitted over the Event Bus.
 Avoid inventing ad-hoc strings in code; instead, add them here and to `desktop.constants.events`.

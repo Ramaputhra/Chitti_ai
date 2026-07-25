@@ -1,4 +1,4 @@
-id: chitti.automation.research_companion
+id: vizzu.automation.research_companion
 name: Research Companion Workflow
 trigger: intent
 intent: "Research"

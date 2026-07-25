@@ -1,8 +1,8 @@
-# CHITTI Capability Tracker
+# Vizzu Capability Tracker
 
 We measure project maturity by **Capabilities**, providing a product-level view of the system.
 
-## Milestone 1: "Hey Chitti" (Vertical Slice)
+## Milestone 1: "Hey Vizzu" (Vertical Slice)
 | Capability | Target Sprint | Progress | Status |
 |------------|---------------|----------|--------|
 | Audio Pipeline (Capture/Playback) | 3 | `██████████` 100% | ✅ |
@@ -11,7 +11,7 @@ We measure project maturity by **Capabilities**, providing a product-level view 
 | Intent Recognition (Mocked) | 4 | `░░░░░░░░░░` 0% | ⏳ |
 
 ## Milestone 2: "Real Speech"
-> "Chitti can understand a real spoken sentence and respond using a real speech synthesizer without any external AI."
+> "Vizzu can understand a real spoken sentence and respond using a real speech synthesizer without any external AI."
 
 | Capability | Target Sprint | Progress | Status |
 |------------|---------------|----------|--------|

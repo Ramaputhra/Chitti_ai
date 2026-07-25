@@ -1,4 +1,4 @@
-# CHITTI V2 — REMOTE COMPANION FINAL MICRO REFINEMENT ANALYSIS
+# Vizzu V2 — REMOTE COMPANION FINAL MICRO REFINEMENT ANALYSIS
 **(WAVE 1 — SPRINT 1: FEATURE: REMOTE_COMPANION)**
 
 ======================================================================
@@ -77,7 +77,7 @@ Following the capability enhancement analysis (`REMOTE_COMPANION_ENHANCEMENT_ANA
 - **Description:** Single-page mobile web app (`frontend/remote_mobile/index.html`) handles network switches gracefully:
   - **Auto Reconnect:** Re-initiates WebSocket connection using exponential backoff (`1s`, `2s`, `4s`, `8s`, max `16s`).
   - **Session Resume:** Passes saved `permanent_token` during WebSocket handshake.
-  - **Offline Banner:** Displays a subtle top banner ("Reconnecting to CHITTI...") when Wi-Fi drops.
+  - **Offline Banner:** Displays a subtle top banner ("Reconnecting to Vizzu...") when Wi-Fi drops.
   - **Heartbeat Indicator:** Green/Yellow/Red pulse dot showing latency and connection health.
 - **Safety Guarantee:** Modifies HTML/JS frontend only; `WebSocketTransport` backend architecture remains untouched.
 

@@ -1,4 +1,4 @@
-# CHITTI V2 — SPRINT W1S2-B PRODUCTION REFINEMENTS ANALYSIS
+# Vizzu V2 — SPRINT W1S2-B PRODUCTION REFINEMENTS ANALYSIS
 **(EPIC 38 — WAVE 1 — SPRINT W1S2-B: OS CONTROL & INTEGRATION)**
 
 ======================================================================
@@ -9,7 +9,7 @@ An engineering analysis of four production refinements for **EPIC 38 — WAVE 1 
 
 ### Core Engineering Directives:
 1. **Extend Existing Architecture Only:** Strictly extend `DesktopAutomationCapability` (`desktop/capabilities/desktop/automation/capability.py`), `WindowRuntime` (`runtime.py`), and `OutputRouter` (`desktop/runtimes/channel/router/output.py`).
-2. **Strict Safety Policy:** Essential Windows processes and CHITTI runtime processes are **100% PROTECTED** from termination or suspension.
+2. **Strict Safety Policy:** Essential Windows processes and Vizzu runtime processes are **100% PROTECTED** from termination or suspension.
 3. **Zero Frozen Platform Impact:** Character Platform, Desktop UI Runtime Foundation, Motion Design System, and Cognitive Core V1 remain **100% FROZEN and UNTOUCHED**.
 
 ---
@@ -20,7 +20,7 @@ An engineering analysis of four production refinements for **EPIC 38 — WAVE 1 
 
 | # | Production Refinement Area | Status | Target Files to Extend | Safety Guarantee | Priority |
 | :-: | :--- | :--- | :--- | :--- | :-: |
-| **1** | **Safe Process Control Policy** | **Missing** | `desktop/capabilities/desktop/automation/capability.py` | Protects Windows OS & CHITTI | **High** |
+| **1** | **Safe Process Control Policy** | **Missing** | `desktop/capabilities/desktop/automation/capability.py` | Protects Windows OS & Vizzu | **High** |
 | **2** | **Application Lifecycle Mgmt** | **Partially Exists** | `desktop/capabilities/desktop/automation/runtime.py` | Prevents duplicate launches | **High** |
 | **3** | **Smart Execution Policy (Planner)**| **Missing** | `desktop/capabilities/desktop/automation/capability.py` | Confirmation for active renders | **High** |
 | **4** | **Remote Control Panel** | **Partially Exists** | `frontend/remote_mobile/index.html`<br>`desktop/runtimes/channel/router/output.py` | Secure mobile control dashboard | **High** |
@@ -34,10 +34,10 @@ An engineering analysis of four production refinements for **EPIC 38 — WAVE 1 
 ### 3.1 Refinement 1 — Safe Process Control & Safety Policy
 - **Protected Windows Processes (CANNOT BE TERMINATED OR SUSPENDED):**
   - `csrss.exe`, `lsass.exe`, `services.exe`, `smss.exe`, `winlogon.exe`, `svchost.exe`, `explorer.exe`, `dwm.exe`.
-- **Protected CHITTI Runtime Processes:**
-  - CHITTI main python process (`python.exe` executing `desktop/app/kernel.py`).
+- **Protected Vizzu Runtime Processes:**
+  - Vizzu main python process (`python.exe` executing `desktop/app/kernel.py`).
 - **Policy Enforcement:** `DesktopAutomationCapability` checks target process against the protection list. If protected, returns:
-  `ExecutionResult(success=False, error="Security Exception: Terminating system/CHITTI process is strictly prohibited.")`
+  `ExecutionResult(success=False, error="Security Exception: Terminating system/Vizzu process is strictly prohibited.")`
 
 ### 3.2 Refinement 2 — Application Lifecycle Management (`WindowRuntime`)
 - **Single Instance Detection:** `WindowRuntime.open(app_name)` checks `ProcessSource` first.

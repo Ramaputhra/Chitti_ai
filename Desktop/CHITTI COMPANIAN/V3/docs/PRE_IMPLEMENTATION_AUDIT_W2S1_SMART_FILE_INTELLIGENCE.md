@@ -1,4 +1,4 @@
-# CHITTI V2 — EPIC 39 WAVE 2 SPRINT W2S1
+# Vizzu V2 — EPIC 39 WAVE 2 SPRINT W2S1
 # SMART FILE INTELLIGENCE: PRE-IMPLEMENTATION AUDIT REPORT
 
 ======================================================================
@@ -10,7 +10,7 @@ A mandatory pre-implementation audit was conducted for **Epic 39 Wave 2 Sprint W
 ### Core Audit Finding:
 The repository **already contains ~70% of the core file capability infrastructure** across `desktop/capabilities/sys/file/` (Search, Open, Copy, Move, Rename, Delete, Recycle) and `FilesystemSource` in `desktop/platform/observation/sources.py` (Storage Intelligence, Disk Summary, Downloads Size, Duplicate Engine Compatibility).
 
-To satisfy Sprint W2S1 without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, CHITTI V2 SHALL **extend existing modules** (`FilesystemSource`, `sys/file/search/adapter.py`) rather than introducing duplicate capabilities or new top-level platforms.
+To satisfy Sprint W2S1 without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, Vizzu V2 SHALL **extend existing modules** (`FilesystemSource`, `sys/file/search/adapter.py`) rather than introducing duplicate capabilities or new top-level platforms.
 
 ---
 

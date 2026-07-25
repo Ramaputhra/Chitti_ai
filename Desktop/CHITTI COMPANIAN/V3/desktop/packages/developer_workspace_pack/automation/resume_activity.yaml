@@ -1,4 +1,4 @@
-id: chitti.automation.resume_activity
+id: vizzu.automation.resume_activity
 name: Resume Activity Framework
 trigger: intent
 intent: "Resume Activity"

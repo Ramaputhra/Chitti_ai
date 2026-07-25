@@ -5,7 +5,7 @@
 > **5. Every runtime, planner, scheduler, and capability must exist only to improve the AI Desktop Companion experience. Architectural complexity must always provide measurable product value.**
 
 ## 1. Purpose
-The master blueprint for CHITTI's Runtime-based AI Desktop Companion architecture.
+The master blueprint for Vizzu's Runtime-based AI Desktop Companion architecture.
 
 ## 2. Responsibilities
 Define the master orchestration chain: Interaction -> Intent -> Context -> Workflow -> Planner -> ExecutionGraph -> Scheduler -> Execution -> Capability.

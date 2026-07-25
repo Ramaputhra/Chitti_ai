@@ -2,7 +2,7 @@ id: SCN-0001
 name: Greeting
 description: Basic greeting validation
 input:
-  text: Hello Chitti
+  text: Hello Vizzu
 expected:
   intent:
     type: Greeting

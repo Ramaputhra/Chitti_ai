@@ -1,6 +1,6 @@
-# CHITTI: Capability Development Constitution
+# Vizzu: Capability Development Constitution
 
-The core architecture (Experience 001 v1.0) is frozen. The following 15 requirements must be met by **every** capability added to the CHITTI platform to ensure horizontal scaling does not compromise architectural integrity.
+The core architecture (Experience 001 v1.0) is frozen. The following 15 requirements must be met by **every** capability added to the Vizzu platform to ensure horizontal scaling does not compromise architectural integrity.
 
 ## 1. Capability Manifest
 Every capability must define a declarative YAML manifest (`manifest.yaml`) specifying its signature, domain (e.g. `sys.file.*`), parameters, failure policies, and metadata.
@@ -80,13 +80,13 @@ Every manifest should declare whether repeated execution is safe (e.g., `idempot
 Every capability should expose an estimated execution cost (e.g., cpu, memory, disk, network) so the planner can optimize workflows without changing the capability itself.
 
 ## 16. Irreversible Destructive Actions
-CHITTI never performs irreversible destructive actions autonomously. CHITTI may plan, prepare, verify, and present destructive operations (e.g., permanent deletion, format), but the final irreversible action must always require an explicit physical user confirmation. Voice commands alone are never sufficient.
+Vizzu never performs irreversible destructive actions autonomously. Vizzu may plan, prepare, verify, and present destructive operations (e.g., permanent deletion, format), but the final irreversible action must always require an explicit physical user confirmation. Voice commands alone are never sufficient.
 
 ## 17. Recover Before Destroy
-CHITTI always prefers recoverable actions over irreversible actions. Unless the user explicitly requests permanent deletion, all delete operations are redirected to the Windows Recycle Bin (or equivalent recoverable state).
+Vizzu always prefers recoverable actions over irreversible actions. Unless the user explicitly requests permanent deletion, all delete operations are redirected to the Windows Recycle Bin (or equivalent recoverable state).
 
 ## 18. Recovery Communication
-Whenever CHITTI performs a recoverable action instead of a destructive one, it must clearly inform the user where and how the data can be recovered.
+Whenever Vizzu performs a recoverable action instead of a destructive one, it must clearly inform the user where and how the data can be recovered.
 
 ## 19. Least Intrusive Web Execution
 Web tasks must execute using the simplest runtime capable of completing the task. The escalation path is strictly: Search → Crawl → Headless Browser → Interactive Browser.
@@ -95,10 +95,10 @@ Web tasks must execute using the simplest runtime capable of completing the task
 Interactive browser windows must only be opened when user interaction or specific website state strictly requires it. Information retrieval must remain invisible.
 
 ## 21. User Privacy
-Whenever authentication or sensitive information is required, CHITTI must announce it, the avatar must step aside, the browser remains open, and CHITTI must wait until the user calls it again. CHITTI never watches password entry.
+Whenever authentication or sensitive information is required, Vizzu must announce it, the avatar must step aside, the browser remains open, and Vizzu must wait until the user calls it again. Vizzu never watches password entry.
 
 ## 22. Safe Browsing Policy
-CHITTI must not intentionally navigate to, search for, automate, or interact with websites whose primary purpose is adult sexual content, pornography, illegal content, malware distribution, phishing, piracy, or other unsafe material. The Planner and Web Execution Policy Runtime must reject such requests before browser execution.
+Vizzu must not intentionally navigate to, search for, automate, or interact with websites whose primary purpose is adult sexual content, pornography, illegal content, malware distribution, phishing, piracy, or other unsafe material. The Planner and Web Execution Policy Runtime must reject such requests before browser execution.
 
 ## 24. Web Capabilities Are Read-Oriented by Default
 Unless explicitly requested by the user, Web Capabilities shall not create accounts, submit forms, purchase products, publish content, send messages, or modify remote state. Default mode is Observe, Extract, Verify, Present. Only explicit user intent allows mutation.
@@ -113,7 +113,7 @@ The Workflow Runtime is the only runtime permitted to orchestrate multi-step exe
 Expression may communicate, delay, interrupt, or reorder presentation, but it shall never modify workflow execution, verification outcomes, or planner decisions.
 
 ## 28. Core Dependency Vendoring (In-lining)
-To guarantee total offline autonomy, eliminate bloat, and prevent supply chain attacks, CHITTI shall prefer vendoring (in-lining) critical open-source execution logic over relying on package managers (e.g., pip) for core desktop and system interactions. External dependencies should only be used during prototyping; for production, only the essential, audited source code must be extracted and placed into `desktop/platform/native/`.
+To guarantee total offline autonomy, eliminate bloat, and prevent supply chain attacks, Vizzu shall prefer vendoring (in-lining) critical open-source execution logic over relying on package managers (e.g., pip) for core desktop and system interactions. External dependencies should only be used during prototyping; for production, only the essential, audited source code must be extracted and placed into `desktop/platform/native/`.
 
 ---
 **Approval Rule**: No capability may be merged into the standard library unless it satisfies all 28 elements of this Constitution. Capability directories must mirror their hierarchical namespace (e.g., `sys/file/open/`).

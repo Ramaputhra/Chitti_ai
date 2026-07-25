@@ -2,7 +2,7 @@ id: SCN-1003
 name: Double Wake
 description: Verifies that triggering a wake word while a session is active is safely ignored
 input:
-  text: Hello Chitti
+  text: Hello Vizzu
 expected:
   events:
     - Session.Started

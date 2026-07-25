@@ -6,7 +6,7 @@
 > **5. Every runtime, planner, scheduler, and capability must exist only to improve the AI Desktop Companion experience. Architectural complexity must always provide measurable product value.**
 
 ## 1. Purpose
-Transforms normalized natural language text (`SpeechTranscribed` events or direct text input) into structured, typed, language-independent intents. It serves as CHITTI's primary comprehension engine, isolating semantic interpretation from execution.
+Transforms normalized natural language text (`SpeechTranscribed` events or direct text input) into structured, typed, language-independent intents. It serves as Vizzu's primary comprehension engine, isolating semantic interpretation from execution.
 
 ## 2. Responsibilities
 - **JSON-Driven Configurations:** Relies strictly on `desktop/config/` for `intents/`, `normalization/`, `entities/`, and `clarifications.json`. Python code handles algorithms; JSON handles data.

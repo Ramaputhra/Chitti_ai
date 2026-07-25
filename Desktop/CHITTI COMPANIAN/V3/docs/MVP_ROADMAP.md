@@ -1,7 +1,7 @@
-# CHITTI Desktop Companion MVP - Roadmap
+# Vizzu Desktop Companion MVP - Roadmap
 
 ## Objective
-Deliver a stable, local-first, privacy-respecting Desktop AI Companion based on the frozen CHITTI Project Blueprint v1.0.
+Deliver a stable, local-first, privacy-respecting Desktop AI Companion based on the frozen Vizzu Project Blueprint v1.0.
 
 ## Core Tenets
 1. **Desktop Focused:** Prioritize desktop integration, UI automation, and seamless local execution.

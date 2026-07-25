@@ -375,7 +375,7 @@ TTS --> AudioRenderer["Audio Renderer"]
 AudioRenderer --> UserHear["User Hears Response"]
 ```
 
-# 33. Complete CHITTI V2 Master Architecture
+# 33. Complete Vizzu V2 Master Architecture
 
 ```mermaid
 flowchart TD

@@ -1,11 +1,11 @@
-# CHITTI V2 — MASTER CAPABILITY OWNERSHIP & FEATURE MAPPING AUDIT
+# Vizzu V2 — MASTER CAPABILITY OWNERSHIP & FEATURE MAPPING AUDIT
 **(Canonical Architectural Ownership Map & Future Feature Boundary Rules)**
 
 ======================================================================
 ## 1. EXECUTIVE SUMMARY & PERMANENT OWNERSHIP RULE
 ======================================================================
 
-A comprehensive, non-destructive audit of the CHITTI V2 repository (`c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3`) was conducted to establish the **permanent canonical capability hierarchy**.
+A comprehensive, non-destructive audit of the Vizzu V2 repository (`c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3`) was conducted to establish the **permanent canonical capability hierarchy**.
 
 ### Permanent Architectural Rule:
 ```

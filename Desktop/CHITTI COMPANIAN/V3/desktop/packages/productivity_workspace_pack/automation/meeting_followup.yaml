@@ -1,4 +1,4 @@
-id: chitti.automation.meeting_followup
+id: vizzu.automation.meeting_followup
 name: Meeting Followup
 trigger: manual
 steps:

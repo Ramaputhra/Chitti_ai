@@ -1,4 +1,4 @@
-# 🎯 CHITTI AI Desktop Companion V3
+# 🎯 Vizzu AI Desktop Companion V3
 
 A comprehensive AI-powered desktop companion with voice commands, automation, and intelligent assistance.
 

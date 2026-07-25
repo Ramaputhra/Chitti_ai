@@ -1,6 +1,6 @@
 # Platform Compatibility
 
-This document defines the ABI (Application Binary Interface) and compatibility commitments for the CHITTI architecture. These boundaries are considered frozen and must not be altered by future sprints or feature additions.
+This document defines the ABI (Application Binary Interface) and compatibility commitments for the Vizzu architecture. These boundaries are considered frozen and must not be altered by future sprints or feature additions.
 
 ## Frozen Contracts
 

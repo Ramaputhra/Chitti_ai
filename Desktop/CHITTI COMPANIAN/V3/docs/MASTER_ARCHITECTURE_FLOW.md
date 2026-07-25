@@ -1,11 +1,11 @@
-# CHITTI V2 — MASTER ARCHITECTURE & ENGINEERING SPECIFICATION
+# Vizzu V2 — MASTER ARCHITECTURE & ENGINEERING SPECIFICATION
 **(Canonical Architectural Reference & Data Flow Manual)**
 
 ======================================================================
 ## 1. EXECUTIVE ENGINEERING OVERVIEW
 ======================================================================
 
-CHITTI V2 is a deterministic, event-driven, multi-runtime desktop companion platform. It operates on a strict 4-layer cognitive architecture (Context -> Planning -> Execution -> Evaluation) bound to isolated visual, auditory, and cognitive runtimes.
+Vizzu V2 is a deterministic, event-driven, multi-runtime desktop companion platform. It operates on a strict 4-layer cognitive architecture (Context -> Planning -> Execution -> Evaluation) bound to isolated visual, auditory, and cognitive runtimes.
 
 ### Core Architectural Invariants:
 1. **DecisionEngine Purity (Rule 18):** Given the same `PlanningContext`, `DecisionEngine` strictly returns the exact same `Decision`. No event bus, no network, no logging, no async, no side effects.
@@ -196,7 +196,7 @@ CHITTI V2 is a deterministic, event-driven, multi-runtime desktop companion plat
 - **Consumed Events:** `VisualStateChanged`, `TimelineScheduled`, `ConflictResolved`, `PolicyChanged`, `RuntimeRecovered`.
 - **Published Events:** `UnifiedTimelineUpdated`, `VisualStateBroadcast`.
 - **Ownership:** Coordinator Orchestration Loop.
-- **Failure Recovery:** Resynchronizes remaining healthy runtimes without restarting CHITTI.
+- **Failure Recovery:** Resynchronizes remaining healthy runtimes without restarting Vizzu.
 
 ---
 
@@ -669,11 +669,11 @@ sequenceDiagram
 
 ```
 ######################################################################
-          CHITTI V2 MASTER ARCHITECTURE SPECIFICATION
+          Vizzu V2 MASTER ARCHITECTURE SPECIFICATION
 
                         STATUS:
                    CANONICAL & COMPLETE
 ######################################################################
 ```
 
-This document represents the permanent, complete, and un-truncated architectural engineering specification for CHITTI V2.
+This document represents the permanent, complete, and un-truncated architectural engineering specification for Vizzu V2.

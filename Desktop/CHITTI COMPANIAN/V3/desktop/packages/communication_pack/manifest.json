@@ -1,9 +1,9 @@
 {
-  "id": "chitti.pack.communication",
+  "id": "vizzu.pack.communication",
   "name": "Communication Pack",
   "version": "1.0.0",
   "description": "Standardized, provider-agnostic communication primitives.",
-  "dependencies": ["chitti.platform.environment", "chitti.platform.presentation"],
+  "dependencies": ["vizzu.platform.environment", "vizzu.platform.presentation"],
   "capabilities": [
     "ReadEmail", "SearchEmail", "ComposeEmail", "SendEmail", "ReplyEmail", "ForwardEmail", "WatchInbox",
     "ViewSchedule", "CreateEvent", "UpdateEvent", "CancelEvent", "FindAvailability", "Reminder", "WatchCalendarChanges",

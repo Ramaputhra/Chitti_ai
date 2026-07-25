@@ -1,4 +1,4 @@
-# CHITTI V1 MASTER ENGINEERING SPECIFICATION
+# Vizzu V1 MASTER ENGINEERING SPECIFICATION
 
 ## Part 1 --- Foundation & Governance
 
@@ -10,7 +10,7 @@
 # 1. Purpose
 
 This document defines the architectural rules, ownership boundaries, and
-engineering principles governing CHITTI V1.
+engineering principles governing Vizzu V1.
 
 It is the authoritative engineering reference for the project. Where
 implementation conflicts with this specification, the specification
@@ -20,7 +20,7 @@ shall take precedence unless formally revised.
 
 # 2. Vision
 
-CHITTI is a **Desktop Companion Platform**.
+Vizzu is a **Desktop Companion Platform**.
 
 It is **not**: - A chatbot - A prompt wrapper - A workflow script - A
 cloud AI frontend

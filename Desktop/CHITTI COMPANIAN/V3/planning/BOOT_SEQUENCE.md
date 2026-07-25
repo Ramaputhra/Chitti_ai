@@ -1,4 +1,4 @@
-# CHITTI Boot Sequence
+# Vizzu Boot Sequence
 
 The startup order must be strictly deterministic. This sequence ensures foundation services are available before feature subsystems start up.
 

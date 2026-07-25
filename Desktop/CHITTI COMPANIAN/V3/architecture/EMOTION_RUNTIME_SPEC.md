@@ -6,7 +6,7 @@
 > **5. Every runtime, planner, scheduler, and capability must exist only to improve the AI Desktop Companion experience. Architectural complexity must always provide measurable product value.**
 
 ## 1. Purpose
-Maintains CHITTI's internal emotional state machine based purely on systemic events rather than abstract language analysis.
+Maintains Vizzu's internal emotional state machine based purely on systemic events rather than abstract language analysis.
 
 ## 2. Responsibilities
 - Act as a **100% deterministic** state machine mapping system events to emotional states (e.g., Happy, Curious, Thinking, Concerned, Relaxed).

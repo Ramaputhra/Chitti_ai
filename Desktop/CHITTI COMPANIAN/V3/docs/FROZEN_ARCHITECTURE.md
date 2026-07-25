@@ -1,6 +1,6 @@
 # Frozen Architecture
 
-This document explicitly defines the boundaries of the CHITTI architecture. **Do not redesign these components.**
+This document explicitly defines the boundaries of the Vizzu architecture. **Do not redesign these components.**
 
 ## Architecture Status
 **Frozen**

@@ -1,4 +1,4 @@
-# CHITTI Development Constitution
+# Vizzu Development Constitution
 
 ## Version 1.0 (Frozen)
 
@@ -6,7 +6,7 @@
 
 # Purpose
 
-This document governs **all future development** of CHITTI Desktop Companion.
+This document governs **all future development** of Vizzu Desktop Companion.
 
 The architecture has been completed and frozen.
 
@@ -440,6 +440,6 @@ No alternative recovery process is permitted.
 
 # Final Principle
 
-> **CHITTI is a product, not a research project.**
+> **Vizzu is a product, not a research project.**
 >
-> The architecture is complete. Intelligence emerges by composing the existing systems, not by inventing new ones. Every sprint must make CHITTI more useful to the user, never more complicated internally.
+> The architecture is complete. Intelligence emerges by composing the existing systems, not by inventing new ones. Every sprint must make Vizzu more useful to the user, never more complicated internally.

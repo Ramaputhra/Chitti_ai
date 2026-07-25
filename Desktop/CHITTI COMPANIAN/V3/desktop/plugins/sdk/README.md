@@ -1,11 +1,11 @@
-# CHITTI Plugin SDK Documentation
+# Vizzu Plugin SDK Documentation
 
-Welcome to the CHITTI Plugin SDK! This guide will help you create plugins to extend CHITTI's capabilities.
+Welcome to the Vizzu Plugin SDK! This guide will help you create plugins to extend Vizzu's capabilities.
 
 ## 🎯 Quick Start
 
 ```bash
-# Install the CHITTI plugin template generator
+# Install the Vizzu plugin template generator
 pip install chitti-sdk
 
 # Create a new plugin
@@ -14,10 +14,10 @@ chitti plugin create my-plugin --template capability
 
 ## 📦 Plugin Types
 
-CHITTI supports 4 types of plugins:
+Vizzu supports 4 types of plugins:
 
 ### 1. Capability Plugin
-Adds new tools/capabilities to CHITTI.
+Adds new tools/capabilities to Vizzu.
 
 ```python
 from chitti.plugins import BasePlugin, PluginMetadata, PluginType
@@ -248,7 +248,7 @@ chitti marketplace publish --plugin ./dist/my_plugin-1.0.0.tar.gz
 ### Step 3: Share Your Plugin
 
 Share your plugin on:
-- CHITTI Marketplace
+- Vizzu Marketplace
 - GitHub
 - PyPI
 
@@ -256,7 +256,7 @@ Share your plugin on:
 
 1. **Permissions**: Only request necessary permissions
 2. **Data Handling**: Never store sensitive data without encryption
-3. **API Keys**: Use CHITTI's secure storage for secrets
+3. **API Keys**: Use Vizzu's secure storage for secrets
 4. **Input Validation**: Always validate user input
 
 ## 📚 Examples
@@ -271,7 +271,7 @@ See `docs/examples/custom_commands/` for a complete example.
 
 ## 🆘 Support
 
-- GitHub Issues: https://github.com/Ramaputhra/Chitti_ai/issues
+- GitHub Issues: https://github.com/Ramaputhra/Vizzu_ai/issues
 - Discord: https://discord.gg/chitti
 - Email: support@chitti.ai
 

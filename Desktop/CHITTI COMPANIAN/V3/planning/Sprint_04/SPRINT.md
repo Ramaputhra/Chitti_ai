@@ -1,7 +1,7 @@
 # Sprint 4: Language Runtime
 
 ## 1. Goal
-Build the cognitive layer of CHITTI. Process `Voice.AudioReady` (or injected text), determine Intent, plan a Workflow, execute it, and generate a Mock Response/TTS. Present a Developer Console to visualize this pipeline.
+Build the cognitive layer of Vizzu. Process `Voice.AudioReady` (or injected text), determine Intent, plan a Workflow, execute it, and generate a Mock Response/TTS. Present a Developer Console to visualize this pipeline.
 
 ## 2. Deliverables
 - Speech Provider Interfaces (`ISpeechProvider`, `ISpeechSynthesizer`)

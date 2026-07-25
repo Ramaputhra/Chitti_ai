@@ -1,6 +1,6 @@
-# CHITTI Desktop Provider Recommendation
+# Vizzu Desktop Provider Recommendation
 
-Based on the isolated evaluation of capability coverage, reliability, maintenance health, and dependency replacement, the following is the official recommendation for the CHITTI Desktop Automation Provider Stack.
+Based on the isolated evaluation of capability coverage, reliability, maintenance health, and dependency replacement, the following is the official recommendation for the Vizzu Desktop Automation Provider Stack.
 
 ## Final Stack Recommendation
 
@@ -29,7 +29,7 @@ Rejected (Superseded/Unnecessary):
 ## Architectural Justification
 
 ### 1. Why `uiautomation` is the Primary
-It directly wraps `UIAutomationCore.dll`. It provides the fastest UI tree traversal currently available in Python, fully supports modern UWP and Electron apps (which `pywinauto` struggles with), and requires only `comtypes` as a dependency. It allows CHITTI to "read" the screen semantically rather than blindly clicking coordinates.
+It directly wraps `UIAutomationCore.dll`. It provides the fastest UI tree traversal currently available in Python, fully supports modern UWP and Electron apps (which `pywinauto` struggles with), and requires only `comtypes` as a dependency. It allows Vizzu to "read" the screen semantically rather than blindly clicking coordinates.
 
 ### 2. Why `pywin32` is the Secondary Native Layer
 While `uiautomation` handles the content *inside* windows, `pywin32` handles the windows themselves. It provides direct access to the Windows API for maximizing, focusing, setting Z-order, and polling for raw HWNDs. It is the de-facto standard for Windows Python environments.

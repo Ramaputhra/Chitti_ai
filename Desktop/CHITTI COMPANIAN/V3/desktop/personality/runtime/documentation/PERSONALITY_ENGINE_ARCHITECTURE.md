@@ -1,4 +1,4 @@
-# CHITTI V2 — PERSONALITY ENGINE ARCHITECTURE
+# Vizzu V2 — PERSONALITY ENGINE ARCHITECTURE
 
 ## 1. Executive Summary
 The **Personality Engine & Narration Platform** (`desktop/personality/runtime/`) serves as the single canonical source of truth for personality traits, speaking styles, humor, friendliness, formality, empathy, motivation, conciseness, talkativeness, and curiosity.

@@ -9,7 +9,7 @@ expected:
   workflow:
     action: ExecuteSkill
   response:
-    text: I am Chitti, your AI Companion.
+    text: I am Vizzu, your AI Companion.
   events:
     - Language.TextRecognized
     - Intent.Detected

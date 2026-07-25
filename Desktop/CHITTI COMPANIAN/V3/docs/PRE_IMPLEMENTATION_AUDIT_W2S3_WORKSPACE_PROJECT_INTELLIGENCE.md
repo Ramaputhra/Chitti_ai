@@ -1,4 +1,4 @@
-# CHITTI V2 — EPIC 39 WAVE 2 SPRINT W2S3
+# Vizzu V2 — EPIC 39 WAVE 2 SPRINT W2S3
 # WORKSPACE & PROJECT INTELLIGENCE: PRE-IMPLEMENTATION AUDIT REPORT
 
 ======================================================================
@@ -10,7 +10,7 @@ A mandatory pre-implementation audit was conducted for **Epic 39 Wave 2 Sprint W
 ### Core Audit Finding:
 The repository **already contains ~82% of Workspace & Project Intelligence infrastructure** across `WorkspaceRuntime` (`desktop/runtimes/workspace_runtime.py`), `WorkspaceCapability` (`desktop/services/capabilities/workspace_capability.py`), `IDEAdapter` (`desktop/runtimes/environment/adapters/ide/adapter.py`), `WorkspaceContextBuilder` (`desktop/platform/shared/utilities/workspace_context_builder.py`), and activity observers (`git_observer.py`, `vscode_observer.py`, `node_observer.py`).
 
-To satisfy Sprint W2S3 without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, CHITTI V2 SHALL **extend existing modules** (`WorkspaceCapability` and `WorkspaceContextBuilder`) rather than creating duplicate capabilities or new top-level platforms.
+To satisfy Sprint W2S3 without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, Vizzu V2 SHALL **extend existing modules** (`WorkspaceCapability` and `WorkspaceContextBuilder`) rather than creating duplicate capabilities or new top-level platforms.
 
 ---
 

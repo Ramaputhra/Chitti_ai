@@ -1,4 +1,4 @@
-# CHITTI V1 MASTER ENGINEERING SPECIFICATION
+# Vizzu V1 MASTER ENGINEERING SPECIFICATION
 
 # Part 7
 # Development Roadmap, Testing & Deployment
@@ -7,7 +7,7 @@
 
 # 1. Objective
 
-This document defines the engineering lifecycle, validation strategy, testing framework, deployment process, and long-term evolution of CHITTI.
+This document defines the engineering lifecycle, validation strategy, testing framework, deployment process, and long-term evolution of Vizzu.
 
 ---
 
@@ -475,4 +475,4 @@ AI remains advisory.
 
 # Part 7 Summary
 
-This roadmap establishes a structured engineering lifecycle from architecture through production, ensuring CHITTI evolves through stable, testable, and independently deployable components while maintaining long-term scalability and maintainability.
+This roadmap establishes a structured engineering lifecycle from architecture through production, ensuring Vizzu evolves through stable, testable, and independently deployable components while maintaining long-term scalability and maintainability.

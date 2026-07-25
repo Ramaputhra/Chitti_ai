@@ -1,7 +1,7 @@
-# CHITTI Repository Structure
+# Vizzu Repository Structure
 
 ```
-CHITTI/
+Vizzu/
 │
 ├── README.md
 ├── LICENSE
@@ -309,4 +309,4 @@ AI Providers are replaceable.
 
 Plugins are independent.
 
-This keeps Chitti scalable for many years without major rewrites.
+This keeps Vizzu scalable for many years without major rewrites.

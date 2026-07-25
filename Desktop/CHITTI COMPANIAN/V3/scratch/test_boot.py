@@ -9,7 +9,7 @@ from desktop.app.kernel import BootManager
 from desktop.app.kernel import RuntimeConfiguration
 
 async def main():
-    print("--- Booting CHITTI Cognitive Engine (Architecture Validation) ---")
+    print("--- Booting Vizzu Cognitive Engine (Architecture Validation) ---")
     boot_manager = BootManager()
     kernel = boot_manager.compose_runtimes()
     await kernel.boot()

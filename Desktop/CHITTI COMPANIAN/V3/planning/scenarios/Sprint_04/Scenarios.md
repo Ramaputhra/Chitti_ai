@@ -3,7 +3,7 @@
 These scenarios define the acceptance criteria for Milestone 1. They bypass the physical microphone and test the cognitive language pipeline (Language -> Intent -> Plan -> Response).
 
 ## Scenario 001: Greeting
-- **Input text:** "Hello Chitti" (Injected via Dev Console)
+- **Input text:** "Hello Vizzu" (Injected via Dev Console)
 - **Expected Intent:** `Greeting`
 - **Expected Response Text:** "Hello! How can I help you today?"
 - **Success Criteria:** Speaker outputs synthesized text, Dev Console shows successful workflow completion.
@@ -11,7 +11,7 @@ These scenarios define the acceptance criteria for Milestone 1. They bypass the 
 ## Scenario 002: Identity
 - **Input text:** "Who are you?"
 - **Expected Intent:** `Identity`
-- **Expected Response Text:** "I am Chitti, your AI Companion."
+- **Expected Response Text:** "I am Vizzu, your AI Companion."
 
 ## Scenario 003: Gratitude
 - **Input text:** "Thank you"

@@ -1,4 +1,4 @@
-id: chitti.automation.organize_downloads
+id: vizzu.automation.organize_downloads
 name: Organize Downloads Folder
 trigger: manual
 steps:

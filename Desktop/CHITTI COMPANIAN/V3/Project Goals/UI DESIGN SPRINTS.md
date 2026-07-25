@@ -3,23 +3,23 @@ This is exactly where I want to protect the project from derailing again.
 **I would NOT sprint by screens.**
 I would sprint by **user experience**.
 
-For example, don't have a sprint called "Settings UI." Instead, have "User can control CHITTI." The UI is just the presentation of that capability.
+For example, don't have a sprint called "Settings UI." Instead, have "User can control Vizzu." The UI is just the presentation of that capability.
 
 ---
 
-# Phase F — CHITTI UI Experience
+# Phase F — Vizzu UI Experience
 
 This phase begins **only after all MVP capabilities are complete.**
 
 Goal:
 
-> **Transform CHITTI from a powerful backend into a polished living desktop companion.**
+> **Transform Vizzu from a powerful backend into a polished living desktop companion.**
 
 ---
 
 # Sprint 126 — Companion Shell
 
-**Goal:** Bring CHITTI to life as a permanent desktop companion.
+**Goal:** Bring Vizzu to life as a permanent desktop companion.
 
 ### Features
 
@@ -28,7 +28,7 @@ Goal:
 * Always-on-top companion.
 * Auto-hide after 5 minutes.
 * Idle yoga/exercise animations after 1 minute.
-* Wake word brings CHITTI back.
+* Wake word brings Vizzu back.
 * System tray integration.
 * Expression engine integration.
 
@@ -39,7 +39,7 @@ PC Starts
 
 ↓
 
-CHITTI appears
+Vizzu appears
 
 ↓
 
@@ -70,7 +70,7 @@ A living companion on the desktop.
 
 # Sprint 127 — Companion Toolbar
 
-**Goal:** Give Boss instant access to CHITTI.
+**Goal:** Give Boss instant access to Vizzu.
 
 Toolbar:
 
@@ -122,7 +122,7 @@ Features
 
 Goal
 
-Drop anything onto CHITTI.
+Drop anything onto Vizzu.
 
 Supports
 
@@ -141,7 +141,7 @@ Drag File
 
 ↓
 
-CHITTI understands
+Vizzu understands
 
 ↓
 
@@ -221,7 +221,7 @@ Each mode changes
 
 Goal
 
-Boss customizes CHITTI.
+Boss customizes Vizzu.
 
 Sections
 
@@ -273,7 +273,7 @@ User says
 
 > Boss, show me.
 
-CHITTI
+Vizzu
 
 ↓
 
@@ -289,7 +289,7 @@ Interactive presentation
 
 Boss continues asking questions.
 
-CHITTI updates presentation live.
+Vizzu updates presentation live.
 
 No PowerPoint required.
 
@@ -299,7 +299,7 @@ No PowerPoint required.
 
 Instead of Windows notifications.
 
-CHITTI itself speaks.
+Vizzu itself speaks.
 
 Examples
 
@@ -394,7 +394,7 @@ Windows Starts
 
 ↓
 
-CHITTI appears
+Vizzu appears
 
 ↓
 
@@ -450,7 +450,7 @@ Closes toolbar
 
 ↓
 
-CHITTI remains alive
+Vizzu remains alive
 ```
 
 ---
@@ -480,7 +480,7 @@ Fine-tune:
 
 This sprint is what makes people feel:
 
-> "CHITTI is alive."
+> "Vizzu is alive."
 
 ---
 

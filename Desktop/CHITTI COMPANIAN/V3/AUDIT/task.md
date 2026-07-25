@@ -50,7 +50,7 @@
   - `[ ]` **5.2 Understand**: Implement Semantic Intent & Entity Services.
   - `[ ]` **5.3 Act**: Execute desktop commands via Planner.
   - `[ ]` **5.4 Respond**: Synthesize TTS & display Avatar state.
-  - `[ ]` **Experience 001 Validation:** Complete "Chitti, open Downloads" end-to-end.
+  - `[ ]` **Experience 001 Validation:** Complete "Vizzu, open Downloads" end-to-end.
   
   *(Note: A Capability Demonstration is permanently required to exit any phase. The model is never the milestone; the capability is.)*
 

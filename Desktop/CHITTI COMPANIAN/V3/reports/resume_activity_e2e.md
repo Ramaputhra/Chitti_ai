@@ -1,7 +1,7 @@
 # Resume Activity E2E Report
 
 **Date:** 2026-07-18T20:30:55.385647
-**Target:** `C:\Users\Sm!le\Desktop\CHITTI_E2E\frontend`
+**Target:** `C:\Users\Sm!le\Desktop\Vizzu_E2E\frontend`
 **Result:** ✅ PASS
 
 ## Telemetry

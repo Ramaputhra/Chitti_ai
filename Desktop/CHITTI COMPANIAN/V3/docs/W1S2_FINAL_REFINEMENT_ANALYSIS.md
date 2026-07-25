@@ -1,4 +1,4 @@
-# CHITTI V2 — SPRINT W1S2 FINAL REFINEMENT ANALYSIS
+# Vizzu V2 — SPRINT W1S2 FINAL REFINEMENT ANALYSIS
 **(EPIC 38 — WAVE 1 — SPRINT W1S2: OS INTELLIGENCE & LIVE SYSTEM CONTROL)**
 
 ======================================================================

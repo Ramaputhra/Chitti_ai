@@ -1,4 +1,4 @@
-id: chitti.automation.coding_workspace
+id: vizzu.automation.coding_workspace
 name: Coding Workspace
 trigger: manual
 steps:

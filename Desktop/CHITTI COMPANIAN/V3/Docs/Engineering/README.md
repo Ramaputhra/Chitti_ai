@@ -1,16 +1,16 @@
-# CHITTI Engineering Documentation
+# Vizzu Engineering Documentation
 
-This directory is the authoritative engineering reference for CHITTI V1.
+This directory is the authoritative engineering reference for Vizzu V1.
 
 Reading order:
 
-1. CHITTI_V1_Integration_Audit_Report.md
+1. Vizzu_V1_Integration_Audit_Report.md
 
-2. CHITTI_V1_Integration_Master_Blueprint.md
+2. Vizzu_V1_Integration_Master_Blueprint.md
 
 3. antigravity_commands.md
 
-4. CHITTI_V1_MASTER_ENGINEERING_SPECIFICATION
+4. Vizzu_V1_MASTER_ENGINEERING_SPECIFICATION
    Parts 1–10
 
 Only after reading all documents may implementation begin.

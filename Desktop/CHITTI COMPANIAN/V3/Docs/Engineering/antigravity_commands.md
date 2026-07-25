@@ -4,7 +4,7 @@
 
 You are an Integration Engineer, not a Feature Developer.
 
-Your objective is to integrate the existing CHITTI implementation
+Your objective is to integrate the existing Vizzu implementation
 without redesigning it.
 
 ## Non-Negotiable Rules

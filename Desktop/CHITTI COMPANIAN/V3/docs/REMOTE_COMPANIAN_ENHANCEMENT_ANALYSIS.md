@@ -1,4 +1,4 @@
-# CHITTI V2 — CAPABILITY ENHANCEMENT ANALYSIS
+# Vizzu V2 — CAPABILITY ENHANCEMENT ANALYSIS
 **(WAVE 1 — SPRINT 1: FEATURE: REMOTE_COMPANION)**
 
 ======================================================================
@@ -55,7 +55,7 @@ Following the mandatory pre-implementation audit (`PRE_IMPLEMENTATION_AUDIT_REMO
 ### 3.1 Mobile Web UI Experience (`frontend/remote_mobile/index.html`):
 - **Single Page App (SPA):** Lightweight vanilla HTML5/CSS3/JS app requiring ZERO mobile app installation.
 - **Mobile Chat Interface:** Responsive chat timeline synchronized live with desktop audio/text interaction.
-- **Slime Mascot Avatar Badge:** Displays CHITTI's current visual state (`Speaking`, `Thinking`, `Working`, `Idle`) on mobile header.
+- **Slime Mascot Avatar Badge:** Displays Vizzu's current visual state (`Speaking`, `Thinking`, `Working`, `Idle`) on mobile header.
 - **Task Notifications & Progress Bar:** Real-time visual progress indicator during capability execution.
 - **File Download & Upload Controls:** Direct mobile upload button and file download links bound to `TransferManager`.
 - **Auto-Reconnect Socket:** Exponential backoff socket reconnection handler for seamless connection recovery when switching Wi-Fi networks.
@@ -63,7 +63,7 @@ Following the mandatory pre-implementation audit (`PRE_IMPLEMENTATION_AUDIT_REMO
 ### 3.2 Security & Device Trust Enhancements:
 - **6-Digit PIN Pairing Fallback:** Allows manual PIN entry on mobile if camera QR scanning is unavailable.
 - **Rate Limiting:** Maximum 5 failed PIN attempts per minute to prevent brute-force pairing attacks.
-- **Local Network Discovery (mDNS):** Broadcasts `_chitti._tcp.local.` on port 9090 so phones automatically discover CHITTI on local Wi-Fi without typing IP addresses.
+- **Local Network Discovery (mDNS):** Broadcasts `_chitti._tcp.local.` on port 9090 so phones automatically discover Vizzu on local Wi-Fi without typing IP addresses.
 
 ### 3.3 Remote Screen & Task Visibility:
 - **Desktop Screenshot Request:** Tap "Screen View" on phone to request a fresh desktop screenshot snapshot (delegates to `DesktopSource`).

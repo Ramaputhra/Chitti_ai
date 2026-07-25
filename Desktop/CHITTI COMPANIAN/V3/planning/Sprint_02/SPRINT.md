@@ -1,7 +1,7 @@
 # Sprint 2: Runtime Core
 
 ## 1. Goal
-Establish the Operating System of CHITTI: Application, Services, State, Execution, and Messaging.
+Establish the Operating System of Vizzu: Application, Services, State, Execution, and Messaging.
 
 ## 2. Deliverables
 - Settings Manager

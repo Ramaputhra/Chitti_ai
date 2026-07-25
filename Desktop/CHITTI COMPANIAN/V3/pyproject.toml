@@ -1,7 +1,7 @@
 [project]
-name = "chitti-companion"
+name = "vizzu-companion"
 version = "0.1.0"
-description = "CHITTI AI Companion Desktop Application"
+description = "Vizzu AI Companion Desktop Application"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [

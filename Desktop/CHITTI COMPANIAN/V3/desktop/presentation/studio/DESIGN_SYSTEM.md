@@ -1,7 +1,7 @@
-# CHITTI V2 — PRESENTATION STUDIO DESIGN SYSTEM
+# Vizzu V2 — PRESENTATION STUDIO DESIGN SYSTEM
 
 ## 1. Overview
-The Presentation Studio Design System establishes canonical guidelines, color tokens, typography scales, grid layouts, component naming conventions, responsive rules, and accessibility standards for all CHITTI Presentation Experiences (Productivity, Navigation, Browser, Vision, OCR, Calendar, Reminders).
+The Presentation Studio Design System establishes canonical guidelines, color tokens, typography scales, grid layouts, component naming conventions, responsive rules, and accessibility standards for all Vizzu Presentation Experiences (Productivity, Navigation, Browser, Vision, OCR, Calendar, Reminders).
 
 ---
 

@@ -126,10 +126,10 @@ For CLI text input with `--use-llm`, the current system still produces correct o
 **Owner:** Perception Team  
 
 ### Current Behaviour
-`extract_text` constructs a hardcoded `sample_text = "CHITTI V2 LiteOCR Modernized Vision Output"`, builds fake bounding boxes from it, and returns a fully-formed `OCRArtifact` — regardless of what image is passed.
+`extract_text` constructs a hardcoded `sample_text = "Vizzu V2 LiteOCR Modernized Vision Output"`, builds fake bounding boxes from it, and returns a fully-formed `OCRArtifact` — regardless of what image is passed.
 
 ### Evidence
-- `liteocr_provider.py:66`: `sample_text = "CHITTI V2 LiteOCR Modernized Vision Output"` — literal hardcoded string.
+- `liteocr_provider.py:66`: `sample_text = "Vizzu V2 LiteOCR Modernized Vision Output"` — literal hardcoded string.
 - `liteocr_provider.py:68-70`: Fake boxes and lines constructed from this string.
 - No ONNX runtime import exists anywhere in this file.
 
@@ -501,7 +501,7 @@ After repair, reverify:
 ### SECTION 9 — RELEASE DECISION
 
 **Blocks Release: NO** (App Analytics is not a core V2 release requirement)  
-The missing wiring is a feature gap for desktop activity analytics, not a core assistant capability. CHITTI can boot and interact correctly without it.
+The missing wiring is a feature gap for desktop activity analytics, not a core assistant capability. Vizzu can boot and interact correctly without it.
 
 ---
 ---

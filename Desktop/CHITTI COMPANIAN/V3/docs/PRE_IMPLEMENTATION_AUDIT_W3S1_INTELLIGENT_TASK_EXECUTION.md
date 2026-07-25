@@ -1,4 +1,4 @@
-# CHITTI V2 — EPIC 40 WAVE 3 SPRINT W3S1
+# Vizzu V2 — EPIC 40 WAVE 3 SPRINT W3S1
 # INTELLIGENT TASK EXECUTION: PRE-IMPLEMENTATION AUDIT REPORT
 
 ======================================================================
@@ -10,7 +10,7 @@ A mandatory pre-implementation engineering audit was conducted for **Epic 40 Wav
 ### Core Audit Finding:
 The repository **already contains ~80% of the execution and orchestration infrastructure** in `WorkflowRuntime` (`desktop/runtimes/workflow_runtime.py`), `VerificationRuntime` (`desktop/runtimes/verification_runtime.py`), `ExecutionRuntime` (`desktop/runtimes/ai/runtime.py`), and `ExecutionTrace` / `ExecutionStep` models (`desktop/models/execution.py`).
 
-To satisfy Sprint W3S1 without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, CHITTI V2 SHALL **extend `WorkflowRuntime`** to add retry loops, step timeouts, intelligent wait conditions, and cancellation state flags, rather than introducing duplicate execution engines or new top-level runtimes.
+To satisfy Sprint W3S1 without violating **Engineering Rules 260–269 (Frozen Architecture Directive)**, Vizzu V2 SHALL **extend `WorkflowRuntime`** to add retry loops, step timeouts, intelligent wait conditions, and cancellation state flags, rather than introducing duplicate execution engines or new top-level runtimes.
 
 ---
 

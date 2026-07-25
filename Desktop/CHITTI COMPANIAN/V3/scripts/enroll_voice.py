@@ -55,7 +55,7 @@ def main():
     embeddings = []
     
     sentences = [
-        "Hi Chitti, wake up and initialize my workspace.",
+        "Hi Vizzu, wake up and initialize my workspace.",
         "Please open the browser and check my emails for today.",
         "Set the security mode to voice authentication only."
     ]

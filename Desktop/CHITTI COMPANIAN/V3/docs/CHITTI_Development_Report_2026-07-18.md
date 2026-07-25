@@ -1,9 +1,9 @@
-# CHITTI Development Report - July 18, 2026
+# Vizzu Development Report - July 18, 2026
 
 ## Overview
-Today marked one of the most critical milestones in the history of the CHITTI Companion project. We successfully architected, certified, and froze the entire **Behavior Layer (Phase 6)**, officially cementing **CHITTI Architecture v1.0**.
+Today marked one of the most critical milestones in the history of the Vizzu Companion project. We successfully architected, certified, and froze the entire **Behavior Layer (Phase 6)**, officially cementing **Vizzu Architecture v1.0**.
 
-The architecture transitions CHITTI from a monolithic execution framework into a deeply layered, emotionally intelligent desktop companion. It enforces a strict separation between *Execution* (deterministic workflows, capabilities, resources) and *Behavior* (emotion, narration, expressions, speech).
+The architecture transitions Vizzu from a monolithic execution framework into a deeply layered, emotionally intelligent desktop companion. It enforces a strict separation between *Execution* (deterministic workflows, capabilities, resources) and *Behavior* (emotion, narration, expressions, speech).
 
 ## Key Accomplishments
 
@@ -20,7 +20,7 @@ We constructed the 6-stage behavior pipeline, entirely isolated from execution l
 - **Rule 259 — Emotion Purity**: Emotion state is derived exclusively from triggers, not execution internals.
 - **Rule 260 — Semantic Narration**: Narration Runtime never emits localized text, only semantic intents.
 - **Rule 261 — Companionship Over Logging**: Silence is preferred over spam. Never narrate internal architecture.
-- **Rule 262 — Companion First**: Every new feature must improve CHITTI as a companion, not just as an automation tool.
+- **Rule 262 — Companion First**: Every new feature must improve Vizzu as a companion, not just as an automation tool.
 
 ### 3. Certification Passed
 We documented 18 Companion-focused Chaos Scenarios (e.g., Mic Interruption Storm, Rapid Emotion Switching, Noisy Workflows) in the `PHASE6_CERTIFICATION_REPORT.md`. The architecture passed all 5 Acceptance Criteria, proving its long-term stability for continuous 8-hour sessions.
@@ -33,4 +33,4 @@ We will begin implementing real-world companion capabilities, such as:
 2. "Summarize this PDF."
 3. "Good morning, boss."
 
-All files, schemas, and rule modifications have been safely persisted to the workspace. CHITTI is ready to execute.
+All files, schemas, and rule modifications have been safely persisted to the workspace. Vizzu is ready to execute.

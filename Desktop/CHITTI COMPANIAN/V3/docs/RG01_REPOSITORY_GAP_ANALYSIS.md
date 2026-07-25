@@ -2,7 +2,7 @@
 ## EVIDENCE-FIRST FORENSIC AUDIT
 
 ### OVERVIEW
-This gap analysis represents the single source of truth for the CHITTI V2 repository state, evaluating every production component strictly via source-code evidence. Previous "PASS" certificates and verification scripts that artificially wired components or injected mock payloads were invalidated. 
+This gap analysis represents the single source of truth for the Vizzu V2 repository state, evaluating every production component strictly via source-code evidence. Previous "PASS" certificates and verification scripts that artificially wired components or injected mock payloads were invalidated. 
 
 ### CLASSIFICATION SUMMARY
 - **Production Ready (A):** 15% (e.g., Kernel EventBus, execute terminal command capability)
@@ -14,7 +14,7 @@ This gap analysis represents the single source of truth for the CHITTI V2 reposi
 - **Unknown (G):** 0%
 
 ### RELEASE DECISION
-**Can CHITTI V2 ship today?**  
+**Can Vizzu V2 ship today?**  
 **NO.**
 
 **Exactly what prevents release?**
@@ -36,7 +36,7 @@ The core intelligence pipeline (Inference, Intent Resolution) and major hero cap
 - **Repository Path:** `desktop/platform/providers/ocr/liteocr_provider.py`
 - **Class:** `LiteOCRProvider`
 - **Method:** `extract_text`
-- **Evidence:** Method returns a hardcoded `OCRArtifact` containing `"CHITTI V2 LiteOCR Modernized Vision Output"`. No actual image processing or ONNX execution occurs.
+- **Evidence:** Method returns a hardcoded `OCRArtifact` containing `"Vizzu V2 LiteOCR Modernized Vision Output"`. No actual image processing or ONNX execution occurs.
 - **Category:** C (MOCK)
 - **Release Critical:** YES
 

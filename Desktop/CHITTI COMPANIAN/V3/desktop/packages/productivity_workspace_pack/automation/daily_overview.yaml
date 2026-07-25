@@ -1,4 +1,4 @@
-id: chitti.automation.daily_overview
+id: vizzu.automation.daily_overview
 name: Daily Overview Framework
 trigger: intent
 intent: "Briefing"

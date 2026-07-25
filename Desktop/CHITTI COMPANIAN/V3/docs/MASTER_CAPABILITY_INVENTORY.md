@@ -1,14 +1,14 @@
-# CHITTI V2 — MASTER CAPABILITY INVENTORY AUDIT
+# Vizzu V2 — MASTER CAPABILITY INVENTORY AUDIT
 **(Production Readiness Audit & User Capability Assessment)**
 
 ======================================================================
 ## 1. EXECUTIVE SUMMARY
 ======================================================================
 
-A comprehensive, non-destructive audit of the CHITTI V2 repository (`c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3`) was conducted to answer one fundamental question:
+A comprehensive, non-destructive audit of the Vizzu V2 repository (`c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3`) was conducted to answer one fundamental question:
 
 ### Central Question:
-**"What can CHITTI actually do TODAY for a real user on a Windows desktop?"**
+**"What can Vizzu actually do TODAY for a real user on a Windows desktop?"**
 
 ### Summary of Audit Findings:
 - **Total Capabilities Audited:** 28 distinct capability modules.
@@ -17,7 +17,7 @@ A comprehensive, non-destructive audit of the CHITTI V2 repository (`c:\Users\Sm
 - **Not Implemented / Missing User Capabilities:** 3 capabilities (10.7%).
 - **Overall User Capability Production Readiness Score:** **89.3%**
 
-CHITTI possesses a fully operational, end-to-end execution spine capable of desktop application launching, native Win32 window focus & input automation, clipboard reading/writing, web searching, Playwright web browser navigation, OCR screen layout extraction, time/distance/navigation calculations, media playback control, presentation deck rendering, and stateful workspace restoration.
+Vizzu possesses a fully operational, end-to-end execution spine capable of desktop application launching, native Win32 window focus & input automation, clipboard reading/writing, web searching, Playwright web browser navigation, OCR screen layout extraction, time/distance/navigation calculations, media playback control, presentation deck rendering, and stateful workspace restoration.
 
 ---
 
@@ -56,7 +56,7 @@ CHITTI possesses a fully operational, end-to-end execution spine capable of desk
 ## 3. USER EXPERIENCE MATRIX (REAL USER QUERY AUDIT)
 ======================================================================
 
-Below is the verification audit of real-world user requests and commands on CHITTI V2:
+Below is the verification audit of real-world user requests and commands on Vizzu V2:
 
 | # | User Request / Voice Command | Executable Capability | Supported TODAY? | Operational Flow |
 | :-: | :--- | :--- | :-: | :--- |
@@ -142,8 +142,8 @@ Based strictly on user value for daily desktop productivity, the top 20 missing 
 ## 6. FINAL ENGINEERING DECISION & RECOMMENDED NEXT EPIC
 ======================================================================
 
-### 1. Is CHITTI currently feature complete?
-**NO.** While the core infrastructure (Phases 1–10) and EPIC 36 (Character, Motion, Desktop UI, Widgets, Visual Coordinator) are **100% COMPLETE and FROZEN**, CHITTI lacks several high-value desktop utility capabilities that users expect daily.
+### 1. Is Vizzu currently feature complete?
+**NO.** While the core infrastructure (Phases 1–10) and EPIC 36 (Character, Motion, Desktop UI, Widgets, Visual Coordinator) are **100% COMPLETE and FROZEN**, Vizzu lacks several high-value desktop utility capabilities that users expect daily.
 
 ### 2. Recommended Next EPIC Based on USER VALUE:
 ```

@@ -1,9 +1,9 @@
-# CHITTI Desktop Companion v1.0
+# Vizzu Desktop Companion v1.0
 
 ## Final Project Folder Structure (Frozen)
 
 ```text
-CHITTI/
+Vizzu/
 │
 ├── app/
 │   ├── main.py
@@ -206,7 +206,7 @@ CHITTI/
 5. User-generated data is stored only under `data/`.
 6. Static resources belong only under `assets/`.
 7. Every AI model interaction must go through `capabilities/local_ai/`.
-8. CHITTI remains a standard desktop application that users can install, close, disable, and uninstall without affecting the operating system.
+8. Vizzu remains a standard desktop application that users can install, close, disable, and uninstall without affecting the operating system.
 9. New features must fit into this architecture. Redesign the feature—not the architecture.
 10. This folder structure is **Version 1.0 Frozen** and should not change unless a critical architectural issue is discovered.
 
@@ -214,7 +214,7 @@ CHITTI/
 
 -----------
 
-# CHITTI Desktop Companion
+# Vizzu Desktop Companion
 ## MVP Project Report v1.0
 ### (Master Project Specification)
 
@@ -222,7 +222,7 @@ CHITTI/
 
 # Project Name
 
-**CHITTI – AI Desktop Companion**
+**Vizzu – AI Desktop Companion**
 
 Version: MVP v1.0
 
@@ -234,14 +234,14 @@ Status: Product Definition Frozen
 
 Build an **AI-powered Desktop Companion** that naturally understands the user's work, remembers meaningful experiences, automates desktop tasks, and collaborates like a trusted companion.
 
-CHITTI is **NOT**
+Vizzu is **NOT**
 
 - A chatbot
 - A voice assistant
 - An operating system
 - A shell replacement
 
-CHITTI **IS**
+Vizzu **IS**
 
 - A Desktop Companion Application
 - Local-first
@@ -274,7 +274,7 @@ The long-term goal is to create an AI companion that eventually powers a physica
 
 > Companion before Automation.
 
-Every feature should make CHITTI feel like a reliable companion rather than an automation script.
+Every feature should make Vizzu feel like a reliable companion rather than an automation script.
 
 ---
 
@@ -596,7 +596,7 @@ An AI Desktop Companion that understands your work, remembers your journey and n
 
 # AI Philosophy
 
-CHITTI uses specialized local AI models.
+Vizzu uses specialized local AI models.
 
 One model should not perform every task.
 
@@ -676,7 +676,7 @@ Vision activates only when required.
 
 Normally:
 
-CHITTI lives in the System Tray.
+Vizzu lives in the System Tray.
 
 Wake Word
 
@@ -711,7 +711,7 @@ Slides away while continuing background monitoring.
 
 The MVP is successful when users can naturally:
 
-- Talk to CHITTI
+- Talk to Vizzu
 - Open applications
 - Search files
 - Ask questions about files
@@ -750,7 +750,7 @@ Each sprint delivers one complete experience from conversation to execution, ens
 
 # Final Statement
 
-CHITTI is designed to become a trusted desktop companion that quietly understands the user's work, remembers meaningful experiences, and assists naturally while respecting privacy, maintaining user control, and reducing everyday friction.
+Vizzu is designed to become a trusted desktop companion that quietly understands the user's work, remembers meaningful experiences, and assists naturally while respecting privacy, maintaining user control, and reducing everyday friction.
 
 
 -------------------------

@@ -1,4 +1,4 @@
-id: chitti.automation.review_pull_request
+id: vizzu.automation.review_pull_request
 name: Review Pull Request
 trigger: manual
 steps:

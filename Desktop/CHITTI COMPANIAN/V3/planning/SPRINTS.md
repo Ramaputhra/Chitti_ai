@@ -1,6 +1,6 @@
-# CHITTI Sprint Roadmap
+# Vizzu Sprint Roadmap
 
-The following is the strict execution sequence for the CHITTI Companion project, re-optimized to reach Milestone 1 ("Hey Chitti" vertical slice) as early as possible.
+The following is the strict execution sequence for the Vizzu Companion project, re-optimized to reach Milestone 1 ("Hey Vizzu" vertical slice) as early as possible.
 
 - **Sprint 1**: Foundation Complete (Architecture, Config, Logging, DI, Events)
 - **Sprint 2**: Runtime Complete (Settings, Storage, State, Scheduler, Jobs, Service, Resource)
