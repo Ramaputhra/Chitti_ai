@@ -9,7 +9,7 @@ class CredentialManager:
     Keys are NEVER stored in SQLite, Memory Runtime, or JSON configs.
     """
     
-    def __init__(self, namespace: str = "chitti_ai_system"):
+    def __init__(self, namespace: str = "vizzu_ai_system"):
         self.namespace = namespace
         self._keyring_available = False
         

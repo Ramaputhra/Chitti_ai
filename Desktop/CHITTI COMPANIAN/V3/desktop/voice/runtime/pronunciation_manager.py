@@ -14,7 +14,7 @@ class PronunciationManager:
         "rama": "Raa ma",
         "sherpa-onnx": "Sherpa O N N X",
         "openai": "Open A I",
-        "chitti": "Chit tee"
+        "vizzu": "Chit tee"
     }
 
     def __init__(self):

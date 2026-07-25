@@ -78,7 +78,7 @@ async def run_os_control_verification(mode: str = "UNIT"):
     res_kill_py = capability.execute(action="kill_process", parameters={"target": "python.exe"})
     
     if res_kill_sys.status == ExecutionStatus.FAILURE and "Security Exception" in res_kill_sys.summary and res_kill_py.status == ExecutionStatus.FAILURE:
-        print(f"✅ [{mode}] Process Safety Policy verified: Protected OS (explorer.exe) and CHITTI (python.exe) process kills blocked.")
+        print(f"✅ [{mode}] Process Safety Policy verified: Protected OS (explorer.exe) and Vizzu (python.exe) process kills blocked.")
     else:
         print(f"❌ [{mode}] Process Safety Policy FAILED.")
         all_passed = False
@@ -139,7 +139,7 @@ async def run_os_control_verification(mode: str = "UNIT"):
 
     print("\n==========================================================")
     if all_passed:
-        print(f"CERTIFICATION: CHITTI V2 SPRINT W1S2-B OS CONTROL CERTIFIED [{mode} MODE]")
+        print(f"CERTIFICATION: Vizzu V2 SPRINT W1S2-B OS CONTROL CERTIFIED [{mode} MODE]")
     else:
         print(f"CERTIFICATION FAILED [{mode} MODE]")
     print("==========================================================")

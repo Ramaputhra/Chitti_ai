@@ -120,7 +120,7 @@ async def run_w3s2b_verification():
 
     print("\n==========================================================")
     if all_passed:
-        print("CERTIFICATION: CHITTI V2 SPRINT W3S2-B CONDITIONAL WORKFLOWS CERTIFIED [UNIT MODE]")
+        print("CERTIFICATION: Vizzu V2 SPRINT W3S2-B CONDITIONAL WORKFLOWS CERTIFIED [UNIT MODE]")
     else:
         print("CERTIFICATION FAILED [UNIT MODE]")
     print("==========================================================")

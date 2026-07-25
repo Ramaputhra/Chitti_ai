@@ -41,7 +41,7 @@ class LLMInferenceStrategy(IInferenceStrategy):
         from desktop.app.context_budgeter import ContextBudgeter
         budgeter = ContextBudgeter(max_context=1000)
         
-        system_rules = "You are CHITTI, a helpful deterministic companion."
+        system_rules = "You are Vizzu, a helpful deterministic companion."
         
         context = budgeter.budget_and_trim(
             selected=selected,

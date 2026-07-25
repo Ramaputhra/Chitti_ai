@@ -67,7 +67,7 @@ class VoiceTransport(ITransport):
         self.tts = PiperProvider(self.event_bus, self.logger)
 
         # Wire the event loop hooks
-        # When wake word detects "hey chitti", it emits Voice.WakeDetected. We then emit Session.Started
+        # When wake word detects "hey vizzu", it emits Voice.WakeDetected. We then emit Session.Started
         self.event_bus.subscribe("Voice.WakeDetected", self._on_wake_detected)
         
         # When AudioPipeline emits VOICE_AUDIO_READY, STT handles it automatically (WhisperProvider subscribes to it).

@@ -1,5 +1,5 @@
 """
-CHITTI Plugin System
+Vizzu Plugin System
 
 Provides extensibility through a plugin architecture.
 """

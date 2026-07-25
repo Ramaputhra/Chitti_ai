@@ -3,7 +3,7 @@ from typing import Dict, Any
 
 class BaseProvider(ABC):
     """
-    Abstract Base Class for all AI Providers in CHITTI V2.
+    Abstract Base Class for all AI Providers in Vizzu V2.
     """
     @property
     @abstractmethod

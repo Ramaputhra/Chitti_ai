@@ -4,7 +4,7 @@ from PySide6.QtCore import Qt
 class DiagnosticsWidget(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("CHITTI Diagnostics")
+        self.setWindowTitle("Vizzu Diagnostics")
         self.setFixedSize(400, 300)
         
         layout = QVBoxLayout(self)

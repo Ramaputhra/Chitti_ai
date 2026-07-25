@@ -20,7 +20,7 @@ class DiagnosticsCLI:
         self.start_time = time.time()
 
     def run(self, mode: str = "diagnostics") -> None:
-        print("\nCHITTI v0.1 Diagnostics (BIOS)")
+        print("\nVizzu v0.1 Diagnostics (BIOS)")
         print("────────────────────────────────────")
         
         # 1. System

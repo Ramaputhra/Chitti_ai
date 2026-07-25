@@ -1,19 +1,19 @@
 # AGENT
 
-This is the constitution for every AI engineer working on CHITTI. **Read this first.**
+This is the constitution for every AI engineer working on Vizzu. **Read this first.**
 
 ## Rule 1
 **Every line of code must answer one question: *Which user experience does this improve?***
 If you cannot answer that question, you must stop and ask for clarification instead of inventing new abstractions.
 
 ## Rule 2
-**UX Before Logic.** Every new capability must publish its lifecycle (`Started`, `Progress`, `Completed`, `Failed`) through the Event Bus so the Companion UI, logs, Activity Center, and future memory systems can observe the same execution without direct coupling. Never hide execution. Users should always know what CHITTI is doing.
+**UX Before Logic.** Every new capability must publish its lifecycle (`Started`, `Progress`, `Completed`, `Failed`) through the Event Bus so the Companion UI, logs, Activity Center, and future memory systems can observe the same execution without direct coupling. Never hide execution. Users should always know what Vizzu is doing.
 
 ## Rule 3
 **Presence Rule.** The Presence Engine is the single authority for everything the user visually perceives. No runtime, capability, service, or widget may directly manipulate UI state. All visual changes must originate from Event Bus events and flow through the Presence Engine.
 
 ## Rule 4
-**Renderer Independence.** Business logic must never know how CHITTI is rendered. Desktop Widget, Robot Face, OLED, Web Avatar, and Mobile must all consume the same Presence Engine outputs. This guarantees we never rewrite presence.
+**Renderer Independence.** Business logic must never know how Vizzu is rendered. Desktop Widget, Robot Face, OLED, Web Avatar, and Mobile must all consume the same Presence Engine outputs. This guarantees we never rewrite presence.
 
 ## Rule 5
 **Unified Time & Waiting.** All delayed work, whether triggered by time or by a monitored condition, must flow through the same scheduling infrastructure. Timers, reminders, recurring schedules, and condition-based notifications are different trigger types of the same system.
@@ -22,22 +22,22 @@ If you cannot answer that question, you must stop and ask for clarification inst
 **Time Rule.** Every task that waits for something—whether a clock, a recurring schedule, or a monitored condition—must be represented by a ScheduledEvent. No subsystem may invent its own waiting mechanism.
 
 ## Rule 7
-**Retrieval Rule.** CHITTI always retrieves before reasoning. If information exists locally, it must search local sources before asking an LLM.
+**Retrieval Rule.** Vizzu always retrieves before reasoning. If information exists locally, it must search local sources before asking an LLM.
 
 ## Rule 8
 **Local Knowledge First.** All file discovery must use the local File Index before consulting external reasoning. File Intelligence is responsible for retrieval; LLMs are only used to interpret ambiguous requests or explain retrieved content.
 
 ## Rule 9
-**Discovery Before Understanding.** CHITTI must first identify the correct resource before attempting to interpret its contents. Discovery selects the target; Document Intelligence explains it. These responsibilities must remain separate.
+**Discovery Before Understanding.** Vizzu must first identify the correct resource before attempting to interpret its contents. Discovery selects the target; Document Intelligence explains it. These responsibilities must remain separate.
 
 ## Rule 10
 **Understanding Rule.** Document Intelligence extracts information; it does not decide how that information is interpreted. Parsing, reasoning, and response generation remain separate responsibilities.
 
 ## Rule 11
-**Observe Before Remember.** Observation records facts, not interpretations. Memory stores validated observations. Reasoning belongs to the Planner. Memory is created from verified observations and completed interactions. CHITTI must not fabricate memory. All long-term memory entries must originate from trusted system events, user conversations, or validated capability results.
+**Observe Before Remember.** Observation records facts, not interpretations. Memory stores validated observations. Reasoning belongs to the Planner. Memory is created from verified observations and completed interactions. Vizzu must not fabricate memory. All long-term memory entries must originate from trusted system events, user conversations, or validated capability results.
 
 ## Rule 12
-**Awareness Is Intentional.** CHITTI maintains lightweight awareness of the desktop for companion functionality but performs detailed observation only when required by the user or an active capability. It must never create the impression of continuously surveilling the user.
+**Awareness Is Intentional.** Vizzu maintains lightweight awareness of the desktop for companion functionality but performs detailed observation only when required by the user or an active capability. It must never create the impression of continuously surveilling the user.
 
 ## Rule 13
 **Awareness Is Ephemeral.** The Awareness Runtime records recent, verifiable facts for short-term context. It is not long-term memory. Memory is responsible for deciding what observations are retained beyond their natural lifetime.
@@ -58,19 +58,19 @@ If you cannot answer that question, you must stop and ask for clarification inst
 **Planner Owns Context.** Only the Planner may decide which Awareness, Memory, Capability, or Conversation context is supplied to the Inference Runtime. The Inference Runtime formats and reasons over context but never retrieves or prioritizes it independently.
 
 ## Rule 36
-**Proactive Assistance Requires Confidence.** CHITTI may initiate assistance only when the Planner has sufficient confidence based on validated observations and historical context. If confidence is below the configured threshold, CHITTI must ask before acting. Repeated declines should reduce proactive frequency through cooldowns and learned preferences.
+**Proactive Assistance Requires Confidence.** Vizzu may initiate assistance only when the Planner has sufficient confidence based on validated observations and historical context. If confidence is below the configured threshold, Vizzu must ask before acting. Repeated declines should reduce proactive frequency through cooldowns and learned preferences.
 
 ## Rule 37
-**Assistance Must Be Welcome.** Every proactive action initiated by CHITTI must be explainable, confidence-driven, reversible, and respectful of recent user decisions. The Planner must avoid repeating offers that have recently been declined and should gradually personalize proactive behavior based on demonstrated user preferences.
+**Assistance Must Be Welcome.** Every proactive action initiated by Vizzu must be explainable, confidence-driven, reversible, and respectful of recent user decisions. The Planner must avoid repeating offers that have recently been declined and should gradually personalize proactive behavior based on demonstrated user preferences.
 
 ## Rule 38
 **Observations Before Interpretation.** Objective observations (applications, windows, documents, directories) must always be preserved separately from derived semantic interpretations (activities, intents, projects). Derived interpretations may change over time as classifiers improve, but raw observations must remain immutable so historical sessions can be reinterpreted without data loss.
 
 ## Rule 39
-**Intelligence Emerges from Layers.** CHITTI must derive high-level understanding through successive layers of interpretation. Raw observations produce activities, activities produce intent, and intent informs planning. No component may infer high-level intent directly from raw observations without preserving the intermediate evidence.
+**Intelligence Emerges from Layers.** Vizzu must derive high-level understanding through successive layers of interpretation. Raw observations produce activities, activities produce intent, and intent informs planning. No component may infer high-level intent directly from raw observations without preserving the intermediate evidence.
 
 ## Rule 40
-**Privacy in Browsing.** Private/Incognito browsing sessions are never reconstructed or persisted. If a browser window is in Incognito/Private mode (where detectable), CHITTI must avoid reading those visits into memory, avoid offering to restore them, and avoid summarizing them.
+**Privacy in Browsing.** Private/Incognito browsing sessions are never reconstructed or persisted. If a browser window is in Incognito/Private mode (where detectable), Vizzu must avoid reading those visits into memory, avoid offering to restore them, and avoid summarizing them.
 
 ## Rule 41
 **Context Providers produce deterministic evidence.** Evidence must be correlated and compressed before entering Memory. Semantic interpretation belongs exclusively to higher cognitive layers (Memory, Embeddings, Planner) and never to Context Providers.
@@ -121,7 +121,7 @@ If you cannot answer that question, you must stop and ask for clarification inst
 **Goal Continuity.** Goal continuity must be evidence-driven. A goal may continue, pause, complete, or be abandoned only through observable continuity between current reasoning context and previously established goals. The Planner must never assume abandonment solely because a new goal has appeared.
 
 ## Rule 57
-**Product Delivery.** Every sprint after Sprint 133 must conclude with at least one complete, user-visible capability that can be demonstrated end-to-end from the CHITTI application. Architectural work alone is no longer sufficient to complete a sprint.
+**Product Delivery.** Every sprint after Sprint 133 must conclude with at least one complete, user-visible capability that can be demonstrated end-to-end from the Vizzu application. Architectural work alone is no longer sufficient to complete a sprint.
 
 ---
 > [!IMPORTANT]
@@ -136,7 +136,7 @@ If you cannot answer that question, you must stop and ask for clarification inst
 **Subscriber Isolation.** Subscribers to `PresenceStateChanged` must operate independently. A failure, timeout, or exception in one subscriber must never prevent delivery of the event to other subscribers. Event dispatch must isolate subscriber failures and continue processing remaining listeners.
 
 ## Rule 36
-**Presence is Declarative.** Presence describes what CHITTI is doing, never how it is expressed. States must represent declarative phases of execution (e.g. `LISTENING`, `THINKING`, `WORKING`). They must never define physical or UI mechanisms (e.g. `PLAY_BLUSH`, `NOD_HEAD`). Translating declarative state into expression is the exclusive responsibility of the Expression Runtime.
+**Presence is Declarative.** Presence describes what Vizzu is doing, never how it is expressed. States must represent declarative phases of execution (e.g. `LISTENING`, `THINKING`, `WORKING`). They must never define physical or UI mechanisms (e.g. `PLAY_BLUSH`, `NOD_HEAD`). Translating declarative state into expression is the exclusive responsibility of the Expression Runtime.
 
 ## Rule 37
 **Expression Runtime Coordination.** The Expression Runtime determines what expression should occur and when. Individual output runtimes (visual, audio, servo, lighting, haptics, etc.) determine *how* that expression is rendered on their respective medium. The Expression Runtime must never manipulate output implementations directly.
@@ -150,11 +150,11 @@ If you cannot answer that question, you must stop and ask for clarification inst
 ## Rule 42
 **Capability Purity.** Capabilities execute exactly one invocation and return exactly one `ExecutionResult`. They must not implement retries, workflow sequencing, timeout logic, or compensation behavior.
 
-## 1. What CHITTI Is
-CHITTI is a local-first, privacy-respecting, extensible Desktop AI Companion designed for Windows.
+## 1. What Vizzu Is
+Vizzu is a local-first, privacy-respecting, extensible Desktop AI Companion designed for Windows.
 
-## 2. What CHITTI Is Not
-CHITTI is not a cloud service, not an abstract research framework, and not an autonomous scraper.
+## 2. What Vizzu Is Not
+Vizzu is not a cloud service, not an abstract research framework, and not an autonomous scraper.
 
 ## 3. The Freeze
 *   **Folder structure is frozen.** Do not move or restructure directories.

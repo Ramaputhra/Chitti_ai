@@ -120,7 +120,7 @@ async def run_os_intelligence_verification():
 
     print("\n==========================================================")
     if all_passed:
-        print("CERTIFICATION: CHITTI V2 WAVE 1 SPRINT W1S2-A OS INTELLIGENCE CORE CERTIFIED")
+        print("CERTIFICATION: Vizzu V2 WAVE 1 SPRINT W1S2-A OS INTELLIGENCE CORE CERTIFIED")
     else:
         print("CERTIFICATION FAILED")
     print("==========================================================")

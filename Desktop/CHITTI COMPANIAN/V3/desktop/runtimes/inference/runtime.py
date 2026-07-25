@@ -53,7 +53,7 @@ class InferenceRuntime:
             logger.info("Warming up KV cache...")
             # Fire-and-forget dummy prompt to pre-allocate memory and prime KV cache
             try:
-                self.provider.core.generate([{"role": "system", "content": "You are CHITTI."}], tools_enabled=False)
+                self.provider.core.generate([{"role": "system", "content": "You are Vizzu."}], tools_enabled=False)
                 logger.info("KV cache warm-up complete.")
             except Exception as e:
                 if type(e).__name__ == "ModelNotInstalledError":

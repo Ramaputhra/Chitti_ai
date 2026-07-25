@@ -4,7 +4,7 @@ from typing import Dict, Any
 
 class ChaosMonkey:
     """
-    Intentionally injects faults into the CHITTI runtime stack to validate 
+    Intentionally injects faults into the Vizzu runtime stack to validate 
     graceful degradation, fallbacks, and retry mechanisms.
     """
     def __init__(self, failure_probability: float = 0.0):

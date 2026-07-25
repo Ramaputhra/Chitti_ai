@@ -73,7 +73,7 @@ def setup_faster_whisper():
     print("✅ Faster-whisper setup complete.")
 
 def main():
-    print("Starting CHITTI Model Downloader...\n")
+    print("Starting Vizzu Model Downloader...\n")
     create_folders()
     setup_faster_whisper()
     setup_indic_conformer()

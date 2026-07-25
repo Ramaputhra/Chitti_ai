@@ -58,8 +58,8 @@ class IdentityLoader:
 
         profile = IdentityProfile(
             character_id=data.get("character_id", "CHR_ID_DEFAULT"),
-            display_name=data.get("display_name", "CHITTI"),
-            short_name=data.get("short_name", "CHITTI"),
+            display_name=data.get("display_name", "Vizzu"),
+            short_name=data.get("short_name", "Vizzu"),
             creator=data.get("creator", "Rama"),
             platform_version=data.get("platform_version", "2.0.0"),
             identity_version=data.get("identity_version", "1.0.0"),

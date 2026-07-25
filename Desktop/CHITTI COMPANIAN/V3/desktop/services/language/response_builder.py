@@ -54,7 +54,7 @@ class ResponseBuilder(IResponseBuilder):
         if template == "Greeting":
             response_text = "Hello! How can I help you today?"
         elif template == "Identity":
-            response_text = "I am Chitti, your AI Companion."
+            response_text = "I am Vizzu, your AI Companion."
         elif template == "Gratitude":
             response_text = "You're very welcome!"
         elif template == "Farewell":

@@ -1,6 +1,6 @@
 # GRAPHIC DESIGNER HANDBOOK & ASSET REPLACEMENT GUIDE (PROCEED.md)
 
-Welcome to the **CHITTI V2 Character Studio Asset Pipeline**. This guide provides exact instructions for graphic designers and animators on how to replace placeholder assets, add new behavior clips, and maintain production quality across the platform.
+Welcome to the **Vizzu V2 Character Studio Asset Pipeline**. This guide provides exact instructions for graphic designers and animators on how to replace placeholder assets, add new behavior clips, and maintain production quality across the platform.
 
 ---
 

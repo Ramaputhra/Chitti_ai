@@ -20,7 +20,7 @@ class IDEExtractor(IContextExtractor):
         # and `git branch --show-current` in the background.
         return {
             "current_project": {
-                "value": "CHITTI",
+                "value": "Vizzu",
                 "confidence": 0.98,
                 "sources": ["IDE", "Git"]
             },

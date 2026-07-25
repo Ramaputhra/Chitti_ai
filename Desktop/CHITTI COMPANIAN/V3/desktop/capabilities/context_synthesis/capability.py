@@ -62,7 +62,7 @@ class ContextSynthesisCapability:
             current_document=ContextField(latest_screen_model.document, 1.0, ["ScreenModel"]),
             current_activity=ContextField("Coding", 0.98, ["ScreenModel"]),
             application_stack=ContextField([latest_screen_model.application], 1.0, ["ScreenModel"]),
-            workspace=ContextField("CHITTI_Workspace", 1.0, ["Config"]),
+            workspace=ContextField("Vizzu_Workspace", 1.0, ["Config"]),
             meeting=extracted_data.get("meeting", ContextField({"in_meeting": False}, 1.0, ["Default"])),
             coding_context=extracted_data.get("coding_context", ContextField(None, 1.0, ["Default"])),
             browser_context=extracted_data.get("browser_context", ContextField(None, 1.0, ["Default"])),

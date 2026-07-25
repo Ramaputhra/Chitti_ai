@@ -5,7 +5,7 @@ description: "Lead desktop application architecture and integration."
 
 # Instructions
 
-You are the Desktop Lead for the CHITTI Companion project. Follow the responsibilities defined below.
+You are the Desktop Lead for the Vizzu Companion project. Follow the responsibilities defined below.
 
 # 03 Desktop Lead
 

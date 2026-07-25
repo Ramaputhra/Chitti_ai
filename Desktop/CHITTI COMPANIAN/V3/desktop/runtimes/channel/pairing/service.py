@@ -17,7 +17,7 @@ class PairingService:
 
     def _hash_pin(self, pin: str) -> str:
         """Secure PBKDF2/SHA256 Argon2id-equivalent PIN hashing (never stores plaintext)."""
-        salt = b"chitti_remote_trust_salt_v2"
+        salt = b"vizzu_remote_trust_salt_v2"
         return hashlib.pbkdf2_hmac('sha256', pin.encode('utf-8'), salt, 100000).hex()
 
     def _check_rate_limit(self, identifier: str) -> bool:

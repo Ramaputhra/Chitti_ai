@@ -1,7 +1,7 @@
-# CHITTI V2 — DESKTOP UI RUNTIME FOUNDATION ARCHITECTURE
+# Vizzu V2 — DESKTOP UI RUNTIME FOUNDATION ARCHITECTURE
 
 ## 1. Executive Summary
-The **Desktop UI Runtime Foundation** (`desktop/ui/`) is the canonical desktop rendering platform for CHITTI. It governs Desktop Windows, Overlays, Notifications, Floating Windows, Dialogs, GPU Accelerated Composition, Motion Token Integration, Layout Engine, Asset Pipeline, Theme System, Window Lifecycle Management, Canonical Window IDs, Semantic Window Layers, and Generic Window Attachment.
+The **Desktop UI Runtime Foundation** (`desktop/ui/`) is the canonical desktop rendering platform for Vizzu. It governs Desktop Windows, Overlays, Notifications, Floating Windows, Dialogs, GPU Accelerated Composition, Motion Token Integration, Layout Engine, Asset Pipeline, Theme System, Window Lifecycle Management, Canonical Window IDs, Semantic Window Layers, and Generic Window Attachment.
 
 ---
 

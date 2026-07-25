@@ -11,10 +11,10 @@ logger = logging.getLogger(__name__)
 
 class SettingsRuntime(IRuntime):
     """
-    Manages platform settings defining HOW CHITTI behaves.
+    Manages platform settings defining HOW Vizzu behaves.
     Follows Rule 263: Configuration Ownership.
     """
-    def __init__(self, config_dir: str = "AppData/CHITTI/settings"):
+    def __init__(self, config_dir: str = "AppData/Vizzu/settings"):
         self.context: Optional[KernelContext] = None
         self._running = False
         self._config_dir = config_dir

@@ -21,12 +21,12 @@ class GenericWidgetImpl(BaseWidget):
     def render(self) -> str:
         sess = self.context.session
         if not sess:
-            return f"<div id='{self.widget_id}' class='chitti-widget widget-{self.widget_type.lower()}'>Unbound Widget</div>"
+            return f"<div id='{self.widget_id}' class='vizzu-widget widget-{self.widget_type.lower()}'>Unbound Widget</div>"
 
         data_summary = ", ".join(f"{k}: {v}" for k, v in sess.data.items())
         style = self.context.theme
         return (
-            f"<div id='{self.widget_id}' class='chitti-widget widget-{self.widget_type.lower()} "
+            f"<div id='{self.widget_id}' class='vizzu-widget widget-{self.widget_type.lower()} "
             f"{'expanded' if self.expanded else 'collapsed'} {'docked' if self.docked else 'floating'}' "
             f"style='border-radius: {style.corner_radius_px}px; font-family: {style.font_family}; accent: {style.accent_color};'>\n"
             f"  <div class='widget-header'>{self.widget_type} Widget [{sess.session_id}] ({sess.owner_capability})</div>\n"

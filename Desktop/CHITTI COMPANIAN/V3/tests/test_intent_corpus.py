@@ -37,7 +37,7 @@ class TestResult:
 CORPUS = [
     # SmallTalkIntent
     CorpusEntry("hello there", "SmallTalkIntent"),
-    CorpusEntry("hi chitti", "SmallTalkIntent"),
+    CorpusEntry("hi vizzu", "SmallTalkIntent"),
     CorpusEntry("good morning", "SmallTalkIntent"),
     CorpusEntry("how are you today", "SmallTalkIntent"),
     CorpusEntry("what's up", "SmallTalkIntent"),
@@ -189,7 +189,7 @@ async def run_corpus():
         # We manually perform what AIRuntime.resolve_intent does so we can capture raw JSON
         # Build prompt
         system_prompt = """
-You are the CHITTI intent parser. Convert the user's request into a strict JSON object.
+You are the Vizzu intent parser. Convert the user's request into a strict JSON object.
 
 # Intent Decision Matrix
 

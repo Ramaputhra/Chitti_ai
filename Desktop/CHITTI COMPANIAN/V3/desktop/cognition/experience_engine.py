@@ -39,7 +39,7 @@ class ExperienceResolver:
 
 class ExperienceLearningEngine:
     """
-    The centerpiece of CHITTI's intelligence.
+    The centerpiece of Vizzu's intelligence.
     Sits between Intent generation and physical Capability execution.
     It accumulates, refines, reuses, and generalizes successful experiences.
     """

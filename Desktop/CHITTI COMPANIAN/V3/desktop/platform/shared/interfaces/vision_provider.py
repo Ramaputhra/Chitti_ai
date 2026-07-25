@@ -7,7 +7,7 @@ from desktop.platform.shared.models.vision_artifact import VisionArtifact
 class IVisionProvider(IService):
     """
     Standard interface for all Vision capabilities.
-    Maintains the CHITTI architecture standard for providers.
+    Maintains the Vizzu architecture standard for providers.
     """
     def detect(self, preprocessed_image: bytes) -> VisionArtifact:
         """Processes the normalized image and yields a specific VisionArtifact."""

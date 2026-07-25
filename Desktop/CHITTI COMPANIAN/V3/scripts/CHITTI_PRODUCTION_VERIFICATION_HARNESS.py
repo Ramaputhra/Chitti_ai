@@ -227,8 +227,8 @@ async def run_all_tests():
     return results
 
 def generate_reports(results):
-    with open("CHITTI_PRODUCT_CERTIFICATION_REPORT.md", "w") as f:
-        f.write("# CHITTI V2 PRODUCT CERTIFICATION REPORT\n\n")
+    with open("Vizzu_PRODUCT_CERTIFICATION_REPORT.md", "w") as f:
+        f.write("# Vizzu V2 PRODUCT CERTIFICATION REPORT\n\n")
         f.write("## Zero Trust Executable Harness\n\n")
         for res in results:
             f.write(f"### {res['feature']}\n")

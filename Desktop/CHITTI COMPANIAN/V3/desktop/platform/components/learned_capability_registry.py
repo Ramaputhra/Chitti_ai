@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 class LearnedCapabilityRegistry:
     """
     Stores declarative workflow graphs (YAML/JSON) learned via ACA.
-    CHITTI never generates or stores executable Python code.
+    Vizzu never generates or stores executable Python code.
     """
     def __init__(self):
         # Maps capability_id (e.g. "learned.compress.pngs") to its YAML/JSON declarative graph

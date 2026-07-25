@@ -64,7 +64,7 @@ class CompanionArtifact:
     related_resources: List[str] = field(default_factory=list)
     related_goal: Optional[str] = None
     related_activity: Optional[str] = None
-    created_by: str = "CHITTI"
+    created_by: str = "Vizzu"
 
 @dataclass
 class CompanionResource:

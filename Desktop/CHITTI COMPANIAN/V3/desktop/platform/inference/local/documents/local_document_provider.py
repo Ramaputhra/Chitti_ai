@@ -15,7 +15,7 @@ class LocalDocumentProvider(IDocumentProvider):
     def __init__(self, logger: ILoggingService) -> None:
         self.logger = logger
         self._state = ServiceState.STOPPED
-        self.docs_dir = os.path.expanduser("~/CHITTI_Workspace/Documents")
+        self.docs_dir = os.path.expanduser("~/Vizzu_Workspace/Documents")
 
     @property
     def name(self) -> str:

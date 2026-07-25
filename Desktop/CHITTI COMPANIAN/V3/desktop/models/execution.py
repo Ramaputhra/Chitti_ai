@@ -1,5 +1,5 @@
 """
-Execution models for CHITTI Desktop Companion.
+Execution models for Vizzu Desktop Companion.
 
 This module re-exports ExecutionResult and ExecutionStatus from the canonical
 location in desktop.platform.shared.models.execution for backward compatibility.

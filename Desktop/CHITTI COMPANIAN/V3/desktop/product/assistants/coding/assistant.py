@@ -37,7 +37,7 @@ class CodingAssistant(BaseAssistant):
         
         # 3. Synthesize into the CodingSession working model
         session = CodingSession(
-            project="CHITTI COMPANION V2",
+            project="Vizzu COMPANION V2",
             workspace=context.workspace,
             branch="feature/coding-assistant",
             active_files=["assistant.py"],

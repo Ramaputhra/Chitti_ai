@@ -1,7 +1,7 @@
-# CHITTI V2 — CANONICAL MOTION DESIGN SYSTEM
+# Vizzu V2 — CANONICAL MOTION DESIGN SYSTEM
 
 ## 1. Executive Summary
-The **Canonical Motion Design System** (`desktop/shared/motion/`) serves as the single source of truth for motion definitions, spring physics, timing tokens, opacity transitions, and scale tokens across the entire CHITTI platform.
+The **Canonical Motion Design System** (`desktop/shared/motion/`) serves as the single source of truth for motion definitions, spring physics, timing tokens, opacity transitions, and scale tokens across the entire Vizzu platform.
 
 ---
 

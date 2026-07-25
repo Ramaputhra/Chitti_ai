@@ -1,6 +1,6 @@
 import os
 
-base_dir = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\architecture"
+base_dir = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\architecture"
 
 golden_rules = """> **1. The architecture must remain deterministic by default. AI reasoning is an optional capability, never a mandatory dependency for system operation. Any feature that can be executed through deterministic logic must not require an LLM.**
 >
@@ -27,7 +27,7 @@ specs = {
     "CHARACTER_RUNTIME_SPEC.md": f"""# Character Runtime Specification
 {golden_rules}
 ## 1. Purpose
-Defines CHITTI's personality, speaking style, and behavioral quirks. It guarantees the companion feels alive and consistent without requiring LLM inference for standard responses.
+Defines Vizzu's personality, speaking style, and behavioral quirks. It guarantees the companion feels alive and consistent without requiring LLM inference for standard responses.
 
 ## 2. Responsibilities
 - Provide a **100% deterministic** response selection from curated JSON datasets based on intent or state.
@@ -63,7 +63,7 @@ Follows standard `IRuntime` strict state machine (`CREATED` -> `INITIALIZING` ->
     "EMOTION_RUNTIME_SPEC.md": f"""# Emotion Runtime Specification
 {golden_rules}
 ## 1. Purpose
-Maintains CHITTI's internal emotional state machine based purely on systemic events rather than abstract language analysis.
+Maintains Vizzu's internal emotional state machine based purely on systemic events rather than abstract language analysis.
 
 ## 2. Responsibilities
 - Act as a **100% deterministic** state machine mapping system events to emotional states (e.g., Happy, Curious, Thinking, Concerned, Relaxed).
@@ -135,7 +135,7 @@ Follows standard `IRuntime` strict state machine (`CREATED` -> `INITIALIZING` ->
     "NARRATION_RUNTIME_SPEC.md": f"""# Narration Runtime Specification
 {golden_rules}
 ## 1. Purpose
-Decides *when* and *what* CHITTI should speak during execution to maintain transparency and progress communication without overwhelming the user.
+Decides *when* and *what* Vizzu should speak during execution to maintain transparency and progress communication without overwhelming the user.
 
 ## 2. Responsibilities
 - Track active workflows and emit progress updates (e.g., "Downloading...", "Extracting...").

@@ -52,7 +52,7 @@ class CompanionWidget(QWidget):
         layout.addWidget(self.label)
         
         # Load Cache and setup Player
-        base_path = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\Expressions"
+        base_path = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\Expressions"
         self.cache = AnimationCache(base_path)
         self.cache.load_all(target_size=(300, 300))
         

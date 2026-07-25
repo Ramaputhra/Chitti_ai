@@ -18,7 +18,7 @@ class ContextSwitchType(enum.Enum):
 
 class InterruptionPolicy(enum.Enum):
     NEVER = "never"       # Simply remember
-    PASSIVE = "passive"   # Show only when user opens CHITTI
+    PASSIVE = "passive"   # Show only when user opens Vizzu
     SUGGEST = "suggest"   # Small toast
     URGENT = "urgent"     # High disruption acceptable (e.g. data loss)
 

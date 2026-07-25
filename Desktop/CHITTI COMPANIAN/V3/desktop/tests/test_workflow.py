@@ -15,7 +15,7 @@ from desktop.execution_graph.runtime import ExecutionGraphRuntime
 
 class TestWorkflowOrchestration(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self):
-        self.config_dir = Path(r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\desktop\config")
+        self.config_dir = Path(r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\desktop\config")
         self.events = []
         
         def publish(event):

@@ -58,7 +58,7 @@ async def boot_kernel(boot, cap_registry, transport_mgr, time_runtime, engine):
     print("\nShutting down transports...")
     await transport_mgr.stop_all()
     engine.stop()
-    print("CHITTI Shutdown Complete.")
+    print("Vizzu Shutdown Complete.")
 
 async def _mock_wait(kernel):
     while getattr(kernel, "_running", True):
@@ -69,7 +69,7 @@ def run_kernel_thread(boot, cap_registry, transport_mgr, time_runtime, engine):
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="CHITTI Cognitive Engine")
+    parser = argparse.ArgumentParser(description="Vizzu Cognitive Engine")
     parser.add_argument("--demo", action="store_true", help="Launch in stable demo mode")
     parser.add_argument("--use-llm", action="store_true", help="Use real LLM (GGUF Qwen2.5) instead of Deterministic planner")
     args, unknown = parser.parse_known_args()

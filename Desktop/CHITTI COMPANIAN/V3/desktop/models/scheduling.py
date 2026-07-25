@@ -73,7 +73,7 @@ class EventStatus(Enum):
 @dataclass
 class ScheduledEvent:
     """
-    The unified waiting mechanism for CHITTI (Temporal Rule).
+    The unified waiting mechanism for Vizzu (Temporal Rule).
     """
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
     trigger_type: TriggerType = TriggerType.TIME

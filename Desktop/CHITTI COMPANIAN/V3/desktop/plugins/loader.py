@@ -1,5 +1,5 @@
 """
-CHITTI Plugin System - Loader
+Vizzu Plugin System - Loader
 
 Dynamic plugin loading and hot-reloading support.
 """
@@ -36,7 +36,7 @@ class PluginLoader:
     ):
         self.registry = registry or get_plugin_registry()
         self.plugin_dirs = plugin_dirs or []
-        self.config_dir = config_dir or os.path.expanduser("~/.chitti/plugins")
+        self.config_dir = config_dir or os.path.expanduser("~/.vizzu/plugins")
         self._watched_files: Dict[str, float] = {}
         self._config_file = os.path.join(self.config_dir, "plugins.json")
         
@@ -256,7 +256,7 @@ class PluginLoader:
         self.registry.unload_plugin(plugin_id)
         
         # Reload module
-        plugin_class = self.load_plugin_from_module(f"chitti_plugins.{plugin_id}")
+        plugin_class = self.load_plugin_from_module(f"vizzu_plugins.{plugin_id}")
         if not plugin_class:
             logger.error(f"Failed to reload plugin {plugin_id}")
             return False
@@ -284,7 +284,7 @@ class PluginLoader:
 
 # Example plugin template
 PLUGIN_TEMPLATE = '''"""
-{plugin_name} - CHITTI Plugin
+{plugin_name} - Vizzu Plugin
 
 {description}
 """
@@ -336,7 +336,7 @@ def create_plugin_template(
     plugin_id: str,
     plugin_name: str,
     description: str,
-    author: str = "CHITTI User",
+    author: str = "Vizzu User",
     output_dir: str = "."
 ) -> str:
     """Create a plugin template file."""

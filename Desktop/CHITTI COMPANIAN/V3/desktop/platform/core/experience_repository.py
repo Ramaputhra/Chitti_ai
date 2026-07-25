@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 class ExperienceRepository:
     """
-    Passive storage abstraction for CHITTI's Experience Learning Engine.
+    Passive storage abstraction for Vizzu's Experience Learning Engine.
     Adheres strictly to storing, loading, searching, and updating workflows.
     Does NOT execute logic or perform lifecycle promotions.
     """

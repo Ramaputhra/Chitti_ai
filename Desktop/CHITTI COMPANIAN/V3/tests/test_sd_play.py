@@ -2,7 +2,7 @@ import sys
 import os
 import numpy as np
 
-model_path = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\desktop\models\piper\en_US-lessac-medium.onnx"
+model_path = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\desktop\models\piper\en_US-lessac-medium.onnx"
 
 def main():
     try:

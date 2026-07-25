@@ -72,7 +72,7 @@ class FocusSession:
 
 class HealthCapability:
     """
-    Health & Wellness capability for CHITTI.
+    Health & Wellness capability for Vizzu.
     
     Tools:
     - get_screen_time: Get today's screen time by app

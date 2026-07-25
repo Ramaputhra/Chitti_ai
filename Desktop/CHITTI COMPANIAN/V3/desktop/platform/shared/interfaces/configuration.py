@@ -2,7 +2,7 @@ from typing import Any, Protocol
 
 class IConfigurationService(Protocol):
     """
-    Interface for the CHITTI Configuration Service.
+    Interface for the Vizzu Configuration Service.
     Defines the standard contract for accessing configuration.
     """
 

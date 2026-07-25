@@ -12,7 +12,7 @@ from desktop.ui.widgets.registry.widget_manifest_schema import WidgetCategory
 
 def run_widget_preview_studio():
     print("==========================================================")
-    print("CHITTI V2 — DESKTOP WIDGET FRAMEWORK PREVIEW STUDIO")
+    print("Vizzu V2 — DESKTOP WIDGET FRAMEWORK PREVIEW STUDIO")
     print("==========================================================\n")
 
     w_runtime = WidgetRuntime()

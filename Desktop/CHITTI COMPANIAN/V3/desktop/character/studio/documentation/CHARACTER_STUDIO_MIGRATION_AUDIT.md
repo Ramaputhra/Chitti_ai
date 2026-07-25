@@ -1,16 +1,16 @@
-# CHITTI V2 — CHARACTER STUDIO MIGRATION AUDIT
+# Vizzu V2 — CHARACTER STUDIO MIGRATION AUDIT
 
 ======================================================================
 ## 1. LEGACY REPOSITORY AUDIT SUMMARY
 ======================================================================
 
-A comprehensive repository-wide audit was conducted to identify all legacy, duplicated, misplaced, or obsolete character assets, expressions, and tools across `CHITTI COMPANIAN V3`.
+A comprehensive repository-wide audit was conducted to identify all legacy, duplicated, misplaced, or obsolete character assets, expressions, and tools across `Vizzu COMPANIAN V3`.
 
 ### Inspected Legacy Locations:
-1. `c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\Expressions/`: Legacy expression folders (21 subdirectories containing obsolete GIF/PNG assets).
-2. `c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\desktop\assets\avatar/`: Obsolete avatar assets directory (`classic/` subfolder).
-3. `c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\tools\convert_avatar_assets.py`: Obsolete script generating legacy GIF mock assets.
-4. `c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\Character sheet.png`: Legacy root character sheet image.
+1. `c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\Expressions/`: Legacy expression folders (21 subdirectories containing obsolete GIF/PNG assets).
+2. `c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\desktop\assets\avatar/`: Obsolete avatar assets directory (`classic/` subfolder).
+3. `c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\tools\convert_avatar_assets.py`: Obsolete script generating legacy GIF mock assets.
+4. `c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\Character sheet.png`: Legacy root character sheet image.
 
 ======================================================================
 ## 2. LEGACY CLEANUP & CONSOLIDATION ACTIONS

@@ -14,9 +14,9 @@ class ProfileRuntime(IRuntime):
     """
     Manages the UserProfile defining WHO the user is.
     Follows Rule 263: Configuration Ownership.
-    Loads from AppData/CHITTI/profile/profile.json.
+    Loads from AppData/Vizzu/profile/profile.json.
     """
-    def __init__(self, config_dir: str = "AppData/CHITTI/profile"):
+    def __init__(self, config_dir: str = "AppData/Vizzu/profile"):
         self.context: Optional[KernelContext] = None
         self._running = False
         self._config_dir = config_dir

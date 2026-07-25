@@ -12,7 +12,7 @@ class SpeechTimeline:
     total_duration: float
     speech_rate: float = 1.0
     language: str = "en-US"
-    voice: str = "chitti_voice_v1"
+    voice: str = "vizzu_voice_v1"
     start_time: float = 0.0
     estimated_end_time: float = 0.0
     sentence_boundaries: List[Tuple[float, float]] = field(default_factory=list)

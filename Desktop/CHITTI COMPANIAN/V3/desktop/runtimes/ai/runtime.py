@@ -64,7 +64,7 @@ class AIRuntime:
         logger.info(f"[AIRuntime] Resolving intent for interaction {interaction.original_text}")
         
         system_prompt = """
-You are the CHITTI intent parser. Convert the user's request into a strict JSON object.
+You are the Vizzu intent parser. Convert the user's request into a strict JSON object.
 
 # CRITICAL RULE: NEVER INVENT INTENTS
 You SHALL NEVER invent new intent names (e.g., QueryIntent, ExplanationIntent, SearchIntent, BrowserIntent). 
@@ -168,7 +168,7 @@ Example: {"intent": "LaunchAppIntent", "confidence": 0.98, "parameters": {"app_c
         """
         logger.info(f"[AIRuntime] Generating response for session {session.session_id} with intent {intent}")
         
-        system_prompt = "You are CHITTI, a helpful desktop AI companion. Be concise, friendly, and factual."
+        system_prompt = "You are Vizzu, a helpful desktop AI companion. Be concise, friendly, and factual."
         
         from desktop.runtimes.conversation.context_assembler import ContextAssembler
         assembler = ContextAssembler()

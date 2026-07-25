@@ -21,7 +21,7 @@ class AwarenessRuntime(IRuntime):
     Level 1: Always on (Window, Process, Battery)
     Level 2/3: Ephemeral watchers activated by user or capability.
     """
-    def __init__(self, db_path: str = "chitti_awareness.db"):
+    def __init__(self, db_path: str = "vizzu_awareness.db"):
         self.db_path = db_path
         self._running = False
         self.context: Optional[KernelContext] = None

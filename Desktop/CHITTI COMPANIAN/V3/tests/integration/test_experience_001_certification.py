@@ -18,7 +18,7 @@ def run_suite_1_to_4_and_9():
     
     print("\n[SUITE 2: Runtime Independence (Forbidden Imports)]")
     # We will simulate a quick AST check of the presentation runtime
-    target_file = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\desktop\platform\core\presentation_runtime.py"
+    target_file = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\desktop\platform\core\presentation_runtime.py"
     if os.path.exists(target_file):
         with open(target_file, "r") as f:
             tree = ast.parse(f.read())
@@ -158,7 +158,7 @@ Verified. Strict runtime ownership enforced. No UI manipulation by Kernel.
 
 > **Experience 001 Architecture v1.0 is certified and frozen. All subsequent capabilities, workflows, AI integrations, and presentation features must conform to this architecture. Any structural modification to certified runtime layers requires an approved Architecture Decision Record (ADR) and re-certification of the affected architecture.**
 """
-    with open(r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\EXPERIENCE_001_CERTIFICATION.md", "w") as f:
+    with open(r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\EXPERIENCE_001_CERTIFICATION.md", "w") as f:
         f.write(report_content)
     print("\n✅ EXPERIENCE_001_CERTIFICATION.md generated successfully.")
 

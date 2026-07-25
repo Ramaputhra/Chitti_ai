@@ -15,7 +15,7 @@ class SystemState(Enum):
 
 class IStateManager(Protocol):
     """
-    Manages the global operational state of the CHITTI AI.
+    Manages the global operational state of the Vizzu AI.
     Every subsystem queries this instead of inventing local state flags.
     """
     def current_state(self) -> SystemState:

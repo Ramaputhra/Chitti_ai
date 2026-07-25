@@ -1,6 +1,6 @@
 # Cognitive Architecture
 
-This document describes the frozen architecture (Phases L and M) that powers CHITTI. It is a strictly deterministic pipeline that operates purely on immutable domain contracts.
+This document describes the frozen architecture (Phases L and M) that powers Vizzu. It is a strictly deterministic pipeline that operates purely on immutable domain contracts.
 
 ## The Cognitive Spine
 

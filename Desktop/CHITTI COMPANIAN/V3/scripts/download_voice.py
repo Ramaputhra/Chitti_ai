@@ -48,6 +48,6 @@ def download_voice(dest_dir):
     return model_id
 
 if __name__ == "__main__":
-    dest = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\desktop\models\piper"
+    dest = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\desktop\models\piper"
     model_id = download_voice(dest)
     print(f"\nIMPORTANT: Open your preview scripts and ensure the model path points to: {model_id}.onnx")

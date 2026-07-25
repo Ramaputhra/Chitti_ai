@@ -32,7 +32,7 @@ class TimeRuntime(IRuntime):
     Temporal Intelligence Layer. (Rule 6: Time Rule).
     Owns all waiting mechanisms (Timers, Reminders, Conditions, Timetables).
     """
-    def __init__(self, db_path: str = "chitti_time.db"):
+    def __init__(self, db_path: str = "vizzu_time.db"):
         self.db_path = db_path
         self._running = False
         self.context: Optional[KernelContext] = None

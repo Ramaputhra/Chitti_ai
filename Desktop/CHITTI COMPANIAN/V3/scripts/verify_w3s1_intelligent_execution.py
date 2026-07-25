@@ -127,7 +127,7 @@ async def run_w3s1_verification():
 
     print("\n==========================================================")
     if all_passed:
-        print("CERTIFICATION: CHITTI V2 SPRINT W3S1 INTELLIGENT TASK EXECUTION CERTIFIED [UNIT MODE]")
+        print("CERTIFICATION: Vizzu V2 SPRINT W3S1 INTELLIGENT TASK EXECUTION CERTIFIED [UNIT MODE]")
     else:
         print("CERTIFICATION FAILED [UNIT MODE]")
     print("==========================================================")

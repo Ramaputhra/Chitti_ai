@@ -13,7 +13,7 @@ class TextClassificationProvider(ProviderAdapter):
     """
     Model-agnostic adapter for Text Classification (e.g. ModernBERT, TinyBERT).
     Uses Hugging Face Transformers pipeline under the hood, but abstracts it
-    completely from the rest of CHITTI.
+    completely from the rest of Vizzu.
     """
     def __init__(self, model_name_or_path: str, component_id: str, tracker: BenchmarkTracker):
         self.model_path = model_name_or_path

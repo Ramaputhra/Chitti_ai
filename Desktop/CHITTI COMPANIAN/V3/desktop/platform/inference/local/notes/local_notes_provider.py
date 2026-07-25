@@ -14,7 +14,7 @@ class LocalNotesProvider(INotesProvider):
     def __init__(self, logger: ILoggingService) -> None:
         self.logger = logger
         self._state = ServiceState.STOPPED
-        self.notes_dir = os.path.expanduser("~/CHITTI_Workspace/Notes")
+        self.notes_dir = os.path.expanduser("~/Vizzu_Workspace/Notes")
 
     @property
     def name(self) -> str:

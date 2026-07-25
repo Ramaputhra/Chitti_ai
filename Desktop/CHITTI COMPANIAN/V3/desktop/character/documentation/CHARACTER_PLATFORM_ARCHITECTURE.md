@@ -1,4 +1,4 @@
-# CHITTI V2 — CHARACTER PLATFORM ARCHITECTURE & BOUNDARIES
+# Vizzu V2 — CHARACTER PLATFORM ARCHITECTURE & BOUNDARIES
 
 ## 1. Executive Summary
 The **Character Platform** (`desktop/character/`) encompasses the Character Studio, Behavior Scheduler, Character Runtime, Character Scene Manager, Character Identity Platform, and Character Presence Lifecycle.

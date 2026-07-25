@@ -8,7 +8,7 @@ from desktop.app.capability_contracts import CapabilityExecutionMode
 
 class IdentityCapability:
     """
-    Provides information about CHITTI's identity, version, and platform.
+    Provides information about Vizzu's identity, version, and platform.
     Adheres to the stateless, side-effect-free capability rules.
     """
     
@@ -32,7 +32,7 @@ class IdentityCapability:
             context.logger.info("Executing IdentityCapability...")
             
         info = {
-            "identity": "I am CHITTI, a desktop AI companion operating on Platform v3.0.",
+            "identity": "I am Vizzu, a desktop AI companion operating on Platform v3.0.",
             "version": "Platform Version 3.0 (Sprint 15 Hardening)",
             "os": f"{platform.system()} {platform.release()} ({platform.architecture()[0]})",
             "python": sys.version

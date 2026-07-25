@@ -73,7 +73,7 @@ class ChromeProvider(BrowserProvider):
                 
             conn.close()
         except Exception:
-            # Graceful failure without breaking CHITTI
+            # Graceful failure without breaking Vizzu
             pass
         finally:
             if os.path.exists(temp_path):

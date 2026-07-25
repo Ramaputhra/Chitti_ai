@@ -42,7 +42,7 @@ class Benchmark003EmptyDownloads(CognitiveBenchmark):
         )
         
     def setup(self, event_bus: Any, registry: Any) -> Goal:
-        self.temp_dir = tempfile.mkdtemp(prefix="chitti_empty_downloads_")
+        self.temp_dir = tempfile.mkdtemp(prefix="vizzu_empty_downloads_")
         
         goal = Goal(
             goal_id="goal_bench_003",

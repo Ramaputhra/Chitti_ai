@@ -54,7 +54,7 @@ class WorkContinuityCapability:
                 reason="Searching StackOverflow for PyTorch leaks",
                 duration=2700,
                 severity=0.7,
-                recommended_action="Search local CHITTI project logs instead."
+                recommended_action="Search local Vizzu project logs instead."
             ))
 
         # 7. Construct final ContinuityModel

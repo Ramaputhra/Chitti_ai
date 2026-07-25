@@ -91,7 +91,7 @@ def run_verbose_integration():
         ("TimeCapability", "cap_time_query", "get_time", {}),
         ("DistanceCapability", "cap_distance_query", "get_distance", {"origin": "Home", "destination": "Work"}),
         ("NavigationCapability", "cap_live_navigation", "navigate", {"active_artifact": None}),
-        ("BrowserCapability", "cap_browser_automation", "browser_action", {"action": "open", "url": "https://chitti.ai"}),
+        ("BrowserCapability", "cap_browser_automation", "browser_action", {"action": "open", "url": "https://vizzu.ai"}),
         ("OCRCapability", "cap_ocr_vision", "ocr_capture", {"source_window": "VSCode"}),
         ("SearchCapability", "cap_external_search", "search", {"query": "Latest AI models"})
     ]

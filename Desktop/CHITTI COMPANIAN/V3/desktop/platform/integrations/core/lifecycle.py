@@ -6,7 +6,7 @@ from desktop.platform.shared.interfaces.logging import ILoggingService
 
 class LifecycleManager(ILifecycleManager):
     """
-    Controls the strict state transitions of the CHITTI application.
+    Controls the strict state transitions of the Vizzu application.
     """
     def __init__(self, event_bus: IEventBus, logger: ILoggingService) -> None:
         self.event_bus = event_bus

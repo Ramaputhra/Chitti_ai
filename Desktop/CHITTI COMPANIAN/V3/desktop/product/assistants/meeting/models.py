@@ -28,7 +28,7 @@ class MeetingContext:
     participants: List[str]
     related_topics: List[str]
     related_projects: List[str]
-    current_workspace: str # e.g., "Editing models.py in CHITTI"
+    current_workspace: str # e.g., "Editing models.py in Vizzu"
     expected_decisions: List[str]
     open_questions: List[str]
     time_constraints: str

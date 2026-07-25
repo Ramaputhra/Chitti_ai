@@ -39,7 +39,7 @@ class ActivityContextProvider(ContextProvider):
         # or we assume we can fetch it. Let's just do a direct sqlite fetch to avoid circular dependency.
         import sqlite3
         try:
-            with sqlite3.connect("data/chitti_memory.db") as conn:
+            with sqlite3.connect("data/vizzu_memory.db") as conn:
                 cursor = conn.execute("SELECT application, project_name, workspace_path FROM activity_history ORDER BY timestamp DESC LIMIT 1")
                 row = cursor.fetchone()
                 if row:
@@ -59,7 +59,7 @@ class EntityContextProvider(ContextProvider):
 class CapabilityContextProvider(ContextProvider):
     def provide_context(self, session: ConversationSession, intent: str) -> List[Dict[str, str]]:
         if intent in ["QuestionIntent", "CommandIntent", "SmallTalkIntent"]:
-            # Provide grounding on what CHITTI can do
+            # Provide grounding on what Vizzu can do
             capabilities = "Launch applications, execute terminal commands, manage browser, open files, resume activities."
             return [{"role": "system", "content": f"Installed Capabilities: {capabilities}"}]
         return []

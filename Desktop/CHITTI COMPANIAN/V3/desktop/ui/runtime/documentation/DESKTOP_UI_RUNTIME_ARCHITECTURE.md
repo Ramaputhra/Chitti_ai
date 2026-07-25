@@ -1,4 +1,4 @@
-# CHITTI V2 — DESKTOP UI RUNTIME ARCHITECTURE
+# Vizzu V2 — DESKTOP UI RUNTIME ARCHITECTURE
 
 ## 1. Executive Summary
 The **Desktop UI Runtime & Widget Framework** (`desktop/ui/runtime/`) is the ONLY runtime responsible for rendering Desktop Notifications, Toasts, Dialogs, Floating Windows, Countdowns, Badges, Widgets, Docked Widgets, Character Attached Widgets, and Overlay Windows.

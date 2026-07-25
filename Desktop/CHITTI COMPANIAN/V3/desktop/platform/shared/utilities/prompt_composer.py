@@ -27,7 +27,7 @@ class PromptComposer:
             context_payload = "No context available. Only local data could be accessed."
 
         return (
-            "You are CHITTI, a helpful assistant. Provide a short, natural Morning Brief for Rama based on the following context.\n"
+            "You are Vizzu, a helpful assistant. Provide a short, natural Morning Brief for Rama based on the following context.\n"
             "If some data is missing, degrade gracefully (e.g., 'Your local calendar isn't connected yet.').\n"
             "Keep it conversational and brief.\n\n"
             f"Context Data:\n{context_payload}"
@@ -53,7 +53,7 @@ class PromptComposer:
             context_payload = "No specific meeting context could be found."
 
         return (
-            "You are CHITTI. Provide a proactive meeting brief based on the context data below.\n"
+            "You are Vizzu. Provide a proactive meeting brief based on the context data below.\n"
             "Synthesize the calendar events with any found notes or recent documents.\n"
             "Keep it professional and concise.\n\n"
             f"Context Data:\n{context_payload}"
@@ -73,7 +73,7 @@ class PromptComposer:
             
         payload = "\n".join(context)
         return (
-            "You are CHITTI. Summarize the following bundle of unread emails naturally.\n"
+            "You are Vizzu. Summarize the following bundle of unread emails naturally.\n"
             "Do not list them one by one unless there are only 1-2. Instead, group them conceptually "
             "(e.g., 'You have 3 newsletters and one invoice due tomorrow.').\n"
             "End by asking if the user wants to draft replies or archive any of them.\n\n"

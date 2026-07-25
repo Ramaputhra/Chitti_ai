@@ -5,7 +5,7 @@ import os
 @dataclass
 class PlatformSettings:
     """
-    HOW CHITTI behaves (Settings), distinct from WHO the user is (Profile).
+    HOW Vizzu behaves (Settings), distinct from WHO the user is (Profile).
     """
     theme: str = "dark"
     accent_color: str = "blue"

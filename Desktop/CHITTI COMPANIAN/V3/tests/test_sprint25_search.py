@@ -7,11 +7,11 @@ def run_tests():
     cap = SearchCapability()
     
     # 1. Search Execution & Artifact Generation
-    out = cap.execute({"query": "CHITTI Architecture"})
+    out = cap.execute({"query": "Vizzu Architecture"})
     artifact: SearchArtifact = out.conversation_artifact
     
     assert artifact.artifact_type == "SearchArtifact", "Artifact creation failed"
-    assert artifact.query == "CHITTI Architecture", "Query mismatch"
+    assert artifact.query == "Vizzu Architecture", "Query mismatch"
     assert artifact.provider == "google", "Provider abstraction failed"
     assert len(artifact.results) > 0, "No results returned"
     print("[PASS] Search execution (Provider simulated) & SearchArtifact generation.")

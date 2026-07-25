@@ -1,5 +1,5 @@
 """
-DecisionEngine — CHITTI's cognitive routing brain.
+DecisionEngine — Vizzu's cognitive routing brain.
 
 Receives a PlanningContext and evaluates a strict cascade:
 

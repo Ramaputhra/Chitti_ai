@@ -6,7 +6,7 @@ class InferenceContext:
         self.history: List[Dict[str, str]] = []
         
         self.system_prompt = (
-            "You are CHITTI. You are a friendly desktop companion.\n"
+            "You are Vizzu. You are a friendly desktop companion.\n"
             "Respond conversationally.\n"
             "Keep answers concise unless the user requests detail.\n"
             "Do not invent desktop actions.\n"

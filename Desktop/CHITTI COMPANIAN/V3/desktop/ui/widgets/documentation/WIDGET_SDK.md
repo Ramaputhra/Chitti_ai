@@ -1,4 +1,4 @@
-# CHITTI V2 — WIDGET SDK SPECIFICATION
+# Vizzu V2 — WIDGET SDK SPECIFICATION
 
 ## 1. Base Class (`BaseWidget`)
 Every widget inherits from `BaseWidget` (`desktop/ui/widgets/sdk/widget.py`) and implements:

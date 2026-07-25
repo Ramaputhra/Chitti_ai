@@ -1,6 +1,6 @@
-# CHITTI V2 — WIDGET AUTHORING GUIDE
+# Vizzu V2 — WIDGET AUTHORING GUIDE
 
-Welcome to the **CHITTI V2 Widget Authoring Guide**. This document explains how to author new desktop widgets that bind to runtime sessions.
+Welcome to the **Vizzu V2 Widget Authoring Guide**. This document explains how to author new desktop widgets that bind to runtime sessions.
 
 ---
 

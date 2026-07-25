@@ -20,7 +20,7 @@ class ChatWorkspace(QWidget):
     def __init__(self, event_bus: Any, parent=None):
         super().__init__(parent)
         self.event_bus = event_bus
-        self.setWindowTitle("CHITTI Chat Workspace")
+        self.setWindowTitle("Vizzu Chat Workspace")
         self.resize(500, 700)
         
         self.layout = QVBoxLayout(self)
@@ -109,4 +109,4 @@ class ChatWorkspace(QWidget):
         if isinstance(event_data, dict): payload = event_data.get("payload", {})
         ev = payload.get("event")
         if ev:
-            self.append_text_signal.emit(f"<span style='color:green;'>🤖 <b>Chitti:</b> <i>{ev.response_text}</i></span><br>")
+            self.append_text_signal.emit(f"<span style='color:green;'>🤖 <b>Vizzu:</b> <i>{ev.response_text}</i></span><br>")

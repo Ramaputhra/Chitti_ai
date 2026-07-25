@@ -31,8 +31,8 @@ class WorkspaceResolver(Resolver[str, WorkspaceIdentity]):
             return None
             
         # Very simple MVP resolution
-        # D:\Projects\CHITTI\src\main.py -> root="D:", workspace="Projects", relative="CHITTI\src\main.py"
-        # Since we want "CHITTI" as the workspace:
+        # D:\Projects\Vizzu\src\main.py -> root="D:", workspace="Projects", relative="Vizzu\src\main.py"
+        # Since we want "Vizzu" as the workspace:
         # If it's a typical structure: Drive:\Folder\WorkspaceName\...
         
         parts = path.replace('/', '\\').split('\\')
@@ -60,7 +60,7 @@ class WorkspaceResolver(Resolver[str, WorkspaceIdentity]):
                 else:
                     return make_identity("Personal Documents", "")
             
-            # Default fallback for D:\Projects\CHITTI
+            # Default fallback for D:\Projects\Vizzu
             category = parts[1]
             workspace = parts[2] if len(parts) > 2 else category
             rel = "\\".join(parts[3:]) if len(parts) > 3 else ""
@@ -118,8 +118,8 @@ class WorkspaceResolver(Resolver[str, WorkspaceIdentity]):
 
     @staticmethod
     def classify_project(window_title: str) -> Dict[str, float]:
-        if "CHITTI" in window_title:
-            return {"CHITTI_Companion": 0.9}
+        if "Vizzu" in window_title:
+            return {"Vizzu_Companion": 0.9}
         if "PCB" in window_title:
             return {"PCB_Design": 0.85}
         return {"Unknown": 0.1}

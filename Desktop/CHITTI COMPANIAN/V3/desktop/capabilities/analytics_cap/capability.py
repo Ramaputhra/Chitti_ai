@@ -81,7 +81,7 @@ class ProductivitySnapshot:
 
 class PersonalAnalyticsCapability:
     """
-    Personal Analytics capability for CHITTI.
+    Personal Analytics capability for Vizzu.
     
     Tools:
     - start_time_tracking: Start tracking time for a task

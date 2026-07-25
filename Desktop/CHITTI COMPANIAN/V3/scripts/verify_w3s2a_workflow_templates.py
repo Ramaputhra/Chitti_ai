@@ -117,7 +117,7 @@ async def run_w3s2a_verification():
 
     print("\n==========================================================")
     if all_passed:
-        print("CERTIFICATION: CHITTI V2 SPRINT W3S2-A WORKFLOW TEMPLATES CERTIFIED [UNIT MODE]")
+        print("CERTIFICATION: Vizzu V2 SPRINT W3S2-A WORKFLOW TEMPLATES CERTIFIED [UNIT MODE]")
     else:
         print("CERTIFICATION FAILED [UNIT MODE]")
     print("==========================================================")

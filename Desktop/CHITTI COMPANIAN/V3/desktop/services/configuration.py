@@ -26,8 +26,8 @@ class ConfigurationService(IConfigurationService):
         if key in self._overrides:
             return self._overrides[key]
 
-        # 2. Env Vars (look for CHITTI_ prefixed vars)
-        env_key = f"CHITTI_{key.upper().replace('.', '_')}"
+        # 2. Env Vars (look for Vizzu_ prefixed vars)
+        env_key = f"Vizzu_{key.upper().replace('.', '_')}"
         if env_key in os.environ:
             return os.environ[env_key]
 

@@ -60,7 +60,7 @@ def analyze_file(filepath):
     return classes
 
 def main():
-    root_dir = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\desktop"
+    root_dir = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\desktop"
     all_classes = []
     
     for dirpath, _, filenames in os.walk(root_dir):
@@ -69,7 +69,7 @@ def main():
                 filepath = os.path.join(dirpath, f)
                 all_classes.extend(analyze_file(filepath))
                 
-    output_path = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\audit_facts.json"
+    output_path = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\audit_facts.json"
     
     with open(output_path, 'w', encoding='utf-8') as out:
         json.dump(all_classes, out, indent=2)

@@ -1,4 +1,4 @@
-# CHITTI V2 — PRESENCE MEMORY SCHEMA (v2.0.0)
+# Vizzu V2 — PRESENCE MEMORY SCHEMA (v2.0.0)
 
 ## 1. Schema Metadata
 - **Platform Schema Version:** `1.0.0`

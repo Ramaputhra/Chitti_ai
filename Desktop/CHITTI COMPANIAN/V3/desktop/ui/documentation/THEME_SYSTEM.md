@@ -1,4 +1,4 @@
-# CHITTI V2 — THEME SYSTEM SPECIFICATION
+# Vizzu V2 — THEME SYSTEM SPECIFICATION
 
 ## 1. Supported Themes
 - `Dark`: Fluent dark palette with glassmorphic opacity (`0.85`).

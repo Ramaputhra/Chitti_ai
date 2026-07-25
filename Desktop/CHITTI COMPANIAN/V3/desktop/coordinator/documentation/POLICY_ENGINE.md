@@ -1,4 +1,4 @@
-# CHITTI V2 — POLICY ENGINE SPECIFICATION
+# Vizzu V2 — POLICY ENGINE SPECIFICATION
 
 Supported Orchestration Policies:
 - `Minimal UI`: Hides background widgets, minimal character presence.

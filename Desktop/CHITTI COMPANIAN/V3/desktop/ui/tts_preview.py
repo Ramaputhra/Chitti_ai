@@ -25,9 +25,9 @@ class MockLogger:
     def exception(self, e, **kwargs): logger.error(f"EXCEPTION: {e} {kwargs}")
 
 def main():
-    print("=== CHITTI TTS PREVIEW ===")
+    print("=== Vizzu TTS PREVIEW ===")
     
-    model_path = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\desktop\models\piper\en_US-amy-medium.onnx"
+    model_path = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\desktop\models\piper\en_US-amy-medium.onnx"
     if not os.path.exists(model_path):
         print(f"\n[ERROR] Piper model not found at {model_path}")
         print("Please run `python scripts/download_piper_model.py` first.\n")

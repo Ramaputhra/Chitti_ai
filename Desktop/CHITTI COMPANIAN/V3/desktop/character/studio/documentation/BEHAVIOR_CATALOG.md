@@ -1,4 +1,4 @@
-# CHITTI V2 — CHARACTER BEHAVIOR CATALOG
+# Vizzu V2 — CHARACTER BEHAVIOR CATALOG
 
 ## 1. Overview
 This catalog documents every behavior clip registered in `Character Studio` (`desktop/character/studio/assets/runtime/behaviors/`).

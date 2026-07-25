@@ -85,7 +85,7 @@ async def run_verification():
     await analytics_runtime.start()
     
     activity_runtime._context = ctx
-    activity_runtime.record_activity("Google Chrome", "CHITTI Architecture - Google Search", duration_ms=1200.0, session_id="s1")
+    activity_runtime.record_activity("Google Chrome", "Vizzu Architecture - Google Search", duration_ms=1200.0, session_id="s1")
     
     records = analytics_runtime.get_records(session_id="s1")
     activity_records = [r for r in records if r.event_type == "USER_ACTIVITY"]

@@ -8,7 +8,7 @@ from desktop.runtimes.reasoning.reasoning_cache import ReasoningCache
 
 class ReasoningRuntime:
     """
-    The deterministic "brain" of CHITTI.
+    The deterministic "brain" of Vizzu.
     Orchestrates: Policy Engine -> Decision Engine -> Plan Builder.
     Rule 293: Produces plan, doesn't execute.
     Rule 296: Never executes capabilities.

@@ -148,7 +148,7 @@ async def run_final_sprint_verification():
 
     print("\n==========================================================")
     if all_passed:
-        print("CERTIFICATION: CHITTI V2 WAVE 1 SPRINT W1S1 REMOTE COMPANION CERTIFIED")
+        print("CERTIFICATION: Vizzu V2 WAVE 1 SPRINT W1S1 REMOTE COMPANION CERTIFIED")
     else:
         print("CERTIFICATION FAILED")
     print("==========================================================")

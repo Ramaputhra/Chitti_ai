@@ -25,7 +25,7 @@ class PackManifest:
 class Pack(ABC):
     """
     Generic Pack SDK.
-    All packs inherit this to participate in the standardized CHITTI lifecycle.
+    All packs inherit this to participate in the standardized Vizzu lifecycle.
     """
     def __init__(self, manifest_path: str):
         self.manifest = PackManifest(manifest_path)

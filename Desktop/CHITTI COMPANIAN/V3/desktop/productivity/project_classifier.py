@@ -15,24 +15,24 @@ class ProjectClassifier:
             
         # Example naive weighted mapping for MVP
         for d in directories:
-            if "CHITTI" in d:
-                add_score("CHITTI_Companion", 5.0)
+            if "Vizzu" in d:
+                add_score("Vizzu_Companion", 5.0)
             elif "PCB" in d:
                 add_score("PCB_Design", 5.0)
                 
         for doc in documents:
-            if "chitti" in doc.lower():
-                add_score("CHITTI_Companion", 3.0)
+            if "vizzu" in doc.lower():
+                add_score("Vizzu_Companion", 3.0)
             elif "schematic" in doc.lower():
                 add_score("PCB_Design", 3.0)
                 
         for tab in browser_tabs:
-            if "chitti" in tab.lower():
-                add_score("CHITTI_Companion", 2.0)
+            if "vizzu" in tab.lower():
+                add_score("Vizzu_Companion", 2.0)
                 
         for t in window_titles:
-            if "chitti" in t.lower():
-                add_score("CHITTI_Companion", 1.0)
+            if "vizzu" in t.lower():
+                add_score("Vizzu_Companion", 1.0)
                 
         if not scores:
             return ("Unknown", 0.1)

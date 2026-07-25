@@ -1,6 +1,6 @@
 import os
 
-base_dir = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\architecture"
+base_dir = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\architecture"
 decisions_dir = os.path.join(base_dir, "decisions")
 
 os.makedirs(decisions_dir, exist_ok=True)

@@ -11,7 +11,7 @@ from desktop.platform.shared.models.tool import ToolDescriptor, ToolParameter
 
 
 class IdentityCapability(ICapability):
-    """Provides information about CHITTI's identity, version, and platform."""
+    """Provides information about Vizzu's identity, version, and platform."""
     
     def __init__(self, registry: ICapabilityRegistry):
         self._registry = registry
@@ -70,7 +70,7 @@ class IdentityCapability(ICapability):
             return ExecutionResult(success=False, error=f"Invalid tool: {invocation.tool_name}", output=None)
 
         if invocation.tool_name == "get_identity" or invocation.tool_name == "identify":
-            return ExecutionResult(success=True, output="I am CHITTI, a desktop AI companion operating on Platform v3.0.")
+            return ExecutionResult(success=True, output="I am Vizzu, a desktop AI companion operating on Platform v3.0.")
             
         elif invocation.tool_name == "get_version":
             return ExecutionResult(success=True, output="Platform Version 3.0 (Sprint 21)")

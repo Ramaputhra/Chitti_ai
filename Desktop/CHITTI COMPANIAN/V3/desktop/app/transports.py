@@ -106,7 +106,7 @@ class CLITransport(ITransport):
 
     async def deliver(self, expr: RenderedExpression, event_bus):
         if "text" in expr.formats:
-            print(f"\nCHITTI> {expr.formats['text']}\n")
+            print(f"\nVizzu> {expr.formats['text']}\n")
             # Confirm delivery
             event_bus.publish(ExpressionDelivered(
                 timestamp=datetime.now(),

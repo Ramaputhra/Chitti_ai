@@ -1,4 +1,4 @@
-# CHITTI V2 — RENDER PIPELINE & PROFILES
+# Vizzu V2 — RENDER PIPELINE & PROFILES
 
 ## 1. Render Profiles (FPS Targets)
 

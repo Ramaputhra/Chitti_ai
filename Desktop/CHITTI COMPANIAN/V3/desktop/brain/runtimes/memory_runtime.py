@@ -8,7 +8,7 @@ class MemoryRuntime:
     Owns SQLite persistence, retrieval, and indices.
     Zero cognitive reasoning.
     """
-    def __init__(self, db_path: str = "chitti_memory.db"):
+    def __init__(self, db_path: str = "vizzu_memory.db"):
         self.db_path = db_path
         self._init_db()
 

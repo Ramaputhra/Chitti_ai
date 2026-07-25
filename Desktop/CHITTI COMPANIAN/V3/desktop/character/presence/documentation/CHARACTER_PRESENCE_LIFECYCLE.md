@@ -1,4 +1,4 @@
-# CHITTI V2 — CHARACTER PRESENCE LIFECYCLE ARCHITECTURE
+# Vizzu V2 — CHARACTER PRESENCE LIFECYCLE ARCHITECTURE
 
 ## 1. Executive Summary
 The **Character Presence Lifecycle** (`desktop/character/presence/`) governs visual companion visibility, state transitions, middle-click transformations, presentation mode restoration, conversation suspension modeling, and presence memory persistence.
@@ -25,8 +25,8 @@ Defined in `desktop/character/presence/conversation_state.py`:
 
 ### Resumability Handling
 When a user requests *"Continue"*, *"Resume"*, *"Keep going"*, or *"Resume previous explanation"*:
-- If `resume_allowed == True`, CHITTI resumes from stored narration/speech offset (`narration_offset`, `speech_offset`, `remaining_queue`).
-- If `resume_allowed == False`, CHITTI explains briefly that the capability output cannot be resumed and offers to restart or summarize.
+- If `resume_allowed == True`, Vizzu resumes from stored narration/speech offset (`narration_offset`, `speech_offset`, `remaining_queue`).
+- If `resume_allowed == False`, Vizzu explains briefly that the capability output cannot be resumed and offers to restart or summarize.
 - Never restarts from beginning automatically.
 
 ---

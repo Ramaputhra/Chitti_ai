@@ -2,7 +2,7 @@ import os
 import shutil
 import glob
 
-base_dir = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V2"
+base_dir = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V2"
 
 # 1. Delete generated
 to_delete = [
@@ -34,7 +34,7 @@ def move_safe(src, dst):
         except Exception as e:
             print(f"Failed to move {src} to {dst}: {e}")
 
-move_safe(os.path.join(base_dir, "CHITTI_PROJECT_ARCHITECTURE"), os.path.join(base_dir, "archive", "CHITTI_PROJECT_ARCHITECTURE"))
+move_safe(os.path.join(base_dir, "Vizzu_PROJECT_ARCHITECTURE"), os.path.join(base_dir, "archive", "Vizzu_PROJECT_ARCHITECTURE"))
 move_safe(os.path.join(base_dir, "desktop", "capabilities", "robotics"), os.path.join(base_dir, "archive", "capabilities", "robotics"))
 move_safe(os.path.join(base_dir, "desktop", "services", "remote"), os.path.join(base_dir, "archive", "remote"))
 

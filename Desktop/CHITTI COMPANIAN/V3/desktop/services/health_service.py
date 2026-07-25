@@ -1,7 +1,7 @@
 """
 Health Check Service
 
-Provides centralized health monitoring for all CHITTI runtimes.
+Provides centralized health monitoring for all Vizzu runtimes.
 """
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, field

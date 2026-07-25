@@ -3,7 +3,7 @@ from dataclasses import dataclass
 @dataclass
 class WidgetTheme:
     """
-    S36D-2: Widget Visual Styling parameters enforcing canonical CHITTI Design System:
+    S36D-2: Widget Visual Styling parameters enforcing canonical Vizzu Design System:
     Rounded Corners 10px, Noto Sans typography, Soft Shadow, Glass Blur, Minimal Borders.
     """
     corner_radius_px: int = 10

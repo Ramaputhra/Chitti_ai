@@ -20,8 +20,8 @@ class MockCapabilityRuntime:
 
 def test_experience_001_v1_frozen():
     """
-    Experience 001: "Chitti, open Downloads"
-    Validates the CHITTI Runtime Architecture v1.0 (Frozen).
+    Experience 001: "Vizzu, open Downloads"
+    Validates the Vizzu Runtime Architecture v1.0 (Frozen).
     Spine: Semantic -> Translation -> Resolver -> Workflow -> Verification -> Completed
     """
     logging.basicConfig(level=logging.ERROR) # keep logs clean for print output

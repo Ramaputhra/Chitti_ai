@@ -68,7 +68,7 @@ class IdentityManager:
 
         # Fallback keywords
         if "who are you" in q_clean or "tell me about yourself" in q_clean:
-            return parsed.get("who are you?", "I am CHITTI V2, an intelligent AI desktop companion.")
+            return parsed.get("who are you?", "I am Vizzu V2, an intelligent AI desktop companion.")
         if "who created you" in q_clean or "who made you" in q_clean:
             return parsed.get("who created you?", f"I was created by {self.active_profile.creator}.")
         if "purpose" in q_clean:

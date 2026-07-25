@@ -42,8 +42,8 @@ class IdentityValidator:
                     if fk in data:
                         errors.append(f"Forbidden wake field '{fk}' found in identity.json. Identity must not contain wake configuration.")
 
-                if data.get("display_name") != "CHITTI":
-                    errors.append(f"Display name must be clean 'CHITTI' without version suffixes (Got: '{data.get('display_name')}').")
+                if data.get("display_name") != "Vizzu":
+                    errors.append(f"Display name must be clean 'Vizzu' without version suffixes (Got: '{data.get('display_name')}').")
 
             except Exception as e:
                 errors.append(f"Failed to parse identity.json: {str(e)}")

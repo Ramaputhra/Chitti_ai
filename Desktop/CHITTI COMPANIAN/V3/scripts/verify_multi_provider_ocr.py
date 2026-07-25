@@ -116,7 +116,7 @@ async def run_multi_provider_ocr_verification():
 
     print("\n==========================================================")
     if all_passed:
-        print("CERTIFICATION: CHITTI V2 MULTI-PROVIDER OCR ARCHITECTURE CERTIFIED")
+        print("CERTIFICATION: Vizzu V2 MULTI-PROVIDER OCR ARCHITECTURE CERTIFIED")
     else:
         print("CERTIFICATION FAILED")
     print("==========================================================")

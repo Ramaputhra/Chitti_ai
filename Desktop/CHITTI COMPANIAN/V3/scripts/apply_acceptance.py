@@ -2,7 +2,7 @@ import os
 import glob
 import re
 
-base_dir = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\architecture"
+base_dir = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\architecture"
 
 # 1. Rename APPLICATION_CORE_SPEC
 old_core = os.path.join(base_dir, "CORE_RUNTIME_SPEC.md")
@@ -22,14 +22,14 @@ for path in [
         with open(path, 'w', encoding='utf-8') as f:
             f.write(content)
 
-# 2. Update CHITTI_ARCHITECTURE.md description explicitly
-chitti_arch_path = os.path.join(base_dir, "CHITTI_ARCHITECTURE.md")
+# 2. Update Vizzu_ARCHITECTURE.md description explicitly
+chitti_arch_path = os.path.join(base_dir, "Vizzu_ARCHITECTURE.md")
 if os.path.exists(chitti_arch_path):
     with open(chitti_arch_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
     # regex replace the entire line under "## 1. Purpose"
-    content = re.sub(r"## 1\. Purpose\n.*?\n", "## 1. Purpose\nThe master blueprint for CHITTI's Runtime-based AI Desktop Companion architecture.\n", content, count=1)
+    content = re.sub(r"## 1\. Purpose\n.*?\n", "## 1. Purpose\nThe master blueprint for Vizzu's Runtime-based AI Desktop Companion architecture.\n", content, count=1)
     
     with open(chitti_arch_path, 'w', encoding='utf-8') as f:
         f.write(content)

@@ -20,7 +20,7 @@ class VersionManager(IVersionManager):
 
     def __init__(self, logger: ILoggingService) -> None:
         self.logger = logger
-        self._env = os.environ.get("CHITTI_ENV", "Development")
+        self._env = os.environ.get("Vizzu_ENV", "Development")
         self._build = "0001"
         self._commit = "unknown"
         self._branch = "develop"

@@ -2,7 +2,7 @@ from typing import Any, Protocol
 
 class ILoggingService(Protocol):
     """
-    Interface for the CHITTI Logging Service.
+    Interface for the Vizzu Logging Service.
     All modules must depend on this interface, never directly on Loguru.
     """
 

@@ -31,7 +31,7 @@ def record_audio(duration=5, samplerate=16000) -> bytes:
 
 def main():
     print("========================================")
-    print("   CHITTI Initial Setup - Voice Profile   ")
+    print("   Vizzu Initial Setup - Voice Profile   ")
     print("========================================\n")
     
     print("Hello! Let's recognize your voice so I can authenticate your commands.")

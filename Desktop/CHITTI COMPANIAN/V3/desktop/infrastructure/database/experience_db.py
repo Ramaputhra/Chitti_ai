@@ -11,7 +11,7 @@ class ExperienceDatabase:
     Lightweight SQLite wrapper for the Experience Learning Engine.
     Handles storage and retrieval of successful experiences, patterns, and contexts.
     """
-    def __init__(self, db_path: str = "chitti_experiences.db"):
+    def __init__(self, db_path: str = "vizzu_experiences.db"):
         self.db_path = db_path
         self._initialize_schemas()
 

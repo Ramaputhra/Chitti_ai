@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 class HotkeyListener:
     """
     S36E: Listens for user-configurable global hotkeys (e.g. Ctrl+Space, Alt+C, Win+C).
-    Restores CHITTI from System Tray or Presence Dot.
+    Restores Vizzu from System Tray or Presence Dot.
     """
     def __init__(self, shortcut: str = "Ctrl+Space"):
         self.shortcut = shortcut

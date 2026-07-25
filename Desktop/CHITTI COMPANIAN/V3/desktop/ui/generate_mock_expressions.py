@@ -1,7 +1,7 @@
 import os
 import json
 
-base_path = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\Expressions"
+base_path = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\Expressions"
 
 states = [
     ("Offline", {"id": "offline", "fps": 24, "loop": False}),

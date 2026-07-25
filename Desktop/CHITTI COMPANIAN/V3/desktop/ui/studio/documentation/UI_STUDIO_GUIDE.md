@@ -1,7 +1,7 @@
-# CHITTI V2 — DESKTOP UI STUDIO GUIDE
+# Vizzu V2 — DESKTOP UI STUDIO GUIDE
 
 ## 1. Executive Summary
-Desktop UI Studio (`desktop/ui/studio/`) is the single canonical repository for all lightweight UI assets, overlays, notifications, indicators, badges, timers, countdowns, dialogs, icons, animations, and system-state visual components across CHITTI V2.
+Desktop UI Studio (`desktop/ui/studio/`) is the single canonical repository for all lightweight UI assets, overlays, notifications, indicators, badges, timers, countdowns, dialogs, icons, animations, and system-state visual components across Vizzu V2.
 
 ---
 

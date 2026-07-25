@@ -6,7 +6,7 @@ from desktop.runtimes.search.models import SearchQuery
 
 class UniversalSearchCapability(ICapability):
     """
-    Unified entry point for the Planner to search across all CHITTI domains.
+    Unified entry point for the Planner to search across all Vizzu domains.
     Delegates to the UniversalSearchRuntime.
     """
     def __init__(self, search_runtime: UniversalSearchRuntime, event_loop: asyncio.AbstractEventLoop):
@@ -16,7 +16,7 @@ class UniversalSearchCapability(ICapability):
     def describe(self) -> CapabilityDescriptor:
         return CapabilityDescriptor(
             name="UniversalSearchCapability",
-            description="Searches across all observable domains in CHITTI (Files, Activity, Memory, etc.).",
+            description="Searches across all observable domains in Vizzu (Files, Activity, Memory, etc.).",
             parameters=[
                 CapabilityParameter(
                     name="query",

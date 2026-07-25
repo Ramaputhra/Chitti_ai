@@ -2,7 +2,7 @@ import os
 import glob
 import re
 
-base_dir = r"c:\Users\Sm!le\Desktop\CHITTI COMPANIAN\V3\architecture"
+base_dir = r"c:\Users\Sm!le\Desktop\Vizzu COMPANIAN\V3\architecture"
 
 new_runtime_spec = """# Base Runtime Specification
 > **1. The architecture must remain deterministic by default. AI reasoning is an optional capability, never a mandatory dependency for system operation. Any feature that can be executed through deterministic logic must not require an LLM.**

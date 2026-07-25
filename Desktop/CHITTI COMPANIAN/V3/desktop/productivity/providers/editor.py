@@ -55,7 +55,7 @@ class EditorProvider(ContextProvider):
                 continue
                 
             # Extract document name (naive for MVP, could use UI automation in future)
-            # Typically "main.py - CHITTI - Visual Studio Code"
+            # Typically "main.py - Vizzu - Visual Studio Code"
             doc_name = WorkspaceResolver.extract_document(app, title)
             if not doc_name:
                 continue
@@ -68,7 +68,7 @@ class EditorProvider(ContextProvider):
             # If it fails, we fall back to a mock ProjectIdentity for now, or just use the extracted Workspace string.
             
             # In a real implementation, we would query the Editor's API or use a more advanced UI inspector.
-            # For this MVP, we'll try to extract the workspace from the title (e.g., "CHITTI").
+            # For this MVP, we'll try to extract the workspace from the title (e.g., "Vizzu").
             
             # Since we can't easily get the absolute path of the open file from just the window title in most cases,
             # we'll create a dummy path based on the workspace name if it exists in directories.

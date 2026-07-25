@@ -1,7 +1,7 @@
-# CHITTI V2 — CHARACTER RUNTIME INVARIANTS
+# Vizzu V2 — CHARACTER RUNTIME INVARIANTS
 
 ## 1. Executive Summary
-This document records the **permanent architectural contracts and invariants** governing the CHITTI Character Platform. These rules are non-negotiable and permanently frozen.
+This document records the **permanent architectural contracts and invariants** governing the Vizzu Character Platform. These rules are non-negotiable and permanently frozen.
 
 ---
 

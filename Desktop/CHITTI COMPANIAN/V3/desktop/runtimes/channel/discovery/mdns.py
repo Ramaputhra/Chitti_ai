@@ -4,10 +4,10 @@ import time
 
 class mDNSDiscovery:
     """
-    Lightweight LAN discovery helper for CHITTI Remote Companion.
+    Lightweight LAN discovery helper for Vizzu Remote Companion.
     Broadcasting local IP and port 9090 for zero-configuration LAN mobile connection.
     """
-    def __init__(self, service_name: str = "_chitti._tcp.local.", port: int = 9090):
+    def __init__(self, service_name: str = "_vizzu._tcp.local.", port: int = 9090):
         self.service_name = service_name
         self.port = port
         self.running = False
@@ -28,7 +28,7 @@ class mDNSDiscovery:
         self.running = True
         self.thread = threading.Thread(target=self._broadcast_loop, daemon=True)
         self.thread.start()
-        print(f"[mDNSDiscovery] Broadcasting CHITTI Remote service on {self.get_local_ip()}:{self.port}...")
+        print(f"[mDNSDiscovery] Broadcasting Vizzu Remote service on {self.get_local_ip()}:{self.port}...")
 
     def _broadcast_loop(self):
         while self.running:

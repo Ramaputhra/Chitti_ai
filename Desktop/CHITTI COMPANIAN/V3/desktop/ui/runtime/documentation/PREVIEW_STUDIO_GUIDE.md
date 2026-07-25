@@ -1,4 +1,4 @@
-# CHITTI V2 — DESKTOP UI PREVIEW STUDIO GUIDE
+# Vizzu V2 — DESKTOP UI PREVIEW STUDIO GUIDE
 
 Run the preview studio CLI to test all 17 generic widgets and mock session bindings:
 

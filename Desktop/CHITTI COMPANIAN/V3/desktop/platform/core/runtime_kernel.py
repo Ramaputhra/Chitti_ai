@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 class RuntimeKernel:
     """
-    The heart of CHITTI.
+    The heart of Vizzu.
     Orchestrates the lifecycle between Semantic Intents, Planning, and Execution.
     """
     def __init__(self, event_bus: Any, resolver: CapabilityResolver, planner: PlannerRuntime):

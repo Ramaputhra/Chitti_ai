@@ -30,7 +30,7 @@ class LifecycleManager:
             logging.error(f"Failed to verify package {manifest.id}")
             return False
             
-        # Stub: Extract zip/tar to ~/.gemini/chitti/packages/<id>/<version>
+        # Stub: Extract zip/tar to ~/.gemini/vizzu/packages/<id>/<version>
         self._emit("PackageLifecycleChanged", {"package_id": manifest.id, "state": PackageLifecycle.INSTALLED.value})
         return True
         
