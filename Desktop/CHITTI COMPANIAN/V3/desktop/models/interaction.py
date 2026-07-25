@@ -32,6 +32,7 @@ class IntentResult:
     parameters: Dict[str, Any]
     source: str
     interaction_id: str
+    session_id: str = ""  # Required for session tracing
     model: str = "unknown"
 
 @dataclass(frozen=True)

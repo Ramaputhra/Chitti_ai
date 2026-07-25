@@ -1,13 +1,13 @@
 from typing import Any, Dict
-from datetime import datetime
-from uuid import uuid4
 from desktop.packages.sdk.pack_metadata import CapabilityMetadata
-from desktop.models.presentation import RenderedExpression
 
 class ExpressionCapability:
+    """
+    Expression capability - triggers expressions without publishing events directly.
+    ExpressionRuntime should handle the rendering via ExpressionRequested events.
+    """
     def __init__(self):
         self.metadata = CapabilityMetadata(category="Expression", supports_undo=False)
-        self.event_bus = None # Injected by executor or registry if needed
 
     def execute(self, context: 'CapabilityContext') -> 'ExecutionResult':
         expression_type = context.payload.get("expression_type", "unknown")
@@ -20,43 +20,45 @@ class ExpressionCapability:
         return ExecutionResult(status=ExecutionStatus.SUCCESS)
 
 class SpeakCapability:
+    """
+    Speak capability - returns speech text for ExpressionRuntime to render.
+    Does not publish events directly.
+    """
     def __init__(self):
         self.metadata = CapabilityMetadata(category="Expression", supports_undo=False)
-        self.event_bus = None
 
     def execute(self, context: 'CapabilityContext') -> 'ExecutionResult':
+        from desktop.runtimes.capability.results import ExecutionResult, ExecutionStatus
+        
         text = context.payload.get("text", "")
         
         if context.logger:
-            context.logger.info(f"[SpeakCapability] Speaking: {text}")
-            
-        if self.event_bus:
-            self.event_bus.publish(RenderedExpression(
-                timestamp=datetime.now(),
-                correlation_id=str(uuid4()),
-                formats={"text": text, "speech": True}
-            ))
-            
-        from desktop.runtimes.capability.results import ExecutionResult, ExecutionStatus
-        return ExecutionResult(status=ExecutionStatus.SUCCESS)
+            context.logger.info(f"[SpeakCapability] Returning text for rendering: {text}")
+        
+        # Return text in outputs - ExpressionRuntime will render via ExpressionRequested
+        return ExecutionResult(
+            status=ExecutionStatus.SUCCESS,
+            outputs={"text": text, "modality": "speech"}
+        )
 
 class TextResponseCapability:
+    """
+    Text response capability - returns text for ExpressionRuntime to render.
+    Does not publish events directly.
+    """
     def __init__(self):
         self.metadata = CapabilityMetadata(category="Expression", supports_undo=False)
-        self.event_bus = None
 
     def execute(self, context: 'CapabilityContext') -> 'ExecutionResult':
+        from desktop.runtimes.capability.results import ExecutionResult, ExecutionStatus
+        
         text = context.payload.get("text", "")
         
         if context.logger:
-            context.logger.info(f"[TextResponseCapability] Responding: {text}")
-            
-        if self.event_bus:
-            self.event_bus.publish(RenderedExpression(
-                timestamp=datetime.now(),
-                correlation_id=str(uuid4()),
-                formats={"text": text}
-            ))
-            
-        from desktop.runtimes.capability.results import ExecutionResult, ExecutionStatus
-        return ExecutionResult(status=ExecutionStatus.SUCCESS)
+            context.logger.info(f"[TextResponseCapability] Returning text for rendering: {text}")
+        
+        # Return text in outputs - ExpressionRuntime will render via ExpressionRequested
+        return ExecutionResult(
+            status=ExecutionStatus.SUCCESS,
+            outputs={"text": text, "modality": "text"}
+        )

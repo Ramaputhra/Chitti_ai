@@ -1,10 +1,13 @@
 import asyncio
+import logging
 from typing import List
 from desktop.models.lifecycle import IRuntime, HealthState
 from desktop.models.interaction import ExpressionRequested
 from desktop.models.presentation import RenderedExpression, AvatarStateChanged, AvatarState
 from desktop.app.context import KernelContext
 from desktop.app.presentation_contracts import IExpressionRenderer
+
+logger = logging.getLogger(__name__)
 
 class ExpressionRuntime(IRuntime):
     """
@@ -26,11 +29,11 @@ class ExpressionRuntime(IRuntime):
         return True
 
     async def start(self) -> bool:
-        print(f"    [ExpressionRuntime] Started with {len(self.renderers)} renderers.")
+        logger.info(f"[ExpressionRuntime] Started with {len(self.renderers)} renderers.")
         return True
 
     async def stop(self) -> bool:
-        print("    [ExpressionRuntime] Stopped.")
+        logger.info("[ExpressionRuntime] Stopped.")
         return True
 
     def health(self) -> HealthState:
@@ -41,7 +44,7 @@ class ExpressionRuntime(IRuntime):
 
     async def _on_expression_requested(self, req: ExpressionRequested):
         """Intercepts an executing capability's intent to express."""
-        print(f"\n[Expression] Rendering multi-format output for interaction: {req.interaction_id}")
+        logger.debug(f"[Expression] Rendering multi-format output for interaction: {req.interaction_id}")
         
         # 1. State Transition: Emit AvatarState (Separated from Rendering)
         # In a real system, we might map `req.emotion` to specific avatar animations.
@@ -54,7 +57,7 @@ class ExpressionRuntime(IRuntime):
             try:
                 formats[fmt] = renderer.render(req)
             except Exception as e:
-                print(f"[Expression] ⚠️ Renderer {fmt} failed: {e}")
+                logger.warning(f"[Expression] Renderer {fmt} failed: {e}")
                 
         # 3. Artifact Packaging
         rendered_expr = RenderedExpression(
@@ -68,7 +71,6 @@ class ExpressionRuntime(IRuntime):
         self.context.event_bus.publish(rendered_expr)
         
         # 5. State Transition: Revert AvatarState
-        # (Using a small delay in this demo to simulate speaking time)
         asyncio.create_task(self._revert_avatar_state())
         
     async def _revert_avatar_state(self):

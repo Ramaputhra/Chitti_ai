@@ -1,10 +1,13 @@
 from datetime import datetime
+import logging
 from desktop.models.lifecycle import IRuntime, HealthState
 from desktop.models.interaction import InteractionEnvelope, IntentResolved
 from desktop.models.events import PlanCreated
 from desktop.app.context import KernelContext
 from desktop.app.memory_contracts import IMemoryService
 from desktop.app.planner_contracts import IPlannerStrategy
+
+logger = logging.getLogger(__name__)
 
 class PlannerRuntime(IRuntime):
     """
@@ -27,11 +30,11 @@ class PlannerRuntime(IRuntime):
         return True
 
     async def start(self) -> bool:
-        print(f"    [PlannerRuntime] Started using strategy: {getattr(self.strategy, 'version', 'unknown')}")
+        logger.info(f"[PlannerRuntime] Started using strategy: {getattr(self.strategy, 'version', 'unknown')}")
         return True
 
     async def stop(self) -> bool:
-        print("    [PlannerRuntime] Stopped.")
+        logger.info("[PlannerRuntime] Stopped.")
         return True
 
     def health(self) -> HealthState:
@@ -47,14 +50,15 @@ class PlannerRuntime(IRuntime):
         """
         memory_service: IMemoryService = self.context.registry.resolve(IMemoryService)
         
-        # Hardcoding session_id for demonstration purposes (Sprint 79)
-        session_id = "default_session"
+        # Extract session_id from IntentResult for session integrity
+        session_id = getattr(event.result, 'session_id', '') or 'unknown_session'
+        if not session_id:
+            raise ValueError("session_id is required in IntentResult for session tracing")
 
         # 1. Store the incoming User interaction as a factual record (Rule 175)
-        # In real V2, ConversationRuntime would store this before generating the intent.
-        # For this sprint, we just pull it from the IntentResult for continuity.
+        # ConversationRuntime stores this before generating the intent.
         if hasattr(event.result, "interaction_id"):
-            pass # Already recorded by Conversation or Transport if needed
+            pass
 
         # 2. Context Assembly
         snapshot = memory_service.snapshot(session_id, workflow_id="global")
@@ -78,7 +82,7 @@ class PlannerRuntime(IRuntime):
             payload={
                 "interaction_id": getattr(plan, 'interaction_id', ''),
                 "plan_id": getattr(plan, 'plan_id', ''),
-                "session_id": getattr(plan, 'session_id', ''),
+                "session_id": session_id,
                 "planner_version": getattr(plan, 'planner_version', '1.0.0')
             }
         ))
