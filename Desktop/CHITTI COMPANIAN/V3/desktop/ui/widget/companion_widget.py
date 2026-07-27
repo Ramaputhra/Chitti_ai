@@ -5,6 +5,7 @@ from desktop.ui.widget.expression_controller import ExpressionController
 import os
 from desktop.ui.widget.animation_cache import AnimationCache
 from desktop.ui.widget.expression_player import ExpressionPlayer
+from desktop.ui.widget.audio_pulse_overlay import AudioPulseOverlay
 
 class RoundedLabel(QLabel):
     def paintEvent(self, event):
@@ -59,7 +60,15 @@ class CompanionWidget(QWidget):
         self.player = ExpressionPlayer(self.cache)
         self.player.frame_updated.connect(self.label.setPixmap)
         
+        # Audio Pulse Overlay - reacts to real-time audio
+        self.audio_pulse = AudioPulseOverlay(self)
+        self.audio_pulse.setFixedSize(300, 300)
+        self.audio_pulse.hide_pulse()  # Hidden by default
+        
         self.player.play_animation("Idle")
+        
+        # Audio pulse control
+        self._audio_pulse_manager = None
         
         # Screen positioning - Stick to right screen edge
         screen_geo = QGuiApplication.primaryScreen().geometry()
@@ -144,3 +153,48 @@ class CompanionWidget(QWidget):
             self.label.setText(html)
             self.label.setStyleSheet("") # Clear base style to let HTML render
             self.slide_in()
+
+    # ========== Audio Pulse Control Methods ==========
+    
+    def set_audio_level(self, level: float):
+        """
+        Update the audio pulse based on current audio level.
+        
+        Args:
+            level: Audio level from 0.0 (silent) to 1.0 (max)
+        """
+        if hasattr(self, 'audio_pulse'):
+            self.audio_pulse.set_audio_level(level)
+    
+    def set_listening(self, listening: bool = True):
+        """
+        Set the avatar to listening state, showing the audio pulse.
+        
+        Args:
+            listening: True to show pulse, False to hide
+        """
+        if hasattr(self, 'audio_pulse'):
+            if listening:
+                self.audio_pulse.set_listening(True)
+            else:
+                self.audio_pulse.set_idle()
+    
+    def hide_audio_pulse(self):
+        """Hide the audio pulse completely."""
+        if hasattr(self, 'audio_pulse'):
+            self.audio_pulse.hide_pulse()
+    
+    def set_audio_pulse_idle(self):
+        """Set the audio pulse to idle state with slow pulse animation."""
+        if hasattr(self, 'audio_pulse'):
+            self.audio_pulse.set_idle()
+    
+    def update_audio_from_vad(self, audio_data: bytes):
+        """
+        Update audio pulse from raw VAD audio data.
+        
+        Args:
+            audio_data: Raw audio bytes from VAD
+        """
+        if hasattr(self, 'audio_pulse'):
+            self.audio_pulse.update_from_vad(audio_data)
