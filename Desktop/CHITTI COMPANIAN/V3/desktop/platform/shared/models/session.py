@@ -48,6 +48,17 @@ class ConversationSession:
     artifacts: List[str] = field(default_factory=list)
     context_snapshot: Optional[dict] = None
     health: str = "GOOD"
+
+    # Conversation Intelligence fields (initialized lazily)
+    focus: Optional[Any] = None
+    recent_entities: List[Any] = field(default_factory=list)
+
+    knowledge_snapshot: Optional[KnowledgeSnapshot] = None
+    
+    # Conversation Intelligence fields
+    focus: Optional["ConversationFocus"] = None
+    recent_entities: List["EntityDescriptor"] = field(default_factory=list)
+
     knowledge_snapshot: Optional[KnowledgeSnapshot] = None
     
     # AI Trace Fields
@@ -61,3 +72,4 @@ class ConversationSession:
     tool_calls: List[Dict[str, Any]] = field(default_factory=list)
     tool_results: List[Dict[str, Any]] = field(default_factory=list)
     finish_reason: Optional[str] = None
+

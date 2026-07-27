@@ -7,8 +7,12 @@ from desktop.models.execution import ExecutionContext
 from desktop.platform.shared.models.session import ConversationSession
 
 @dataclass
+@dataclass
 class ResolvedInteraction:
-    pass
+    original_text: str
+    resolved_text: str
+    resolved_entities: List[Any]
+    routing_action: Optional[str] = None
 
 @dataclass
 class ConversationFocus:
@@ -185,3 +189,4 @@ class DocumentationArtifact(PageArtifact):
     article_content: str = ""
     code_blocks: List[str] = field(default_factory=list)
     affordances: List[str] = field(default_factory=list)
+

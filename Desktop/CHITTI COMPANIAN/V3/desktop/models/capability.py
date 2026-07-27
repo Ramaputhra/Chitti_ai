@@ -1,7 +1,26 @@
 from dataclasses import dataclass, field
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Union
 from datetime import datetime
 from desktop.models.conversation import ConversationArtifact
+
+@dataclass
+class CapabilityAction:
+    """Represents an action that a capability can perform."""
+    name: str
+    parameters: Dict[str, Any] = field(default_factory=dict)
+    description: Optional[str] = None
+
+@dataclass
+class CapabilityResult:
+    """
+    Legacy result format for backward compatibility.
+    Use CanonicalCapabilityOutput for new capabilities.
+    """
+    title: str
+    summary: str
+    status: str = "SUCCESS"
+    data: Dict[str, Any] = field(default_factory=dict)
+    confidence: float = 1.0
 
 @dataclass
 class ExecutionResult:
