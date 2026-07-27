@@ -1,192 +1,526 @@
 {
-    "OFFLINE": {
-        "id": "offline",
-        "interruptible": false,
-        "minimum_duration": 0,
-        "outputs": {
-            "visual": { "animation": "Offline", "visible": false },
-            "audio": {},
-            "servo": { "motion": "head_down" }
+    "_meta": {
+        "version": "2.0",
+        "description": "VIZZU Animation Expression Manifest - Voice Command Flow: Listening → Task → Success → Idle"
+    },
+
+    "SYSTEM": {
+        "boot_start": {
+            "id": "boot_start",
+            "category": "system",
+            "interruptible": false,
+            "minimum_duration": 1500,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "BootStart", "visible": true },
+                "audio": { "sound": "boot_start.wav" },
+                "servo": { "motion": "eyes_opening" }
+            }
+        },
+        "boot_progress": {
+            "id": "boot_progress",
+            "category": "system",
+            "interruptible": false,
+            "minimum_duration": 2000,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "BootProgress", "visible": true },
+                "audio": {},
+                "servo": { "motion": "loading_spin" }
+            }
+        },
+        "boot_complete": {
+            "id": "boot_complete",
+            "category": "system",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "BootComplete", "visible": true },
+                "audio": { "sound": "ready.wav" },
+                "servo": { "motion": "neutral_forward" }
+            }
+        },
+        "idle_to_dot": {
+            "id": "idle_to_dot",
+            "category": "system",
+            "interruptible": true,
+            "minimum_duration": 2000,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "IdleToDot", "visible": true },
+                "audio": {},
+                "servo": { "motion": "shrink_down" }
+            }
+        },
+        "dot_idle": {
+            "id": "dot_idle",
+            "category": "system",
+            "interruptible": true,
+            "minimum_duration": 0,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "DotIdle", "visible": true },
+                "audio": {},
+                "servo": { "motion": "pulse" }
+            }
+        },
+        "intro_from_dot_1": {
+            "id": "intro_from_dot_1",
+            "category": "system",
+            "description": "Variant 1 - Pop expand animation",
+            "interruptible": false,
+            "minimum_duration": 1500,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "IntroDot1", "visible": true },
+                "audio": { "sound": "wake_pop.wav" },
+                "servo": { "motion": "pop_expand" }
+            }
+        },
+        "intro_from_dot_2": {
+            "id": "intro_from_dot_2",
+            "category": "system",
+            "description": "Variant 2 - Slide in animation",
+            "interruptible": false,
+            "minimum_duration": 1500,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "IntroDot2", "visible": true },
+                "audio": { "sound": "wake_slide.wav" },
+                "servo": { "motion": "slide_in" }
+            }
+        },
+        "intro_from_dot_3": {
+            "id": "intro_from_dot_3",
+            "category": "system",
+            "description": "Variant 3 - Fade grow animation",
+            "interruptible": false,
+            "minimum_duration": 1500,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "IntroDot3", "visible": true },
+                "audio": { "sound": "wake_fade.wav" },
+                "servo": { "motion": "fade_grow" }
+            }
+        },
+        "stretch_1min": {
+            "id": "stretch_1min",
+            "category": "system",
+            "description": "Quick stretch at 1 minute idle",
+            "interruptible": true,
+            "minimum_duration": 500,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "Stretch1Min", "visible": true },
+                "audio": {},
+                "servo": { "motion": "quick_stretch" }
+            }
+        },
+        "stretch_2min": {
+            "id": "stretch_2min",
+            "category": "system",
+            "description": "Full stretch at 2 minutes idle",
+            "interruptible": true,
+            "minimum_duration": 800,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "Stretch2Min", "visible": true },
+                "audio": {},
+                "servo": { "motion": "full_stretch" }
+            }
+        },
+        "goodbye": {
+            "id": "goodbye",
+            "category": "system",
+            "description": "Wave and fade animation",
+            "interruptible": false,
+            "minimum_duration": 2000,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "Goodbye", "visible": true },
+                "audio": { "sound": "bye.wav" },
+                "servo": { "motion": "wave" }
+            }
+        },
+        "shutdown": {
+            "id": "shutdown",
+            "category": "system",
+            "description": "Final shutdown animation",
+            "interruptible": false,
+            "minimum_duration": 1500,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "Shutdown", "visible": true },
+                "audio": {},
+                "servo": { "motion": "eyes_close" }
+            }
         }
     },
-    "STARTING": {
-        "id": "starting",
-        "interruptible": false,
-        "minimum_duration": 1000,
-        "outputs": {
-            "visual": { "animation": "Starting", "visible": true },
-            "audio": {},
-            "servo": { "motion": "neutral_forward" }
+
+    "SPEECH": {
+        "wake_detected": {
+            "id": "wake_detected",
+            "category": "speech",
+            "description": "Eyes light up when wake word heard",
+            "interruptible": true,
+            "minimum_duration": 500,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "WakeDetected", "visible": true },
+                "audio": { "sound": "wake_beep.wav" },
+                "servo": { "motion": "eyes_light_up" }
+            }
+        },
+        "listening_active": {
+            "id": "listening_active",
+            "category": "speech",
+            "description": "Active listening mode",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "ListeningActive", "visible": true },
+                "audio": {},
+                "servo": { "motion": "ear_tilt" }
+            }
+        },
+        "listening_pulse": {
+            "id": "listening_pulse",
+            "category": "speech",
+            "description": "Pulse on speech detection",
+            "interruptible": true,
+            "minimum_duration": 300,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "ListeningPulse", "visible": true },
+                "audio": {},
+                "servo": { "motion": "pulse_in" }
+            }
+        },
+        "processing_command": {
+            "id": "processing_command",
+            "category": "speech",
+            "description": "Thinking nod after command",
+            "interruptible": true,
+            "minimum_duration": 800,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "ProcessingCommand", "visible": true },
+                "audio": {},
+                "servo": { "motion": "nod_thoughtful" }
+            }
+        },
+        "understanding": {
+            "id": "understanding",
+            "category": "speech",
+            "description": "Recognition confirmed",
+            "interruptible": true,
+            "minimum_duration": 500,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "Understanding", "visible": true },
+                "audio": {},
+                "servo": { "motion": "slight_nod" }
+            }
         }
     },
-    "ERROR": {
-        "id": "error",
-        "interruptible": true,
-        "minimum_duration": 2000,
-        "outputs": {
-            "visual": { "animation": "Error", "visible": true },
-            "audio": { "sound": "error_buzz.wav" },
-            "servo": { "motion": "shake_head" }
+
+    "EXECUTION": {
+        "executing_general": {
+            "id": "executing_general",
+            "category": "execution",
+            "description": "Generic task execution",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "ExecutingGeneral", "visible": true },
+                "audio": {},
+                "servo": { "motion": "busy_neutral" }
+            }
+        },
+        "executing_file": {
+            "id": "executing_file",
+            "category": "execution",
+            "description": "File operations (open, save, move, delete)",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "ExecutingFile", "visible": true },
+                "audio": {},
+                "servo": { "motion": "file_motion" }
+            }
+        },
+        "executing_browser": {
+            "id": "executing_browser",
+            "category": "execution",
+            "description": "Browser automation tasks",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "ExecutingBrowser", "visible": true },
+                "audio": {},
+                "servo": { "motion": "scan_motion" }
+            }
+        },
+        "executing_app": {
+            "id": "executing_app",
+            "category": "execution",
+            "description": "Application launch/control",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "ExecutingApp", "visible": true },
+                "audio": {},
+                "servo": { "motion": "tap_motion" }
+            }
+        },
+        "executing_calendar": {
+            "id": "executing_calendar",
+            "category": "execution",
+            "description": "Calendar/Reminder/Timer operations",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "ExecutingCalendar", "visible": true },
+                "audio": {},
+                "servo": { "motion": "clock_motion" }
+            }
+        },
+        "executing_clipboard": {
+            "id": "executing_clipboard",
+            "category": "execution",
+            "description": "Clipboard operations (copy/paste)",
+            "interruptible": true,
+            "minimum_duration": 500,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "ExecutingClipboard", "visible": true },
+                "audio": {},
+                "servo": { "motion": "clip_motion" }
+            }
+        },
+        "executing_search": {
+            "id": "executing_search",
+            "category": "execution",
+            "description": "Search operations",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "ExecutingSearch", "visible": true },
+                "audio": {},
+                "servo": { "motion": "search_motion" }
+            }
+        },
+        "executing_system": {
+            "id": "executing_system",
+            "category": "execution",
+            "description": "System settings/volume/brightness",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "ExecutingSystem", "visible": true },
+                "audio": {},
+                "servo": { "motion": "slider_motion" }
+            }
         }
     },
-    "LISTENING": {
-        "id": "listening",
-        "interruptible": true,
-        "minimum_duration": 500,
-        "outputs": {
-            "visual": { "animation": "Blush_loop", "visible": true },
-            "audio": { "sound": "listening_blip.wav" },
-            "servo": { "motion": "look_up_and_center" }
+
+    "RESULT": {
+        "task_success": {
+            "id": "task_success",
+            "category": "result",
+            "description": "Task completed successfully",
+            "interruptible": false,
+            "minimum_duration": 1500,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "TaskSuccess", "visible": true },
+                "audio": { "sound": "success_chime.wav" },
+                "servo": { "motion": "happy_nod" }
+            }
+        },
+        "task_partial": {
+            "id": "task_partial",
+            "category": "result",
+            "description": "Task partially completed",
+            "interruptible": true,
+            "minimum_duration": 1200,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "TaskPartial", "visible": true },
+                "audio": {},
+                "servo": { "motion": "partial_nod" }
+            }
+        },
+        "task_failed": {
+            "id": "task_failed",
+            "category": "result",
+            "description": "Task failed",
+            "interruptible": true,
+            "minimum_duration": 1500,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "TaskFailed", "visible": true },
+                "audio": { "sound": "error_tone.wav" },
+                "servo": { "motion": "concern_shake" }
+            }
+        },
+        "task_blocked": {
+            "id": "task_blocked",
+            "category": "result",
+            "description": "Task blocked or needs permission",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "TaskBlocked", "visible": true },
+                "audio": {},
+                "servo": { "motion": "uncertain_pose" }
+            }
+        },
+        "waiting_for_confirm": {
+            "id": "waiting_for_confirm",
+            "category": "result",
+            "description": "Waiting for user confirmation",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "WaitingConfirm", "visible": true },
+                "audio": {},
+                "servo": { "motion": "patient_wait" }
+            }
+        },
+        "confirming": {
+            "id": "confirming",
+            "category": "result",
+            "description": "Asking user for confirmation",
+            "interruptible": true,
+            "minimum_duration": 800,
+            "loop": false,
+            "outputs": {
+                "visual": { "animation": "Confirming", "visible": true },
+                "audio": {},
+                "servo": { "motion": "question_pose" }
+            }
         }
     },
+
     "TALKING": {
-        "id": "talking",
-        "interruptible": true,
-        "minimum_duration": 100,
-        "outputs": {
-            "visual": { "animation": "Talking", "visible": true },
-            "audio": {},
-            "servo": { "motion": "head_tilt_speaking" }
+        "talking": {
+            "id": "talking",
+            "category": "talking",
+            "description": "Speaking response (base)",
+            "interruptible": true,
+            "minimum_duration": 1000,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "Talking", "visible": true },
+                "audio": {},
+                "servo": { "motion": "speaking_mouth" }
+            }
+        },
+        "talking_short": {
+            "id": "talking_short",
+            "category": "talking",
+            "description": "Short response",
+            "interruptible": true,
+            "minimum_duration": 500,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "TalkingShort", "visible": true },
+                "audio": {},
+                "servo": { "motion": "brief_speak" }
+            }
+        },
+        "talking_explain": {
+            "id": "talking_explain",
+            "category": "talking",
+            "description": "Explaining/detailed response",
+            "interruptible": true,
+            "minimum_duration": 1500,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "TalkingExplain", "visible": true },
+                "audio": {},
+                "servo": { "motion": "explaining_gesture" }
+            }
         }
     },
-    "FAILURE": {
-        "id": "failure",
-        "interruptible": true,
-        "minimum_duration": 1500,
-        "outputs": {
-            "visual": { "animation": "Failure", "visible": true },
-            "audio": { "sound": "error_buzz.wav" },
-            "servo": { "motion": "shake_head" }
-        }
-    },
-    "UNDERSTANDING": {
-        "id": "understanding",
-        "interruptible": true,
-        "minimum_duration": 300,
-        "outputs": {
-            "visual": { "animation": "Understanding", "visible": true },
-            "audio": {},
-            "servo": { "motion": "look_up_and_center" }
-        }
-    },
-    "THINKING": {
-        "id": "thinking",
-        "interruptible": true,
-        "minimum_duration": 600,
-        "outputs": {
-            "visual": { "animation": "Thinking", "visible": true },
-            "audio": {},
-            "servo": { "motion": "look_up_and_center" }
-        }
-    },
-    "WORKING": {
-        "id": "working",
-        "interruptible": true,
-        "minimum_duration": 500,
-        "outputs": {
-            "visual": { "animation": "Working", "visible": true },
-            "audio": { "sound": "task_started.wav" },
-            "servo": { "motion": "jitter_busy" }
-        }
-    },
-    "READING": {
-        "id": "reading",
-        "interruptible": true,
-        "minimum_duration": 500,
-        "outputs": {
-            "visual": { "animation": "Reading", "visible": true },
-            "audio": {},
-            "servo": { "motion": "scan_left_right" }
-        }
-    },
-    "WRITING": {
-        "id": "writing",
-        "interruptible": true,
-        "minimum_duration": 500,
-        "outputs": {
-            "visual": { "animation": "Writing", "visible": true },
-            "audio": {},
-            "servo": { "motion": "scan_left_right" }
-        }
-    },
-    "SUCCESS": {
-        "id": "success",
-        "interruptible": false,
-        "minimum_duration": 1200,
-        "outputs": {
-            "visual": { "animation": "Success", "visible": true },
-            "audio": { "sound": "success_chime.wav" },
-            "servo": { "motion": "nod_small" }
-        }
-    },
-    "MONITORING": {
-        "id": "monitoring",
-        "interruptible": true,
-        "minimum_duration": 1000,
-        "outputs": {
-            "visual": { "animation": "Monitoring", "visible": true },
-            "audio": {},
-            "servo": { "motion": "slow_random_panning" }
-        }
-    },
-    "READY": {
-        "id": "ready",
-        "interruptible": true,
-        "minimum_duration": 500,
-        "outputs": {
-            "visual": { "animation": "Ready", "visible": true },
-            "audio": {},
-            "servo": { "motion": "neutral_forward" }
-        }
-    },
+
     "IDLE": {
-        "id": "idle",
-        "interruptible": true,
-        "minimum_duration": 0,
-        "outputs": {
-            "visual": { "animation": "Idle", "visible": true },
-            "audio": {},
-            "servo": { "motion": "slow_random_panning" }
-        }
-    },
-    "WAITING": {
-        "id": "waiting",
-        "interruptible": true,
-        "minimum_duration": 500,
-        "outputs": {
-            "visual": { "animation": "Waiting", "visible": true },
-            "audio": {},
-            "servo": { "motion": "neutral_forward" }
-        }
-    },
-    "EXERCISING": {
-        "id": "exercising",
-        "interruptible": true,
-        "minimum_duration": 0,
-        "outputs": {
-            "visual": { "animation": "Exercising", "visible": true },
-            "audio": {},
-            "servo": { "motion": "bounce" }
-        }
-    },
-    "SLEEPING": {
-        "id": "sleeping",
-        "interruptible": true,
-        "minimum_duration": 0,
-        "outputs": {
-            "visual": { "animation": "Sleeping", "visible": false },
-            "audio": {},
-            "servo": { "motion": "head_down" }
-        }
-    },
-    "GOODBYE": {
-        "id": "goodbye",
-        "interruptible": false,
-        "minimum_duration": 1500,
-        "outputs": {
-            "visual": { "animation": "Goodbye", "visible": true },
-            "audio": {},
-            "servo": { "motion": "head_down" }
+        "idle_normal": {
+            "id": "idle_normal",
+            "category": "idle",
+            "description": "Default idle state",
+            "interruptible": true,
+            "minimum_duration": 0,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "IdleNormal", "visible": true },
+                "audio": {},
+                "servo": { "motion": "slow_breathe" }
+            }
+        },
+        "idle_happy": {
+            "id": "idle_happy",
+            "category": "idle",
+            "description": "Happy idle mood",
+            "interruptible": true,
+            "minimum_duration": 0,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "IdleHappy", "visible": true },
+                "audio": {},
+                "servo": { "motion": "happy_breathe" }
+            }
+        },
+        "idle_curious": {
+            "id": "idle_curious",
+            "category": "idle",
+            "description": "Curious/alert idle",
+            "interruptible": true,
+            "minimum_duration": 0,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "IdleCurious", "visible": true },
+                "audio": {},
+                "servo": { "motion": "curious_look" }
+            }
+        },
+        "idle_waiting": {
+            "id": "idle_waiting",
+            "category": "idle",
+            "description": "Patient waiting idle",
+            "interruptible": true,
+            "minimum_duration": 0,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "IdleWaiting", "visible": true },
+                "audio": {},
+                "servo": { "motion": "patient_breathe" }
+            }
+        },
+        "idle_blink": {
+            "id": "idle_blink",
+            "category": "idle",
+            "description": "Blink animation",
+            "interruptible": true,
+            "minimum_duration": 200,
+            "loop": true,
+            "outputs": {
+                "visual": { "animation": "IdleBlink", "visible": true },
+                "audio": {},
+                "servo": { "motion": "blink" }
+            }
         }
     }
 }
