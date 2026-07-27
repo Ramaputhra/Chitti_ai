@@ -7,7 +7,7 @@ from desktop.models.capability_models import CapabilityManifest
 logger = logging.getLogger(__name__)
 
 # Alias for backward compatibility
-CapabilityResolver = CapabilityResolverRuntime
+
 
 class CapabilityResolverRuntime:
     """
@@ -60,3 +60,5 @@ class CapabilityResolverRuntime:
             confidence=1.0,
             parameters=resolved_params
         )
+# Alias at end
+CapabilityResolver = CapabilityResolverRuntime
